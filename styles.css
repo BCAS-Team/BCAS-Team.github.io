@@ -18,12 +18,10 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Hide all native cursors */
 *, *::before, *::after {
   cursor: none !important;
 }
 
-/* Ensure all UI elements stay behind the custom cursor */
 a, button, input, textarea, select, label, span {
   position: relative;
   z-index: 1;
@@ -107,6 +105,19 @@ a, button, input, textarea, select, label, span {
   color: #ccc;
 }
 
+/* Embedded Results */
+#iframe-results,
+#embedded-results {
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  border: none;
+  margin: 2rem auto;
+  display: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
 /* CTA Buttons */
 .cta-buttons {
   display: flex;
@@ -179,7 +190,7 @@ footer a:hover {
   mix-blend-mode: difference;
   box-shadow: 0 0 12px 6px #a855f7;
   transform: translate(-50%, -50%);
-  z-index: 999999999; /* highest z-index */
+  z-index: 999999999;
   transition: transform 0.05s ease-out;
   will-change: transform;
 }
