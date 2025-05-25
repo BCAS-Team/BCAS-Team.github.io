@@ -6,7 +6,7 @@
 
 ## 🚀 Featuring Beta 1.4
 
-### ✨ **Gemini Chat Update** + **Drug WIKI Enhancements** + **Legal Overhaul**
+### **Drug WIKI Enhancements** + **Hackers Wiki** + **Legal Overhaul**
 
 ---
 
@@ -23,7 +23,6 @@ The **Beta 1.4** update introduces **integrated AI chat** via **Google Gemini**,
 
 ### What’s New in Beta 1.4?
 
-- 💬 **Gemini AI Chat**: Talk to an embedded Google Gemini assistant directly from the site  
 - 🔥 Expanded **Drug WIKI** with deeper content and classifications  
 - ⚖️ Updated **Legal Section** to reflect the newest laws and grey areas  
 - 🎨 Refined dark UI with floating chat, better readability, and smoother UX  
