@@ -1,0 +1,240 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  cursor: none;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+a, button, input, textarea, select, label, span {
+  position: relative;
+  z-index: 1;
+  cursor: none !important;
+}
+
+/* Hero Section */
+.hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+/* Search Refinement Section */
+.search-refine-section {
+  background-color: #000;
+  color: white;
+  padding: 2rem 1rem;
+  margin: 0 auto 2rem auto;
+  max-width: 600px;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.search-refine-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-refine-section input {
+  padding: 0.75rem;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #555;
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-refine-section input:focus {
+  border-color: #a855f7;
+  outline: none;
+  box-shadow: 0 0 8px #a855f7cc;
+}
+
+.search-refine-section button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #555;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.search-refine-section button:hover {
+  box-shadow: 0 0 12px 4px #a855f7;
+  border-color: #a855f7;
+}
+
+#refined-query-output {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Popup for Wikipedia iframe */
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 80vh;
+  background-color: #111;
+  border-radius: 16px;
+  box-shadow: 0 0 25px #a855f7cc;
+  display: none;
+  flex-direction: column;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+#popup.active {
+  display: flex;
+}
+
+#close-popup {
+  background: none;
+  border: none;
+  color: #a855f7;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  margin: 0.5rem 1rem 0 0;
+  transition: color 0.3s ease;
+  z-index: 10001;
+}
+
+#close-popup:hover {
+  color: #fff;
+}
+
+#popup-frame {
+  flex-grow: 1;
+  filter: invert(1) grayscale(1) brightness(0.9) contrast(1.2);
+  border: none;
+  border-radius: 0 0 16px 16px;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 2rem auto;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  position: relative; /* enable relative positioning */
+  top: 15px;           /* move down 5px */
+}
+
+
+
+.cta-buttons a {
+  white-space: nowrap;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #555;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+
+.cta-buttons a:hover {
+  box-shadow: 0 0 12px 4px #a855f7;
+  border-color: #a855f7;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  color: #777;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+footer a:hover {
+  color: #c084fc;
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #a855f7;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 12px 6px #a855f7;
+  transform: translate(-50%, -50%);
+  z-index: 999999999;
+  transition: transform 0.05s ease-out;
+  will-change: transform;
+  user-select: none;
+}
+
+/* Accessibility: Focus styles */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
