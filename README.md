@@ -4,9 +4,9 @@
 
 ---
 
-## 🚀 Featuring Beta 1.1
+## 🚀 Featuring Beta 1.3
 
-### ✨ **The Drug WIKI update** + **Legal Update**
+### ✨ **The Drug WIKI update** + **Legal Update** + **Clean Up**
 
 ---
 
