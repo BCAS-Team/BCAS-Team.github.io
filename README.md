@@ -17,11 +17,11 @@
 ### About
 
 Welcome to **BCAS-Team.github.io**, your go-to source for cutting-edge internet tools and knowledge.  
-Dive into the **Beta 1.1** release, bringing a fully revamped **Drug WIKI** along with the latest **Legal Updates** to keep you informed and empowered.
+Dive into the **Beta 1.3** release, bringing a fully revamped **Drug WIKI** along with the latest **Legal Updates** to keep you informed and empowered.
 
 ---
 
-### What’s New in Beta 1.1?
+### What’s New in Beta 1.3?
 
 - 🔥 Extensive **Drug WIKI** overhaul with new drug types and detailed entries  
 - ⚖️ Comprehensive **Legal Update** section covering current regulations and policies  
