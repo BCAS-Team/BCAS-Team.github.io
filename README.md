@@ -1,4 +1,4 @@
-# BCAS-Team.github.io
+# BCAS-Team.github.i
 
 > ### *The Underhanded PowerHouse of The Internet*
 
