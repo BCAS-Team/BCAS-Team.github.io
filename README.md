@@ -34,6 +34,7 @@ The **Beta 1.4** update introduces **integrated AI chat** via **Google Gemini**,
 
 We are the **Underhanded PowerHouse** shaping the future of the internet.  
 Follow, fork, contribute, or just explore—we’re building something bigger.
+https://discord.gg/Re287dnm Join our Discord here, if link is out of date, email me, ill Update :)
 
 ---
 
