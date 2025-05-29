@@ -1,120 +1,109 @@
 #!/bin/bash
 
-APP_DIR="/home/pi/BCAS"
-BACKEND="$APP_DIR/backend"
-PYTHON_EXEC=$(which python3)
-
-banner() {
-whiptail --title "BCAS Installer" --msgbox "
+# ASCII Banner
+clear
+cat << "EOF"
 $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  
 $$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ 
 $$ |  $$ |$$ /  \__|$$ /  $$ |$$ /  \__|
-$$$$$$$  |$$ |      $$$$$$$$ |\$$$$$$\  
-$$  ____/ $$ |      $$  __$$ | \____$$\ 
-$$ |      $$ |  $$\ $$ |  $$ |$$\   $$ |
-$$ |      \$$$$$$  |$$ |  $$ |\$$$$$$  |
-\__|       \______/ \__|  \__| \______/ 
+$$$$$$$\ |$$ |      $$$$$$$$ |\$$$$$$\  
+$$  __$$\ $$ |      $$  __$$ | \____$$\ 
+$$ |  $$ |$$ |  $$\ $$ |  $$ |$$\   $$ |
+$$$$$$$  |\$$$$$$  |$$ |  $$ |\$$$$$$  |
+\_______/  \______/ \__|  \__| \______/ 
+                                                                                                                 
+EOF
 
-BCAS Installer & Auto-Setup" 20 70
-}
+echo "Welcome to the BCAS Installer Script!"
+echo "Setting up environment..."
 
-install_deps() {
-  sudo apt update
-  sudo apt install -y python3-pip python3-venv whiptail
-  pip3 install flask flask-login flask-bcrypt
-}
+# System Update and Dependencies
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y python3 python3-pip python3-flask python3-flask-login python3-flask-bcrypt python3-flask-cors nginx sqlite3 figlet curl net-tools ufw openvpn unzip
 
-create_user_db() {
-  cd "$BACKEND" || exit 1
-  if [ ! -f users.db ]; then
-    $PYTHON_EXEC <<EOF
+# Project Setup
+echo "Cloning BCAS project..."
+git clone https://github.com/BCAS-Team/BCAS-Team.github.io.git /opt/bcas
+cd /opt/bcas/PIVPN || exit 1
+
+# Permissions
+sudo chmod +x PIVPINinstaller.sh
+
+# Create Python virtual environment (optional)
+# python3 -m venv venv
+# source venv/bin/activate
+
+# Database Setup
+if [ ! -f "users.db" ]; then
+    echo "Creating users.db..."
+    cat <<EOF | python3
 import sqlite3
+from flask_bcrypt import Bcrypt
 conn = sqlite3.connect('users.db')
 c = conn.cursor()
-c.execute('''CREATE TABLE users (
-    id INTEGER PRIMARY KEY,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL)''')
+c.execute("""
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
+);
+""")
 conn.commit()
 conn.close()
 EOF
-  fi
-}
+fi
 
-create_user() {
-  while true; do
-    username=$(whiptail --inputbox "Enter new admin username:" 8 40 --title "Create Admin User" 3>&1 1>&2 2>&3)
-    password=$(whiptail --passwordbox "Enter new admin password:" 8 40 --title "Password" 3>&1 1>&2 2>&3)
-    confirm=$(whiptail --passwordbox "Confirm password:" 8 40 --title "Confirm Password" 3>&1 1>&2 2>&3)
+# Prompt for admin account
+read -p "Enter initial admin username: " ADMIN_USER
+read -s -p "Enter initial admin password: " ADMIN_PASS
 
-    if [ "$password" == "$confirm" ]; then
-      $PYTHON_EXEC <<EOF
+cat <<EOF | python3
 import sqlite3
-import bcrypt
-conn = sqlite3.connect('$BACKEND/users.db')
+from flask_bcrypt import Bcrypt
+bcrypt = Bcrypt()
+hashed = bcrypt.generate_password_hash("${ADMIN_PASS}").decode('utf-8')
+conn = sqlite3.connect('users.db')
 c = conn.cursor()
-hashed = bcrypt.hashpw("$password".encode(), bcrypt.gensalt()).decode()
-try:
-    c.execute("INSERT INTO users (username, password) VALUES (?, ?)", ("$username", hashed))
-    conn.commit()
-except sqlite3.IntegrityError:
-    print("Username already exists")
+c.execute("INSERT INTO users (username, password) VALUES (?, ?)", ("${ADMIN_USER}", hashed))
+conn.commit()
 conn.close()
 EOF
-      break
-    else
-      whiptail --msgbox "Passwords do not match. Try again." 8 40
-    fi
-  done
-}
 
-create_service() {
-  sudo bash -c "cat > /etc/systemd/system/bcas.service" <<EOF
+# Systemd Service
+cat <<EOF | sudo tee /etc/systemd/system/bcas.service
 [Unit]
-Description=BCAS Flask Server
+Description=BCAS Web Interface
 After=network.target
 
 [Service]
-ExecStart=$PYTHON_EXEC $BACKEND/app.py
-WorkingDirectory=$BACKEND
+ExecStart=/usr/bin/python3 /opt/bcas/PIVPN/backend/app.py
+WorkingDirectory=/opt/bcas/PIVPN/backend
 Restart=always
-User=pi
-Environment=PYTHONUNBUFFERED=1
+User=root
 
 [Install]
 WantedBy=multi-user.target
 EOF
 
-  sudo systemctl daemon-reexec
-  sudo systemctl daemon-reload
-  sudo systemctl enable bcas.service
-}
+# Enable and start service
+sudo systemctl daemon-reexec
+sudo systemctl enable bcas.service
+sudo systemctl start bcas.service
 
-start_service() {
-  sudo systemctl start bcas.service
-}
+# Setup UFW Firewall
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 5000
+sudo ufw --force enable
 
-main() {
-  banner
+# VPN Installation via PiVPN
+curl -L https://install.pivpn.io | bash
 
-  if [ ! -d "$APP_DIR" ]; then
-    whiptail --msgbox "❌ BCAS folder not found at $APP_DIR. Please clone the repo there first." 10 60
-    exit 1
-  fi
+# Display IP address
+echo "Your local IP address is:"
+hostname -I | awk '{print $1}'
+echo "BCAS server is running at: http://$(hostname -I | awk '{print $1}'):5000"
 
-  install_deps
-  create_user_db
-  create_user
-  create_service
-  start_service
-
-  IP=$(hostname -I | awk '{print $1}')
-  whiptail --title "✅ BCAS Setup Complete" --msgbox "BCAS is now installed.
-
-Web interface: http://$IP:5000
-
-It will start automatically on every boot.
-Press OK to finish." 12 60
-}
-
-main
+# Done
+figlet DONE
