@@ -27,7 +27,7 @@ The **Beta 1.4** update introduces **integrated AI chat** via **Google Gemini**,
 - ⚖️ Updated **Legal Section** to reflect the newest laws and grey areas  
 - 🎨 Refined dark UI with floating chat, better readability, and smoother UX  
 - 🐞 Minor bug fixes, layout polishing, and performance optimization
-
+- ERROR FOUND IN PIVPN (FORMATTING ERROR NOT COMPLETE!!!)
 ---
 
 ### Join Us!
