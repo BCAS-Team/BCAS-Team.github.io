@@ -17,8 +17,6 @@
 ### About
 
 Welcome to **BCAS-Team.github.io**, your go-to portal for radical knowledge, tools, and underground resources.  
-The **Beta 1.4** update introduces **integrated AI chat** via **Google Gemini**, allowing you to interact with our database and explore concepts in a whole new way.
-
 ---
 
 ### What’s New in Beta 1.4?
@@ -27,7 +25,7 @@ The **Beta 1.4** update introduces **integrated AI chat** via **Google Gemini**,
 - ⚖️ Updated **Legal Section** to reflect the newest laws and grey areas  
 - 🎨 Refined dark UI with floating chat, better readability, and smoother UX  
 - 🐞 Minor bug fixes, layout polishing, and performance optimization
-- ERROR FOUND IN PIVPN (FORMATTING ERROR NOT COMPLETE!!!)
+- ❗❗ ERROR FOUND IN PIVPN (FORMATTING ERROR NOT COMPLETE!!!)
 ---
 
 ### Join Us!
