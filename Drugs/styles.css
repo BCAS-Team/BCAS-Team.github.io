@@ -1,3 +1,9 @@
+/* Assigning all/ base stuff*/
+
+* {
+  text-decoration: none;
+}
+
 /* Base styles */
 body {
   font-family: Arial, sans-serif;
