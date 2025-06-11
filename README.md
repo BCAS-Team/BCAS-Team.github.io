@@ -34,7 +34,7 @@ We're constantly evolving, and Beta 1.5 brings significant advancements. Here's 
 
 ---
 
-### 📅 What's New Today? (June 11, 2025 - Worksop, England)
+### 📅 What's New Today? (June 11, 2025 - England)
 
 **Today's work has significantly pushed Beta 1.5 forward:**
 
