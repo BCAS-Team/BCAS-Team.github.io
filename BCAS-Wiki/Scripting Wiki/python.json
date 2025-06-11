@@ -1,0 +1,186 @@
+{
+  "guide": {
+    "tools": [
+      {
+        "name": "File Operations",
+        "category": "I/O Operations",
+        "description": "Reading, writing, and manipulating files in Python",
+        "usage": "with open('filename', 'mode') as file:",
+        "examples": [
+          "with open('data.txt', 'r') as f: content = f.read()",
+          "with open('output.txt', 'w') as f: f.write('Hello World')",
+          "import os; os.listdir('.')"
+        ],
+        "notes": "Always use context managers (with statement) for file operations to ensure proper cleanup"
+      },
+      {
+        "name": "Regular Expressions",
+        "category": "Text Processing",
+        "description": "Pattern matching and text manipulation using regex",
+        "usage": "import re; re.search(pattern, text)",
+        "examples": [
+          "import re; re.findall(r'\\d+', 'Price: 25 dollars')",
+          "re.sub(r'\\s+', '_', 'hello world test')",
+          "re.match(r'^[a-zA-Z]+$', 'onlyletters')"
+        ],
+        "notes": "Use raw strings (r'') for regex patterns to avoid escaping issues"
+      },
+      {
+        "name": "JSON Handling",
+        "category": "Data Processing",
+        "description": "Parse and generate JSON data",
+        "usage": "import json; json.loads(json_string)",
+        "examples": [
+          "import json; data = json.loads('{\"name\": \"John\"}')",
+          "json.dumps({'name': 'Jane', 'age': 30})",
+          "with open('data.json') as f: data = json.load(f)"
+        ],
+        "notes": "Use json.load() for files and json.loads() for strings"
+      },
+      {
+        "name": "HTTP Requests",
+        "category": "Network",
+        "description": "Make HTTP requests using requests library",
+        "usage": "import requests; requests.get(url)",
+        "examples": [
+          "import requests; r = requests.get('https://api.github.com/users/octocat')",
+          "requests.post('https://httpbin.org/post', data={'key': 'value'})",
+          "requests.get('https://example.com', headers={'User-Agent': 'MyBot'})"
+        ],
+        "notes": "Install with: pip install requests. Always handle exceptions for network operations"
+      },
+      {
+        "name": "Command Line Arguments",
+        "category": "System",
+        "description": "Parse command line arguments using argparse",
+        "usage": "import argparse; parser = argparse.ArgumentParser()",
+        "examples": [
+          "parser.add_argument('--input', help='Input file')",
+          "parser.add_argument('-v', '--verbose', action='store_true')",
+          "args = parser.parse_args()"
+        ],
+        "notes": "Use argparse for complex argument parsing, sys.argv for simple cases"
+      },
+      {
+        "name": "Directory Operations",
+        "category": "File System",
+        "description": "Navigate and manipulate directories",
+        "usage": "import os; os.chdir(path)",
+        "examples": [
+          "import os; os.getcwd()",
+          "os.makedirs('new/directory', exist_ok=True)",
+          "for root, dirs, files in os.walk('.'):"
+        ],
+        "notes": "Use pathlib for modern path operations: from pathlib import Path"
+      },
+      {
+        "name": "Environment Variables",
+        "category": "System",
+        "description": "Access and modify environment variables",
+        "usage": "import os; os.environ.get('VAR_NAME')",
+        "examples": [
+          "import os; home = os.environ.get('HOME', '/default')",
+          "os.environ['MY_VAR'] = 'value'",
+          "path = os.environ.get('PATH', '').split(os.pathsep)"
+        ],
+        "notes": "Use .get() method with default values to avoid KeyError"
+      },
+      {
+        "name": "Process Management",
+        "category": "System",
+        "description": "Execute and manage system processes",
+        "usage": "import subprocess; subprocess.run(['command'])",
+        "examples": [
+          "import subprocess; result = subprocess.run(['ls', '-la'], capture_output=True, text=True)",
+          "subprocess.run(['git', 'status'], check=True)",
+          "proc = subprocess.Popen(['ping', 'google.com'], stdout=subprocess.PIPE)"
+        ],
+        "notes": "Use subprocess.run() for simple cases, Popen for complex process management"
+      },
+      {
+        "name": "Date and Time",
+        "category": "Utilities",
+        "description": "Handle dates, times, and timestamps",
+        "usage": "from datetime import datetime",
+        "examples": [
+          "from datetime import datetime; now = datetime.now()",
+          "datetime.strptime('2023-01-01', '%Y-%m-%d')",
+          "import time; time.sleep(5)"
+        ],
+        "notes": "Use datetime for date operations, time for delays and timestamps"
+      },
+      {
+        "name": "Database Operations",
+        "category": "Database",
+        "description": "Connect to and query databases",
+        "usage": "import sqlite3; conn = sqlite3.connect('db.sqlite')",
+        "examples": [
+          "import sqlite3; conn = sqlite3.connect(':memory:')",
+          "cursor = conn.execute('SELECT * FROM users')",
+          "conn.execute('INSERT INTO users (name) VALUES (?)', ('John',))"
+        ],
+        "notes": "Always use parameterized queries to prevent SQL injection"
+      },
+      {
+        "name": "CSV Processing",
+        "category": "Data Processing",
+        "description": "Read and write CSV files",
+        "usage": "import csv; csv.reader(file)",
+        "examples": [
+          "import csv; with open('data.csv') as f: reader = csv.DictReader(f)",
+          "with open('output.csv', 'w') as f: writer = csv.writer(f)",
+          "writer.writerow(['Name', 'Age', 'City'])"
+        ],
+        "notes": "Use DictReader/DictWriter for header-based access"
+      },
+      {
+        "name": "Logging",
+        "category": "Debugging",
+        "description": "Implement proper logging in applications",
+        "usage": "import logging; logging.basicConfig(level=logging.INFO)",
+        "examples": [
+          "import logging; logging.info('Application started')",
+          "logging.error('An error occurred: %s', error_msg)",
+          "logger = logging.getLogger(__name__)"
+        ],
+        "notes": "Use different log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL"
+      },
+      {
+        "name": "Error Handling",
+        "category": "Exception Management",
+        "description": "Handle exceptions and errors gracefully",
+        "usage": "try: ... except Exception as e: ...",
+        "examples": [
+          "try: result = 10 / 0\nexcept ZeroDivisionError: print('Cannot divide by zero')",
+          "try: file = open('missing.txt')\nexcept FileNotFoundError as e: print(f'File error: {e}')",
+          "finally: print('Cleanup code here')"
+        ],
+        "notes": "Always catch specific exceptions rather than generic Exception when possible"
+      },
+      {
+        "name": "List Comprehensions",
+        "category": "Data Structures",
+        "description": "Create lists using concise syntax",
+        "usage": "[expression for item in iterable if condition]",
+        "examples": [
+          "squares = [x**2 for x in range(10)]",
+          "evens = [x for x in range(20) if x % 2 == 0]",
+          "words = [word.upper() for word in ['hello', 'world']]"
+        ],
+        "notes": "More readable and often faster than traditional loops for simple operations"
+      },
+      {
+        "name": "Dictionary Operations",
+        "category": "Data Structures",
+        "description": "Advanced dictionary manipulation techniques",
+        "usage": "dict.get(key, default)",
+        "examples": [
+          "data = {'a': 1, 'b': 2}; data.get('c', 0)",
+          "merged = {**dict1, **dict2}",
+          "counts = {}; counts[item] = counts.get(item, 0) + 1"
+        ],
+        "notes": "Use collections.defaultdict for automatic default values"
+      }
+    ]
+  }
+}

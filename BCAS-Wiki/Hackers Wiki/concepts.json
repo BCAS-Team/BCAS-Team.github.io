@@ -1,0 +1,324 @@
+{
+  "concepts": [
+    {
+      "id": "1",
+      "name": "Anonymity",
+      "category": "Privacy & Security",
+      "description": "The state of being unidentifiable or untraceable online, often achieved through tools like Tor or encrypted communication.",
+      "definitions": [
+        "Anonymity refers to the ability to engage in activities without revealing one's identity or personal details.",
+        "In cybersecurity, anonymity is critical for protecting privacy and avoiding surveillance.",
+        "Tools like Tor Browser enhance anonymity by routing traffic through a network of relays.",
+        "Anonymity can be compromised through IP leaks, browser fingerprinting, or data collection."
+      ],
+      "notes": "True anonymity requires layering multiple security measures (e.g., Tor + HTTPS).",
+      "links": [
+        "https://torproject.org"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Privacy",
+      "category": "Anonymity & Privacy",
+      "description": "The right to control one's personal data and avoid unwanted surveillance.",
+      "definitions": [
+        "Privacy involves limiting access to sensitive information such as location, browsing history, or financial records.",
+        "Privacy is foundational to digital rights and ethical online behavior.",
+        "Encryption (e.g., HTTPS) and tools like Tor Browser help protect privacy by securing communications.",
+        "Privacy can be eroded through data breaches, third-party tracking, or insecure network practices."
+      ],
+      "notes": "Privacy should always be prioritized over convenience in sensitive contexts.",
+      "links": [
+        "https://www.privacyinternational.org"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "GPG Signature",
+      "category": "Anonymity & Privacy",
+      "description": "A cryptographic method to verify the authenticity of downloaded software or documents.",
+      "definitions": [
+        "GPG (GNU Privacy Guard) uses public-key cryptography to sign files and ensure their integrity.",
+        "Verifying a GPG signature confirms that a file hasn't been altered since it was signed by its author.",
+        "This is critical for avoiding malware disguised as legitimate software.",
+        "Steps include importing the signer's public key, using `gpg --verify` on the file."
+      ],
+      "notes": "Always verify signatures for security-critical downloads (e.g., Tor Browser).",
+      "links": [
+        "https://www.gnupg.org"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Tor Network",
+      "category": "Anonymity & Privacy",
+      "description": "A decentralized network of relays that routes internet traffic to obscure user locations.",
+      "definitions": [
+        "The Tor (The Onion Router) network anonymizes data by routing it through multiple encrypted nodes.",
+        "Each relay layer adds a level of encryption, making it difficult to trace the origin of traffic.",
+        "Tor is used for bypassing censorship and protecting online privacy but has limitations (e.g., exit node vulnerabilities).",
+        "Users must avoid leaking real IP addresses or metadata to maintain anonymity."
+      ],
+      "notes": "Tor is not foolproof; always use HTTPS and avoid identifiable data leaks.",
+      "links": [
+        "https://www.torproject.org"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "VPS (Virtual Private Server)",
+      "category": "Privacy & Security",
+      "description": "A virtual machine hosted on a physical server, providing secure and private computing resources.",
+      "definitions": [
+        "VPS is an isolated environment with dedicated CPU, RAM, and storage allocated to a single user.",
+        "It allows users to run services (e.g., OpenVPN servers) without sharing physical hardware with others.",
+        "Providers like DigitalOcean or Vultr offer VPS instances with configurable security settings.",
+        "Using a VPS enables full control over infrastructure but requires technical expertise."
+      ],
+      "notes": "Choose providers with strong privacy policies to avoid data logging.",
+      "links": [
+        "https://www.digitalocean.com"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "OpenVPN",
+      "category": "Privacy & Security",
+      "description": "An open-source VPN protocol that secures internet traffic using SSL/TLS encryption.",
+      "definitions": [
+        "OpenVPN uses SSL/TLS to encrypt data between the client and server, preventing eavesdropping.",
+        "It supports both TCP and UDP protocols, with UDP often preferred for speed.",
+        "OpenVPN can be configured to route all traffic through the server (split tunneling) or selectively.",
+        "Clients must use certificates or pre-shared keys for secure authentication."
+      ],
+      "notes": "Regularly update OpenVPN to patch vulnerabilities in its implementation.",
+      "links": [
+        "https://openvpn.net"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Password Hashing",
+      "category": "Password Cracking",
+      "description": "The process of converting plain-text passwords into encrypted values for secure storage.",
+      "definitions": [
+        "Hashing transforms passwords into fixed-length strings using cryptographic algorithms (e.g., SHA-256).",
+        "Salting adds random data to hashes to prevent rainbow table attacks.",
+        "Common hash types include MD5, SHA-1, and bcrypt (used in modern systems).",
+        "Brute-force or dictionary attacks can crack weak hashes if not salted or iterated."
+      ],
+      "notes": "Use strong, unique passwords and avoid storing unhashed credentials.",
+      "links": [
+        "https://en.wikipedia.org/wiki/Password_hashing"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Wordlist Attacks",
+      "category": "Password Cracking",
+      "description": "A method of cracking passwords by testing precomputed lists of common words and phrases.",
+      "definitions": [
+        "Wordlists like 'rockyou.txt' contain millions of potential passwords derived from breaches or dictionaries.",
+        "Attackers use these to brute-force hashes by matching them against target hash values.",
+        "This is effective for weak passwords but less so for complex, unique ones.",
+        "Tools like John the Ripper can accelerate this process using optimized algorithms."
+      ],
+      "notes": "Never reuse passwords; use password managers to generate strong, unique keys.",
+      "links": [
+        "https://www.openwall.com"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Nmap (Network Mapper)",
+      "category": "Information Gathering",
+      "description": "A powerful tool for network discovery and security auditing through port scanning.",
+      "definitions": [
+        "Nmap uses TCP/IP protocols to identify hosts, services, and vulnerabilities on a network.",
+        "It supports various scan types: ping scans (`-sn`), SYN scans (`-sS`), UDP scans (`-sU`), etc.",
+        "OS detection (`-O`) and version detection (`-sV`) help determine target configurations.",
+        "Nmap can automate tasks like scanning entire subnets or checking for open ports."
+      ],
+      "notes": "Always scan with permission to avoid legal repercussions or network disruptions.",
+      "links": [
+        "https://nmap.org"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Metasploit Framework",
+      "category": "Exploitation Framework",
+      "description": "A penetration testing platform for developing, testing, and using exploit code securely.",
+      "definitions": [
+        "Metasploit includes a database of exploits (modules), payloads, and auxiliary tools for security assessments.",
+        "Exploits like `ms17_010_eternalblue` leverage known vulnerabilities in software (e.g., Windows SMB).",
+        "Payloads (`reverse_tcp`) establish communication between the attacker and target machine.",
+        "The framework supports both manual and automated exploitation workflows."
+      ],
+      "notes": "Only use Metasploit in authorized environments for ethical hacking purposes.",
+      "links": [
+        "https://metasploit.help.rapid7.com"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Wireless Attacks",
+      "category": "Wireless Security",
+      "description": "Exploits targeting vulnerabilities in Wi-Fi networks or wireless communication protocols.",
+      "definitions": [
+        "These attacks often involve intercepting traffic, cracking WPA/WPA2 passwords, or exploiting rogue access points.",
+        "Tools like Aircrack-ng can capture handshake data and use wordlists to decrypt Wi-Fi keys.",
+        "Wi-Fi security is vulnerable to eavesdropping if not configured with strong encryption (e.g., WPA3).",
+        "Attackers may spoof APs (rogue hotspots) to trick users into connecting securely."
+      ],
+      "notes": "Use WPA3 and disable Wi-Fi when not in use to mitigate risks.",
+      "links": [
+        "https://www.aircrack-ng.org"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Browser Fingerprinting",
+      "category": "Anonymity & Privacy",
+      "description": "A technique that uniquely identifies users based on browser settings and plugins.",
+      "definitions": [
+        "Browsers leave digital fingerprints through details like screen resolution, installed fonts, or WebRTC data.",
+        "These can be used to track users even if cookies are disabled (third-party tracking).",
+        "Tor Browser actively disables fingerprinting to enhance anonymity.",
+        "Users should avoid enabling unnecessary plugins (e.g., Flash) that increase identifiability."
+      ],
+      "notes": "Use privacy-focused browsers and disable features like WebRTC when not needed.",
+      "links": [
+        "https://www.ghacks.net/2017/04/26/browser-fingerprinting-is-here-to-stay/"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "DNS Leak Protection",
+      "category": "Privacy & Security",
+      "description": "Preventing DNS queries from being transmitted over unencrypted channels.",
+      "definitions": [
+        "DNS leaks occur when public DNS servers (e.g., Google's 8.8.8.8) are used instead of encrypted ones.",
+        "VPNs with strict DNS settings can route all traffic, including DNS requests, through their tunnel.",
+        "Services like Quad9 or OpenDNS offer secure, encrypted DNS resolution options.",
+        "Users should test for leaks using tools like dnsleaktest.com."
+      ],
+      "notes": "Always configure your network to use privacy-aware DNS resolvers.",
+      "links": [
+        "https://www.dnsleaktest.com"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "IPv6 Security",
+      "category": "Network Security",
+      "description": "Protecting IPv6 networks from vulnerabilities unique to the protocol.",
+      "definitions": [
+        "IPv6 offers larger address spaces but lacks built-in encryption, requiring additional security measures.",
+        "Misconfigured IPv6 can expose devices to attacks like Neighbor Discovery Protocol (NDP) spoofing.",
+        "Firewalls should block unnecessary IPv6 traffic to prevent unauthorized access.",
+        "Use IPv6 with strong authentication protocols (e.g., IPsec) for secure communication."
+      ],
+      "notes": "Enable IPv6 only if necessary and configure it securely to avoid exposure.",
+      "links": [
+        "https://www.ietf.org/rfc/rfc4291.txt"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Port Knocking",
+      "category": "Network Security",
+      "description": "A technique where a sequence of connection attempts to closed ports grants access.",
+      "definitions": [
+        "Port knocking is used to hide services from unauthorized users by keeping them inaccessible until the correct sequence is sent.",
+        "It can be combined with authentication mechanisms (e.g., SSH) for additional security.",
+        "Tools like knockd allow administrators to manage port-based access rules dynamically.",
+        "This method requires proper configuration to avoid false negatives or missed knocks."
+      ],
+      "notes": "Port knocking is not a substitute for strong authentication but adds an extra layer of defense.",
+      "links": [
+        "https://www.knockd.org"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "SSL/TLS Handshake",
+      "category": "Network Security",
+      "description": "The process by which a client and server establish an encrypted connection.",
+      "definitions": [
+        "The handshake begins with the client requesting a secure connection, followed by server certificate exchange.",
+        "Key exchange algorithms (e.g., Diffie-Hellman) ensure symmetric keys are shared securely.",
+        "Modern protocols like TLS 1.3 offer faster handshakes and better security than older versions.",
+        "SSL/TLS is critical for securing web traffic, email, and API communications."
+      ],
+      "notes": "Always use modern, supported protocols to avoid vulnerabilities in outdated versions.",
+      "links": [
+        "https://en.wikipedia.org/wiki/Transport_Layer_Security"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "XSS (Cross-Site Scripting)",
+      "category": "Web Security",
+      "description": "A type of attack where malicious scripts are injected into trusted websites to exploit users.",
+      "definitions": [
+        "Reflected XSS targets users via URLs or forms, while stored XSS persists in databases for longer periods.",
+        "Attackers inject malicious JavaScript that runs in the victim's browser without their knowledge.",
+        "XSS is often used to steal cookies, session tokens, or perform actions on behalf of users.",
+        "Input validation and Content Security Policies (CSP) are key defenses against XSS."
+      ],
+      "notes": "Always sanitize user input and use secure HTTP headers to mitigate risks.",
+      "links": [
+        "https://owasp.org/www-community/attacks/xss/"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "SQL Injection",
+      "category": "Web Security",
+      "description": "A technique where attackers inject malicious SQL code into database queries to access or manipulate data.",
+      "definitions": [
+        "Attackers exploit poorly sanitized user inputs to execute arbitrary SQL commands on a backend database.",
+        "This can lead to data breaches, privilege escalation, or complete database theft.",
+        "Examples include `SELECT * FROM users WHERE username = 'admin' OR '1'='1`.",
+        "Prepared statements (parameterized queries) are the best defense against SQL injection."
+      ],
+      "notes": "Avoid concatenating user input with SQL queries; use ORM frameworks to reduce risks.",
+      "links": [
+        "https://owasp.org/www-community/attacks/sqli/"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Phishing Attacks",
+      "category": "Social Engineering",
+      "description": "Deceptive tactics used to trick users into revealing sensitive information or credentials.",
+      "definitions": [
+        "Phishing often involves fake emails, websites, or messages mimicking legitimate organizations.",
+        "Users may be directed to malicious sites where they enter login details or click on harmful links.",
+        "Spear phishing targets specific individuals with personalized attacks (e.g., CEO fraud).",
+        "Multi-factor authentication (MFA) is critical for mitigating phishing risks."
+      ],
+      "notes": "Verify the authenticity of requests and avoid clicking suspicious links in emails.",
+      "links": [
+        "https://www.ict-2031.eu"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Social Engineering",
+      "category": "Human Factors",
+      "description": "Exploiting human psychology to gain unauthorized access or sensitive information.",
+      "definitions": [
+        "This includes tactics like pretexting, baiting, tailgating, and quid pro quo scams.",
+        "Attackers may pose as IT support or employees to manipulate victims into revealing passwords or physical access.",
+        "Training users to recognize and resist social engineering attempts is essential for security awareness.",
+        "Physical security measures (e.g., ID checks) can also prevent unauthorized access."
+      ],
+      "notes": "Combine technical defenses with ongoing employee training to reduce human error risks.",
+      "links": [
+        "https://www.social-engineering.com/"
+      ]
+    }
+]
+}
