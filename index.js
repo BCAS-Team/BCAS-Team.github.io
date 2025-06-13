@@ -13,7 +13,6 @@ const searchLoadingIndicator = document.getElementById('search-loading-indicator
 // and assume the directory structure as provided in your `dir` commands.
 // The 'linkPath' is now the relative path to the root HTML file of each wiki.
 const JSON_FILES = [
-  { path: 'BCAS-Wiki/Drug Wiki/Main.json', wikiName: 'Drug Wiki', linkPath: 'BCAS-Wiki/Drug Wiki/index.html' },
   { path: 'BCAS-Wiki/Hackers Wiki/concepts.json', wikiName: 'Hackers Wiki (Concepts)', linkPath: 'BCAS-Wiki/Hackers Wiki/index.html' },
   { path: 'BCAS-Wiki/Hackers Wiki/resources.json', wikiName: 'Hackers Wiki (Resources)', linkPath: 'BCAS-Wiki/Hackers Wiki/index.html' },
   { path: 'BCAS-Wiki/Hackers Wiki/tools.json', wikiName: 'Hackers Wiki (Tools)', linkPath: 'BCAS-Wiki/Hackers Wiki/index.html' },
