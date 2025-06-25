@@ -1,6 +1,6 @@
 BCAS-Team.github.io - Project Roadmap
 
-Current Version: Beta 1.4
+Current Version: Beta 1.5.1
 
 Upcoming Wiki Projects and Site Additions:
 
