@@ -1,6 +1,6 @@
 // ==================== API KEYS - EDIT THESE ====================
 const API_KEYS = {
-    openrouter: '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', // Your OpenRouter API key
+    openrouter: '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', // Your OpenRouter API ke
 };
 
 // Available free models on OpenRouter
