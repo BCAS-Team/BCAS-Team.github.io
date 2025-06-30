@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Add this in your <head> -->
-  <title>AI Assistant</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCAS - AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Manrope:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>BCAS-AI</h1>
-      <p>Powered by Design</p>
-    </div>
-
-    <div class="chat-container">
-      <div class="messages" id="messages" aria-live="polite" aria-atomic="false"></div>
-
-      <div class="loading-indicator" id="loading-indicator" style="display: none;">
-        <div class="loader"></div>
-      </div>
-    </div>
-
-    <div class="input-container">
-      <div class="tone-selector">
-        <label for="tone-select">Response Tone:</label>
-        <select id="tone-select">
-          <option value="professional">Professional</option>
-          <option value="casual">Casual</option>
-          <option value="creative">Creative</option>
-          <option value="analytical">Analytical</option>
-          <option value="friendly">Friendly</option>
-        </select>
-      </div>
-
-      <div class="input-row">
-        <div class="input-field">
-          <textarea
-            id="prompt-input"
-            placeholder="Ask me anything..."
-            rows="1"
-            aria-label="Chat input"
-          ></textarea>
+    <div class="container">
+        <div class="header">
+            <h1>BCAS-AI</h1>
+            <p>Powered by Synethesis</p>
         </div>
-        <button class="submit-button" id="submit-button">Send</button>
-      </div>
+        
+        <div class="chat-container">
+            <div id="messages" class="messages">
+                <div class="message assistant">
+                    <div class="message-content">
+                        <h3>Welcome!</h3>
+                        <div class="api-response">
+                            I am Bcas's Personal AI, an advanced system integrating ten distinct, high-level artificial intelligences to deliver unparalleled performance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="loader"></div>
+                <div class="loading-text">Processing with multiple AI models...</div>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <div class="controls">
+                <div class="tone-selector">
+                    <label for="tone-select">Tone:</label>
+                    <select id="tone-select">
+                        <option value="professional">Professional</option>
+                        <option value="friendly">Friendly</option>
+                        <option value="casual">Casual</option>
+                        <option value="formal">Formal</option>
+                        <option value="creative">Creative</option>
+                        <option value="analytical">Analytical</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-field">
+                    <textarea 
+                        id="prompt-input" 
+                        placeholder="Ask me anything..."
+                        rows="1"
+                    ></textarea>
+                </div>
+                <button id="submit-button" class="submit-button">Send</button>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
