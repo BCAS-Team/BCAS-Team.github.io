@@ -1,0 +1,41 @@
+BCAS-Team.github.io - Project Roadmap
+
+Current Version: Beta 1.5.1
+
+Upcoming Wiki Projects and Site Additions:
+
+1. Scripting Wiki
+   - Tutorials and code snippets in Python, Bash, PowerShell
+   - Automation scripts for data scraping, network tasks, and daily ops
+
+2. Device Liberation Wiki
+   - Guides on rooting Android devices and jailbreaking iOS
+   - Router firmware flashing (OpenWRT/DD-WRT)
+   - Console homebrew basics and legal disclaimers
+
+3. Hacker Culture & History Wiki
+   - Timeline of hacker milestones and movements
+   - Classic hacker manifestos and writings
+   - Profiles of influential groups and events
+
+4. Crypto Wiki
+   - Deep dive into privacy-focused cryptocurrencies like Monero
+   - Wallet security and self-custody practices
+   - Avoiding KYC and surveillance on exchanges
+
+5. Digital Activism Wiki
+   - Guides to secure communication tools and techniques
+   - Info on legal rights and protest technology
+   - Profiles of digital rights organizations and campaigns
+
+Additional Planned Features:
+- Improve site navigation and UI/UX (dark mode, responsive design)
+- Add search functionality across all wiki content
+- Integrate live Discord chat widget on the site
+- Develop a blog section for updates and community news
+
+---
+
+For contributions or questions, join our Discord: https://discord.gg/Re287dnm
+
+"Made with 💡 and a hint of rebellion."
