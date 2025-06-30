@@ -25,7 +25,7 @@ body {
 /* ========== Container - Desktop/Tablet "App Window" ========== */
 .container {
   width: 1140px; /* Slightly wider for 16:9 */
-  max-width: 100vw;
+  max-width: 95vw;
   min-height: 720px; /* ~16:9 ratio height */
   display: flex;
   flex-direction: column;
@@ -88,8 +88,7 @@ body {
 /* ========== Messages ========== */
 .messages {
     border-top: 1px solid rgba(167, 139, 250, 0.2);
-  background: rgba(50, 40, 80, 0.95);
-  border-radius: 0 0 24px 24px;
+  background: rgba(30, 20, 50, 0.85);
   flex: 1;
   overflow-y: auto;
   padding: 32px 44px;
@@ -198,25 +197,16 @@ body {
 }
 
 .message.assistant .message-content .api-response {
-  margin-bottom: 24px;
-  padding-bottom: 18px;
-  border-bottom: 1px dashed rgba(167, 139, 250, 0.25);
+    line-height: 1.6;
 }
 
-.message.assistant .message-content .api-response:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
 
 /* ========== Input Container ========== */
 .input-container {
   padding: 30px 44px;
   border-top: 1px solid rgba(167, 139, 250, 0.2);
-  background: rgba(50, 40, 80, 0.95);
-  border-radius: 0 0 24px 24px;
-  position: sticky;
-  bottom: 0;
+  background: rgba(40, 30, 60, 0.88);
+  position: relative;
   z-index: 15;
   user-select: none;
   display: flex;
@@ -224,8 +214,7 @@ body {
   gap: 24px;
 }
 
-/* Tone selector */
-.tone-selector {
+.controls {
   margin: 0;
   user-select: none;
 }
@@ -281,7 +270,7 @@ body {
   user-select: text;
 }
 
-.input-field textarea {
+#prompt-input {
   width: 100%;
   min-height: 70px;
   max-height: 180px;
@@ -297,12 +286,12 @@ body {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input-field textarea::placeholder {
+#prompt-input::placeholder {
   color: #9a91f4cc;
   font-style: italic;
 }
 
-.input-field textarea:focus {
+#prompt-input:focus {
   border-color: #c4b5fd;
   box-shadow: 0 0 8px #c4b5fdbb, 0 0 25px #7c3aedbb;
 }
@@ -318,6 +307,7 @@ body {
   font-weight: 700;
   cursor: pointer;
   min-width: 120px;
+  height: 70px;
   box-shadow:
     0 6px 20px rgba(167, 139, 250, 0.4),
     0 0 12px #a78bfa;
@@ -425,18 +415,6 @@ body {
 }
 
 /* ========== Error Messages ========== */
-.error-message {
-  color: #ff6b6b !important;
-  background: #2a1e1e !important;
-  border-color: #ff6b6b !important;
-  border-width: 1.5px !important;
-  border-style: solid !important;
-  border-radius: 14px;
-  padding: 12px 20px;
-  user-select: text;
-  font-weight: 600;
-}
-
 .api-errors {
   margin-top: 24px;
   padding: 20px;
@@ -461,25 +439,6 @@ body {
 .api-errors li {
   color: #f8f4f4;
   margin-bottom: 8px;
-}
-
-/* ========== Scrollbars ========== */
-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #5c4f8d;
-  border-radius: 4px;
-  border: 1px solid transparent;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
 }
 
 /* ========== Animations ========== */
@@ -571,58 +530,45 @@ body::-webkit-scrollbar-thumb:hover {
 @media (max-width: 1140px) {
   .container {
     width: 95vw;
+    min-height: 0;
+    max-height: 95vh;
   }
 }
 
 @media (max-width: 768px) {
+    body {
+        padding: 1rem 0;
+    }
   .container {
-    max-height: 85vh;
+    border-radius: 18px;
   }
-}
-
-@media (max-width: 600px) {
-  html, body {
-    overflow: auto;
-  }
-
-.container {
-  width: 1140px; /* as before */
-  max-width: 95vw;
-  min-height: 640px;
-  display: flex;
-  flex-direction: column;
-  background: rgba(44, 37, 66, 0.85);
-  backdrop-filter: blur(22px);
-  border-radius: 22px;
-  box-shadow:
-    0 0 40px 10px rgba(167, 139, 250, 0.35),
-    0 10px 40px -5px rgba(167, 139, 250, 0.45);
-  padding: 1.5rem; /* add some padding inside for glow */
-  margin: 3rem auto; /* more margin to prevent clipping */
-  overflow: visible; /* make sure shadows aren’t clipped */
-  position: relative;
-  animation: fadeIn 1s ease-out forwards;
-  }
-
-
   .header {
-    padding: 20px 24px;
+    padding: 24px 28px;
   }
-
+  .header h1 {
+      font-size: 26px;
+  }
   .messages {
-    padding: 24px 24px;
+      padding: 24px;
   }
-
+  .message-content {
+      max-width: 85%;
+      padding: 18px 22px;
+  }
   .input-container {
-    padding: 24px 24px;
+      padding: 24px;
+      gap: 18px;
   }
-
   .input-row {
-    flex-direction: column;
-    gap: 20px;
+      flex-direction: column;
+      gap: 16px;
+      align-items: stretch;
   }
-
   .submit-button {
-    width: 100%;
+      align-self: flex-end;
+      width: auto;
+  }
+  #prompt-input {
+      min-height: 60px;
   }
 }
