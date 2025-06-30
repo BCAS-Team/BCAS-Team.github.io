@@ -1,17 +1,18 @@
 // ==================== API KEYS - EDIT THESE ====================
 const API_KEYS = {
-    gemini: 'AIzaSyCxicCo2gfwrKuqYEEcRJUWsii1E6IqFzg', // Your Google Gemini API key
-    cohere: [
-      'klohTv7PeqIRAYcfHn1hBNbJJDq3vTYVKbtRlNnR',
-      'jO7uJkW4yNbN3vIHkBTgbgFAkst2bF8oUYmRcgBm',
-      'klohTv7PeqIRAYcfHn1hBNbJJDq3vTYVKbtRlNnR'
-    ], // Your 3 Cohere API keys
-    // Hugging Face key removed as per request
+    openrouter: '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', // Your OpenRouter API key
 };
-// ================================================================
 
-// Cohere key rotation
-let currentCohereKeyIndex = 0;
+// Available free models on OpenRouter
+const MODELS = [
+    'google/gemini-2.0-flash-exp:free',
+    'mistralai/mistral-small-3.2-24b-instruct:free',
+    'deepseek/deepseek-r1-0528:free',
+    'qwen/qwen3-14b:free',
+    'meta-llama/llama-4-maverick:free',
+    'deepseek/deepseek-r1:free',
+];
+// ================================================================
 
 // DOM Elements
 const submitButton = document.getElementById('submit-button');
@@ -23,7 +24,9 @@ const loadingIndicator = document.getElementById('loading-indicator');
 // Auto-resize textarea
 promptInput.addEventListener('input', function () {
   this.style.height = 'auto';
-  this.style.height = Math.min(this.scrollHeight, 150) + 'px'; // Max height updated
+  const newHeight = Math.min(this.scrollHeight, 180);
+  this.style.height = newHeight + 'px';
+  submitButton.style.height = Math.max(70, newHeight) + 'px';
 });
 
 // Submit on Enter (but not Shift+Enter)
@@ -35,39 +38,22 @@ promptInput.addEventListener('keydown', function (e) {
 });
 
 /**
- * Validate that at least one API key is provided
+ * Validate that OpenRouter API key is provided
  */
 function validateApiKeys() {
-  const hasCohere = API_KEYS.cohere.some(
-    (key) => key.trim() && key !== 'YOUR_COHERE_API_KEY_1'
-  ); // Check for placeholder
-  const hasGemini =
-    API_KEYS.gemini.trim() && API_KEYS.gemini !== 'YOUR_GEMINI_API_KEY'; // Check for placeholder
-  return hasGemini || hasCohere;
+  return API_KEYS.openrouter.trim() && !API_KEYS.openrouter.includes('YOUR_');
 }
 
 /**
- * Get next Cohere API key (rotating)
+ * Add message to chat, enforcing the 'bcas-ai' persona for the assistant
  */
-function getNextCohereKey() {
-  const availableKeys = API_KEYS.cohere.filter(
-    (key) => key.trim() && key !== 'YOUR_COHERE_API_KEY_1'
-  );
-  if (availableKeys.length === 0) return null;
-
-  const key = availableKeys[currentCohereKeyIndex % availableKeys.length];
-  currentCohereKeyIndex++;
-  return key;
-}
-
-/**
- * Add message to chat
- */
-let messageCount = 0; // To help with staggered animation
+let messageCount = 0;
 function addMessage(content, isUser = false, provider = null) {
   const messageDiv = document.createElement('div');
+  const persona = 'bcas-ai'; // Enforce persona
+
   messageDiv.className = `message ${isUser ? 'user' : 'assistant'}`;
-  messageDiv.style.setProperty('--delay', `${messageCount * 0.05}s`); // Stagger animation
+  messageDiv.style.setProperty('--delay', `${messageCount * 0.05}s`);
   messageCount++;
 
   const contentDiv = document.createElement('div');
@@ -76,14 +62,14 @@ function addMessage(content, isUser = false, provider = null) {
   if (isUser) {
     contentDiv.textContent = content;
   } else {
-    if (provider) {
-      contentDiv.innerHTML = `<h3>${provider}</h3><div class="api-response">${content.replace(
-        /\n/g,
-        '<br>'
-      )}</div>`;
-    } else {
-      contentDiv.innerHTML = content;
-    }
+    // For assistant messages, always use the defined persona.
+    // The provider argument is ignored for the final display name.
+    let htmlContent = `<h3>${persona}</h3>`;
+    
+    // Convert newlines to <br> for proper HTML rendering
+    content = content.replace(/\n/g, '<br>');
+    htmlContent += `<div class="api-response">${content}</div>`;
+    contentDiv.innerHTML = htmlContent;
   }
 
   messageDiv.appendChild(contentDiv);
@@ -92,106 +78,73 @@ function addMessage(content, isUser = false, provider = null) {
 }
 
 /**
- * Call Google Gemini API directly
+ * Call OpenRouter API with specific model
  */
-async function callGemini(prompt, tone) {
-  if (!API_KEYS.gemini || API_KEYS.gemini === 'YOUR_GEMINI_API_KEY') return null;
+async function callOpenRouterModel(prompt, tone, model) {
+  if (!validateApiKeys()) return null;
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEYS.gemini}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
-                {
-                  text: `Please respond in a ${tone} tone: ${prompt}`,
-                },
-              ],
-            },
-          ],
-        }),
-      }
-    );
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${API_KEYS.openrouter}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': window.location.href,
+        'X-Title': 'bcas-ai' // Updated title for API referral
+      },
+      body: JSON.stringify({
+        model: model,
+        messages: [
+          {
+            role: 'user',
+            content: `Please respond in a ${tone} tone: ${prompt}`
+          }
+        ],
+        max_tokens: 1500,
+        temperature: 0.7
+      })
+    });
 
     if (!response.ok) {
-      const errorData = await response
-        .json()
-        .catch(() => ({ error: { message: 'Non-JSON error response or network issue' } }));
-      throw new Error(
-        `Gemini API error: ${response.status} - ${errorData.error.message || 'Unknown error'}`
-      );
+      const errorData = await response.json().catch(() => ({ 
+        error: { message: 'Non-JSON error response or network issue' } 
+      }));
+      // Throw an error but avoid mentioning the model name in the message itself
+      throw new Error(`API error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
     }
 
     const data = await response.json();
-    if (
-      !data.candidates ||
-      data.candidates.length === 0 ||
-      !data.candidates[0].content ||
-      !data.candidates[0].content.parts ||
-      data.candidates[0].content.parts.length === 0
-    ) {
-      throw new Error('Gemini API response did not contain expected content.');
+    if (!data.choices || data.choices.length === 0 || !data.choices[0].message?.content) {
+      throw new Error(`API response did not contain expected content.`);
     }
+
     return {
-      provider: 'Google Gemini',
-      response: data.candidates[0].content.parts[0].text,
+      response: data.choices[0].message.content.trim(),
+      model: model // Keep model for internal logic like synthesis selection
     };
   } catch (error) {
-    console.error('Gemini API call failed:', error);
-    throw error;
+    // Log detailed error for debugging but throw a generic one to hide model details
+    console.error(`Model ${model} failed:`, error);
+    throw new Error('A data stream failed.');
   }
 }
 
 /**
- * Call Cohere API directly
+ * Select a primary model for synthesis (internal logic, not shown to user)
  */
-async function callCohere(prompt, tone) {
-  const cohereKey = getNextCohereKey();
-  if (!cohereKey || cohereKey === 'YOUR_COHERE_API_KEY_1') return null;
-
-  try {
-    const response = await fetch('https://api.cohere.ai/v1/generate', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${cohereKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'command',
-        prompt: `Please respond in a ${tone} tone: ${prompt}`,
-        max_tokens: 1000,
-        temperature: 0.7,
-        k: 0,
-        stop_sequences: [],
-        return_likelihoods: 'NONE',
-      }),
-    });
-
-    if (!response.ok) {
-      const errorData = await response
-        .json()
-        .catch(() => ({ message: 'Non-JSON error response or network issue' }));
-      throw new Error(`Cohere API error: ${response.status} - ${errorData.message || 'Unknown error'}`);
-    }
-
-    const data = await response.json();
-    if (!data.generations || data.generations.length === 0 || !data.generations[0].text) {
-      throw new Error('Cohere API response did not contain expected content.');
-    }
-    return {
-      provider: 'Cohere Command',
-      response: data.generations[0].text.trim(),
-    };
-  } catch (error) {
-    console.error('Cohere API call failed:', error);
-    throw error;
+function selectPrimaryModel(successfulResponses) {
+  const priorityModels = [
+    'google/gemini-2.0-flash-exp:free',
+    'deepseek/deepseek-r1:free',
+    'deepseek/deepseek-r1-0528:free'
+  ];
+  
+  for (const priorityModel of priorityModels) {
+    const found = successfulResponses.find(r => r.model === priorityModel);
+    if (found) return found;
   }
+  
+  return successfulResponses[0]; // Fallback to first successful response
 }
 
 // Event listener for the submit button click
@@ -199,114 +152,86 @@ submitButton.addEventListener('click', async () => {
   const prompt = promptInput.value.trim();
   const tone = toneSelect.value;
 
-  // Basic validation
-  if (!prompt) {
-    return;
-  }
+  if (!prompt) return;
 
-  // Validate API keys
   if (!validateApiKeys()) {
     addMessage(
-      'Please add at least one valid API key to the code before using the assistant. Check the API_KEYS object in index.html.',
+      'An API key is required for me to function. Please configure the key in the `script.js` file.',
       false
     );
     return;
   }
 
-  // Add user message
   addMessage(prompt, true);
-
-  // Clear input
   promptInput.value = '';
   promptInput.style.height = 'auto';
+  submitButton.style.height = '70px';
 
-  // Show loading
-  loadingIndicator.style.display = 'flex'; // Show the loader
-  messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to bottom to show loader
+  loadingIndicator.style.display = 'flex';
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
   submitButton.disabled = true;
 
+  let errorCount = 0;
   try {
     const individualResponses = [];
-    const errors = [];
-
-    // Call available APIs in parallel
-    const apiPromises = [];
-
-    const hasGemini = API_KEYS.gemini.trim() && API_KEYS.gemini !== 'YOUR_GEMINI_API_KEY';
-    if (hasGemini) {
-      apiPromises.push(
-        callGemini(prompt, tone)
-          .then((result) => result && individualResponses.push(result))
-          .catch((error) => errors.push(`Google Gemini: ${error.message}`))
-      );
-    }
-
-    const hasCohereKeys = API_KEYS.cohere.some(
-      (key) => key.trim() && key !== 'YOUR_COHERE_API_KEY_1'
+    const apiPromises = MODELS.slice(0, 5).map(model =>
+      callOpenRouterModel(prompt, tone, model)
+        .then(result => result && individualResponses.push(result))
+        .catch(() => {
+            errorCount++; // Increment generic error counter
+        })
     );
-    if (hasCohereKeys) {
-      apiPromises.push(
-        callCohere(prompt, tone)
-          .then((result) => result && individualResponses.push(result))
-          .catch((error) => errors.push(`Cohere: ${error.message}`))
-      );
-    }
 
-    // Wait for all initial API calls to complete
-    await Promise.allSettled(apiPromises); // Use Promise.allSettled to ensure all promises resolve/reject
+    await Promise.allSettled(apiPromises);
 
-    // Filter out successful responses
-    const successfulResponses = individualResponses.filter((r) => r !== null);
+    const successfulResponses = individualResponses.filter(r => r !== null);
 
-    let superResponseContent = '';
+    let finalResponse = null;
 
-    // If there are multiple successful responses, combine them with Gemini
-    // Or if only Gemini succeeded, treat its response as the primary
-    if (successfulResponses.length > 0 && hasGemini) {
+    if (successfulResponses.length > 1) {
+      const primaryModel = selectPrimaryModel(successfulResponses);
       const combinedText = successfulResponses
-        .map((res) => `${res.provider}: ${res.response}`)
-        .join('\n\n');
+        .map((res, index) => `Response from stream ${index + 1}:\n${res.response}`)
+        .join('\n\n---\n\n');
 
-      const superPrompt = `I received multiple responses to the prompt "${prompt}". Please synthesize and combine the following information into a comprehensive and coherent "super response", maintaining a ${tone} tone:\n\n${combinedText}`;
+      const superPrompt = `I have received multiple data streams for the prompt: "${prompt}". Your task is to synthesize these into a single, comprehensive, and coherent response. Maintain a ${tone} tone. Focus on integrating the best insights, resolving any contradictions, and presenting the information clearly. Do not simply list the responses. Create a new, unified answer based on the following content:\n\n${combinedText}`;
 
       try {
-        const geminiSuperResponse = await callGemini(superPrompt, tone);
-        if (geminiSuperResponse) {
-          superResponseContent = geminiSuperResponse.response;
-          addMessage(superResponseContent, false, 'BCAS-AI');
+        // Attempt to get a synthesized response
+        const synthesisData = await callOpenRouterModel(superPrompt, tone, primaryModel.model);
+        if (synthesisData) {
+            finalResponse = synthesisData.response;
         } else {
-          errors.push(
-            'Gemini failed to generate a super response (possibly due to empty response or API issue).'
-          );
+            // Fallback to the best single response if synthesis returns nothing
+            finalResponse = primaryModel.response;
         }
-      } catch (superResponseError) {
-        errors.push(`Gemini Super Response: ${superResponseError.message}`);
+      } catch (e) {
+        // Fallback to the best single response if synthesis itself errors out
+        finalResponse = primaryModel.response;
+        errorCount++;
       }
-    } else if (successfulResponses.length === 1 && !hasGemini) {
-      errors.push(
-        'Cannot generate a "BCAS-AI" response because Gemini API did not provide a response or is not configured.'
-      );
-    } else if (successfulResponses.length === 0) {
-      errors.push('No APIs returned a successful response, so no "BCAS-AI" response can be formed.');
+    } else if (successfulResponses.length === 1) {
+      // Use the single successful response
+      finalResponse = successfulResponses[0].response;
     }
 
-    // Show any errors
-    if (errors.length > 0) {
-      const errorHtml = `
-          <div class="api-errors">
-            <h4>Some API calls failed or could not generate a Super Response:</h4>
-            <ul>
-              ${errors.map((error) => `<li>${error}</li>`).join('')}
-            </ul>
-          </div>
-        `;
-      addMessage(errorHtml, false);
+    // Display the final message from "bcas-ai"
+    if(finalResponse) {
+        addMessage(finalResponse, false);
+    } else {
+        addMessage('I am sorry, but I was unable to generate a response. Please try again.', false);
     }
+    
+    // Optionally, notify the user about processing issues without revealing details
+    if (errorCount > 0) {
+      console.log(`${errorCount} data stream(s) failed during processing.`);
+    }
+
   } catch (error) {
     console.error('Unexpected error during processing:', error);
-    addMessage(`An unexpected error occurred: ${error.message}`, false);
+    addMessage(`An unexpected system error occurred. Please try again.`, false);
   } finally {
-    loadingIndicator.style.display = 'none'; // Hide the loader
+    loadingIndicator.style.display = 'none';
     submitButton.disabled = false;
   }
 });
