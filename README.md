@@ -4,7 +4,7 @@
 
 ## *The Underhanded Powerhouse of the Internet*
 
-[![Version](https://img.shields.io/badge/Version-Beta%201.6.1-ff6b6b?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/BCAS-Team)
+[![Version](https://img.shields.io/badge/Version-Beta%201.6.2-ff6b6b?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/BCAS-Team)
 [![Status](https://img.shields.io/badge/Status-Active-4ecdc4?style=for-the-badge&logo=pulse&logoColor=white)](https://github.com/BCAS-Team)
 [![AI Powered](https://img.shields.io/badge/AI-Powered-9b59b6?style=for-the-badge&logo=brain&logoColor=white)](https://github.com/BCAS-Team)
 
