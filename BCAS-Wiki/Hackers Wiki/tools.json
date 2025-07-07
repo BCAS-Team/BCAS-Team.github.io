@@ -1,0 +1,2509 @@
+{
+    "guide": {
+        "tools": [
+            {
+                "name": "nmap",
+                "category": "Information Gathering",
+                "description": "Network Mapper. Used for network discovery and security auditing by scanning hosts and services.",
+                "usage": "nmap [options] <target>",
+                "examples": [
+                    "nmap -sS -p 1-65535 192.168.1.1",
+                    "nmap -A target.com"
+                ],
+                "notes": "Widely used for penetration testing reconnaissance. Always have permission before scanning.",
+                "links": [
+                    "https://nmap.org/"
+                ]
+            },
+            {
+                "name": "kismet",
+                "category": "Wireless Attacks",
+                "description": "Wireless network and device detector, sniffer, wardriving tool, and WIDS framework.",
+                "usage": "kismet",
+                "examples": [
+                    "kismet -c wlan0",
+                    "kismet_server -f kismet.conf"
+                ],
+                "notes": "Comprehensive wireless monitoring and analysis.",
+                "links": [
+                    "https://www.kismetwireless.net/"
+                ]
+            },
+            {
+                "name": "wifiphisher",
+                "category": "Wireless Attacks",
+                "description": "Rogue Access Point framework for conducting red team engagements or Wi-Fi security testing.",
+                "usage": "wifiphisher [options]",
+                "examples": [
+                    "wifiphisher -aI wlan0 -jI wlan1",
+                    "wifiphisher -e 'Free WiFi' -p plugin_update"
+                ],
+                "notes": "Automated phishing attacks against Wi-Fi networks.",
+                "links": [
+                    "https://github.com/wifiphisher/wifiphisher"
+                ]
+            },
+            {
+                "name": "hostapd-wpe",
+                "category": "Wireless Attacks",
+                "description": "Hostapd with support for extracting WPA/WPA2 handshakes from clients.",
+                "usage": "hostapd-wpe hostapd-wpe.conf",
+                "examples": [
+                    "Setup rogue access point",
+                    "Capture EAP credentials"
+                ],
+                "notes": "Modified hostapd for wireless penetration testing.",
+                "links": [
+                    "https://github.com/OpenSecurityResearch/hostapd-wpe"
+                ]
+            },
+            {
+                "name": "Wireshark",
+                "category": "Sniffing & Spoofing",
+                "description": "Network protocol analyzer to capture and inspect packets.",
+                "usage": "wireshark",
+                "examples": [
+                    "Capture packets on interface eth0",
+                    "Apply filters such as http or tcp.port==80",
+                    "Follow TCP streams"
+                ],
+                "notes": "Use responsibly on networks you own or have permission to monitor.",
+                "links": [
+                    "https://www.wireshark.org/"
+                ]
+            },
+            {
+                "name": "tcpdump",
+                "category": "Sniffing & Spoofing",
+                "description": "Command-line packet analyzer for network troubleshooting and analysis.",
+                "usage": "tcpdump [options] [expression]",
+                "examples": [
+                    "tcpdump -i eth0 host 192.168.1.1",
+                    "tcpdump -w capture.pcap port 80",
+                    "tcpdump -r capture.pcap"
+                ],
+                "notes": "Lightweight command-line alternative to Wireshark.",
+                "links": [
+                    "https://www.tcpdump.org/"
+                ]
+            },
+            {
+                "name": "ettercap",
+                "category": "Sniffing & Spoofing",
+                "description": "Comprehensive suite for man-in-the-middle attacks on LAN.",
+                "usage": "ettercap [options] [target1] [target2]",
+                "examples": [
+                    "ettercap -T -M arp:remote /192.168.1.1// /192.168.1.100//",
+                    "ettercap -G"
+                ],
+                "notes": "Powerful MITM framework with many plugins.",
+                "links": [
+                    "https://www.ettercap-project.org/"
+                ]
+            },
+            {
+                "name": "bettercap",
+                "category": "Sniffing & Spoofing",
+                "description": "Complete, modular, portable and easily extensible MITM tool and framework.",
+                "usage": "bettercap [options]",
+                "examples": [
+                    "net.probe on; net.sniff on",
+                    "set arp.spoof.targets 192.168.1.10; arp.spoof on"
+                ],
+                "notes": "Modern replacement for Ettercap with web UI.",
+                "links": [
+                    "https://www.bettercap.org/"
+                ]
+            },
+            {
+                "name": "dsniff",
+                "category": "Sniffing & Spoofing",
+                "description": "Collection of tools for network auditing and penetration testing.",
+                "usage": "Various tools: dsniff, arpspoof, dnsspoof, etc.",
+                "examples": [
+                    "arpspoof -i eth0 -t 192.168.1.10 192.168.1.1",
+                    "dnsspoof -i eth0 -f hosts.txt"
+                ],
+                "notes": "Classic suite of network sniffing tools.",
+                "links": [
+                    "https://www.monkey.org/~dugsong/dsniff/"
+                ]
+            },
+            {
+                "name": "scapy",
+                "category": "Sniffing & Spoofing",
+                "description": "Python-based interactive packet manipulation program and library.",
+                "usage": "scapy",
+                "examples": [
+                    "sr1(IP(dst='8.8.8.8')/ICMP())",
+                    "sniff(filter='tcp port 80', prn=lambda x: x.summary())"
+                ],
+                "notes": "Powerful packet crafting and analysis library.",
+                "links": [
+                    "https://scapy.net/"
+                ]
+            },
+            {
+                "name": "netsniff-ng",
+                "category": "Sniffing & Spoofing",
+                "description": "Free Linux networking toolkit with zero-copy mechanisms for network development and analysis.",
+                "usage": "netsniff-ng [options]",
+                "examples": [
+                    "netsniff-ng --in eth0 --out dump.pcap",
+                    "netsniff-ng --in dump.pcap"
+                ],
+                "notes": "High-performance packet capture and analysis.",
+                "links": [
+                    "http://netsniff-ng.org/"
+                ]
+            },
+            {
+                "name": "Responder",
+                "category": "Sniffing & Spoofing",
+                "description": "LLMNR, NBT-NS and MDNS poisoner for capturing NTLM hashes.",
+                "usage": "responder -I <interface>",
+                "examples": [
+                    "responder -I eth0",
+                    "responder -I eth0 -w -r -f"
+                ],
+                "notes": "Commonly used during internal network penetration tests.",
+                "links": [
+                    "https://github.com/lgandx/Responder"
+                ]
+            },
+            {
+                "name": "mitm6",
+                "category": "Sniffing & Spoofing",
+                "description": "IPv6 attack tool that exploits default Windows configuration to take over default DNS server.",
+                "usage": "mitm6 -d <domain>",
+                "examples": [
+                    "mitm6 -d example.local",
+                    "mitm6 -d example.local --ignore-nofqdn"
+                ],
+                "notes": "Exploits IPv6 misconfigurations in Windows networks.",
+                "links": [
+                    "https://github.com/fox-it/mitm6"
+                ]
+            },
+            {
+                "name": "impacket",
+                "category": "Sniffing & Spoofing",
+                "description": "Collection of Python classes for working with network protocols.",
+                "usage": "Various scripts included",
+                "examples": [
+                    "ntlmrelayx.py -tf targets.txt",
+                    "smbserver.py share .",
+                    "psexec.py domain/user@target"
+                ],
+                "notes": "Essential toolkit for Windows network testing.",
+                "links": [
+                    "https://github.com/SecureAuthCorp/impacket"
+                ]
+            },
+            {
+                "name": "Mimikatz",
+                "category": "Post Exploitation",
+                "description": "Tool for extracting plaintext passwords, hashes, PINs and kerberos tickets from memory.",
+                "usage": "mimikatz.exe",
+                "examples": [
+                    "privilege::debug",
+                    "sekurlsa::logonpasswords",
+                    "lsadump::sam"
+                ],
+                "notes": "Windows-only tool; requires administrative privileges.",
+                "links": [
+                    "https://github.com/gentilkiwi/mimikatz"
+                ]
+            },
+            {
+                "name": "bloodhound",
+                "category": "Post Exploitation",
+                "description": "Uses graph theory to reveal hidden and often unintended relationships within Active Directory.",
+                "usage": "BloodHound application with SharpHound collector",
+                "examples": [
+                    "SharpHound.exe -c All",
+                    "Import data into BloodHound GUI"
+                ],
+                "notes": "Essential for AD enumeration and attack path analysis.",
+                "links": [
+                    "https://github.com/BloodHoundAD/BloodHound"
+                ]
+            },
+            {
+                "name": "powersploit",
+                "category": "Post Exploitation",
+                "description": "PowerShell post-exploitation framework with many useful modules.",
+                "usage": "Import-Module PowerSploit",
+                "examples": [
+                    "Invoke-Mimikatz",
+                    "Get-GPPPassword",
+                    "Invoke-TokenManipulation"
+                ],
+                "notes": "Collection of PowerShell modules for Windows exploitation.",
+                "links": [
+                    "https://github.com/PowerShellMafia/PowerSploit"
+                ]
+            },
+            {
+                "name": "empire",
+                "category": "Post Exploitation",
+                "description": "PowerShell and Python post-exploitation agent.",
+                "usage": "empire",
+                "examples": [
+                    "PowerShell and Python agents",
+                    "Encrypted communications"
+                ],
+                "notes": "Multi-platform post-exploitation framework.",
+                "links": [
+                    "https://github.com/EmpireProject/Empire"
+                ]
+            },
+            {
+                "name": "winpeas",
+                "category": "Post Exploitation",
+                "description": "Windows Privilege Escalation Awesome Scripts suite.",
+                "usage": "winPEAS.exe",
+                "examples": [
+                    "winPEAS.exe",
+                    "winPEAS.exe quiet"
+                ],
+                "notes": "Automated Windows privilege escalation enumeration.",
+                "links": [
+                    "https://github.com/carlospolop/PEASS-ng"
+                ]
+            },
+            {
+                "name": "linpeas",
+                "category": "Post Exploitation",
+                "description": "Linux Privilege Escalation Awesome Script.",
+                "usage": "./linpeas.sh",
+                "examples": [
+                    "./linpeas.sh",
+                    "./linpeas.sh -a"
+                ],
+                "notes": "Automated Linux privilege escalation enumeration.",
+                "links": [
+                    "https://github.com/carlospolop/PEASS-ng"
+                ]
+            },
+            {
+                "name": "linenum",
+                "category": "Post Exploitation",
+                "description": "Scripted Local Linux Enumeration & Privilege Escalation Checks.",
+                "usage": "./LinEnum.sh",
+                "examples": [
+                    "./LinEnum.sh",
+                    "./LinEnum.sh -t"
+                ],
+                "notes": "Comprehensive Linux enumeration script.",
+                "links": [
+                    "https://github.com/rebootuser/LinEnum"
+                ]
+            },
+            {
+                "name": "linux-exploit-suggester",
+                "category": "Post Exploitation",
+                "description": "Script to suggest Linux kernel exploits based on the operating system release number.",
+                "usage": "./linux-exploit-suggester.sh",
+                "examples": [
+                    "./linux-exploit-suggester.sh",
+                    "./linux-exploit-suggester.sh -k 4.4.0"
+                ],
+                "notes": "Helps identify potential kernel exploits.",
+                "links": [
+                    "https://github.com/mzet-/linux-exploit-suggester"
+                ]
+            },
+            {
+                "name": "windows-exploit-suggester",
+                "category": "Post Exploitation",
+                "description": "Compares target patch levels against Microsoft vulnerability database.",
+                "usage": "windows-exploit-suggester.py",
+                "examples": [
+                    "windows-exploit-suggester.py --database 2021-09-21-mssb.xls --systeminfo systeminfo.txt",
+                    "windows-exploit-suggester.py --update"
+                ],
+                "notes": "Identifies missing patches and potential exploits.",
+                "links": [
+                    "https://github.com/AonCyberLabs/Windows-Exploit-Suggester"
+                ]
+            },
+            {
+                "name": "gtfobins",
+                "category": "Post Exploitation",
+                "description": "Curated list of Unix binaries that can be exploited for privilege escalation.",
+                "usage": "Web resource/reference",
+                "examples": [
+                    "Research legitimate binaries with SUID",
+                    "Find privilege escalation techniques"
+                ],
+                "notes": "Reference for legitimate binary abuse techniques.",
+                "links": [
+                    "https://gtfobins.github.io/"
+                ]
+            },
+            {
+                "name": "pspy",
+                "category": "Post Exploitation",
+                "description": "Monitor Linux processes without root permissions using procfs, netlink or eBPF.",
+                "usage": "./pspy64",
+                "examples": [
+                    "./pspy64",
+                    "./pspy64 -pf -i 1000"
+                ],
+                "notes": "Useful for finding running processes and cron jobs.",
+                "links": [
+                    "https://github.com/DominicBreuker/pspy"
+                ]
+            },
+            {
+                "name": "crackmapexec",
+                "category": "Post Exploitation",
+                "description": "Swiss army knife for pentesting networks with focus on Active Directory.",
+                "usage": "crackmapexec <protocol> <target> [options]",
+                "examples": [
+                    "crackmapexec smb 192.168.1.0/24 -u administrator -p password",
+                    "crackmapexec winrm 192.168.1.10 -u user -p pass -X 'whoami'"
+                ],
+                "notes": "Excellent for Windows network enumeration and exploitation.",
+                "links": [
+                    "https://github.com/byt3bl33d3r/CrackMapExec"
+                ]
+            },
+            {
+                "name": "evil-winrm",
+                "category": "Post Exploitation",
+                "description": "Ultimate WinRM shell for hacking/pentesting.",
+                "usage": "evil-winrm [options]",
+                "examples": [
+                    "evil-winrm -i 192.168.1.10 -u administrator -p password",
+                    "evil-winrm -i 192.168.1.10 -u user -H hash"
+                ],
+                "notes": "Provides shell access via Windows Remote Management.",
+                "links": [
+                    "https://github.com/Hackplayers/evil-winrm"
+                ]
+            },
+            {
+                "name": "Tor Browser",
+                "category": "Anonymity & Privacy",
+                "description": "Browser that routes traffic through the Tor network to anonymize web activity.",
+                "usage": "Download and run the Tor Browser bundle.",
+                "examples": [
+                    "Browse anonymously",
+                    "Access .onion sites"
+                ],
+                "notes": "Do not log in with personal accounts to maintain anonymity.",
+                "links": [
+                    "https://www.torproject.org/"
+                ]
+            },
+            {
+                "name": "tails",
+                "category": "Anonymity & Privacy",
+                "description": "Live operating system that preserves privacy and anonymity.",
+                "usage": "Boot from USB/DVD",
+                "examples": [
+                    "Anonymous Browse",
+                    "Secure communications"
+                ],
+                "notes": "Leaves no traces on the computer you use.",
+                "links": [
+                    "https://tails.boum.org/"
+                ]
+            },
+            {
+                "name": "whonix",
+                "category": "Anonymity & Privacy",
+                "description": "Operating system designed for anonymity, privacy and security.",
+                "usage": "Run as virtual machines",
+                "examples": [
+                    "Gateway VM routes all traffic through Tor",
+                    "Workstation VM for applications"
+                ],
+                "notes": "Two-VM system providing strong anonymity.",
+                "links": [
+                    "https://www.whonix.org/"
+                ]
+            },
+            {
+                "name": "proxychains",
+                "category": "Anonymity & Privacy",
+                "description": "Forces network connections through proxy servers.",
+                "usage": "proxychains <command>",
+                "examples": [
+                    "proxychains nmap -sT -Pn target.com",
+                    "proxychains firefox"
+                ],
+                "notes": "Routes applications through proxy chains.",
+                "links": [
+                    "https://github.com/haad/proxychains"
+                ]
+            },
+            {
+                "name": "openvpn",
+                "category": "Anonymity & Privacy",
+                "description": "Open source VPN solution for secure point-to-point connections.",
+                "usage": "openvpn <config_file>",
+                "examples": [
+                    "openvpn client.ovpn",
+                    "openvpn --config client.conf"
+                ],
+                "notes": "Standard VPN protocol with strong encryption.",
+                "links": [
+                    "https://openvpn.net/"
+                ]
+            },
+            {
+                "name": "wireguard",
+                "category": "Anonymity & Privacy",
+                "description": "Modern VPN protocol designed to be simpler and more performant than IPsec and OpenVPN.",
+                "usage": "wg-quick up <interface>",
+                "examples": [
+                    "wg-quick up wg0",
+                    "wg show"
+                ],
+                "notes": "Fast, modern VPN with minimal code base.",
+                "links": [
+                    "https://www.wireguard.com/"
+                ]
+            },
+            {
+                "name": "i2p",
+                "category": "Anonymity & Privacy",
+                "description": "Anonymous network layer that provides censorship-resistant communication.",
+                "usage": "Start I2P router",
+                "examples": [
+                    "Anonymous web Browse",
+                    "Hidden services (eepsites)"
+                ],
+                "notes": "Alternative anonymity network to Tor.",
+                "links": [
+                    "https://geti2p.net/"
+                ]
+            },
+            {
+                "name": "freenet",
+                "category": "Anonymity & Privacy",
+                "description": "Peer-to-peer platform for censorship-resistant communication and publishing.",
+                "usage": "Run Freenet node",
+                "examples": [
+                    "Decentralized content publishing",
+                    "Anonymous communication"
+                ],
+                "notes": "Distributed network focused on free speech.",
+                "links": [
+                    "https://freenetproject.org/"
+                ]
+            },
+            {
+                "name": "Psiphon",
+                "category": "Censorship Circumvention",
+                "description": "Tool to bypass internet censorship using VPN, SSH, and HTTP Proxy technology.",
+                "usage": "Download and run Psiphon client.",
+                "examples": [
+                    "Connect to Psiphon to access blocked sites"
+                ],
+                "notes": "Great for users in restrictive internet environments.",
+                "links": [
+                    "https://psiphon.ca/"
+                ]
+            },
+            {
+                "name": "shadowsocks",
+                "category": "Censorship Circumvention",
+                "description": "Fast tunnel proxy that helps you bypass firewalls.",
+                "usage": "ss-local -c config.json",
+                "examples": [
+                    "ss-server -c server_config.json",
+                    "ss-local -c client_config.json"
+                ],
+                "notes": "Popular circumvention tool, especially in China.",
+                "links": [
+                    "https://shadowsocks.org/"
+                ]
+            },
+            {
+                "name": "v2ray",
+                "category": "Censorship Circumvention",
+                "description": "Platform for building proxies to bypass network restrictions.",
+                "usage": "v2ray -config config.json",
+                "examples": [
+                    "Multiple protocol support",
+                    "Traffic obfuscation"
+                ],
+                "notes": "Advanced proxy platform with multiple protocols.",
+                "links": [
+                    "https://www.v2ray.com/"
+                ]
+            },
+            {
+                "name": "lantern",
+                "category": "Censorship Circumvention",
+                "description": "Free application that delivers fast, reliable and secure access to the open Internet.",
+                "usage": "Install and run Lantern app",
+                "examples": [
+                    "Automatic proxy configuration",
+                    "P2P network for circumvention"
+                ],
+                "notes": "User-friendly circumvention tool.",
+                "links": [
+                    "https://getlantern.org/"
+                ]
+            },
+            {
+                "name": "Social Engineering Toolkit (SET)",
+                "category": "Social Engineering",
+                "description": "Toolkit for automating social engineering attacks like phishing, credential harvesting, and more.",
+                "usage": "setoolkit",
+                "examples": [
+                    "Create phishing pages",
+                    "Send spear-phishing emails",
+                    "Generate malicious payloads"
+                ],
+                "notes": "Use only for authorized testing.",
+                "links": [
+                    "https://github.com/trustedsec/social-engineer-toolkit"
+                ]
+            },
+            {
+                "name": "gophish",
+                "category": "Social Engineering",
+                "description": "Open-source phishing toolkit designed for businesses and penetration testers.",
+                "usage": "Run Gophish server and access web interface",
+                "examples": [
+                    "Create phishing campaigns",
+                    "Track email opens and clicks"
+                ],
+                "notes": "Professional phishing framework with web interface.",
+                "links": [
+                    "https://getgophish.com/"
+                ]
+            },
+            {
+                "name": "king phisher",
+                "category": "Social Engineering",
+                "description": "Tool for testing and promoting user awareness by simulating real world phishing attacks.",
+                "usage": "king-phisher-server",
+                "examples": [
+                    "Phishing campaign management",
+                    "Email template creation"
+                ],
+                "notes": "Enterprise-focused phishing simulation platform.",
+                "links": [
+                    "https://github.com/rsmusllp/king-phisher"
+                ]
+            },
+            {
+                "name": "evilginx",
+                "category": "Social Engineering",
+                "description": "Man-in-the-middle attack framework used for phishing login credentials and session cookies.",
+                "usage": "evilginx",
+                "examples": [
+                    "Real-time phishing with 2FA bypass",
+                    "Session hijacking"
+                ],
+                "notes": "Advanced phishing framework that can bypass 2FA.",
+                "links": [
+                    "https://github.com/kgretzky/evilginx2"
+                ]
+            },
+            {
+                "name": "modlishka",
+                "category": "Social Engineering",
+                "description": "Flexible and powerful reverse proxy with real-time two-way traffic modification capabilities.",
+                "usage": "modlishka -config config.json",
+                "examples": [
+                    "Real-time phishing proxy",
+                    "2FA token capture"
+                ],
+                "notes": "Reverse proxy for advanced phishing attacks.",
+                "links": [
+                    "https://github.com/drk1wi/Modlishka"
+                ]
+            },
+            {
+                "name": "beef",
+                "category": "Social Engineering",
+                "description": "Browser Exploitation Framework that focuses on web browser vulnerabilities.",
+                "usage": "beef",
+                "examples": [
+                    "Hook web browsers",
+                    "Exploit client-side vulnerabilities"
+                ],
+                "notes": "Client-side attack framework via web browsers.",
+                "links": [
+                    "https://beefproject.com/"
+                ]
+            },
+            {
+                "name": "fierce",
+                "category": "OSINT",
+                "description": "DNS reconnaissance tool for locating non-contiguous IP space.",
+                "usage": "fierce -dns <domain>",
+                "examples": [
+                    "fierce -dns example.com",
+                    "fierce -dns example.com -wordlist subdomains.txt"
+                ],
+                "notes": "DNS enumeration and subdomain discovery.",
+                "links": [
+                    "https://github.com/mschwager/fierce"
+                ]
+            },
+            {
+                "name": "spiderfoot",
+                "category": "OSINT",
+                "description": "Automated OSINT tool that integrates with over 200 data sources.",
+                "usage": "spiderfoot.py",
+                "examples": [
+                    "Web interface for OSINT collection",
+                    "Automated reconnaissance"
+                ],
+                "notes": "Comprehensive OSINT automation platform.",
+                "links": [
+                    "https://www.spiderfoot.net/"
+                ]
+            },
+            {
+                "name": "osrframework",
+                "category": "OSINT",
+                "description": "Set of libraries and applications for performing Open Source Intelligence tasks.",
+                "usage": "Various tools: usufy, mailfy, searchfy, etc.",
+                "examples": [
+                    "usufy -n john_doe",
+                    "mailfy -n john.doe"
+                ],
+                "notes": "Collection of OSINT tools for different purposes.",
+                "links": [
+                    "https://github.com/i3visio/osrframework"
+                ]
+            },
+            {
+                "name": "sherlock",
+                "category": "OSINT",
+                "description": "Hunt down social media accounts by username across social networks.",
+                "usage": "sherlock <username>",
+                "examples": [
+                    "sherlock john_doe",
+                    "sherlock --print-found john_doe"
+                ],
+                "notes": "Fast username enumeration across social platforms.",
+                "links": [
+                    "https://github.com/sherlock-project/sherlock"
+                ]
+            },
+            {
+                "name": "metagoofil",
+                "category": "OSINT",
+                "description": "Information gathering tool designed for extracting metadata of public documents.",
+                "usage": "metagoofil -d <domain> -t <filetype>",
+                "examples": [
+                    "metagoofil -d example.com -t pdf,doc,xls",
+                    "metagoofil -d example.com -t pdf -l 100"
+                ],
+                "notes": "Extract metadata from documents for reconnaissance.",
+                "links": [
+                    "https://github.com/laramies/metagoofil"
+                ]
+            },
+            {
+                "name": "photon",
+                "category": "OSINT",
+                "description": "Fast web crawler designed for OSINT which extracts URLs, files, intel & endpoints.",
+                "usage": "photon -u <url>",
+                "examples": [
+                    "photon -u http://example.com",
+                    "photon -u http://example.com -l 3 -t 100"
+                ],
+                "notes": "Fast web crawler for intelligence gathering.",
+                "links": [
+                    "https://github.com/s0md3v/Photon"
+                ]
+            },
+            {
+                "name": "twint",
+                "category": "OSINT",
+                "description": "Twitter intelligence tool for scraping Twitter without using Twitter's API.",
+                "usage": "twint [options]",
+                "examples": [
+                    "twint -u username",
+                    "twint -s 'search term' --since 2020-01-01"
+                ],
+                "notes": "Scrape Twitter data without API limitations.",
+                "links": [
+                    "https://github.com/twintproject/twint"
+                ]
+            },
+            {
+                "name": "instaloader",
+                "category": "OSINT",
+                "description": "Tool to download pictures, videos, captions, and other Instagram data.",
+                "usage": "instaloader [options] <profile>",
+                "examples": [
+                    "instaloader profile_name",
+                    "instaloader --comments --geotags profile_name"
+                ],
+                "notes": "Comprehensive Instagram data extraction.",
+                "links": [
+                    "https://instaloader.github.io/"
+                ]
+            },
+            {
+                "name": "theHarvester",
+                "category": "Information Gathering",
+                "description": "Gathers emails, subdomains, hosts, employee names, open ports, and banners from public sources.",
+                "usage": "theharvester -d <domain> -b <source>",
+                "examples": [
+                    "theharvester -d example.com -b google",
+                    "theharvester -d example.com -l 500 -b linkedin"
+                ],
+                "notes": "Automated open-source intelligence gathering.",
+                "links": [
+                    "https://github.com/laramies/theharvester"
+                ]
+            },
+            {
+                "name": "maltego",
+                "category": "Information Gathering",
+                "description": "Graphical link analysis tool for gathering and connecting information for OSINT and forensics.",
+                "usage": "Graphical UI",
+                "examples": [
+                    "Transform domains into related entities (DNS, IP, email)",
+                    "Visualize relationships between data points"
+                ],
+                "notes": "Powerful for visualizing complex relationships in OSINT.",
+                "links": [
+                    "https://www.maltego.com/"
+                ]
+            },
+            {
+                "name": "recon-ng",
+                "category": "Information Gathering",
+                "description": "Full-featured reconnaissance framework designed for web-based open source reconnaissance.",
+                "usage": "recon-ng",
+                "examples": [
+                    "Add a target domain: add domains example.com",
+                    "Run modules: use recon/domains-hosts/hackertarget"
+                ],
+                "notes": "Modular framework for automated web reconnaissance.",
+                "links": [
+                    "https://github.com/lanmaster53/recon-ng"
+                ]
+            },
+            {
+                "name": "shodan",
+                "category": "Information Gathering",
+                "description": "Search engine for Internet-connected devices.",
+                "usage": "shodan search <query>",
+                "examples": [
+                    "shodan search apache country:US",
+                    "shodan host 8.8.8.8"
+                ],
+                "notes": "Discover exposed services and devices globally.",
+                "links": [
+                    "https://www.shodan.io/"
+                ]
+            },
+            {
+                "name": "censys",
+                "category": "Information Gathering",
+                "description": "Search engine that discovers network assets by continuously scanning the Internet.",
+                "usage": "censys search <query>",
+                "examples": [
+                    "censys search '80.http.get.title:\"Apache\"'",
+                    "censys search 'services.port:443 and tags:heartbleed'"
+                ],
+                "notes": "Alternative to Shodan for discovering internet-facing assets.",
+                "links": [
+                    "https://censys.io/"
+                ]
+            },
+            {
+                "name": "masscan",
+                "category": "Information Gathering",
+                "description": "Fastest Internet port scanner, capable of scanning the entire Internet in under 6 minutes.",
+                "usage": "masscan <ip/range> -p <ports>",
+                "examples": [
+                    "masscan 192.168.1.0/24 -p22,80,443",
+                    "masscan 0.0.0.0/0 -p80 --rate 100000"
+                ],
+                "notes": "High-performance port scanning for large networks.",
+                "links": [
+                    "https://github.com/robertdavidgraham/masscan"
+                ]
+            },
+            {
+                "name": "sublist3r",
+                "category": "Information Gathering",
+                "description": "Fast and powerful subdomain enumeration tool for penetration testers.",
+                "usage": "python sublist3r.py -d <domain>",
+                "examples": [
+                    "python sublist3r.py -d example.com",
+                    "python sublist3r.py -d example.com -p 80,443"
+                ],
+                "notes": "Combines various subdomain enumeration techniques.",
+                "links": [
+                    "https://github.com/aboul3la/Sublist3r"
+                ]
+            },
+            {
+                "name": "assetfinder",
+                "category": "Information Gathering",
+                "description": "Finds domains and subdomains related to a given domain.",
+                "usage": "assetfinder <domain>",
+                "examples": [
+                    "assetfinder example.com",
+                    "assetfinder example.com | sort -u"
+                ],
+                "notes": "Simple and effective subdomain discovery.",
+                "links": [
+                    "https://github.com/tomnomnom/assetfinder"
+                ]
+            },
+            {
+                "name": "amass",
+                "category": "Information Gathering",
+                "description": "Go-based tool for network mapping and attack surface reduction using OSINT.",
+                "usage": "amass enum -d <domain>",
+                "examples": [
+                    "amass enum -d example.com",
+                    "amass enum -d example.com -src -ip"
+                ],
+                "notes": "Advanced subdomain and asset enumeration.",
+                "links": [
+                    "https://github.com/OWASP/Amass"
+                ]
+            },
+            {
+                "name": "whois",
+                "category": "Information Gathering",
+                "description": "Utility to look up information about a domain name, IP address, or autonomous system number.",
+                "usage": "whois <domain_or_ip>",
+                "examples": [
+                    "whois example.com",
+                    "whois 8.8.8.8"
+                ],
+                "notes": "Essential for initial domain and IP owner identification.",
+                "links": [
+                    "https://en.wikipedia.org/wiki/WHOIS"
+                ]
+            },
+            {
+                "name": "dig",
+                "category": "Information Gathering",
+                "description": "Domain Information Groper. Flexible tool for interrogating DNS name servers.",
+                "usage": "dig <domain> <record_type>",
+                "examples": [
+                    "dig example.com A",
+                    "dig example.com MX +short"
+                ],
+                "notes": "Fundamental tool for DNS queries and troubleshooting.",
+                "links": [
+                    "https://en.wikipedia.org/wiki/Dig_(command)"
+                ]
+            },
+            {
+                "name": "nslookup",
+                "category": "Information Gathering",
+                "description": "Query Internet domain name servers.",
+                "usage": "nslookup <domain> [dns_server]",
+                "examples": [
+                    "nslookup example.com",
+                    "nslookup example.com 8.8.8.8"
+                ],
+                "notes": "Another standard tool for DNS lookups.",
+                "links": [
+                    "https://en.wikipedia.org/wiki/Nslookup"
+                ]
+            },
+            {
+                "name": "netcat (nc)",
+                "category": "Information Gathering",
+                "description": "Feature-rich networking utility for reading from and writing to network connections using TCP or UDP.",
+                "usage": "nc [options] <host> <port>",
+                "examples": [
+                    "nc -lvnp 4444",
+                    "nc -zv 192.168.1.1 80-90",
+                    "echo 'hello' | nc 192.168.1.1 80"
+                ],
+                "notes": "Versatile for banner grabbing, port scanning, and simple shell connections.",
+                "links": [
+                    "https://eternally.org/ncat/"
+                ]
+            },
+            {
+                "name": "hping3",
+                "category": "Information Gathering",
+                "description": "Network tool able to send custom TCP/IP packets and to display target replies like ping.",
+                "usage": "hping3 <target> [options]",
+                "examples": [
+                    "hping3 -S 192.168.1.1 -p 80 -c 5",
+                    "hping3 -1 192.168.1.1"
+                ],
+                "notes": "Advanced packet crafting for firewall testing and network analysis.",
+                "links": [
+                    "http://www.hping.org/"
+                ]
+            },
+            {
+                "name": "enum4linux",
+                "category": "Information Gathering",
+                "description": "Tool for enumerating data from Windows and Samba hosts.",
+                "usage": "enum4linux <target_ip>",
+                "examples": [
+                    "enum4linux 192.168.1.10",
+                    "enum4linux -a 192.168.1.10"
+                ],
+                "notes": "Extracts user lists, group memberships, share names, etc.",
+                "links": [
+                    "https://github.com/portcullislabs/enum4linux"
+                ]
+            },
+            {
+                "name": "dnsrecon",
+                "category": "Information Gathering",
+                "description": "DNS Enumeration Script.",
+                "usage": "dnsrecon -d <domain> -t <type>",
+                "examples": [
+                    "dnsrecon -d example.com -t std,brt,srv",
+                    "dnsrecon -d example.com -n 8.8.8.8"
+                ],
+                "notes": "Performs various DNS record enumerations.",
+                "links": [
+                    "https://github.com/darkoperator/dnsrecon"
+                ]
+            },
+            {
+                "name": "wafw00f",
+                "category": "Information Gathering",
+                "description": "Identifies and fingerprints Web Application Firewall (WAF) products.",
+                "usage": "wafw00f <url>",
+                "examples": [
+                    "wafw00f http://example.com",
+                    "wafw00f -a http://example.com"
+                ],
+                "notes": "Determine if a website is protected by a WAF.",
+                "links": [
+                    "https://github.com/EnableSecurity/wafw00f"
+                ]
+            },
+            {
+                "name": "whatweb",
+                "category": "Information Gathering",
+                "description": "Website fingerprinting tool.",
+                "usage": "whatweb <url>",
+                "examples": [
+                    "whatweb http://example.com",
+                    "whatweb -v http://example.com"
+                ],
+                "notes": "Identifies web technologies including content management systems, blogging platforms, etc.",
+                "links": [
+                    "https://github.com/urbanadventurer/WhatWeb"
+                ]
+            },
+            {
+                "name": "nikto",
+                "category": "Information Gathering",
+                "description": "Web server scanner that performs comprehensive tests against web servers for multiple items.",
+                "usage": "nikto -h <target>",
+                "examples": [
+                    "nikto -h http://example.com",
+                    "nikto -h http://example.com -C all"
+                ],
+                "notes": "Finds vulnerabilities and misconfigurations in web servers.",
+                "links": [
+                    "https://cirt.net/Nikto2"
+                ]
+            },
+            {
+                "name": "dirb",
+                "category": "Information Gathering",
+                "description": "Web content scanner that looks for existing (and/or hidden) web objects.",
+                "usage": "dirb <url> <wordlist>",
+                "examples": [
+                    "dirb http://example.com /usr/share/wordlists/dirb/common.txt",
+                    "dirb http://example.com -r"
+                ],
+                "notes": "Directory and file brute-forcing for web servers.",
+                "links": [
+                    "https://tools.kali.org/web-applications/dirb"
+                ]
+            },
+            {
+                "name": "gobuster",
+                "category": "Information Gathering",
+                "description": "Fast scanner written in Go, used to brute-force URIs (directories and files) in web sites, DNS subdomains, and S3 buckets.",
+                "usage": "gobuster dir -u <url> -w <wordlist>",
+                "examples": [
+                    "gobuster dir -u http://example.com -w common.txt",
+                    "gobuster dns -d example.com -w subdomains.txt"
+                ],
+                "notes": "Modern and fast alternative to Dirb/Dirbuster.",
+                "links": [
+                    "https://github.com/OJ/gobuster"
+                ]
+            },
+            {
+                "name": "wfuzz",
+                "category": "Information Gathering",
+                "description": "Web application fuzzer. It can be used for web content discovery, parameter fuzzing, etc.",
+                "usage": "wfuzz -c -z file,<wordlist> <url>/FUZZ",
+                "examples": [
+                    "wfuzz -c -z file,dirb/common.txt http://example.com/FUZZ",
+                    "wfuzz -c -z file,users.txt -z file,passwords.txt http://example.com/login.php -d 'user=FUZZ&pass=FUZ2Z'"
+                ],
+                "notes": "Highly configurable web fuzzer.",
+                "links": [
+                    "https://github.com/xmendez/wfuzz"
+                ]
+            },
+            {
+                "name": "sqlmap",
+                "category": "Information Gathering",
+                "description": "Automatic SQL injection and database takeover tool.",
+                "usage": "sqlmap -u <url>",
+                "examples": [
+                    "sqlmap -u \"http://example.com/vuln.php?id=1\"",
+                    "sqlmap -u \"http://example.com/vuln.php?id=1\" --dbs"
+                ],
+                "notes": "Powerful and widely used for SQL injection testing.",
+                "links": [
+                    "http://sqlmap.org/"
+                ]
+            },
+            {
+                "name": "xsstrike",
+                "category": "Information Gathering",
+                "description": "Cross Site Scripting (XSS) detection suite.",
+                "usage": "python3 xsstrike.py -u <url>",
+                "examples": [
+                    "python3 xsstrike.py -u \"http://example.com/search?q=test\"",
+                    "python3 xsstrike.py -u \"http://example.com/\" --crawl"
+                ],
+                "notes": "Automated XSS vulnerability scanner.",
+                "links": [
+                    "https://github.com/s0md3v/XSStrike"
+                ]
+            },
+            {
+                "name": "arachni",
+                "category": "Information Gathering",
+                "description": "High-performance, feature-rich, modular, multi-platform Web Application Security Scanner Framework.",
+                "usage": "arachni <url>",
+                "examples": [
+                    "arachni http://example.com",
+                    "arachni --scope-path-pattern /admin/ http://example.com"
+                ],
+                "notes": "Comprehensive web application vulnerability scanner.",
+                "links": [
+                    "http://arachni-scanner.com/"
+                ]
+            },
+            {
+                "name": "burpsuite",
+                "category": "Information Gathering",
+                "description": "Integrated platform for performing security testing of web applications.",
+                "usage": "Graphical UI or command line for specific tools",
+                "examples": [
+                    "Proxy web traffic for analysis",
+                    "Automated scanning for vulnerabilities",
+                    "Intruder for brute-forcing"
+                ],
+                "notes": "Industry-standard for web application penetration testing.",
+                "links": [
+                    "https://portswigger.net/burp"
+                ]
+            },
+            {
+                "name": "owasp-zap",
+                "category": "Information Gathering",
+                "description": "Open Source Web Application Security Scanner. Find vulnerabilities in web applications.",
+                "usage": "Graphical UI or command line for specific tools",
+                "examples": [
+                    "Automated active and passive scanning",
+                    "Fuzzing",
+                    "Spidering"
+                ],
+                "notes": "Community-driven alternative to Burp Suite.",
+                "links": [
+                    "https://www.zaproxy.org/"
+                ]
+            },
+            {
+                "name": "dirbuster",
+                "category": "Information Gathering",
+                "description": "Multi-threaded java application for brute forcing directories and file names on web servers.",
+                "usage": "Graphical UI",
+                "examples": [
+                    "Scan website for hidden directories",
+                    "Use various wordlists for brute-forcing"
+                ],
+                "notes": "Graphical tool for web content discovery.",
+                "links": [
+                    "https://tools.kali.org/web-applications/dirbuster"
+                ]
+            },
+            {
+                "name": "wpscan",
+                "category": "Information Gathering",
+                "description": "WordPress security scanner.",
+                "usage": "wpscan --url <wordpress_url>",
+                "examples": [
+                    "wpscan --url http://example.com --enumerate p,vt,u",
+                    "wpscan --url http://example.com --api-token YOUR_API_TOKEN"
+                ],
+                "notes": "Finds vulnerabilities in WordPress installations.",
+                "links": [
+                    "https://wpscan.com/"
+                ]
+            },
+            {
+                "name": "joomscan",
+                "category": "Information Gathering",
+                "description": "Joomla! vulnerability scanner.",
+                "usage": "joomscan -u <joomla_url>",
+                "examples": [
+                    "joomscan -u http://example.com",
+                    "joomscan -u http://example.com --cookie 'PHPSESSID=abc'"
+                ],
+                "notes": "Identifies vulnerabilities in Joomla! CMS.",
+                "links": [
+                    "https://github.com/rezadog/joomscan"
+                ]
+            },
+            {
+                "name": "droopescan",
+                "category": "Information Gathering",
+                "description": "Scanner for Drupal, Joomla, Moodle and WordPress.",
+                "usage": "droopescan scan drupal -u <url>",
+                "examples": [
+                    "droopescan scan wordpress -u http://example.com",
+                    "droopescan scan joomla -u http://example.com"
+                ],
+                "notes": "Multi-CMS vulnerability scanner.",
+                "links": [
+                    "https://github.com/droope/droopescan"
+                ]
+            },
+            {
+                "name": "testssl.sh",
+                "category": "Information Gathering",
+                "description": "Command line tool which checks a server's TLS/SSL ciphers, protocols as well as cryptographic flaws.",
+                "usage": "testssl.sh <target>",
+                "examples": [
+                    "testssl.sh example.com:443",
+                    "testssl.sh --severity high --html test.html example.com"
+                ],
+                "notes": "Comprehensive SSL/TLS configuration analysis.",
+                "links": [
+                    "https://testssl.sh/"
+                ]
+            },
+            {
+                "name": "sslyze",
+                "category": "Information Gathering",
+                "description": "Fast and powerful SSL/TLS scanning library.",
+                "usage": "sslyze <target>",
+                "examples": [
+                    "sslyze example.com",
+                    "sslyze --regular example.com"
+                ],
+                "notes": "Python library for detailed SSL/TLS assessments.",
+                "links": [
+                    "https://github.com/nabla-c0d3/sslyze"
+                ]
+            },
+            {
+                "name": "enumall",
+                "category": "Information Gathering",
+                "description": "Performs DNS, host, and user enumeration against a target.",
+                "usage": "enumall <target>",
+                "examples": [
+                    "enumall example.com",
+                    "enumall 192.168.1.0/24"
+                ],
+                "notes": "Combines multiple enumeration techniques.",
+                "links": [
+                    "https://github.com/Tib3rius/enumall"
+                ]
+            },
+            {
+                "name": "autofish",
+                "category": "Social Engineering",
+                "description": "Automated phishing framework for creating and managing phishing campaigns.",
+                "usage": "python autofish.py",
+                "examples": [
+                    "Setup automated phishing campaigns",
+                    "Generate custom phishing emails"
+                ],
+                "notes": "Streamlines the phishing process.",
+                "links": [
+                    "https://github.com/r00t-3xp10it/autofish"
+                ]
+            },
+            {
+                "name": "phishing-frenzy",
+                "category": "Social Engineering",
+                "description": "A full-featured phishing campaign management and tracking system.",
+                "usage": "Web interface",
+                "examples": [
+                    "Manage multiple phishing campaigns",
+                    "Generate reports on campaign effectiveness"
+                ],
+                "notes": "Enterprise-grade phishing simulation and reporting.",
+                "links": [
+                    "https://github.com/gophish/phishing-frenzy"
+                ]
+            },
+            {
+                "name": "credential-harvester",
+                "category": "Social Engineering",
+                "description": "Python tool to create a fake login page to harvest credentials.",
+                "usage": "python harvester.py",
+                "examples": [
+                    "Create fake Facebook login page",
+                    "Capture submitted credentials"
+                ],
+                "notes": "Simple tool for basic credential harvesting.",
+                "links": [
+                    "https://github.com/UndeadSec/CredentialHarvester"
+                ]
+            },
+            {
+                "name": "sms-phishing",
+                "category": "Social Engineering",
+                "description": "Framework for conducting SMS phishing attacks.",
+                "usage": "python sms_phishing.py",
+                "examples": [
+                    "Send fake SMS messages with malicious links",
+                    "Track link clicks"
+                ],
+                "notes": "Focuses on smishing campaigns.",
+                "links": [
+                    "https://github.com/techgaun/sms-phishing"
+                ]
+            },
+            {
+                "name": "social-analyzer",
+                "category": "Social Engineering",
+                "description": "API & CLI for analyzing and finding a person's profile across 300+ social media websites.",
+                "usage": "social_analyzer --username <username>",
+                "examples": [
+                    "social_analyzer --username johndoe",
+                    "social_analyzer --phone +1234567890"
+                ],
+                "notes": "Useful for building social engineering profiles.",
+                "links": [
+                    "https://github.com/qeeqbox/social-analyzer"
+                ]
+            },
+            {
+                "name": "email-spoofer",
+                "category": "Social Engineering",
+                "description": "Python script to send spoofed emails.",
+                "usage": "python email_spoofer.py",
+                "examples": [
+                    "Spoof sender email address",
+                    "Craft custom email content"
+                ],
+                "notes": "Simple email spoofing for testing.",
+                "links": [
+                    "https://github.com/s0md3v/Email-Spoofer"
+                ]
+            },
+            {
+                "name": "phish-king",
+                "category": "Social Engineering",
+                "description": "Another phishing framework with various templates and features.",
+                "usage": "python phishking.py",
+                "examples": [
+                    "Generate phishing pages for various services",
+                    "Monitor campaign activity"
+                ],
+                "notes": "Similar to Gophish but with different features.",
+                "links": [
+                    "https://github.com/Phish-King/Phish-King"
+                ]
+            },
+            {
+                "name": "setoolkit-web",
+                "category": "Social Engineering",
+                "description": "Web interface for the Social Engineering Toolkit (SET).",
+                "usage": "Run web server and access in browser",
+                "examples": [
+                    "Manage SET attacks through a GUI",
+                    "Easier deployment of phishing scenarios"
+                ],
+                "notes": "Provides a user-friendly interface for SET.",
+                "links": [
+                    "https://github.com/trustedsec/social-engineer-toolkit/tree/master/setoolkit_web"
+                ]
+            },
+            {
+                "name": "aircrack-ng",
+                "category": "Wireless Attacks",
+                "description": "Complete suite of tools to assess Wi-Fi network security.",
+                "usage": "airmon-ng start <interface>",
+                "examples": [
+                    "airmon-ng start wlan0",
+                    "airodump-ng wlan0mon",
+                    "aircrack-ng -w wordlist.txt capture.cap"
+                ],
+                "notes": "Essential for Wi-Fi cracking and analysis.",
+                "links": [
+                    "https://www.aircrack-ng.org/"
+                ]
+            },
+            {
+                "name": "reaver",
+                "category": "Wireless Attacks",
+                "description": "Brute-force attack against Wi-Fi Protected Setup (WPS) PINs.",
+                "usage": "reaver -i <interface> -b <BSSID>",
+                "examples": [
+                    "reaver -i wlan0mon -b 00:11:22:33:44:55 -vv",
+                    "reaver -i wlan0mon -b 00:11:22:33:44:55 -vv -L"
+                ],
+                "notes": "Automated WPS PIN brute-forcing.",
+                "links": [
+                    "https://code.google.com/archive/p/reaver-wps/"
+                ]
+            },
+            {
+                "name": "pixiewps",
+                "category": "Wireless Attacks",
+                "description": "Offline WPS brute-force utility for small subset of WPS routers.",
+                "usage": "pixiewps -i <input_file>",
+                "examples": [
+                    "pixiewps -i reaver.log",
+                    "pixiewps -S -e E-S1 -r R-S1 -f K1"
+                ],
+                "notes": "Exploits WPS vulnerabilities for faster cracking.",
+                "links": [
+                    "https://github.com/wiire/pixiewps"
+                ]
+            },
+            {
+                "name": "bully",
+                "category": "Wireless Attacks",
+                "description": "New WPS brute-force tool, written in C.",
+                "usage": "bully <interface> -b <BSSID>",
+                "examples": [
+                    "bully wlan0mon -b 00:11:22:33:44:55",
+                    "bully wlan0mon -b 00:11:22:33:44:55 -F"
+                ],
+                "notes": "Faster and more stable WPS attack tool.",
+                "links": [
+                    "https://github.com/aanand/bully"
+                ]
+            },
+            {
+                "name": "mana",
+                "category": "Wireless Attacks",
+                "description": "Rogue AP suite for creating fake access points and capturing credentials.",
+                "usage": "mana -i <interface>",
+                "examples": [
+                    "Setup fake Wi-Fi network",
+                    "Capture HTTP/HTTPS credentials"
+                ],
+                "notes": "Powerful rogue AP framework.",
+                "links": [
+                    "https://github.com/sensepost/mana"
+                ]
+            },
+            {
+                "name": "fluxion",
+                "category": "Wireless Attacks",
+                "description": "Script to audit wireless networks by social engineering or brute-forcing.",
+                "usage": "fluxion.sh",
+                "examples": [
+                    "Perform deauthentication attack",
+                    "Create fake Wi-Fi portal"
+                ],
+                "notes": "Automated Wi-Fi security assessment tool.",
+                "links": [
+                    "https://github.com/FluxionNetwork/fluxion"
+                ]
+            },
+            {
+                "name": "evil-twin-framework",
+                "category": "Wireless Attacks",
+                "description": "Framework for setting up evil twin attacks to capture credentials.",
+                "usage": "python evil_twin.py",
+                "examples": [
+                    "Create a convincing fake access point",
+                    "Redirect users to a phishing page"
+                ],
+                "notes": "Simplifies evil twin attack deployment.",
+                "links": [
+                    "https://github.com/elbarbari/evil-twin-framework"
+                ]
+            },
+            {
+                "name": "krackattacks-scripts",
+                "category": "Wireless Attacks",
+                "description": "Scripts for exploiting the KRACK (Key Reinstallation Attacks) vulnerability.",
+                "usage": "python krack_attack.py",
+                "examples": [
+                    "Perform key reinstallation attack against WPA2",
+                    "Decrypt traffic"
+                ],
+                "notes": "Exploits known Wi-Fi vulnerabilities.",
+                "links": [
+                    "https://github.com/vanhoefm/krackattacks-scripts"
+                ]
+            },
+            {
+                "name": "wlan slovenia",
+                "category": "Wireless Attacks",
+                "description": "Tools for testing wireless network security, including deauth and flood attacks.",
+                "usage": "python wlan_slovenia.py",
+                "examples": [
+                    "Perform denial-of-service attack on Wi-Fi",
+                    "Inject packets into a wireless network"
+                ],
+                "notes": "Various tools for wireless network disruption and testing.",
+                "links": [
+                    "https://github.com/skypenet/wlan-slovenia"
+                ]
+            },
+            {
+                "name": "airgeddon",
+                "category": "Wireless Attacks",
+                "description": "Multi-use bash script for Linux systems to audit wireless networks.",
+                "usage": "airgeddon.sh",
+                "examples": [
+                    "Automated WPS and WPA/WPA2 attacks",
+                    "Deauthentication and evil twin attacks"
+                ],
+                "notes": "Comprehensive all-in-one wireless attack tool.",
+                "links": [
+                    "https://github.com/v1s1t0r1sh3r3/airgeddon"
+                ]
+            },
+            {
+                "name": "one-liner-wpa-crack",
+                "category": "Wireless Attacks",
+                "description": "Simple one-liner for cracking WPA/WPA2 handshakes using aircrack-ng and a wordlist.",
+                "usage": "Command line",
+                "examples": [
+                    "aircrack-ng -w wordlist.txt -b BSSID capfile.cap"
+                ],
+                "notes": "Quick method for WPA/WPA2 cracking.",
+                "links": [
+                    "No specific GitHub link, common technique."
+                ]
+            },
+            {
+                "name": "pwnagotchi",
+                "category": "Wireless Attacks",
+                "description": "AI-powered Wi-Fi cracking tool that learns and adapts.",
+                "usage": "Deploy on Raspberry Pi Zero",
+                "examples": [
+                    "Automated WPA handshake capture",
+                    "Optimized deauthentication attacks"
+                ],
+                "notes": "Portable, AI-driven Wi-Fi hacking device.",
+                "links": [
+                    "https://pwnagotchi.ai/"
+                ]
+            },
+            {
+                "name": "wifite2",
+                "category": "Wireless Attacks",
+                "description": "Automated wireless auditor.",
+                "usage": "wifite.py",
+                "examples": [
+                    "python wifite.py",
+                    "python wifite.py --crack"
+                ],
+                "notes": "Simplifies various Wi-Fi attacks into an automated script.",
+                "links": [
+                    "https://github.com/derv82/wifite2"
+                ]
+            },
+            {
+                "name": "eaphammer",
+                "category": "Wireless Attacks",
+                "description": "Tool for performing targeted evil twin attacks against WPA-EAP networks.",
+                "usage": "eaphammer",
+                "examples": [
+                    "Perform rogue AP attack against enterprise Wi-Fi",
+                    "Capture EAP credentials"
+                ],
+                "notes": "Focuses on WPA-EAP attacks.",
+                "links": [
+                    "https://github.com/s0lst1c3/eaphammer"
+                ]
+            },
+            {
+                "name": "macchanger",
+                "category": "Anonymity & Privacy",
+                "description": "Utility for viewing, modifying, and manipulating the MAC address of network interfaces.",
+                "usage": "macchanger -r <interface>",
+                "examples": [
+                    "macchanger -r eth0",
+                    "macchanger -p wlan0"
+                ],
+                "notes": "Change MAC address for privacy or to bypass filters.",
+                "links": [
+                    "https://linux.die.net/man/1/macchanger"
+                ]
+            },
+            {
+                "name": "privoxy",
+                "category": "Anonymity & Privacy",
+                "description": "Non-caching web proxy with advanced filtering capabilities for enhancing privacy.",
+                "usage": "Configure browser to use Privoxy",
+                "examples": [
+                    "Filter web content",
+                    "Modify HTTP headers"
+                ],
+                "notes": "Provides web privacy and ad-blocking.",
+                "links": [
+                    "https://www.privoxy.org/"
+                ]
+            },
+            {
+                "name": "streisand",
+                "category": "Anonymity & Privacy",
+                "description": "Set up a new server running a variety of proxy technologies like Tor, OpenConnect, OpenSSH, OpenVPN, Shadowsocks, WireGuard, etc.",
+                "usage": "Automated deployment script",
+                "examples": [
+                    "Deploy a secure, privacy-enhancing server in minutes",
+                    "Easily create multiple VPN accounts"
+                ],
+                "notes": "Automates the setup of robust privacy and censorship circumvention infrastructure.",
+                "links": [
+                    "https://github.com/StreisandEffect/streisand"
+                ]
+            },
+            {
+                "name": "dnscrypt-proxy",
+                "category": "Anonymity & Privacy",
+                "description": "Flexible DNS proxy that encrypts, authenticates and caches DNS queries.",
+                "usage": "dnscrypt-proxy",
+                "examples": [
+                    "Encrypt DNS traffic to prevent eavesdropping",
+                    "Bypass DNS filtering"
+                ],
+                "notes": "Enhances DNS privacy and security.",
+                "links": [
+                    "https://github.com/DNSCrypt/dnscrypt-proxy"
+                ]
+            },
+            {
+                "name": "veri-vpn",
+                "category": "Anonymity & Privacy",
+                "description": "Script to quickly deploy an OpenVPN server.",
+                "usage": "./veri-vpn.sh",
+                "examples": [
+                    "One-command OpenVPN server setup",
+                    "Generate client configurations"
+                ],
+                "notes": "Simplifies OpenVPN server deployment.",
+                "links": [
+                    "https://github.com/Veri/veri-vpn"
+                ]
+            },
+            {
+                "name": "obfs4proxy",
+                "category": "Censorship Circumvention",
+                "description": "Pluggable transport that obfuscates Tor traffic to bypass censorship.",
+                "usage": "Integrated with Tor",
+                "examples": [
+                    "Connect to Tor in censored regions",
+                    "Evade deep packet inspection"
+                ],
+                "notes": "Makes Tor traffic look like random data.",
+                "links": [
+                    "https://git.torproject.org/cgit/pluggable-transports/obfs4.git/"
+                ]
+            },
+            {
+                "name": "meek",
+                "category": "Censorship Circumvention",
+                "description": "Pluggable transport that makes Tor traffic appear to be ordinary HTTPS connections.",
+                "usage": "Integrated with Tor",
+                "examples": [
+                    "Bypass network firewalls that block Tor",
+                    "Blend in with normal web traffic"
+                ],
+                "notes": "Uses domain fronting to hide Tor connections.",
+                "links": [
+                    "https://git.torproject.org/cgit/pluggable-transports/meek.git/"
+                ]
+            },
+            {
+                "name": "snowflake",
+                "category": "Censorship Circumvention",
+                "description": "Browser extension and command-line tool that lets you act as a proxy for censored users.",
+                "usage": "Browser extension / command line",
+                "examples": [
+                    "Help others bypass censorship by running a proxy",
+                    "Circumvent internet blocks as a user"
+                ],
+                "notes": "Peer-to-peer censorship circumvention.",
+                "links": [
+                    "https://snowflake.torproject.org/"
+                ]
+            },
+            {
+                "name": "gost",
+                "category": "Censorship Circumvention",
+                "description": "Go Simple Tunnel - A proxy tool that supports various protocols.",
+                "usage": "gost -L=<listen_address> -F=<forward_address>",
+                "examples": [
+                    "gost -L=:8080 -F=http://google.com",
+                    "gost -L=:443 -F=tls://target.com"
+                ],
+                "notes": "Versatile proxy for bypassing restrictions.",
+                "links": [
+                    "https://github.com/ginuerzh/gost"
+                ]
+            },
+            {
+                "name": "trojan",
+                "category": "Censorship Circumvention",
+                "description": "Undetectable proxy protocol that masquerades as normal HTTPS traffic.",
+                "usage": "trojan -c config.json",
+                "examples": [
+                    "Bypass firewalls that detect VPNs",
+                    "Secure and obfuscated communication"
+                ],
+                "notes": "Designed for maximum undetectability.",
+                "links": [
+                    "https://trojan-gfw.github.io/trojan/"
+                ]
+            },
+            {
+                "name": "clash",
+                "category": "Censorship Circumvention",
+                "description": "Rule-based tunnel that supports various protocols and advanced features.",
+                "usage": "clash",
+                "examples": [
+                    "Route traffic based on rules (domain, IP, process)",
+                    "Support for Socks5, HTTP, Shadowsocks, Vmess, Trojan"
+                ],
+                "notes": "Powerful and flexible proxy client.",
+                "links": [
+                    "https://github.com/Dreamacro/clash"
+                ]
+            },
+            {
+                "name": "outline",
+                "category": "Censorship Circumvention",
+                "description": "Open-source software that lets you set up your own VPN server.",
+                "usage": "Outline Manager & Client",
+                "examples": [
+                    "Easy setup of a personal VPN server",
+                    "Share access with friends and family"
+                ],
+                "notes": "User-friendly VPN for anti-censorship.",
+                "links": [
+                    "https://getoutline.org/"
+                ]
+            },
+            {
+                "name": "sstap",
+                "category": "Censorship Circumvention",
+                "description": "SOCKS/HTTP/Shadowsocks to TAP virtual network card.",
+                "usage": "Windows application",
+                "examples": [
+                    "Route all traffic through a proxy",
+                    "Bypass geo-restrictions for games and applications"
+                ],
+                "notes": "Windows-focused proxy client.",
+                "links": [
+                    "No official GitHub, often found on forums."
+                ]
+            },
+            {
+                "name": "openconnect",
+                "category": "Censorship Circumvention",
+                "description": "Open source client for Cisco AnyConnect and other SSL VPNs.",
+                "usage": "openconnect <server>",
+                "examples": [
+                    "Connect to AnyConnect VPN servers",
+                    "Bypass enterprise network restrictions"
+                ],
+                "notes": "Useful for connecting to corporate VPNs.",
+                "links": [
+                    "https://www.infradead.org/openconnect/"
+                ]
+            },
+            {
+                "name": "softether",
+                "category": "Censorship Circumvention",
+                "description": "Multi-protocol VPN software with high performance and strong encryption.",
+                "usage": "Server and client applications",
+                "examples": [
+                    "Deploy a VPN server with various protocols (OpenVPN, L2TP/IPsec)",
+                    "Bypass firewalls and deep packet inspection"
+                ],
+                "notes": "Comprehensive VPN solution with diverse protocol support.",
+                "links": [
+                    "https://www.softether.org/"
+                ]
+            },
+            {
+                "name": "WireShark",
+                "category": "Sniffing & Spoofing",
+                "description": "Network protocol analyzer to capture and inspect packets.",
+                "usage": "wireshark",
+                "examples": [
+                    "Capture packets on interface eth0",
+                    "Apply filters such as http or tcp.port==80",
+                    "Follow TCP streams"
+                ],
+                "notes": "Use responsibly on networks you own or have permission to monitor.",
+                "links": [
+                    "https://www.wireshark.org/"
+                ]
+            },
+            {
+                "name": "tcpdump",
+                "category": "Sniffing & Spoofing",
+                "description": "Command-line packet analyzer for network troubleshooting and analysis.",
+                "usage": "tcpdump [options] [expression]",
+                "examples": [
+                    "tcpdump -i eth0 host 192.168.1.1",
+                    "tcpdump -w capture.pcap port 80",
+                    "tcpdump -r capture.pcap"
+                ],
+                "notes": "Lightweight command-line alternative to Wireshark.",
+                "links": [
+                    "https://www.tcpdump.org/"
+                ]
+            },
+            {
+                "name": "ettercap",
+                "category": "Sniffing & Spoofing",
+                "description": "Comprehensive suite for man-in-the-middle attacks on LAN.",
+                "usage": "ettercap [options] [target1] [target2]",
+                "examples": [
+                    "ettercap -T -M arp:remote /192.168.1.1// /192.168.1.100//",
+                    "ettercap -G"
+                ],
+                "notes": "Powerful MITM framework with many plugins.",
+                "links": [
+                    "https://www.ettercap-project.org/"
+                ]
+            },
+            {
+                "name": "bettercap",
+                "category": "Sniffing & Spoofing",
+                "description": "Complete, modular, portable and easily extensible MITM tool and framework.",
+                "usage": "bettercap [options]",
+                "examples": [
+                    "net.probe on; net.sniff on",
+                    "set arp.spoof.targets 192.168.1.10; arp.spoof on"
+                ],
+                "notes": "Modern replacement for Ettercap with web UI.",
+                "links": [
+                    "https://www.bettercap.org/"
+                ]
+            },
+            {
+                "name": "dsniff",
+                "category": "Sniffing & Spoofing",
+                "description": "Collection of tools for network auditing and penetration testing.",
+                "usage": "Various tools: dsniff, arpspoof, dnsspoof, etc.",
+                "examples": [
+                    "arpspoof -i eth0 -t 192.168.1.10 192.168.1.1",
+                    "dnsspoof -i eth0 -f hosts.txt"
+                ],
+                "notes": "Classic suite of network sniffing tools.",
+                "links": [
+                    "https://www.monkey.org/~dugsong/dsniff/"
+                ]
+            },
+            {
+                "name": "scapy",
+                "category": "Sniffing & Spoofing",
+                "description": "Python-based interactive packet manipulation program and library.",
+                "usage": "scapy",
+                "examples": [
+                    "sr1(IP(dst='8.8.8.8')/ICMP())",
+                    "sniff(filter='tcp port 80', prn=lambda x: x.summary())"
+                ],
+                "notes": "Powerful packet crafting and analysis library.",
+                "links": [
+                    "https://scapy.net/"
+                ]
+            },
+            {
+                "name": "netsniff-ng",
+                "category": "Sniffing & Spoofing",
+                "description": "Free Linux networking toolkit with zero-copy mechanisms for network development and analysis.",
+                "usage": "netsniff-ng [options]",
+                "examples": [
+                    "netsniff-ng --in eth0 --out dump.pcap",
+                    "netsniff-ng --in dump.pcap"
+                ],
+                "notes": "High-performance packet capture and analysis.",
+                "links": [
+                    "http://netsniff-ng.org/"
+                ]
+            },
+            {
+                "name": "Responder",
+                "category": "Sniffing & Spoofing",
+                "description": "LLMNR, NBT-NS and MDNS poisoner for capturing NTLM hashes.",
+                "usage": "responder -I <interface>",
+                "examples": [
+                    "responder -I eth0",
+                    "responder -I eth0 -w -r -f"
+                ],
+                "notes": "Commonly used during internal network penetration tests.",
+                "links": [
+                    "https://github.com/lgandx/Responder"
+                ]
+            },
+            {
+                "name": "mitm6",
+                "category": "Sniffing & Spoofing",
+                "description": "IPv6 attack tool that exploits default Windows configuration to take over default DNS server.",
+                "usage": "mitm6 -d <domain>",
+                "examples": [
+                    "mitm6 -d example.local",
+                    "mitm6 -d example.local --ignore-nofqdn"
+                ],
+                "notes": "Exploits IPv6 misconfigurations in Windows networks.",
+                "links": [
+                    "https://github.com/fox-it/mitm6"
+                ]
+            },
+            {
+                "name": "impacket",
+                "category": "Sniffing & Spoofing",
+                "description": "Collection of Python classes for working with network protocols.",
+                "usage": "Various scripts included",
+                "examples": [
+                    "ntlmrelayx.py -tf targets.txt",
+                    "smbserver.py share .",
+                    "psexec.py domain/user@target"
+                ],
+                "notes": "Essential toolkit for Windows network testing.",
+                "links": [
+                    "https://github.com/SecureAuthCorp/impacket"
+                ]
+            },
+            {
+                "name": "arpspoof",
+                "category": "Sniffing & Spoofing",
+                "description": "Tool for redirecting packets from a target host on the local network by forging ARP replies.",
+                "usage": "arpspoof -i <interface> -t <target_ip> <gateway_ip>",
+                "examples": [
+                    "arpspoof -i eth0 -t 192.168.1.100 192.168.1.1",
+                    "arpspoof -i wlan0 -t 192.168.1.10 192.168.1.1"
+                ],
+                "notes": "Core tool for ARP poisoning attacks.",
+                "links": [
+                    "https://www.manpagez.com/html/dsniff/html/arpspoof.html"
+                ]
+            },
+            {
+                "name": "dnsspoof",
+                "category": "Sniffing & Spoofing",
+                "description": "Tool for forging DNS replies to arbitrary hostnames on the local network.",
+                "usage": "dnsspoof -i <interface> [-f <hostsfile>]",
+                "examples": [
+                    "dnsspoof -i eth0 -f /etc/dnsspoof.hosts",
+                    "dnsspoof -i eth0"
+                ],
+                "notes": "Redirects DNS queries to malicious IPs.",
+                "links": [
+                    "https://www.manpagez.com/html/dsniff/html/dnsspoof.html"
+                ]
+            },
+            {
+                "name": "macof",
+                "category": "Sniffing & Spoofing",
+                "description": "Floods the local network with random MAC addresses, potentially causing switch exhaustion.",
+                "usage": "macof -i <interface>",
+                "examples": [
+                    "macof -i eth0",
+                    "macof -i wlan0 -n 1000"
+                ],
+                "notes": "Can be used for denial of service or to force a switch into hub mode.",
+                "links": [
+                    "https://www.manpagez.com/html/dsniff/html/macof.html"
+                ]
+            },
+            {
+                "name": "sslsniff",
+                "category": "Sniffing & Spoofing",
+                "description": "Man-in-the-middle tool for SSL/TLS connections.",
+                "usage": "sslsniff -i <interface> -w <log_file>",
+                "examples": [
+                    "sslsniff -i eth0 -w ssl_traffic.log",
+                    "sslsniff -a -c cert.pem -k key.pem"
+                ],
+                "notes": "Intercepts and decrypts SSL/TLS traffic.",
+                "links": [
+                    "https://github.com/justinsteven/sslsniff"
+                ]
+            },
+            {
+                "name": "mitmf",
+                "category": "Sniffing & Spoofing",
+                "description": "Framework for Man-In-The-Middle attacks.",
+                "usage": "python mitmf.py <interface>",
+                "examples": [
+                    "python mitmf.py --arp --spoof --inject --dns --target 192.168.1.10",
+                    "python mitmf.py --hsts --spoof --gateway 192.168.1.1"
+                ],
+                "notes": "Modular MITM framework with various plugins.",
+                "links": [
+                    "https://github.com/byt3bl33d3r/MITMf"
+                ]
+            },
+            {
+                "name": "cain & abel",
+                "category": "Sniffing & Spoofing",
+                "description": "Password recovery tool for Microsoft Operating Systems. Can also sniff networks.",
+                "usage": "Windows GUI application",
+                "examples": [
+                    "Crack various password hashes",
+                    "Perform ARP poisoning and sniff network traffic"
+                ],
+                "notes": "Windows-only, outdated but historically significant.",
+                "links": [
+                    "http://www.oxid.it/cain.html"
+                ]
+            },
+            {
+                "name": "net-creds",
+                "category": "Sniffing & Spoofing",
+                "description": "Passive network credential sniffer.",
+                "usage": "net-creds.py -i <interface>",
+                "examples": [
+                    "python net-creds.py -i eth0",
+                    "python net-creds.py -i wlan0mon -p 'ftp|http|telnet'"
+                ],
+                "notes": "Extracts credentials from unencrypted network traffic.",
+                "links": [
+                    "https://github.com/DanMcInerney/net-creds"
+                ]
+            },
+            {
+                "name": "unicornscan",
+                "category": "Sniffing & Spoofing",
+                "description": "Asynchronous network scanner and information gathering tool.",
+                "usage": "unicornscan -msf -p 1-1000 -Iv 192.168.1.0/24",
+                "examples": [
+                    "unicornscan -i eth0 -p 1-1024,3389,8080 -msa 192.168.1.0/24",
+                    "unicornscan -I -r 1000 -m U -p 53 192.168.1.1"
+                ],
+                "notes": "Fast and versatile for network reconnaissance.",
+                "links": [
+                    "http://www.unicornscan.org/"
+                ]
+            },
+            {
+                "name": "tshark",
+                "category": "Sniffing & Spoofing",
+                "description": "Command-line network protocol analyzer, part of the Wireshark suite.",
+                "usage": "tshark -i <interface>",
+                "examples": [
+                    "tshark -i eth0 -f 'port 80'",
+                    "tshark -r capture.pcap -Y http.request"
+                ],
+                "notes": "Non-GUI equivalent of Wireshark for scripting and automation.",
+                "links": [
+                    "https://www.wireshark.org/docs/man-pages/tshark.html"
+                ]
+            },
+            {
+                "name": "sslstrip",
+                "category": "Sniffing & Spoofing",
+                "description": "Tool that transparently hijacks HTTP traffic on a network, looks for HTTPS redirects, and changes them to HTTP.",
+                "usage": "python sslstrip.py",
+                "examples": [
+                    "Run in conjunction with ARP spoofing",
+                    "Downgrade HTTPS to HTTP for credential capture"
+                ],
+                "notes": "Classic attack for stripping SSL/TLS encryption.",
+                "links": [
+                    "https://moxie.org/software/sslstrip/"
+                ]
+            },
+            {
+                "name": "dnschef",
+                "category": "Sniffing & Spoofing",
+                "description": "Highly configurable DNS proxy for pentesters and malware analysts.",
+                "usage": "dnschef --fakeip <ip> --fakedomains <domain>",
+                "examples": [
+                    "dnschef --fakeip 192.168.1.1 --fakedomains example.com",
+                    "dnschef --interface 192.168.1.1"
+                ],
+                "notes": "Customizable DNS server for spoofing and redirection.",
+                "links": [
+                    "https://github.com/iphelix/dnschef"
+                ]
+            },
+            {
+                "name": "mitmproxy",
+                "category": "Sniffing & Spoofing",
+                "description": "Interactive, SSL/TLS-capable intercepting proxy for HTTP/1, HTTP/2, and WebSockets.",
+                "usage": "mitmproxy",
+                "examples": [
+                    "Intercept and modify HTTP/HTTPS traffic",
+                    "Replay requests and responses"
+                ],
+                "notes": "Powerful tool for man-in-the-middle attacks and debugging.",
+                "links": [
+                    "https://mitmproxy.org/"
+                ]
+            },
+            {
+                "name": "sslsplit",
+                "category": "Sniffing & Spoofing",
+                "description": "Transparent SSL/TLS man-in-the-middle proxy.",
+                "usage": "sslsplit -k <key> -c <cert> ssl <ip> <port> http <ip> <port>",
+                "examples": [
+                    "sslsplit -k ca.key -c ca.crt ssl 0.0.0.0 8443 http 0.0.0.0 8080",
+                    "Transparently intercept SSL/TLS connections"
+                ],
+                "notes": "Provides transparent SSL/TLS interception.",
+                "links": [
+                    "https://github.com/sslsplit/sslsplit"
+                ]
+            },
+            {
+                "name": "nbtscan",
+                "category": "Information Gathering",
+                "description": "Program for scanning networks for NetBIOS name information.",
+                "usage": "nbtscan <ip_range>",
+                "examples": [
+                    "nbtscan 192.168.1.0/24",
+                    "nbtscan -v 192.168.1.100"
+                ],
+                "notes": "Identifies Windows hosts and their NetBIOS names.",
+                "links": [
+                    "http://www.inetcat.org/software/nbtscan.html"
+                ]
+            },
+            {
+                "name": "ike-scan",
+                "category": "Information Gathering",
+                "description": "Tool for discovering, fingerprinting, and testing IPsec VPN servers.",
+                "usage": "ike-scan <ip_address>",
+                "examples": [
+                    "ike-scan 192.168.1.1",
+                    "ike-scan -M 192.168.1.10"
+                ],
+                "notes": "Useful for identifying and probing VPN gateways.",
+                "links": [
+                    "https://www.nta-monitor.com/tools/ike-scan/"
+                ]
+            },
+            {
+                "name": "snmp-check",
+                "category": "Information Gathering",
+                "description": "SNMP enumeration tool for extracting information from network devices.",
+                "usage": "snmp-check <ip_address>",
+                "examples": [
+                    "snmp-check 192.168.1.1",
+                    "snmp-check -w 192.168.1.10"
+                ],
+                "notes": "Gathers information like network interfaces, running processes, etc.",
+                "links": [
+                    "https://github.com/leonjza/snmp-check"
+                ]
+            },
+            {
+                "name": "hydra",
+                "category": "Information Gathering",
+                "description": "Fast and flexible login cracker that supports numerous protocols to attack.",
+                "usage": "hydra -L <users.txt> -P <passwords.txt> <protocol>://<target>",
+                "examples": [
+                    "hydra -L users.txt -P passwords.txt ftp://192.168.1.1",
+                    "hydra -l admin -P passlist.txt ssh://target.com -s 2222"
+                ],
+                "notes": "Widely used for brute-forcing login credentials.",
+                "links": [
+                    "https://github.com/vanhauser-thc/thc-hydra"
+                ]
+            },
+            {
+                "name": "medusa",
+                "category": "Information Gathering",
+                "description": "Brute-force parallel login cracker that supports numerous protocols.",
+                "usage": "medusa -h <host> -u <username> -P <passwordlist>",
+                "examples": [
+                    "medusa -h 192.168.1.10 -u admin -P pass.txt -M ssh",
+                    "medusa -h target.com -U user.txt -p pass.txt -M ftp"
+                ],
+                "notes": "Similar to Hydra, with a focus on speed.",
+                "links": [
+                    "http://foofus.net/goons/jmk/medusa/"
+                ]
+            },
+            {
+                "name": "patator",
+                "category": "Information Gathering",
+                "description": "Multi-purpose brute-forcer, designed to be reliable and flexible.",
+                "usage": "patator <module> <target> <wordlist>",
+                "examples": [
+                    "patator ftp_login host=192.168.1.10 user=admin 0=passwords.txt",
+                    "patator http_fuzz url=http://example.com/login FUZZ=passwords.txt"
+                ],
+                "notes": "Supports various protocols and fuzzing scenarios.",
+                "links": [
+                    "https://github.com/lanjelot/patator"
+                ]
+            },
+            {
+                "name": "cewl",
+                "category": "Information Gathering",
+                "description": "Custom Word List generator. Spiders a target website and generates a wordlist based on words found.",
+                "usage": "cewl -w <output_file> <url>",
+                "examples": [
+                    "cewl -w wordlist.txt http://example.com",
+                    "cewl -d 2 -m 5 -w custom_wordlist.txt http://blog.example.com"
+                ],
+                "notes": "Creates tailored wordlists for brute-forcing attacks.",
+                "links": [
+                    "https://github.com/digininja/cewl"
+                ]
+            },
+            {
+                "name": "gobuster",
+                "category": "Information Gathering",
+                "description": "Fast scanner written in Go, used to brute-force URIs (directories and files) in web sites, DNS subdomains, and S3 buckets.",
+                "usage": "gobuster dir -u <url> -w <wordlist>",
+                "examples": [
+                    "gobuster dir -u http://example.com -w common.txt",
+                    "gobuster dns -d example.com -w subdomains.txt"
+                ],
+                "notes": "Modern and fast alternative to Dirb/Dirbuster.",
+                "links": [
+                    "https://github.com/OJ/gobuster"
+                ]
+            },
+            {
+                "name": "dirsearch",
+                "category": "Information Gathering",
+                "description": "Web path scanner. Scans the given URL for existing directories and files.",
+                "usage": "python3 dirsearch.py -u <url> -w <wordlist>",
+                "examples": [
+                    "python3 dirsearch.py -u http://example.com -w db/wordlists/common.txt",
+                    "python3 dirsearch.py -u https://example.com -e php,html,js"
+                ],
+                "notes": "Powerful and actively maintained directory brute-forcer.",
+                "links": [
+                    "https://github.com/maurosoria/dirsearch"
+                ]
+            },
+            {
+                "name": "aquatone",
+                "category": "Information Gathering",
+                "description": "Tool for visual inspection of websites across a large number of hosts.",
+                "usage": "cat domains.txt | aquatone",
+                "examples": [
+                    "Scan a list of subdomains and take screenshots",
+                    "Identify interesting web services quickly"
+                ],
+                "notes": "Provides a visual overview of web assets.",
+                "links": [
+                    "https://github.com/michenriksen/aquatone"
+                ]
+            },
+            {
+                "name": "httprobe",
+                "category": "Information Gathering",
+                "description": "Takes a list of domains and probes them for working HTTP and HTTPS servers.",
+                "usage": "cat domains.txt | httprobe",
+                "examples": [
+                    "cat subdomains.txt | httprobe -s -p http:80,https:443",
+                    "Filter for active web servers"
+                ],
+                "notes": "Quickly identifies live web servers from a list of hosts.",
+                "links": [
+                    "https://github.com/tomnomnom/httprobe"
+                ]
+            },
+            {
+                "name": "subfinder",
+                "category": "Information Gathering",
+                "description": "Subdomain discovery tool that discovers valid subdomains for websites by using passive online sources.",
+                "usage": "subfinder -d <domain>",
+                "examples": [
+                    "subfinder -d example.com",
+                    "subfinder -d example.com -o subdomains.txt"
+                ],
+                "notes": "Passive subdomain enumeration from multiple sources.",
+                "links": [
+                    "https://github.com/projectdiscovery/subfinder"
+                ]
+            },
+            {
+                "name": "github-dorks",
+                "category": "OSINT",
+                "description": "Scripts and resources for searching GitHub for sensitive information using dorks.",
+                "usage": "github search",
+                "examples": [
+                    "Search for API keys: 'github.com password in:file extension:json'",
+                    "Find sensitive documents: 'github.com private_key filename:id_rsa'"
+                ],
+                "notes": "Leverages GitHub's search capabilities for OSINT.",
+                "links": [
+                    "No single tool, but a collection of dorks and techniques. Example: https://github.com/techgaun/github-dorks"
+                ]
+            },
+            {
+                "name": "trufflehog",
+                "category": "OSINT",
+                "description": "Scans through git repositories for high entropy strings and secrets, digging deep into commit history.",
+                "usage": "trufflehog --regex --entropy=True <repo_url>",
+                "examples": [
+                    "trufflehog --regex --entropy=True https://github.com/example/repo",
+                    "trufflehog file://./local_repo"
+                ],
+                "notes": "Finds sensitive data in Git repositories.",
+                "links": [
+                    "https://github.com/trufflesecurity/trufflehog"
+                ]
+            },
+            {
+                "name": "recon-dog",
+                "category": "OSINT",
+                "description": "Python script for quickly gathering information about a target domain, IP, or username.",
+                "usage": "python recon-dog.py <target>",
+                "examples": [
+                    "python recon-dog.py example.com",
+                    "python recon-dog.py johndoe"
+                ],
+                "notes": "Automates various OSINT lookups.",
+                "links": [
+                    "https://github.com/s0md3v/ReconDog"
+                ]
+            },
+            {
+                "name": "holehe",
+                "category": "OSINT",
+                "description": "Checks if an email exists on more than 120 websites like twitter, instagram and many more.",
+                "usage": "holehe <email_address>",
+                "examples": [
+                    "holehe test@example.com",
+                    "holehe bulk_emails.txt"
+                ],
+                "notes": "Verifies email existence on various online platforms.",
+                "links": [
+                    "https://github.com/megadose/holehe"
+                ]
+            },
+            {
+                "name": "phoneinfoga",
+                "category": "OSINT",
+                "description": "Advanced information gathering & OSINT framework for phone numbers.",
+                "usage": "phoneinfoga -n <phone_number>",
+                "examples": [
+                    "phoneinfoga -n +15551234567",
+                    "phoneinfoga --recon -n +15551234567"
+                ],
+                "notes": "Extracts information related to phone numbers.",
+                "links": [
+                    "https://github.com/sundowndev/phoneinfoga"
+                ]
+            },
+            {
+                "name": "ghunt",
+                "category": "OSINT",
+                "description": "Investigate Google accounts from an email address.",
+                "usage": "python ghunt.py",
+                "examples": [
+                    "Gather public information from a Google account",
+                    "Find associated services"
+                ],
+                "notes": "Focuses on Google account OSINT.",
+                "links": [
+                    "https://github.com/mxrch/GHunt"
+                ]
+            },
+            {
+                "name": "sn0int",
+                "category": "OSINT",
+                "description": "Semi-automatic OSINT framework and package manager.",
+                "usage": "sn0int",
+                "examples": [
+                    "Gather information from various online sources",
+                    "Automate reconnaissance workflows"
+                ],
+                "notes": "Modular OSINT platform.",
+                "links": [
+                    "https://github.com/kpcyrd/sn0int"
+                ]
+            },
+            {
+                "name": "haveibeenpwned (CLI)",
+                "category": "OSINT",
+                "description": "Command-line interface to check if an email address or username has been compromised in a data breach.",
+                "usage": "hibp -e <email>",
+                "examples": [
+                    "hibp -e test@example.com",
+                    "hibp -u username"
+                ],
+                "notes": "Quickly check for breach exposure.",
+                "links": [
+                    "https://github.com/beardhacker/haveibeenpwned-cli"
+                ]
+            },
+            {
+                "name": "dehashed",
+                "category": "OSINT",
+                "description": "Search engine for compromised accounts and data breaches. (Requires API key)",
+                "usage": "Web interface / API",
+                "examples": [
+                    "Search for leaked credentials",
+                    "Check if an email/username appeared in breaches"
+                ],
+                "notes": "Paid service for advanced breach data searching.",
+                "links": [
+                    "https://dehashed.com/"
+                ]
+            },
+            {
+                "name": "wigle",
+                "category": "OSINT",
+                "description": "Database of wireless networks with mapping and data.",
+                "usage": "Web interface / API",
+                "examples": [
+                    "Search for Wi-Fi networks by location",
+                    "Analyze Wi-Fi network density"
+                ],
+                "notes": "Crowdsourced database of Wi-Fi networks.",
+                "links": [
+                    "https://wigle.net/"
+                ]
+            },
+            {
+                "name": "archive.org (Wayback Machine)",
+                "category": "OSINT",
+                "description": "Digital archive of the World Wide Web and other Internet information.",
+                "usage": "Web interface",
+                "examples": [
+                    "View historical versions of websites",
+                    "Recover deleted content or forgotten information"
+                ],
+                "notes": "Invaluable for historical web reconnaissance.",
+                "links": [
+                    "https://archive.org/web/web.php"
+                ]
+            },
+            {
+                "name": "google dorks",
+                "category": "OSINT",
+                "description": "Advanced search queries used to find hidden or exposed information on Google.",
+                "usage": "Google search bar",
+                "examples": [
+                    "site:example.com intitle:\"index of\" \"password\"",
+                    "filetype:xls confidential inurl:documents"
+                ],
+                "notes": "Powerful for uncovering sensitive data exposed online.",
+                "links": [
+                    "https://www.exploit-db.com/google-hacking-database"
+                ]
+            },
+            {
+                "name": "yandex dorks",
+                "category": "OSINT",
+                "description": "Similar to Google dorks, but for the Yandex search engine.",
+                "usage": "Yandex search bar",
+                "examples": [
+                    "site:example.com \"admin login\"",
+                    "inurl:backup filetype:zip"
+                ],
+                "notes": "Can reveal different results compared to Google.",
+                "links": [
+                    "No single link, use Yandex for dorking."
+                ]
+            },
+            {
+                "name": "bing dorks",
+                "category": "OSINT",
+                "description": "Advanced search queries for the Bing search engine.",
+                "usage": "Bing search bar",
+                "examples": [
+                    "ip:192.168.1.1 index of",
+                    "filetype:sql password"
+                ],
+                "notes": "Another alternative for broadening OSINT searches.",
+                "links": [
+                    "No single link, use Bing for dorking."
+                ]
+            },
+            {
+                "name": "crt.sh",
+                "category": "OSINT",
+                "description": "Certificate transparency log search tool to find SSL/TLS certificates and associated domains.",
+                "usage": "Web interface",
+                "examples": [
+                    "Search for domains related to an organization",
+                    "Identify subdomains through certificate information"
+                ],
+                "notes": "Excellent for passive subdomain enumeration.",
+                "links": [
+                    "https://crt.sh/"
+                ]
+            },
+            {
+                "name": "virustotal",
+                "category": "OSINT",
+                "description": "Service that analyzes suspicious files and URLs to detect malware and other threats.",
+                "usage": "Web interface / API",
+                "examples": [
+                    "Check if a file is malicious",
+                    "Get information about a URL's reputation"
+                ],
+                "notes": "Can reveal passive information about infrastructure and associated threats.",
+                "links": [
+                    "https://www.virustotal.com/gui/home/upload"
+                ]
+            },
+            {
+                "name": "threatcrowd",
+                "category": "OSINT",
+                "description": "Tool for finding and analyzing attack surface of an organization.",
+                "usage": "Web interface",
+                "examples": [
+                    "Discover associated domains, IPs, and email addresses",
+                    "Visualize connections between threat indicators"
+                ],
+                "notes": "Maps out relationships between various internet-facing assets.",
+                "links": [
+                    "https://threatcrowd.org/"
+                ]
+            },
+            {
+                "name": "urlscan.io",
+                "category": "OSINT",
+                "description": "Website scanner that generates a report of the site, including screenshots, network requests, and external links.",
+                "usage": "Web interface / API",
+                "examples": [
+                    "Analyze potentially malicious URLs safely",
+                    "Gather intelligence on website structure and dependencies"
+                ],
+                "notes": "Provides detailed insights into website behavior.",
+                "links": [
+                    "https://urlscan.io/"
+                ]
+            },
+            {
+                "name": "reconnaissance suite",
+                "category": "Information Gathering",
+                "description": "A hypothetical suite of tools combining various reconnaissance techniques.",
+                "usage": "Integrated platform",
+                "examples": [
+                    "Automated external and internal network scans",
+                    "Comprehensive data aggregation and reporting"
+                ],
+                "notes": "Designed for streamlined reconnaissance in large environments.",
+                "links": [
+                    "N/A (hypothetical)"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BCAS - AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Manrope:wght@800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>BCAS-AI</h1>
+      <p>Powered by Synethesis</p>
+    </div>
+
+    <div class="chat-container">
+      <div id="messages" class="messages">
+        <div class="message assistant">
+          <div class="message-content">
+            <h3>Welcome!</h3>
+            <div class="api-response">
+              I am Bcas's Personal AI, an advanced system integrating ten distinct,
+              high-level artificial intelligences to deliver unparalleled
+              performance.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="loading-indicator"
+        class="loading-indicator"
+        style="display: none;"
+      >
+        <div class="loader"></div>
+        <div id="loading-text" class="loading-text">Processing with multiple AI models...</div>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <div class="controls">
+        <div class="control-row">
+            <div class="tone-selector">
+              <label for="tone-select">Tone:</label>
+              <select id="tone-select">
+                <option value="professional">Professional</option>
+                <option value="friendly">Friendly</option>
+                <option value="casual">Casual</option>
+                <option value="formal">Formal</option>
+                <option value="creative">Creative</option>
+                <option value="analytical">Analytical</option>
+              </select>
+            </div>
+            <div class="mode-selector">
+                <label for="mode-select" class="mode-label">Mode:</label>
+                <select id="mode-select">
+                    <option value="advanced">Advanced (10 Model Mode(Limited))</option>
+                    <option value="gemini">Gemini (Limited)</option>
+                    <option value="cohere">Cohere (Unlimited)</option>
+                    <option value="huggingface">Hugging Face (Partially Limited)</option> </select>
+            </div>
+        </div>
+        <div class="control-row" id="cohere-key-selector" style="display: none; margin-top: 20px;">
+            <div class="tone-selector"> <label for="cohere-key-select">Cohere Key:</label>
+                <select id="cohere-key-select">
+                    <option value="0">Cohere Key 1</option>
+                    <option value="1">Cohere Key 2</option>
+                    <option value="2">Cohere Key 3</option>
+                </select>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="input-row">
+        <div class="input-field">
+          <textarea
+            id="prompt-input"
+            placeholder="Ask me anything..."
+            rows="1"
+          ></textarea>
+        </div>
+        <button id="submit-button" class="submit-button">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
