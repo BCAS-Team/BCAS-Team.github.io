@@ -43,7 +43,7 @@ The crown jewel of Beta 1.6 is **BCAS-AI** — our quantum leap from a basic cha
 
 ---
 
-### 🔄 **Update 1.6.1: Revolutionary AI Engine**
+### 🔄 **Update 1.6.2: Revolutionary AI Engine**
 
 We've completely **revolutionized** our AI backbone, replacing our previous models with a diverse and powerful suite of cutting-edge options:
 
