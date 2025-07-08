@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Date Plan | July 17th</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Harmony (Beige, Soft Terracotta, Slate Gray, Cream, Amber, Teal) -->
+    <!-- Application Structure Plan: The application is designed as a single-page, interactive timeline. This structure was chosen because the source report is a chronological schedule, making a timeline the most intuitive and user-friendly way to present the information. The key components are a main header for at-a-glance info, an interactive timeline to explore each step, and a data visualization (chart) to provide a high-level summary of how time is allocated. This transforms a static list into an engaging, explorable experience that's practical for use on the day of the event. A 'Focus View' allows users to click any event to see its details in a persistent card. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Full day schedule -> Goal: Inform/Organize -> Viz/Method: Interactive Vertical Timeline (HTML/CSS/JS) -> Interaction: Click to focus on an event -> Justification: The most intuitive way to represent a chronological plan, making it easy to follow the flow of the day.
+        - Report Info: Time spent on categories (shopping, food, etc.) -> Goal: Compare/Inform -> Viz/Method: Horizontal Bar Chart (Chart.js/Canvas) -> Interaction: Hover for tooltips showing exact minutes -> Justification: Provides a quick, visual summary of the day's structure, which is more digestible than reading times from a table.
+        - Report Info: Key event timings -> Goal: Inform -> Viz/Method: Static Header Cards (HTML/CSS) -> Interaction: None -> Justification: Offers immediate visibility of the most critical parts of the schedule (start, dinner, movie).
+        - Report Info: Location Map -> Goal: Organize/Contextualize -> Viz/Method: Embedded Image with full-screen capability -> Interaction: Click image to expand to full-screen; textual guidance for location -> Justification: Allows users to easily view map details on all devices, enhancing navigation without complex overlays.
+        - Report Info: Activities -> Goal: Engage/Enhance -> Viz/Method: LLM-generated text -> Interaction: Button click to generate conversation starters -> Justification: Adds a unique, helpful, and interactive element to make the date experience more enjoyable and less awkward, leveraging the Gemini API.
+        - Report Info: Shopping Activities -> Goal: Engage/Inform -> Viz/Method: LLM-generated text -> Interaction: Button click to generate shop highlights/things to look out for -> Justification: Provides relevant, on-demand information for shopping stops, making the experience more interactive and insightful.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8; /* Warm Beige */
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #E2C2B3; /* Soft Terracotta */
+            border: 3px solid #FDFBF8;
+        }
+        .timeline-item.active::before {
+             background-color: #6B7280; /* Slate Gray */
+        }
+        .timeline-connector {
+            position: absolute;
+            left: -26px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 250px;
+            max-height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 350px;
+            }
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #E2C2B3;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .fullscreen-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .fullscreen-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .fullscreen-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-7xl">
+
+        <header class="text-center mb-10">
+            <h1 class="font-display text-4xl md:text-5xl text-gray-800">Our Perfect Day</h1>
+            <p class="text-lg text-gray-500 mt-2">Thursday, July 17th</p>
+        </header>
+
+        <section id="key-events" class="mb-12">
+             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <p class="text-sm font-semibold text-gray-500">START</p>
+                    <p class="text-2xl font-bold text-gray-800">3:30 PM</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <p class="text-sm font-semibold text-gray-500">DINNER</p>
+                    <p class="text-2xl font-bold text-gray-800">7:40 PM</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <p class="text-sm font-semibold text-gray-500">MOVIE</p>
+                    <p class="text-2xl font-bold text-gray-800">8:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <section class="lg:col-span-2">
+                <h2 class="font-display text-3xl text-gray-800 mb-2">The Plan</h2>
+                <p class="text-gray-600 mb-8">Here is the detailed schedule for our day. Click on any item in the timeline to bring it into focus and see more details. This will help us stay on track while we enjoy our time together.</p>
+
+                <div class="relative pl-8">
+                    <div class="timeline-connector"></div>
+                    <div id="timeline" class="space-y-4">
+                    </div>
+                </div>
+            </section>
+
+            <aside class="lg:col-span-1">
+                 <div class="sticky top-8">
+                    <h2 class="font-display text-3xl text-gray-800 mb-6">Focus View</h2>
+                    <div id="focus-card" class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 transition-all duration-300 min-h-[150px]">
+                         <p class="text-gray-500 text-center pt-8">Click an item on the timeline to see details here.</p>
+                    </div>
+
+                    <div id="map-section" class="mt-8">
+                        <h3 class="font-display text-2xl text-gray-800 mb-4">Venue Map</h3>
+                        <div id="map-container" class="bg-white p-2 rounded-lg shadow-lg border border-gray-200 transition-all duration-300 relative cursor-pointer">
+                           <img id="mall-map-image" src="https://mandc-bl-assets.s3.amazonaws.com/live/meadowhall/2025/06/03095131/MAY_2025_DigitalMap_Final-amended.jpg" alt="Shopping Center Map" class="rounded-md w-full object-cover">
+                        </div>
+                        <p id="map-guidance" class="text-sm text-gray-500 mt-2 text-center"></p>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <section id="summary-viz" class="mt-16 bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
+            <h2 class="font-display text-3xl text-gray-800 mb-2 text-center">How We'll Spend Our Time</h2>
+            <p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">This chart gives a quick overview of our day, showing how much time we've dedicated to each main activity. It helps visualize the balance between shopping, relaxing, and entertainment.</p>
+            <div class="chart-container">
+                <canvas id="timeAllocationChart"></canvas>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-16 py-6 border-t border-gray-200">
+            <p class="text-gray-500">Can't wait to enjoy the day with you!</p>
+        </footer>
+
+    </div>
+
+    <!-- Fullscreen Map Overlay -->
+    <div id="fullscreen-map-overlay" class="fullscreen-overlay">
+        <button id="fullscreen-close-btn" class="fullscreen-close-btn">&times;</button>
+        <img id="fullscreen-map-image" src="" alt="Full Screen Shopping Center Map">
+    </div>
+
+    <script>
+        const datePlan = [
+            { time: '3:30–4:00 pm', activity: '🛍️ HMV', notes: 'Anime, music, games, vinyl, merch, Pop! figures', duration: 30, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '4:00–4:20 pm', activity: '🛍️ LEGO Store', notes: 'Check new sets and exclusives', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '4:20–4:40 pm', activity: '🛍️ GAME', notes: 'Latest games, consoles, accessories', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '4:40–5:00 pm', activity: '🛍️ H&M (Upper Level)', notes: 'Fashion & accessories', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '5:00–5:20 pm', activity: '🛍️ Claire’s', notes: 'Jewellery, accessories, girly gifts', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '5:20–5:40 pm', activity: '🛍️ Typo', notes: 'Quirky stationery, mugs, gifts', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '5:40–6:00 pm', activity: '🛍️ Lush', notes: 'Bath bombs, soaps, sprays (smell test heaven)', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '6:00–6:20 pm', activity: '🛍️ Accessorize or New Look', notes: 'More fashion & accessories', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Upper Level' },
+            { time: '6:20–6:40 pm', activity: '🛍️ Miniso', notes: 'Plushies, gadgets, stationery', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Lower Level' },
+            { time: '6:40–7:00 pm', activity: '🛍️ Paperchase', notes: 'Cards, notebooks, crafts', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Lower Level' },
+            { time: '7:00–7:20 pm', activity: '🛍️ Poundland', notes: 'Grab movie drinks & snacks', duration: 20, category: 'Shopping', type: 'shop', locationHint: 'Lower Level' },
+            { time: '7:20–7:30 pm', activity: '🎮 Freestyle / Arcade', notes: 'Quick chill or revisit fav shops', duration: 10, category: 'Leisure', type: 'leisure', locationHint: 'Various' },
+            { time: '7:30–7:40 pm', activity: '🚶 Walk to McDonald’s', notes: 'Walk to Oasis Dining Quarter', duration: 10, category: 'Transition', type: 'transition', locationHint: 'Lower Level - Oasis Dining Quarter' },
+            { time: '7:40–7:50 pm', activity: '🍔 Dinner at McDonald’s', notes: 'Quick meal before the movie', duration: 10, category: 'Food', type: 'food', locationHint: 'Lower Level - Oasis Dining Quarter' },
+            { time: '8:00–10:20 pm', activity: '🎬 Vue Sheffield Screen 2', notes: 'Movie time!', duration: 140, category: 'Movie', type: 'movie', locationHint: 'Lower Level - Vue Cinemas' },
+        ];
+
+        const timelineContainer = document.getElementById('timeline');
+        const focusCard = document.getElementById('focus-card');
+        const mapContainer = document.getElementById('map-container');
+        const mallMapImage = document.getElementById('mall-map-image');
+        const mapGuidance = document.getElementById('map-guidance');
+        const fullscreenOverlay = document.getElementById('fullscreen-map-overlay');
+        const fullscreenMapImage = document.getElementById('fullscreen-map-image');
+        const fullscreenCloseBtn = document.getElementById('fullscreen-close-btn');
+        let activeItem = null;
+
+        async function generateConversationStarters(activity) {
+            const outputDiv = document.getElementById('conversation-starters-output');
+            const btn = document.getElementById('generate-conversation-starters-btn');
+            
+            outputDiv.innerHTML = `<div class="text-center mt-4"><span class="loading-spinner"></span> Generating ideas...</div>`;
+            btn.disabled = true;
+
+            try {
+                const prompt = `Generate 3 short, fun, and lighthearted conversation starters for a date activity: "${activity}". Focus on open-ended questions or playful observations. Present them as a numbered list.`;
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputDiv.innerHTML = `<div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200 text-sm">${text}</div>`;
+                } else {
+                    outputDiv.innerHTML = `<div class="text-red-500 mt-4">Could not generate conversation starters. Please try again.</div>`;
+                }
+            } catch (error) {
+                outputDiv.innerHTML = `<div class="text-red-500 mt-4">Error generating conversation starters: ${error.message}</div>`;
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        async function generateShopHighlights(shopName) {
+            const outputDiv = document.getElementById('shop-highlights-output');
+            const btn = document.getElementById('generate-shop-highlights-btn');
+
+            outputDiv.innerHTML = `<div class="text-center mt-4"><span class="loading-spinner"></span> Finding highlights...</div>`;
+            btn.disabled = true;
+
+            try {
+                const prompt = `Suggest 3-4 interesting things to look out for or popular items at "${shopName}". Present them as a numbered list. Be concise and engaging.`;
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputDiv.innerHTML = `<div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200 text-sm">${text}</div>`;
+                } else {
+                    outputDiv.innerHTML = `<div class="text-red-500 mt-4">Could not generate shop highlights. Please try again.</div>`;
+                }
+            } catch (error) {
+                outputDiv.innerHTML = `<div class="text-red-500 mt-4">Error generating shop highlights: ${error.message}</div>`;
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        function renderTimeline() {
+            timelineContainer.innerHTML = '';
+            datePlan.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'timeline-item relative bg-white p-4 rounded-lg shadow-sm border border-gray-200 cursor-pointer hover:shadow-md hover:border-gray-300 transition-all duration-200';
+                div.dataset.index = index;
+
+                div.innerHTML = `
+                    <p class="font-semibold text-gray-800">${item.activity}</p>
+                    <p class="text-sm text-gray-500">${item.time}</p>
+                `;
+                
+                div.addEventListener('click', () => setFocus(index));
+                timelineContainer.appendChild(div);
+            });
+        }
+
+        function setFocus(index) {
+            const item = datePlan[index];
+            
+            if(activeItem) {
+                activeItem.classList.remove('active', 'border-gray-800', 'shadow-lg');
+                activeItem.classList.add('border-gray-200');
+            }
+
+            const newActiveItem = timelineContainer.querySelector(`[data-index='${index}']`);
+            if(newActiveItem){
+                newActiveItem.classList.add('active', 'border-gray-800', 'shadow-lg');
+                newActiveItem.classList.remove('border-gray-200');
+                activeItem = newActiveItem;
+            }
+
+            let focusCardContent = `
+                <div class="text-center">
+                    <p class="text-sm font-semibold text-gray-500">${item.time}</p>
+                    <h3 class="text-2xl font-bold font-display text-gray-800 my-2">${item.activity}</h3>
+                    <p class="text-gray-600">${item.notes}</p>
+                    <div class="mt-4 bg-rose-50 text-rose-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-full">
+                        Duration: ${item.duration} minutes
+                    </div>
+            `;
+
+            // Add Conversation Starters button
+            focusCardContent += `
+                    <button id="generate-conversation-starters-btn" class="mt-6 px-6 py-2 bg-amber-600 text-white rounded-full shadow-md hover:bg-amber-700 transition-colors duration-200 text-sm font-semibold">
+                        ✨ Get Conversation Starters ✨
+                    </button>
+                    <div id="conversation-starters-output" class="mt-4 text-left"></div>
+            `;
+
+            // Add Shop Highlights button for shop activities
+            if (item.type === 'shop') {
+                const shopName = item.activity.replace('🛍️ ', '');
+                focusCardContent += `
+                    <button id="generate-shop-highlights-btn" class="mt-4 px-6 py-2 bg-teal-600 text-white rounded-full shadow-md hover:bg-teal-700 transition-colors duration-200 text-sm font-semibold">
+                        ✨ Shop Highlights ✨
+                    </button>
+                    <div id="shop-highlights-output" class="mt-4 text-left"></div>
+                `;
+            }
+
+            focusCardContent += `</div>`; // Close text-center div
+            focusCard.innerHTML = focusCardContent;
+            
+            document.getElementById('generate-conversation-starters-btn').addEventListener('click', () => generateConversationStarters(item.activity));
+            if (item.type === 'shop') {
+                const shopName = item.activity.replace('🛍️ ', '');
+                document.getElementById('generate-shop-highlights-btn').addEventListener('click', () => generateShopHighlights(shopName));
+            }
+
+            // Update map guidance
+            mapGuidance.textContent = '';
+            if (item.locationHint) {
+                let guidanceText = '';
+                if (item.locationHint.includes('Upper Level')) {
+                    guidanceText += `This activity is on the <span class="font-bold text-gray-800">Upper Level</span> of the mall.`;
+                } else if (item.locationHint.includes('Lower Level')) {
+                    guidanceText += `This activity is on the <span class="font-bold text-gray-800">Lower Level</span> of the mall.`;
+                }
+                
+                if (item.locationHint.includes('Oasis Dining Quarter')) {
+                    guidanceText += ` Look for the <span class="font-bold text-gray-800">Oasis Dining Quarter</span>.`;
+                } else if (item.locationHint.includes('Vue Cinemas')) {
+                    guidanceText += ` Look for <span class="font-bold text-gray-800">Vue Cinemas</span>.`;
+                } else if (item.locationHint !== 'Various') {
+                    guidanceText += ` Find <span class="font-bold text-gray-800">${item.activity.replace('🛍️ ', '').replace('🎮 ', '').replace('🚶 ', '').replace('🍔 ', '').replace('🎬 ', '')}</span>.`;
+                }
+                mapGuidance.innerHTML = guidanceText;
+                
+                // Scroll to map for relevant activities
+                if (item.locationHint !== 'Various') {
+                    document.getElementById('map-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        }
+        
+        function renderChart() {
+            const ctx = document.getElementById('timeAllocationChart').getContext('2d');
+            const categoryTotals = datePlan.reduce((acc, item) => {
+                if (item.category !== 'Transition') {
+                    acc[item.category] = (acc[item.category] || 0) + item.duration;
+                }
+                return acc;
+            }, {});
+
+            const labels = Object.keys(categoryTotals);
+            const data = Object.values(categoryTotals);
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Time in Minutes',
+                        data: data,
+                        backgroundColor: ['#E2C2B3', '#D1D5DB', '#A3B18A', '#6B7280'],
+                        borderColor: '#FDFBF8',
+                        borderWidth: 2,
+                        borderRadius: 4,
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#F3F4F6'
+                            },
+                             ticks: {
+                                color: '#6B7280'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            },
+                             ticks: {
+                                color: '#374151',
+                                font: {
+                                    weight: 'bold'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#1F2937',
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold',
+                            },
+                            bodyFont: {
+                                size: 12
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.raw} minutes`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTimeline();
+            renderChart();
+
+            // Fullscreen map functionality
+            mallMapImage.addEventListener('click', () => {
+                fullscreenMapImage.src = mallMapImage.src;
+                fullscreenOverlay.classList.add('active');
+            });
+
+            fullscreenCloseBtn.addEventListener('click', () => {
+                fullscreenOverlay.classList.remove('active');
+            });
+
+            fullscreenOverlay.addEventListener('click', (event) => {
+                if (event.target === fullscreenOverlay) {
+                    fullscreenOverlay.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
