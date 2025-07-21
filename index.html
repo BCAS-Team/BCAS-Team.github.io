@@ -1,0 +1,336 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Secure Access</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #000000;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .login-container {
+                background: #111111;
+                border: 1px solid #333333;
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
+                width: 100%;
+                max-width: 400px;
+                position: relative;
+            }
+
+            .login-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .login-header h1 {
+                color: #ffffff;
+                font-size: 28px;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+
+            .login-header p {
+                color: #cccccc;
+                font-size: 14px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+                position: relative;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                color: #ffffff;
+                font-weight: 500;
+                font-size: 14px;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 15px;
+                border: 2px solid #333333;
+                border-radius: 12px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                background: #222222;
+                color: #ffffff;
+            }
+
+            .form-group input:focus {
+                outline: none;
+                border-color: #ffffff;
+                background: #333333;
+            }
+
+            .login-btn {
+                width: 100%;
+                padding: 15px;
+                background: #ffffff;
+                color: #000000;
+                border: none;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .login-btn:hover {
+                background: #cccccc;
+                box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+            }
+
+            .login-btn:active {
+                transform: translateY(0);
+            }
+
+            .error-message {
+                background: #330000;
+                color: #ff6666;
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                border-left: 4px solid #ff6666;
+                font-size: 14px;
+                display: none;
+            }
+
+            .success-message {
+                background: #003300;
+                color: #66ff66;
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                border-left: 4px solid #66ff66;
+                font-size: 14px;
+                display: none;
+            }
+
+            .loading {
+                opacity: 0.7;
+                pointer-events: none;
+            }
+
+            .demo-credentials {
+                background: #222222;
+                border: 1px solid #444444;
+                padding: 15px;
+                border-radius: 8px;
+                margin-top: 20px;
+                font-size: 12px;
+                color: #cccccc;
+            }
+
+            .demo-credentials h4 {
+                margin-bottom: 8px;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="login-header">
+                <h1>🔐 Secure Login</h1>
+                <p>Enter your credentials to access the system</p>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+
+        </div>
+
+        <script>
+            // User credentials will be loaded from external JSON file
+            let users = {};
+            const usersJsonPath = "QkNBUy1URUFNIFdhcyBIZXJl\\u.json";
+            
+            // Redirect path after successful login
+            const redirectPath = "QkNBUy1URUFNIFdhcyBIZXJl/main.html";
+
+            // Load user credentials from JSON file
+            async function loadUsers() {
+                try {
+                    const response = await fetch(usersJsonPath);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const jsonData = await response.json();
+                    
+                    // Handle nested JSON structure - extract the "user" object
+                    if (jsonData.user && typeof jsonData.user === 'object') {
+                        users = jsonData.user;
+                        console.log('User credentials loaded successfully from nested structure');
+                    } else if (typeof jsonData === 'object') {
+                        // Fallback: treat entire JSON as user object if no "user" key
+                        users = jsonData;
+                        console.log('User credentials loaded successfully from flat structure');
+                    } else {
+                        throw new Error('Invalid JSON structure');
+                    }
+                    
+                    // Hide loading message and show form
+                    hideLoadingMessage();
+                } catch (error) {
+                    console.error('Error loading user credentials:', error);
+                    showError('Failed to load user database. Please check if QkNBUy1URUFNIFdhcyBIZXJl\\u.json exists and has valid JSON format.');
+                    hideLoadingMessage();
+                }
+            }
+
+            function showLoadingMessage() {
+                const loginForm = document.getElementById('loginForm');
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = 'loadingMessage';
+                loadingDiv.style.textAlign = 'center';
+                loadingDiv.style.color = '#cccccc';
+                loadingDiv.style.padding = '20px';
+                loadingDiv.innerHTML = '🔄 Loading user database...';
+                loginForm.style.display = 'none';
+                loginForm.parentNode.insertBefore(loadingDiv, loginForm);
+            }
+
+            function hideLoadingMessage() {
+                const loadingMessage = document.getElementById('loadingMessage');
+                const loginForm = document.getElementById('loginForm');
+                if (loadingMessage) {
+                    loadingMessage.remove();
+                }
+                loginForm.style.display = 'block';
+            }
+
+            const loginForm = document.getElementById('loginForm');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const loginContainer = document.querySelector('.login-container');
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                
+                // Add shake animation
+                loginContainer.style.animation = 'shake 0.5s ease-in-out';
+                setTimeout(() => {
+                    loginContainer.style.animation = '';
+                }, 500);
+            }
+
+            function showSuccess(message) {
+                successMessage.textContent = message;
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+            }
+
+            function hideMessages() {
+                errorMessage.style.display = 'none';
+                successMessage.style.display = 'none';
+            }
+
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value;
+
+                hideMessages();
+
+                // Check if users data is loaded
+                if (Object.keys(users).length === 0) {
+                    showError('User database not loaded. Please refresh the page and try again.');
+                    return;
+                }
+
+                // Basic validation
+                if (!username || !password) {
+                    showError('Please enter both username and password.');
+                    return;
+                }
+
+                // Add loading state
+                loginContainer.classList.add('loading');
+                
+                // Simulate loading delay for better UX
+                setTimeout(() => {
+                    // Check credentials against JSON data
+                    if (users.hasOwnProperty(username) && users[username] === password) {
+                        showSuccess('Login successful! Redirecting...');
+                        
+                        // Store login status (optional)
+                        const loginData = {
+                            username: username,
+                            loginTime: new Date().toISOString(),
+                            authenticated: true
+                        };
+                        
+                        // Since we can't use localStorage in artifacts, we'll just redirect
+                        // In a real implementation, you might want to set a session cookie
+                        
+                        setTimeout(() => {
+                            // Redirect to the specified path
+                            window.location.href = redirectPath;
+                        }, 1000);
+                    } else {
+                        showError('Invalid username or password. Please try again.');
+                        loginContainer.classList.remove('loading');
+                    }
+                }, 800);
+            });
+
+            // Initialize the application
+            document.addEventListener('DOMContentLoaded', function() {
+                showLoadingMessage();
+                loadUsers();
+            });
+
+            // Add CSS for shake animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    25% { transform: translateX(-10px); }
+                    75% { transform: translateX(10px); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Clear messages when user starts typing
+            document.getElementById('username').addEventListener('input', hideMessages);
+            document.getElementById('password').addEventListener('input', hideMessages);
+        </script>
+    </body>
+    </html>
