@@ -4,13 +4,13 @@
 
 ## *The Underhanded Powerhouse of the Internet*
 
-[![Version](https://img.shields.io/badge/Version-Beta%201.6.2-ff6b6b?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/BCAS-Team)
+[![Version](https://img.shields.io/badge/Version-Beta%201.7.0-ff6b6b?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/BCAS-Team)
 [![Status](https://img.shields.io/badge/Status-Active-4ecdc4?style=for-the-badge&logo=pulse&logoColor=white)](https://github.com/BCAS-Team)
 [![AI Powered](https://img.shields.io/badge/AI-Powered-9b59b6?style=for-the-badge&logo=brain&logoColor=white)](https://github.com/BCAS-Team)
 
 ---
 
-## 🚀 **Beta 1.6.2 Has Landed: *The Dawn of BCAS-AI***
+## 🚀 **Beta 1.7.0 Has Landed: *Computing Law & Drug Wiki Update***
 
 > **— Brought to you by the BCAS Team**
 
@@ -18,7 +18,9 @@
 
 **BCAS-Team.github.io** isn't just another repository — it's your **portal to radical knowledge**, cutting-edge tools, and underground resources that push the boundaries of what's possible. We don't just ride the wave — we ***engineer the tsunami***.
 
-With **Beta 1.6.2**, we're redefining the landscape once again. Everything's still in beta, but our vision burns crystal clear:
+With **Beta 1.7.0**, we're kicking things into high gear — and it's official:  
+🛠 **Active development resumed as of 21/07/2025.**  
+The mission? ***Total overhaul, constant progress, no dead links.***
 
 ### 🔥 **Open. Dynamic. User-Centric. Always Evolving.** 🔥
 
@@ -26,11 +28,42 @@ With **Beta 1.6.2**, we're redefining the landscape once again. Everything's sti
 
 ---
 
-## 🆕 **What's Revolutionary in Beta 1.6.1?**
+## 🆕 **What’s Revolutionary in Beta 1.7.0?**
+
+### ⚖️ **Computing Law Wiki: A Legal Arsenal for Hackers and Makers**
+
+Our newest addition is the **Computing Law Wiki**, a definitive, AI-enhanced legal knowledgebase tailored for digital explorers.
+
+| **Feature** | **Description** |
+|:---:|:---|
+| 📜 **Legal Decoded** | AI-simplified breakdowns of global tech law |
+| 🛡️ **Know Your Rights** | Learn how computing laws affect devs, hackers, and researchers |
+| ⚖️ **Global Scope** | Covers international cybersecurity, privacy, and data handling policies |
+| 🧠 **Contextualized Advice** | Law doesn't live in a vacuum — we show how it *really* applies |
+
+> ***Tech law is a battlefield — now you've got armor.***
+
+---
+
+### 💊 **Drug Wiki: Reborn, Rewritten, Recalibrated**
+
+Back by popular demand — **Drug Wiki** returns smarter, cleaner, and more *introspective* than ever.
+
+| **Revamp Highlights** | **Purpose** |
+|:---:|:---|
+| 🌐 **Fully Rewritten Entries** | No fluff — just verified, AI-enhanced insights |
+| 🧪 **Chemical & Biological Breakdown** | Mechanisms, risks, and synthesis details — no glorification, just facts |
+| 🧠 **Cognitive Impact** | Understand how compounds alter consciousness, cognition, and neural pathways |
+| 📛 **Risk Awareness Tags** | Red/Yellow/Green indicators on safety, legality, and ethical use |
+| 🔍 **Contextual Exploration** | Learn in context — not isolation — with BCAS-AI guidance |
+
+> ***This isn't a guide to use — it's a guide to understand.***
+
+---
 
 ### 🤖 **BCAS-AI: Your Intelligent Co-Pilot**
 
-The crown jewel of Beta 1.6 is **BCAS-AI** — our quantum leap from a basic chat interface (Beta 1.4) into a **full-fledged AI-powered knowledge guide** that thinks, adapts, and evolves with you.
+Our quantum leap from a basic chat interface into a **full-fledged AI-powered knowledge guide** continues to evolve.
 
 | Feature | Description |
 |:---:|:---|
@@ -43,9 +76,9 @@ The crown jewel of Beta 1.6 is **BCAS-AI** — our quantum leap from a basic cha
 
 ---
 
-### 🔄 **Update 1.6.2: Revolutionary AI Engine**
+### 🔄 **AI Engine Suite Continues to Evolve**
 
-We've completely **revolutionized** our AI backbone, replacing our previous models with a diverse and powerful suite of cutting-edge options:
+Our backbone remains solid with a cutting-edge suite of models:
 
 | **AI Model** | **Specialization** |
 |:---:|:---:|
@@ -79,12 +112,12 @@ We've completely **revolutionized** our AI backbone, replacing our previous mode
 
 ## 📚 **Content Evolution Status**
 
-### ✂️ **Drug Wiki Status**
-> The **Drug Wiki** remains offline as we realign content strategy with BCAS-AI's advanced capabilities.
+### ✅ **Drug Wiki Reintroduced**
+> Completely reimagined and *actively maintained* — Drug Wiki is now live and evolving.
 
 ### 🛠️ **Scripting Wiki & Hackers Wiki**
 
-Both have been **heavily upgraded** with fresh, focused content:
+Both remain **heavily upgraded** with focused, deep technical content:
 
 | **Enhancement** | **Impact** |
 |:---:|:---|
@@ -115,11 +148,14 @@ With **BCAS-AI** and your support, we're building something truly **radical**.
 
 ## 🔗 **Get Involved**
 
-[![Fork](https://img.shields.io/badge/Fork-Repository-orange?style=for-the-badge&logo=git&logoColor=white)](https://github.com/BCAS-Team)
-[![Follow](https://img.shields.io/badge/Follow-Updates-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BCAS-Team)
+[![Fork](https://img.shields.io/badge/Fork-Repository-orange?style=for-the-badge&logo=git&logoColor=white)](https://github.com/BCAS-Team)  
+[![Follow](https://img.shields.io/badge/Follow-Updates-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BCAS-Team)  
 [![Contribute](https://img.shields.io/badge/Contribute-Code-green?style=for-the-badge&logo=code&logoColor=white)](https://github.com/BCAS-Team)
 
-### **Let's evolve together.**
+📧 **For page stats, issues, and bug reports:**  
+**Bcas.public@gmail.com**
+
+### **Let’s evolve together.**
 
 ---
 
@@ -127,6 +163,6 @@ With **BCAS-AI** and your support, we're building something truly **radical**.
 
 ---
 
-*© 2025 BCAS Team - Redefining the Digital Frontier*
+*© 2025 BCAS Team – Redefining the Digital Frontier*
 
 </div>
