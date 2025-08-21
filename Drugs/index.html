@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drug Information Database</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Drug Information Database</h1>
+    <p>Explore an extensive, detailed drug database.</p>
+    <p>⚠️ This data may not be 100% accurate. We are not responsible for any misuse or consequences arising from the information provided. For accurate and personalized advice, always consult a qualified medical professional.</p>
+    <a href="legal.html">Read The Full Disclaimer.</a>
+  </header>
+
+  <div class="search-filter">
+    <input type="text" id="search-input" placeholder="Search drugs by name, alias, description..." />
+    <select id="type-filter">
+      <option value="">All Types</option>
+      <!-- JS will populate more options -->
+    </select>
+  </div>
+
+  <div id="drugs-container">
+    <!-- Drug cards will be rendered here by JS -->
+  </div>
+
+  <div id="modal" class="modal hidden" tabindex="-1" aria-modal="true" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+    <div class="modal-content">
+      <!-- Modal content populated by JS -->
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

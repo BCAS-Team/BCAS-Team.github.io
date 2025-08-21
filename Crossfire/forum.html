@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrossFire Community Forum</title>
+<style>
+/* Base styling */
+* {margin:0;padding:0;box-sizing:border-box;text-decoration:none;}
+html, body {font-family:'Helvetica Neue',sans-serif;background-color:#000;color:#fff;line-height:1.6;scroll-behavior:smooth;cursor:none;position:relative;z-index:1;overflow-x:hidden;}
+*,*::before,*::after {cursor:none !important;}
+a,button,input,textarea,select,label,span {position:relative;z-index:1;cursor:none !important;}
+
+/* Forum container */
+.forum-container {padding:3rem 2rem; max-width:1200px; margin:auto;}
+.forum-header{text-align:center;margin-bottom:2rem;}
+.forum-header h1{font-size:3rem;color:#a855f7;margin-bottom:0.5rem;}
+.forum-header p{color:#bbb;font-size:1.2rem;}
+.cta-buttons{display:flex;justify-content:center;gap:1rem;margin-bottom:2rem;}
+.cta-buttons a, .cta-buttons button{white-space:nowrap;padding:0.75rem 1.5rem;border-radius:9999px;background-color:#000;color:#fff;border:1px solid #555;font-weight:500;transition:all 0.3s ease;text-align:center; cursor:pointer;}
+.cta-buttons a:hover,.cta-buttons button:hover{box-shadow:0 0 12px 4px #a855f7;border-color:#a855f7;}
+
+/* Threads list */
+.thread-list{display:flex;flex-direction:column;gap:1rem;}
+.thread-item{background-color:#111;padding:1rem 1.5rem;border-radius:12px;border:1px solid #444;transition:all 0.2s ease;box-shadow:0 4px 10px rgba(0,0,0,0.3);}
+.thread-item:hover{background-color:#1a1a1a;border-color:#c084fc;box-shadow:0 6px 15px rgba(168,85,247,0.4);}
+.thread-item h3{color:#a855f7;margin-bottom:0.5rem;}
+.thread-item p{color:#ccc;font-size:0.95rem;margin-bottom:0.5rem;}
+
+/* Thread view */
+.thread-view{background-color:#111;padding:2rem;border-radius:12px;margin-top:2rem;}
+.post{background-color:#1c1c1c;padding:1rem;border-radius:12px;margin-bottom:1rem;border:1px solid #444;}
+.post h4{color:#a855f7;margin-bottom:0.5rem;}
+.post p{color:#ccc;font-size:0.95rem;}
+.reply-form{margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;}
+.reply-form textarea{background-color:#000;color:#fff;border:1px solid #555;padding:0.75rem;border-radius:0.5rem;resize:none;}
+.reply-form button{padding:0.75rem 1.5rem;border-radius:9999px;background-color:#000;color:#fff;border:1px solid #555;font-weight:500;transition:all 0.3s ease;cursor:pointer;}
+.reply-form button:hover{box-shadow:0 0 12px 4px #a855f7;border-color:#a855f7;}
+
+/* Popup new thread */
+#popup-new-thread{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:90vw;max-width:600px;background:#111;border-radius:16px;box-shadow:0 0 25px #a855f7cc;display:none;flex-direction:column;z-index:10000;overflow:hidden;padding:2rem;}
+#popup-new-thread.active{display:flex;}
+#popup-new-thread input,#popup-new-thread textarea{padding:0.75rem;border-radius:0.5rem;border:1px solid #555;background:#000;color:#fff;width:100%;}
+#popup-new-thread button{padding:0.75rem 1.5rem;border-radius:9999px;background-color:#000;color:#fff;border:1px solid #555;font-weight:500;transition:all 0.3s ease;cursor:pointer;margin-top:1rem;}
+#popup-new-thread button:hover{box-shadow:0 0 12px 4px #a855f7;border-color:#a855f7;}
+#close-popup{position:absolute;top:0.5rem;right:1rem;font-size:2rem;color:#a855f7;cursor:pointer;}
+#close-popup:hover{color:#fff;}
+
+/* Custom cursor */
+.cursor{position:fixed;top:0;left:0;width:20px;height:20px;background-color:#a855f7;border-radius:50%;pointer-events:none;mix-blend-mode:difference;box-shadow:0 0 12px 6px #a855f7;transform:translate(-50%,-50%);z-index:999999999;transition:transform 0.05s ease-out;will-change:transform;user-select:none;}
+</style>
+</head>
+<body>
+
+<div class="forum-container">
+  <div class="forum-header">
+    <h1>CrossFire Community Forum</h1>
+    <p>Discuss, ask questions, and share tips</p>
+  </div>
+  
+  <div class="cta-buttons">
+    <a href="index.html">← Back to Docs</a>
+    <button id="new-thread-btn">Create New Thread</button>
+  </div>
+
+  <div class="thread-list" id="thread-list"></div>
+
+  <div class="thread-view" id="thread-view" style="display:none;">
+    <button id="back-btn" style="margin-bottom:1rem;">← Back to Threads</button>
+    <h2 id="thread-title"></h2>
+    <div id="posts-container"></div>
+    <div class="reply-form">
+      <textarea id="reply-content" rows="4" placeholder="Write your reply..."></textarea>
+      <button id="reply-btn">Post Reply</button>
+    </div>
+  </div>
+</div>
+
+<div id="popup-new-thread">
+  <span id="close-popup">×</span>
+  <h2>Create New Thread</h2>
+  <input type="text" id="thread-title-input" placeholder="Thread title">
+  <textarea id="thread-content-input" rows="5" placeholder="Thread content"></textarea>
+  <button id="create-thread-btn">Create Thread</button>
+</div>
+
+<div class="cursor" id="custom-cursor"></div>
+
+<script>
+// Cursor
+const cursor=document.getElementById('custom-cursor');
+document.addEventListener('mousemove',e=>{cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;});
+
+// Load threads from localStorage
+let threads=JSON.parse(localStorage.getItem('threads'))||[{id:1,title:'Welcome!',posts:[{author:'Admin',content:'This is the first post.'}]}];
+
+// Elements
+const threadListEl=document.getElementById('thread-list');
+const threadViewEl=document.getElementById('thread-view');
+const postsContainer=document.getElementById('posts-container');
+const threadTitleEl=document.getElementById('thread-title');
+const replyContent=document.getElementById('reply-content');
+const backBtn=document.getElementById('back-btn');
+
+// Render threads
+function renderThreads(){
+  threadListEl.innerHTML='';
+  threads.forEach(t=>{
+    const div=document.createElement('div');
+    div.className='thread-item';
+    div.innerHTML=`<h3>${t.title}</h3><p>${t.posts.length} posts</p>`;
+    div.onclick=()=>openThread(t.id);
+    threadListEl.appendChild(div);
+  });
+}
+
+// Open thread
+function openThread(id){
+  const thread=threads.find(t=>t.id===id);
+  if(!thread)return;
+  threadTitleEl.textContent=thread.title;
+  postsContainer.innerHTML='';
+  thread.posts.forEach(p=>{
+    const postDiv=document.createElement('div');
+    postDiv.className='post';
+    postDiv.innerHTML=`<h4>${p.author}</h4><p>${p.content}</p>`;
+    postsContainer.appendChild(postDiv);
+  });
+  threadListEl.style.display='none';
+  threadViewEl.style.display='block';
+  threadViewEl.dataset.currentThread=id;
+}
+
+// Back
+backBtn.onclick=()=>{threadViewEl.style.display='none';threadListEl.style.display='flex';replyContent.value='';}
+
+// Post reply
+document.getElementById('reply-btn').onclick=()=>{
+  const id=parseInt(threadViewEl.dataset.currentThread);
+  const thread=threads.find(t=>t.id===id);
+  if(!thread||!replyContent.value.trim())return;
+  thread.posts.push({author:'Guest',content:replyContent.value.trim()});
+  saveThreads();
+  openThread(id);
+  replyContent.value='';
+}
+
+// Popup new thread
+const popup=document.getElementById('popup-new-thread');
+document.getElementById('new-thread-btn').onclick=()=>popup.classList.add('active');
+document.getElementById('close-popup').onclick=()=>popup.classList.remove('active');
+document.getElementById('create-thread-btn').onclick=()=>{
+  const title=document.getElementById('thread-title-input').value.trim();
+  const content=document.getElementById('thread-content-input').value.trim();
+  if(!title||!content)return alert('Please fill both fields');
+  const id=threads.length?threads[threads.length-1].id+1:1;
+  threads.push({id:id,title:title,posts:[{author:'Guest',content:content}]});
+  saveThreads();
+  popup.classList.remove('active');
+  document.getElementById('thread-title-input').value='';
+  document.getElementById('thread-content-input').value='';
+  renderThreads();
+}
+
+// Save threads
+function saveThreads(){localStorage.setItem('threads',JSON.stringify(threads));}
+
+// Initial render
+renderThreads();
+</script>
+</body>
+</html>

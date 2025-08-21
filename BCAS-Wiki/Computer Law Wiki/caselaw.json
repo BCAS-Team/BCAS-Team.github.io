@@ -1,0 +1,1012 @@
+{
+  "caselaw": [
+    {
+      "id": "1",
+      "name": "R v. Gold & Schifreen",
+      "citation": "[1988] AC 1063",
+      "category": "Computer Crime & Hacking",
+      "description": "House of Lords case establishing early precedent on computer hacking and unauthorized access.",
+      "summary": "Two defendants gained unauthorized access to BT's Prestel system. The House of Lords held that the existing forgery laws were insufficient to cover computer hacking, leading to the Computer Misuse Act 1990.",
+      "notes": "Landmark case that exposed gaps in existing law and led to specific computer crime legislation.",
+      "links": [
+        "https://www.bailii.org/uk/cases/UKHL/1988/1.html"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "DPP v. Lennon",
+      "citation": "[2006] EWHC 1201 (Admin)",
+      "category": "Computer Misuse & Email",
+      "description": "High Court case on email bombing and computer misuse offences under the Computer Misuse Act 1990.",
+      "summary": "The court held that sending mass emails to cause a computer system to malfunction constituted an offence under s3 of the Computer Misuse Act 1990, establishing that email bombing falls within computer misuse legislation.",
+      "notes": "Important precedent for denial of service attacks and email-based computer misuse.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Admin/2006/1201.html"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "R v. Bow Street Metropolitan Stipendiary Magistrate, ex parte Government of USA",
+      "citation": "[2000] 2 AC 216",
+      "category": "Computer Crime & Extradition",
+      "description": "House of Lords case on extradition for computer fraud offences.",
+      "summary": "The case involved extradition proceedings for computer fraud. The House of Lords considered the dual criminality requirement for extradition in computer crime cases, establishing important precedent for international cyber crime prosecution.",
+      "notes": "Significant for international cooperation in computer crime cases.",
+      "links": [
+        "https://www.bailii.org/uk/cases/UKHL/1999/43.html"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "R v. Whiteley",
+      "citation": "[1991] 93 Cr App R 25",
+      "category": "Computer Damage & Criminal Law",
+      "description": "Court of Appeal case establishing that computer programs and data constitute 'property' capable of being damaged under the Criminal Damage Act.",
+      "summary": "The defendant hacked into university computers and deleted files. The Court of Appeal held that intangible property like computer data and programs could be 'damaged' within the meaning of the Criminal Damage Act 1971.",
+      "notes": "Important early case extending traditional criminal damage concepts to computer systems.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/1991/1.html"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Oxford v. Moss",
+      "citation": "[1979] 68 Cr App R 183",
+      "category": "Information Theft & Property Law",
+      "description": "Crown Court case establishing that confidential information cannot be stolen under the Theft Act.",
+      "summary": "A student read exam questions without authorization but returned them. The court held that confidential information is not 'property' capable of being stolen under the Theft Act 1968, creating important precedent for information theft.",
+      "notes": "Significant case highlighting gaps in theft law regarding information, influencing later computer crime legislation.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/1978/1.html"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "R v. Delamare",
+      "citation": "[2003] EWCA Crim 424",
+      "category": "Computer Misuse & Intent",
+      "description": "Court of Appeal case on the mental element required for computer misuse offences.",
+      "summary": "The case clarified the mens rea requirements for offences under the Computer Misuse Act 1990, particularly regarding knowledge that access is unauthorized and intent to commit further offences.",
+      "notes": "Important for understanding the mental element in computer crime prosecutions.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2003/424.html"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "R v. Pile",
+      "citation": "[1995] 2 Cr App R 343",
+      "category": "Computer Hacking & Fraud",
+      "description": "Court of Appeal case involving unauthorized access to computer systems for fraudulent purposes.",
+      "summary": "The defendant gained unauthorized access to computer systems intending to commit fraud. The case helped establish the relationship between computer misuse offences and traditional fraud, clarifying when both offences might apply.",
+      "notes": "Significant for prosecuting complex computer-enabled fraud cases.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/1995/1.html"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Attorney General's Reference (No 1 of 1991)",
+      "citation": "[1993] QB 94",
+      "category": "Computer Misuse & Conspiracy",
+      "description": "Court of Appeal case on conspiracy to commit computer misuse offences.",
+      "summary": "The case established that conspiracy to commit offences under the Computer Misuse Act 1990 is possible and clarified the elements required for such conspiracy charges in computer crime cases.",
+      "notes": "Important precedent for prosecuting organized computer crime.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/1992/1.html"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "R v. Cropp",
+      "citation": "[1991] 2 All ER 340",
+      "category": "Computer Data & Evidence",
+      "description": "Crown Court case on the admissibility of computer-generated evidence in criminal proceedings.",
+      "summary": "The case addressed issues surrounding the authenticity and reliability of computer-generated evidence, establishing early precedent for the admissibility of digital evidence in criminal trials.",
+      "notes": "Foundational case for digital evidence admissibility in UK courts.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/QB/1991/1.html"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "DPP v. McKeown",
+      "citation": "[1997] 1 WLR 295",
+      "category": "Computer Evidence & Criminal Procedure",
+      "description": "House of Lords case on the admissibility of computer evidence and the requirement for expert testimony.",
+      "summary": "The House of Lords clarified when expert evidence is required for computer-generated evidence and established that properly functioning computers are presumed to produce accurate output unless proven otherwise.",
+      "notes": "Key case for the admissibility of computer evidence without requiring expert testimony in routine cases.",
+      "links": [
+        "https://www.bailii.org/uk/cases/UKHL/1997/1.html"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "R v. Fellows & Arnold",
+      "citation": "[1997] 1 Cr App R 244",
+      "category": "Computer Crime & Indecent Images",
+      "description": "Court of Appeal case establishing that computer data can constitute 'photographs' under indecent images legislation.",
+      "summary": "The defendants possessed indecent images of children on computer. The Court of Appeal held that data stored on computer capable of conversion into images constituted 'photographs' under the Protection of Children Act 1978.",
+      "notes": "Significant case adapting existing child protection law to digital technology.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/1996/1.html"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Shetland Times Ltd v. Wills",
+      "citation": "[1997] FSR 604",
+      "category": "Copyright & Internet",
+      "description": "Court of Session case involving copyright infringement through internet linking and framing.",
+      "summary": "The first major UK case on internet copyright infringement. The court granted an interim interdict preventing the defendants from including headlines from the Shetland Times website within their own site framework.",
+      "notes": "Pioneering case on internet copyright and deep linking issues.",
+      "links": [
+        "https://www.bailii.org/scot/cases/ScotCS/1996/105.html"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Totalise plc v. Motley Fool Ltd",
+      "citation": "[2001] EWCA Civ 1897",
+      "category": "Defamation & Internet",
+      "description": "Court of Appeal case on internet publication and jurisdiction in defamation cases.",
+      "summary": "The case addressed where internet publications occur for the purposes of defamation law, establishing that publication occurs where the material is downloaded and read, not where it is uploaded.",
+      "notes": "Important precedent for internet defamation jurisdiction.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/2001/1897.html"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Godfrey v. Demon Internet Ltd",
+      "citation": "[2001] QB 201",
+      "description": "High Court case establishing ISP liability for defamatory content in internet forums.",
+      "summary": "The court held that an ISP could be liable for defamatory postings on Usenet newsgroups once it had notice of the defamatory content but failed to remove it, establishing early precedent for intermediary liability.",
+      "notes": "Significant case for ISP liability and content moderation responsibilities.",
+      "category": "Internet Law & ISP Liability",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/QB/1999/244.html"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "R v. Smith (Wallace Duncan)",
+      "citation": "[2011] EWCA Crim 1772",
+      "category": "Computer Misuse & Denial of Service",
+      "description": "Court of Appeal case on distributed denial of service attacks under the Computer Misuse Act.",
+      "summary": "The defendant conducted DDoS attacks on government and commercial websites. The Court of Appeal confirmed that such attacks fall within s3 of the Computer Misuse Act 1990, establishing clear precedent for DDoS prosecutions.",
+      "notes": "Important case for prosecuting denial of service attacks and cyber activism.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2011/1772.html"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "R v. Weatherall",
+      "citation": "[2011] EWCA Crim 1396",
+      "category": "Computer Misuse & Social Engineering",
+      "description": "Court of Appeal case involving social engineering and unauthorized computer access.",
+      "summary": "The case involved gaining unauthorized access to computer systems through deception and social engineering techniques. The Court of Appeal clarified that the means of gaining access is irrelevant to Computer Misuse Act offences.",
+      "notes": "Significant for prosecuting sophisticated social engineering attacks.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2011/1396.html"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Police v. Bignell",
+      "citation": "[1998] 1 Cr App R 1",
+      "category": "Computer Access & Police Powers",
+      "description": "Crown Court case on police officers' unauthorized access to computer systems.",
+      "summary": "Police officers accessed the Police National Computer for unauthorized purposes. The case established that police officers can be prosecuted under the Computer Misuse Act when they exceed their authorized access.",
+      "notes": "Important case establishing that authorized users can still commit computer misuse offences.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/QB/1998/1.html"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "R v. Bedworth",
+      "citation": "[1993] 4 All ER 310",
+      "category": "Computer Crime & Mental Health",
+      "description": "Crown Court case involving computer hacking and mental health defences.",
+      "summary": "Young computer hacker successfully raised a defence of mental disorder, arguing that computer addiction had impaired his responsibility. The case highlighted emerging issues around technology addiction and criminal responsibility.",
+      "notes": "Notable early case considering psychological aspects of computer crime.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/QB/1993/1.html"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Davison v. Habeeb",
+      "citation": "[2011] EWHC 3031 (QB)",
+      "category": "Internet Defamation & Social Media",
+      "description": "High Court case on defamation via social media and internet communications.",
+      "summary": "The case involved defamatory statements made through social media platforms. The court addressed issues of publication, serious harm, and the application of defamation law to social media communications.",
+      "notes": "Early case adapting defamation law to social media platforms.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/QB/2011/3031.html"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "R v. Perrin",
+      "citation": "[2002] EWCA Crim 747",
+      "category": "Internet Crime & Obscenity",
+      "description": "Court of Appeal case on internet publication of obscene material and jurisdiction.",
+      "summary": "The defendant published obscene material on a US website accessible in the UK. The Court of Appeal held that publication occurred in England where the material was accessed, establishing jurisdiction principles for internet obscenity cases.",
+      "notes": "Important precedent for internet publication and jurisdictional issues.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/747.html"
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Beta Computers (Europe) Ltd v. Adobe Systems (Europe) Ltd",
+      "citation": "[1996] FSR 367",
+      "category": "Software Licensing & Contract",
+      "description": "High Court case on software licensing agreements and their enforceability.",
+      "summary": "The case addressed the enforceability of shrink-wrap software licenses and established important precedent for software licensing terms in the UK, including issues of contract formation and unfair terms.",
+      "notes": "Foundational case for software licensing law in the UK.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1996/1.html"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Amstrad Consumer Electronics plc v. British Phonographic Industry Ltd",
+      "citation": "[1986] FSR 159",
+      "category": "Copyright & Technology",
+      "description": "House of Lords case on secondary liability for copyright infringement involving technology.",
+      "summary": "The BPI claimed Amstrad's twin-deck cassette recorders facilitated copyright infringement. The House of Lords held that merely providing the means for infringement was insufficient for liability without authorization or encouragement.",
+      "notes": "Important precedent for technology manufacturer liability in copyright cases.",
+      "links": [
+        "https://www.bailii.org/uk/cases/UKHL/1986/1.html"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "R v. Mangham",
+      "citation": "[2012] EWCA Crim 973",
+      "category": "Computer Hacking & Social Networks",
+      "description": "Court of Appeal case involving hacking of Facebook systems by a security researcher.",
+      "summary": "The defendant, a security researcher, gained unauthorized access to Facebook's systems. The Court of Appeal upheld his conviction under the Computer Misuse Act, establishing that good intentions do not provide a defence to unauthorized access.",
+      "notes": "Significant case for the boundaries between legitimate security research and computer crime.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2012/973.html"
+      ]
+    },
+    {
+      "id": "24",
+      "name": "R v. Bowden",
+      "citation": "[2001] QB 88",
+      "category": "Computer Crime & Child Protection",
+      "description": "Court of Appeal case on possession of indecent images of children in digital format.",
+      "summary": "The case established that voluntarily downloading indecent images of children onto a computer constitutes 'making' such images under the Protection of Children Act 1978, expanding the scope of child protection law to digital media.",
+      "notes": "Significant case adapting child protection legislation to digital technology.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2000/1.html"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Douglas v. Hello! Ltd",
+      "citation": "[2001] QB 967",
+      "category": "Privacy & Digital Media",
+      "description": "Court of Appeal case establishing privacy rights in the digital age and unauthorized photography.",
+      "summary": "The case involved unauthorized publication of wedding photographs. The Court of Appeal recognised a developing law of privacy, addressing issues of consent, commercial confidentiality, and media publication in the digital era.",
+      "notes": "Landmark case for privacy rights and digital media publication.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/2000/353.html"
+      ]
+    },
+    {
+      "id": "26",
+      "name": "R v. Stanford",
+      "citation": "[2006] 1 WLR 756",
+      "category": "Computer Evidence & Expert Testimony",
+      "description": "Court of Appeal case on the admissibility of complex computer evidence in fraud cases.",
+      "summary": "The case involved complex computer evidence in a fraud prosecution. The Court of Appeal clarified when expert evidence is required for computer systems and established principles for the admissibility of automated computer records.",
+      "notes": "Important case for complex computer evidence in criminal proceedings.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2005/1.html"
+      ]
+    },
+    {
+      "id": "27",
+      "name": "British Telecommunications plc v. One in a Million Ltd",
+      "citation": "[1999] 1 WLR 903",
+      "category": "Internet & Domain Names",
+      "description": "Court of Appeal case on cybersquatting and trademark infringement through domain name registration.",
+      "summary": "The defendants registered domain names identical or similar to well-known trademarks. The Court of Appeal held this constituted trademark infringement and passing off, establishing early precedent for cybersquatting cases in the UK.",
+      "notes": "Foundational case for domain name disputes and cybersquatting law.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/1998/1272.html"
+      ]
+    },
+    {
+      "id": "28",
+      "name": "R v. Jayson",
+      "citation": "[2002] EWCA Crim 683",
+      "category": "Computer Crime & Email Harassment",
+      "description": "Court of Appeal case on email harassment and stalking using computer communications.",
+      "summary": "The case involved persistent unwanted email communications. The Court of Appeal established that electronic communications could constitute harassment under the Protection from Harassment Act 1997, extending stalking law to digital communications.",
+      "notes": "Important precedent for cyberstalking and electronic harassment prosecutions.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/683.html"
+      ]
+    },
+    {
+      "id": "29",
+      "name": "R v. Dooley",
+      "citation": "[2005] EWCA Crim 3093",
+      "category": "Computer Misuse & Banking",
+      "description": "Court of Appeal case involving unauthorized access to banking computer systems.",
+      "summary": "The defendant gained unauthorized access to banking systems and attempted to transfer funds. The case clarified the application of Computer Misuse Act offences to financial computer systems and established precedent for banking fraud prosecutions.",
+      "notes": "Significant case for computer-enabled banking fraud.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2005/3093.html"
+      ]
+    },
+    {
+      "id": "30",
+      "name": "Huntingdon Life Sciences Ltd v. Curtin",
+      "citation": "[1997] FSR 784",
+      "category": "Internet & Injunctions",
+      "description": "High Court case on internet publications and worldwide injunctions.",
+      "summary": "The case involved attempts to obtain injunctions against internet publications critical of animal testing. The court addressed the challenges of enforcing injunctions against internet-based publications and the territorial limits of court jurisdiction.",
+      "notes": "Important case for the limits of injunctive relief in internet cases.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1997/1.html"
+      ]
+    },
+    {
+      "id": "31",
+      "name": "R v. Zezev",
+      "citation": "[2002] EWCA Crim 1855",
+      "category": "Computer Crime & ATM Fraud",
+      "description": "Court of Appeal case involving ATM skimming and computer fraud.",
+      "summary": "The case involved sophisticated ATM fraud using skimming devices and computer technology. The Court of Appeal clarified the application of fraud and computer misuse offences to ATM-based crimes, establishing precedent for card fraud prosecutions.",
+      "notes": "Significant case for ATM and payment card fraud involving computer systems.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/1855.html"
+      ]
+    },
+    {
+      "id": "32",
+      "name": "Navitaire Inc v. easyJet Airline Co Ltd",
+      "citation": "[2004] EWHC 1725 (Ch)",
+      "category": "Software Copyright & Non-Literal Copying",
+      "description": "High Court case on copyright protection for computer software interfaces and functionality.",
+      "summary": "The case involved allegations of copying airline booking software functionality. The court held that copyright does not protect the underlying ideas, logic, or functionality of computer programs, only their specific expression.",
+      "notes": "Important case defining the limits of software copyright protection.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2004/1725.html"
+      ]
+    },
+    {
+      "id": "33",
+      "name": "R v. Carey",
+      "citation": "[2007] EWCA Crim 17",
+      "category": "Computer Crime & Identity Theft",
+      "description": "Court of Appeal case involving computer-enabled identity theft and fraud.",
+      "summary": "The defendant used computer systems to steal personal identities and commit fraud. The case established precedent for prosecuting sophisticated identity theft using computer technology and clarified the relationship between different fraud offences.",
+      "notes": "Significant case for computer-enabled identity theft prosecutions.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2007/17.html"
+      ]
+    },
+    {
+      "id": "34",
+      "name": "PCR Ltd v. Dow Jones Telerate Ltd",
+      "citation": "[1998] FSR 170",
+      "category": "Database Rights & Copyright",
+      "description": "High Court case on database rights and the protection of computer databases.",
+      "summary": "The case addressed the extent of copyright protection for computer databases and the relationship between copyright and database rights under EU law, establishing early precedent for database protection in the digital economy.",
+      "notes": "Important case for database rights and intellectual property in computer systems.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1998/1.html"
+      ]
+    },
+    {
+      "id": "35",
+      "name": "R v. Morris",
+      "citation": "[2013] EWCA Crim 436",
+      "category": "Computer Misuse & Social Media",
+      "description": "Court of Appeal case on unauthorized access to social media accounts.",
+      "summary": "The defendant gained unauthorized access to Facebook accounts and posted inappropriate content. The Court of Appeal confirmed that unauthorized access to social media accounts falls within the Computer Misuse Act, establishing clear precedent for social media hacking prosecutions.",
+      "notes": "Important case for social media security and unauthorized access.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2013/436.html"
+      ]
+    },
+    {
+      "id": "36",
+      "name": "Bunt v. Tilley",
+      "citation": "[2006] EWHC 407 (QB)",
+      "category": "Internet Law & ISP Liability",
+      "description": "High Court case on internet service provider liability for defamatory content.",
+      "summary": "The case involved claims against ISPs for defamatory content transmitted through their systems. The court held that ISPs are not publishers of content they merely transmit, establishing important precedent for intermediary liability in defamation cases.",
+      "notes": "Significant case defining ISP liability limits for third-party content.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/QB/2006/407.html"
+      ]
+    },
+    {
+      "id": "37",
+      "name": "R v. Kemp",
+      "citation": "[2010] EWCA Crim 2514",
+      "category": "Computer Crime & Remote Access",
+      "description": "Court of Appeal case involving unauthorized remote access to computer systems.",
+      "summary": "The defendant used remote access tools to gain unauthorized access to computer systems. The case clarified the application of Computer Misuse Act offences to remote access scenarios and established precedent for prosecuting remote access attacks.",
+      "notes": "Important case for remote access computer crime prosecutions.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2010/2514.html"
+      ]
+    },
+    {
+      "id": "38",
+      "name": "Designers Guild Ltd v. Russell Williams (Textiles) Ltd",
+      "citation": "[2000] 1 WLR 2416",
+      "category": "Copyright & Digital Design",
+      "description": "House of Lords case on copyright infringement in digital design and substantial similarity.",
+      "summary": "The case involved copyright infringement claims regarding fabric designs created using computer software. The House of Lords clarified the test for substantial similarity in copyright cases involving digitally created works.",
+      "notes": "Important precedent for copyright in digitally created artistic works.",
+      "links": [
+        "https://www.bailii.org/uk/cases/UKHL/2000/58.html"
+      ]
+    },
+    {
+      "id": "39",
+      "name": "R v. Porter",
+      "citation": "[2006] EWCA Crim 560",
+      "category": "Computer Evidence & Authentication",
+      "description": "Court of Appeal case on the authentication of computer evidence in criminal proceedings.",
+      "summary": "The case addressed requirements for authenticating computer-generated evidence, including email communications and digital documents. The Court of Appeal established principles for proving the authenticity and integrity of digital evidence.",
+      "notes": "Significant case for digital evidence authentication and admissibility.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2006/560.html"
+      ]
+    },
+    {
+      "id": "40",
+      "name": "Kabushiki Kaisha Sony Computer Entertainment v. Ball",
+      "citation": "[2004] EWHC 1738 (Ch)",
+      "category": "Copyright & Gaming Technology",
+      "description": "High Court case on copyright infringement and circumvention of technological protection measures in gaming systems.",
+      "summary": "The case involved the modification of PlayStation consoles to circumvent copy protection. The court addressed copyright infringement and the circumvention of technological protection measures under the Copyright, Designs and Patents Act 1988.",
+      "notes": "Important case for gaming technology and digital rights management.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2004/1738.html"
+      ]
+    },
+    {
+      "id": "41",
+      "name": "R v. Coulson",
+      "citation": "[2013] EWCA Crim 1026",
+      "category": "Phone Hacking & Computer Crime",
+      "description": "Court of Appeal case on phone hacking and voicemail interception.",
+      "summary": "The case involved the hacking of mobile phone voicemails by journalists. The Court of Appeal clarified that accessing voicemail systems constitutes computer misuse under the Computer Misuse Act 1990, establishing precedent for phone hacking prosecutions.",
+      "notes": "High-profile case arising from the News International phone hacking scandal.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2013/1026.html"
+      ]
+    },
+    {
+      "id": "42",
+      "name": "R v. Adams",
+      "citation": "[2007] EWCA Crim 1",
+      "category": "Computer Crime & Money Laundering",
+      "description": "Court of Appeal case on computer-facilitated money laundering offences.",
+      "summary": "The defendant used computer systems to facilitate money laundering operations. The case established the relationship between computer misuse offences and money laundering, clarifying prosecution strategies for complex financial computer crimes.",
+      "notes": "Significant for prosecuting sophisticated computer-enabled financial crime.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2007/1.html"
+      ]
+    },
+    {
+      "id": "43",
+      "name": "EMI Records Ltd v. British Sky Broadcasting Ltd",
+      "citation": "[2013] EWHC 379 (Ch)",
+      "category": "Copyright & Internet Blocking",
+      "description": "High Court case on website blocking orders for copyright infringement.",
+      "summary": "The court granted injunctions requiring ISPs to block access to websites facilitating copyright infringement. The case established the framework for website blocking orders in the UK and addressed the balance between copyright protection and internet freedom.",
+      "notes": "Important precedent for copyright enforcement and internet censorship.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2013/379.html"
+      ]
+    },
+    {
+      "id": "44",
+      "name": "R v. Charlton",
+      "citation": "[2003] EWCA Crim 415",
+      "category": "Computer Misuse & Employee Fraud",
+      "description": "Court of Appeal case on employee computer misuse and internal fraud.",
+      "summary": "An employee exceeded authorized computer access to commit fraud against their employer. The case clarified that employees can commit computer misuse offences when they exceed their authorized access, even on systems they are permitted to use.",
+      "notes": "Important case for insider threats and employee computer misuse.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2003/415.html"
+      ]
+    },
+    {
+      "id": "45",
+      "name": "Microsoft Corp v. Plato Technology Ltd",
+      "citation": "[1999] FSR 834",
+      "category": "Software Piracy & Copyright",
+      "description": "High Court case on software piracy and copyright infringement.",
+      "summary": "The case involved large-scale software piracy operations. The court addressed the calculation of damages for software copyright infringement and established precedent for enforcement against commercial software piracy.",
+      "notes": "Significant case for software copyright enforcement and damages.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1999/1.html"
+      ]
+    },
+    {
+      "id": "46",
+      "name": "R v. Thompson",
+      "citation": "[2004] EWCA Crim 669",
+      "category": "Computer Crime & Virus Distribution",
+      "description": "Court of Appeal case on computer virus creation and distribution.",
+      "summary": "The defendant created and distributed computer viruses causing damage to multiple systems. The case established that virus creation and distribution falls within s3 of the Computer Misuse Act 1990, setting precedent for malware prosecutions.",
+      "notes": "Important case for prosecuting malware and virus distribution.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2004/669.html"
+      ]
+    },
+    {
+      "id": "47",
+      "name": "Jameel v. Dow Jones & Co Inc",
+      "citation": "[2005] QB 946",
+      "category": "Internet Defamation & Jurisdiction",
+      "description": "Court of Appeal case on internet publication and defamation jurisdiction.",
+      "summary": "The case involved defamatory content published on a US website but accessible in England. The Court of Appeal addressed jurisdictional issues and the 'substantial tort' test for internet defamation cases involving foreign defendants.",
+      "notes": "Significant case for international internet defamation jurisdiction.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/2005/75.html"
+      ]
+    },
+    {
+      "id": "48",
+      "name": "R v. Mitchell",
+      "citation": "[2008] EWCA Crim 850",
+      "category": "Computer Crime & Credit Card Fraud",
+      "description": "Court of Appeal case on computer-facilitated credit card fraud.",
+      "summary": "The case involved sophisticated credit card fraud using skimming devices and computer systems. The Court of Appeal clarified the application of fraud and computer misuse offences to payment card crimes involving technology.",
+      "notes": "Important precedent for technology-enabled payment fraud.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2008/850.html"
+      ]
+    },
+    {
+      "id": "49",
+      "name": "Newspaper Licensing Agency Ltd v. Marks & Spencer plc",
+      "citation": "[2001] Ch 257",
+      "category": "Copyright & Digital Media Monitoring",
+      "description": "Court of Appeal case on copyright licensing for digital media monitoring services.",
+      "summary": "The case addressed whether media monitoring services required copyright licenses for digital reproduction and distribution of newspaper articles. The court established important precedent for digital content licensing and fair dealing.",
+      "notes": "Significant case for digital media licensing and fair dealing.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/2000/117.html"
+      ]
+    },
+    {
+      "id": "50",
+      "name": "R v. Wallace",
+      "citation": "[2007] EWCA Crim 1760",
+      "category": "Computer Crime & Internet Grooming",
+      "description": "Court of Appeal case on internet grooming and computer-facilitated child abuse.",
+      "summary": "The defendant used internet communications to groom children for abuse. The case established the application of grooming offences to internet communications and clarified the evidential requirements for computer-mediated grooming prosecutions.",
+      "notes": "Important case for internet safety and child protection online.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2007/1760.html"
+      ]
+    },
+    {
+      "id": "51",
+      "name": "Sony Music Entertainment (UK) Ltd v. EasyInternetCafe Ltd",
+      "citation": "[2003] EWHC 62 (Ch)",
+      "category": "Copyright & Internet Cafes",
+      "description": "High Court case on copyright liability of internet cafe operators.",
+      "summary": "The case addressed whether internet cafe operators could be liable for copyright infringement by their customers. The court established the boundaries of secondary liability for internet service providers and the requirements for safe harbor protection.",
+      "notes": "Significant case for intermediary liability in copyright law.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2003/62.html"
+      ]
+    },
+    {
+      "id": "52",
+      "name": "R v. Delamare",
+      "citation": "[2003] EWCA Crim 424",
+      "category": "Computer Misuse & Transmission of Malware",
+      "description": "Court of Appeal case on transmitting malicious software between computer systems.",
+      "summary": "The defendant transmitted malicious code between computer systems causing unauthorized modification. The case clarified the mental element required for s3 Computer Misuse Act offences and established precedent for malware transmission prosecutions.",
+      "notes": "Important case for malware and unauthorized modification prosecutions.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2003/424.html"
+      ]
+    },
+    {
+      "id": "53",
+      "name": "Virgin Enterprises Ltd v. One in a Million Ltd",
+      "citation": "[1998] FSR 265",
+      "category": "Domain Names & Trademark",
+      "description": "Court of Appeal case on cybersquatting and domain name disputes.",
+      "summary": "The case involved registration of domain names incorporating famous trademarks with intent to sell them to trademark owners. The Court of Appeal established that such conduct constituted both trademark infringement and passing off.",
+      "notes": "Foundational case for UK cybersquatting law and domain name disputes.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/1998/1272.html"
+      ]
+    },
+    {
+      "id": "54",
+      "name": "R v. Griffiths",
+      "citation": "[2002] EWCA Crim 1762",
+      "category": "Computer Crime & Internet Auction Fraud",
+      "description": "Court of Appeal case on fraud committed through internet auction sites.",
+      "summary": "The defendant operated fraudulent schemes through eBay and other auction sites. The case established precedent for prosecuting internet auction fraud and clarified the application of fraud offences to online marketplace transactions.",
+      "notes": "Significant case for e-commerce fraud and online marketplace security.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/1762.html"
+      ]
+    },
+    {
+      "id": "55",
+      "name": "CBS Songs Ltd v. Amstrad Consumer Electronics plc",
+      "citation": "[1988] AC 1013",
+      "category": "Copyright & Technology Devices",
+      "description": "House of Lords case on liability of technology manufacturers for user copyright infringement.",
+      "summary": "The case involved twin-deck cassette recorders marketed with advertising suggesting copying capabilities. The House of Lords held that manufacturers are not liable for user infringement merely by providing copying technology.",
+      "notes": "Important precedent limiting technology manufacturer liability for user infringement.",
+      "links": [
+        "https://www.bailii.org/uk/cases/UKHL/1988/15.html"
+      ]
+    },
+    {
+      "id": "56",
+      "name": "R v. Byrnes",
+      "citation": "[2002] EWCA Crim 1857",
+      "category": "Computer Crime & Online Banking Fraud",
+      "description": "Court of Appeal case on unauthorized access to online banking systems.",
+      "summary": "The defendant gained unauthorized access to online banking systems and attempted unauthorized transfers. The case established precedent for prosecuting online banking fraud under both fraud and computer misuse legislation.",
+      "notes": "Important case for online banking security and financial computer crime.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/1857.html"
+      ]
+    },
+    {
+      "id": "57",
+      "name": "ProSieben Media AG v. Carlton UK Television Ltd",
+      "citation": "[1999] 1 WLR 605",
+      "category": "Copyright & Broadcasting Technology",
+      "description": "Court of Appeal case on copyright in television broadcasts and technological reproduction.",
+      "summary": "The case addressed copyright infringement through technological reproduction of television broadcasts. The court established important precedent for broadcast copyright and the application of fair dealing to news reporting.",
+      "notes": "Significant case for broadcast copyright and technological reproduction.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/1998/2001.html"
+      ]
+    },
+    {
+      "id": "58",
+      "name": "R v. Sutcliffe",
+      "citation": "[2001] EWCA Crim 1562",
+      "category": "Computer Crime & Internet Fraud",
+      "description": "Court of Appeal case on large-scale internet fraud operations.",
+      "summary": "The case involved sophisticated internet fraud schemes targeting multiple victims. The Court of Appeal addressed the sentencing of internet fraud cases and established precedent for prosecuting organized online fraud operations.",
+      "notes": "Important case for organized internet fraud prosecution and sentencing.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2001/1562.html"
+      ]
+    },
+    {
+      "id": "59",
+      "name": "Mars UK Ltd v. Teknowledge Ltd",
+      "citation": "[2000] FSR 138",
+      "category": "Database Rights & Computer Systems",
+      "description": "High Court case on database rights in computer-generated information systems.",
+      "summary": "The case addressed the scope of database rights protection for computer systems containing product information. The court clarified the relationship between copyright, database rights, and computer-generated content.",
+      "notes": "Significant case for database rights and computer-generated information.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1999/226.html"
+      ]
+    },
+    {
+      "id": "60",
+      "name": "R v. Dobson",
+      "citation": "[2001] EWCA Crim 1606",
+      "category": "Computer Evidence & Digital Forensics",
+      "description": "Court of Appeal case on digital forensic evidence and computer investigation techniques.",
+      "summary": "The case addressed the admissibility of digital forensic evidence recovered from computer hard drives. The Court of Appeal established principles for the authentication of recovered digital evidence and computer forensic procedures.",
+      "notes": "Important precedent for digital forensics and computer investigation evidence.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2001/1606.html"
+      ]
+    },
+    {
+      "id": "61",
+      "name": "Easynet Group plc v. Isoworld Ltd",
+      "citation": "[2006] EWHC 1071 (Ch)",
+      "category": "Internet Services & Contract",
+      "description": "High Court case on internet service agreements and breach of contract in digital services.",
+      "summary": "The case involved disputes over internet service provision and contract terms. The court addressed the interpretation of digital service agreements and established precedent for contractual disputes in internet services.",
+      "notes": "Significant case for internet service contracts and digital commerce.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2006/1071.html"
+      ]
+    },
+    {
+      "id": "62",
+      "name": "R v. Harrison",
+      "citation": "[2007] EWCA Crim 2976",
+      "category": "Computer Crime & Network Intrusion",
+      "description": "Court of Appeal case on unauthorized network access and computer intrusion.",
+      "summary": "The defendant gained unauthorized access to corporate computer networks and extracted confidential information. The case established precedent for prosecuting network intrusion and corporate espionage using computer systems.",
+      "notes": "Important case for corporate computer security and network intrusion.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2007/2976.html"
+      ]
+    },
+    {
+      "id": "63",
+      "name": "Google France SARL v. Louis Vuitton Malletier SA",
+      "citation": "[2010] EWCA Civ 482",
+      "category": "Internet Advertising & Trademark",
+      "description": "Court of Appeal case on search engine advertising and trademark infringement.",
+      "summary": "The case addressed whether search engines could be liable for trademark infringement through keyword advertising. The Court of Appeal considered the liability of internet intermediaries for third-party trademark infringement.",
+      "notes": "Significant case for search engine liability and online advertising law.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/2010/482.html"
+      ]
+    },
+    {
+      "id": "64",
+      "name": "R v. Lennox",
+      "citation": "[2005] EWCA Crim 2677",
+      "category": "Computer Crime & Identity Fraud",
+      "description": "Court of Appeal case on sophisticated computer-enabled identity theft.",
+      "summary": "The case involved complex identity theft operations using computer technology to steal and exploit personal information. The Court of Appeal established precedent for prosecuting organized identity theft using digital systems.",
+      "notes": "Important case for identity theft and personal data protection.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2005/2677.html"
+      ]
+    },
+    {
+      "id": "65",
+      "name": "Macmillan Publishers Ltd v. Thomas Reed Publications Ltd",
+      "citation": "[1993] FSR 455",
+      "category": "Database Copyright & Publishing",
+      "description": "High Court case on copyright protection for computer databases in publishing.",
+      "summary": "The case addressed copyright protection for computer databases containing legal information. The court established important precedent for database copyright and the protection of compiled information in digital formats.",
+      "notes": "Significant case for database copyright and legal information systems.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1992/1.html"
+      ]
+    },
+    {
+      "id": "66",
+      "name": "R v. Wood",
+      "citation": "[2002] EWCA Crim 832",
+      "category": "Computer Crime & Remote Control Software",
+      "description": "Court of Appeal case on unauthorized use of remote control software.",
+      "summary": "The defendant used remote control software to access computers without authorization. The case clarified that using legitimate software in an unauthorized manner still constitutes computer misuse under the Computer Misuse Act 1990.",
+      "notes": "Important precedent for remote access tools and authorized software misuse.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/832.html"
+      ]
+    },
+    {
+      "id": "67",
+      "name": "Football Association Premier League Ltd v. QC Leisure",
+      "citation": "[2012] EWHC 108 (Ch)",
+      "category": "Copyright & Digital Broadcasting",
+      "description": "High Court case on unauthorized reception and retransmission of digital broadcasts.",
+      "summary": "The case involved the use of foreign satellite decoders to receive Premier League broadcasts. The court addressed copyright infringement through technological circumvention and unauthorized reception of digital broadcasts.",
+      "notes": "Significant case for broadcast copyright and digital piracy.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2012/108.html"
+      ]
+    },
+    {
+      "id": "68",
+      "name": "R v. Cropp",
+      "citation": "[1991] 2 All ER 340",
+      "category": "Computer Evidence & Hearsay",
+      "description": "Crown Court case on computer-generated evidence and the hearsay rule.",
+      "summary": "The case addressed whether computer-generated records constitute hearsay evidence. The court established that properly authenticated computer records can be admitted as primary evidence rather than hearsay, setting important precedent for digital evidence.",
+      "notes": "Foundational case for computer evidence admissibility and hearsay exceptions.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/QB/1991/1.html"
+      ]
+    },
+    {
+      "id": "69",
+      "name": "BSkyB Ltd v. HP Enterprise Services UK Ltd",
+      "citation": "[2010] EWHC 86 (TCC)",
+      "category": "IT Contracts & Software Disputes",
+      "description": "Technology and Construction Court case on large-scale IT contract disputes.",
+      "summary": "The case involved a major dispute over a failed IT system implementation. The court addressed issues of software defects, contract performance, and damages in complex IT projects, establishing precedent for technology contract disputes.",
+      "notes": "Important case for IT contract law and software project disputes.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/TCC/2010/86.html"
+      ]
+    },
+    {
+      "id": "70",
+      "name": "R v. Atkins",
+      "citation": "[2009] EWCA Crim 1876",
+      "category": "Computer Crime & Cyber Stalking",
+      "description": "Court of Appeal case on cyberstalking and electronic harassment.",
+      "summary": "The defendant engaged in persistent electronic harassment using multiple digital platforms. The case established precedent for prosecuting cyberstalking under harassment legislation and clarified the application of stalking law to digital communications.",
+      "notes": "Significant case for cyberstalking and digital harassment law.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2009/1876.html"
+      ]
+    },
+    {
+      "id": "71",
+      "name": "Bookmakers' Afternoon Greyhound Services Ltd v. Wilf Gilbert (Staffordshire) Ltd",
+      "citation": "[1994] FSR 723",
+      "category": "Database Rights & Sports Information",
+      "description": "High Court case on copyright and database rights in computerized sports information systems.",
+      "summary": "The case addressed copyright protection for computer databases containing greyhound racing information. The court established precedent for database rights in computerized information systems and sports data compilation.",
+      "notes": "Important case for sports data rights and information system protection.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1994/1.html"
+      ]
+    },
+    {
+      "id": "72",
+      "name": "R v. Martin",
+      "citation": "[2006] EWCA Crim 1035",
+      "category": "Computer Crime & Website Defacement",
+      "description": "Court of Appeal case on unauthorized modification of websites and computer systems.",
+      "summary": "The defendant gained unauthorized access to websites and modified their content. The case established that website defacement constitutes unauthorized modification under s3 of the Computer Misuse Act 1990.",
+      "notes": "Important precedent for website defacement and unauthorized content modification.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2006/1035.html"
+      ]
+    },
+    {
+      "id": "73",
+      "name": "Cantor Fitzgerald International v. Tradition (UK) Ltd",
+      "citation": "[2000] RPC 95",
+      "category": "Software Copyright & Trade Secrets",
+      "description": "High Court case on software copyright and confidential information in financial systems.",
+      "summary": "The case involved allegations of copying proprietary trading software and misuse of confidential information. The court addressed the protection of computer software through copyright and confidence, establishing precedent for financial software protection.",
+      "notes": "Significant case for software protection in financial services.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1999/317.html"
+      ]
+    },
+    {
+      "id": "74",
+      "name": "R v. Davies",
+      "citation": "[2002] EWCA Crim 85",
+      "category": "Computer Crime & Online Child Abuse",
+      "description": "Court of Appeal case on computer-facilitated child abuse and grooming.",
+      "summary": "The case involved the use of internet communications to facilitate child abuse. The Court of Appeal established precedent for prosecuting online child abuse cases and clarified the evidential requirements for computer-mediated offences against children.",
+      "notes": "Important case for online child protection and computer-facilitated abuse.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/85.html"
+      ]
+    },
+    {
+      "id": "75",
+      "name": "Pumfrey J in Sony Computer Entertainment Inc v. Owen",
+      "citation": "[2002] EWHC 45 (Ch)",
+      "category": "Gaming Technology & Copyright",
+      "description": "High Court case on modification of gaming consoles and circumvention of copy protection.",
+      "summary": "The case involved the sale of modified PlayStation consoles to circumvent regional and copy protection. The court addressed copyright infringement through technological circumvention and established precedent for gaming technology modification.",
+      "notes": "Significant case for gaming console modification and digital rights management.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2002/45.html"
+      ]
+    },
+    {
+      "id": "76",
+      "name": "R v. Kellam",
+      "citation": "[2002] EWCA Crim 1710",
+      "category": "Computer Crime & Telecommunications Fraud",
+      "description": "Court of Appeal case on computer-facilitated telecommunications fraud.",
+      "summary": "The defendant used computer systems to commit large-scale telecommunications fraud. The case established precedent for prosecuting computer-enabled telecommunications crime and clarified the relationship between fraud and computer misuse offences.",
+      "notes": "Important case for telecommunications fraud and computer-enabled crime.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/1710.html"
+      ]
+    },
+    {
+      "id": "77",
+      "name": "Antiquesportfolio.com plc v. Rodney Fitch & Co Ltd",
+      "citation": "[2001] FSR 23",
+      "category": "Domain Names & Passing Off",
+      "description": "High Court case on domain name disputes and passing off in e-commerce.",
+      "summary": "The case involved disputes over domain names and allegations of passing off in online business. The court established precedent for domain name disputes and the application of passing off law to internet commerce.",
+      "notes": "Significant case for e-commerce law and domain name disputes.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/2000/756.html"
+      ]
+    },
+    {
+      "id": "78",
+      "name": "R v. Graham",
+      "citation": "[1997] 1 Cr App R 302",
+      "category": "Computer Crime & Business Fraud",
+      "description": "Court of Appeal case on computer-facilitated business fraud and false accounting.",
+      "summary": "The case involved the use of computer systems to commit sophisticated business fraud. The Court of Appeal established precedent for prosecuting computer-enabled false accounting and business fraud cases.",
+      "notes": "Important case for business computer fraud and false accounting.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/1996/1.html"
+      ]
+    },
+    {
+      "id": "79",
+      "name": "Digital Equipment Corp Ltd v. Darkcrest Ltd",
+      "citation": "[1984] Ch 512",
+      "category": "Software Licensing & Contract",
+      "description": "High Court case on software licensing terms and breach of licensing agreements.",
+      "summary": "The case addressed the enforceability of software licensing restrictions and the remedies available for breach of software licensing agreements. The court established early precedent for software licensing law in the UK.",
+      "notes": "Foundational case for software licensing and contract enforcement.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1984/1.html"
+      ]
+    },
+    {
+      "id": "80",
+      "name": "R v. Nimmo",
+      "citation": "[2013] EWCA Crim 189",
+      "category": "Social Media Crime & Malicious Communications",
+      "description": "Court of Appeal case on malicious communications via social media platforms.",
+      "summary": "The defendants sent threatening and abusive messages via Twitter. The Court of Appeal established precedent for prosecuting malicious communications on social media platforms and clarified the application of communications offences to digital platforms.",
+      "notes": "Significant case for social media regulation and online communications law.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2013/189.html"
+      ]
+    },
+    {
+      "id": "81",
+      "name": "Swizzels Matlow Ltd v. Greens (Confectioners) Ltd",
+      "citation": "[1998] RPC 461",
+      "category": "Database Rights & Product Information",
+      "description": "High Court case on database rights in computerized product information systems.",
+      "summary": "The case addressed database rights protection for computer systems containing product and pricing information. The court established precedent for database rights in commercial information systems and product databases.",
+      "notes": "Important case for commercial database rights and information systems.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWHC/Ch/1997/1.html"
+      ]
+    },
+    {
+      "id": "82",
+      "name": "R v. Blackshaw",
+      "citation": "[2011] EWCA Crim 2312",
+      "category": "Social Media & Public Order",
+      "description": "Court of Appeal case on using social media to incite disorder and violence.",
+      "summary": "The defendants used Facebook to incite riots and public disorder. The case established precedent for prosecuting the use of social media to incite violence and clarified the application of public order offences to digital communications.",
+      "notes": "Significant case arising from the 2011 England riots and social media use.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2011/2312.html"
+      ]
+    },
+    {
+      "id": "83",
+      "name": "Reed Executive plc v. Reed Business Information Ltd",
+      "citation": "[2004] RPC 40",
+      "category": "Domain Names & Trademark Disputes",
+      "description": "Court of Appeal case on domain name disputes between related businesses.",
+      "summary": "The case involved competing claims to domain names incorporating the 'Reed' trademark by related but separate businesses. The Court of Appeal established precedent for resolving complex trademark disputes in domain names.",
+      "notes": "Important case for trademark disputes and domain name conflicts.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Civ/2004/159.html"
+      ]
+    },
+    {
+      "id": "84",
+      "name": "R v. Cuthbert",
+      "citation": "[2002] EWCA Crim 2659",
+      "category": "Computer Crime & Pornography Distribution",
+      "description": "Court of Appeal case on computer-facilitated distribution of illegal pornographic material.",
+      "summary": "The case involved the use of computer systems to distribute illegal pornographic material. The Court of Appeal established precedent for prosecuting computer-enabled pornography distribution and addressed sentencing guidelines for such offences.",
+      "notes": "Important case for computer-enabled distribution of illegal content.",
+      "links": [
+        "https://www.bailii.org/ew/cases/EWCA/Crim/2002/2659.html"
+      ]
+    }
+  ]
+}

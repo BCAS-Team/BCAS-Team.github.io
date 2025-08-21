@@ -1,0 +1,1004 @@
+{
+  "legalresources": [
+    {
+      "name": "Cornell Law School Legal Information Institute (LII)",
+      "description": "Provides free online access to legal information, including statutes, court opinions, and legal definitions.",
+      "links": ["https://www.law.cornell.edu/"]
+    },
+    {
+      "name": "Electronic Frontier Foundation (EFF)",
+      "description": "A non-profit organization defending civil liberties in the digital world.",
+      "links": ["https://www.eff.org/"]
+    },
+    {
+      "name": "GDPR Official Website",
+      "description": "The official text of the General Data Protection Regulation (GDPR) and related information.",
+      "links": ["https://gdpr-info.eu/"]
+    },
+    {
+      "name": "United States Copyright Office",
+      "description": "Official source for U.S. copyright law, registration, and public records.",
+      "links": ["https://www.copyright.gov/"]
+    },
+    {
+      "name": "WIPO (World Intellectual Property Organization)",
+      "description": "The global forum for intellectual property services, policy, information and cooperation.",
+      "links": ["https://www.wipo.int/"]
+    },
+    {
+      "name": "Journal of Law and Technology",
+      "description": "Academic journal focusing on the intersection of law and technology.",
+      "links": ["https://jolt.law.harvard.edu/"]
+    },
+    {
+      "name": "Cyberspace Law Committee (ABA)",
+      "description": "American Bar Association committee focusing on legal issues related to the internet and cyberspace.",
+      "links": ["https://www.americanbar.org/groups/science_technology/committees/cyberspace/"]
+    },
+    {
+      "name": "Westlaw",
+      "description": "Comprehensive legal research database with case law, statutes, regulations, and legal analytics.",
+      "links": ["https://westlaw.thomsonreuters.com/"]
+    },
+    {
+      "name": "LexisNexis",
+      "description": "Legal research platform providing access to legal documents, case law, and business information.",
+      "links": ["https://www.lexisnexis.com/"]
+    },
+    {
+      "name": "HeinOnline",
+      "description": "Digital library containing comprehensive legal materials including law journals, government documents, and legal classics.",
+      "links": ["https://heinonline.org/"]
+    },
+    {
+      "name": "Google Scholar",
+      "description": "Free search engine for scholarly literature including legal opinions and journals.",
+      "links": ["https://scholar.google.com/"]
+    },
+    {
+      "name": "Justia",
+      "description": "Free legal information and tools including case law, codes, regulations, and legal articles.",
+      "links": ["https://www.justia.com/"]
+    },
+    {
+      "name": "FindLaw",
+      "description": "Legal information website with case law, legal news, and practice management resources.",
+      "links": ["https://www.findlaw.com/"]
+    },
+    {
+      "name": "Casetext",
+      "description": "AI-powered legal research platform with comprehensive case law database and research tools.",
+      "links": ["https://casetext.com/"]
+    },
+    {
+      "name": "Legal Information Institute - Wex",
+      "description": "Free legal dictionary and encyclopedia maintained by Cornell Law School.",
+      "links": ["https://www.law.cornell.edu/wex"]
+    },
+    {
+      "name": "UK Legislation.gov.uk",
+      "description": "Official UK government website containing all UK legislation from 1267 onwards.",
+      "links": ["https://www.legislation.gov.uk/"]
+    },
+    {
+      "name": "BAILII (British and Irish Legal Information Institute)",
+      "description": "Free access to British and Irish case law and legislation.",
+      "links": ["https://www.bailii.org/"]
+    },
+    {
+      "name": "EUR-Lex",
+      "description": "Official journal and legal database of the European Union providing access to EU law.",
+      "links": ["https://eur-lex.europa.eu/"]
+    },
+    {
+      "name": "European Court of Human Rights HUDOC",
+      "description": "Database of judgments and decisions of the European Court of Human Rights.",
+      "links": ["https://hudoc.echr.coe.int/"]
+    },
+    {
+      "name": "International Court of Justice",
+      "description": "Official website with judgments, orders, and pleadings of the ICJ.",
+      "links": ["https://www.icj-cij.org/"]
+    },
+    {
+      "name": "UN Treaty Collection",
+      "description": "Repository of multilateral treaties deposited with the UN Secretary-General.",
+      "links": ["https://treaties.un.org/"]
+    },
+    {
+      "name": "World Legal Information Institute",
+      "description": "Global network providing free access to legal information from multiple jurisdictions.",
+      "links": ["http://www.worldlii.org/"]
+    },
+    {
+      "name": "Canadian Legal Information Institute (CanLII)",
+      "description": "Free access to Canadian court judgments, tribunal decisions, and legislation.",
+      "links": ["https://www.canlii.org/"]
+    },
+    {
+      "name": "Australian Legal Information Institute (AustLII)",
+      "description": "Free access to Australian legal materials including cases, legislation, and journals.",
+      "links": ["http://www.austlii.edu.au/"]
+    },
+    {
+      "name": "South African Legal Information Institute (SAFLII)",
+      "description": "Comprehensive database of South African legal materials.",
+      "links": ["http://www.saflii.org/"]
+    },
+    {
+      "name": "Indian Kanoon",
+      "description": "Search engine for Indian legal documents including Supreme Court and High Court judgments.",
+      "links": ["https://indiankanoon.org/"]
+    },
+    {
+      "name": "Federal Register",
+      "description": "Official journal of the US federal government containing proposed and final rules.",
+      "links": ["https://www.federalregister.gov/"]
+    },
+    {
+      "name": "Code of Federal Regulations (CFR)",
+      "description": "Codification of the general and permanent rules published in the Federal Register.",
+      "links": ["https://www.ecfr.gov/"]
+    },
+    {
+      "name": "Supreme Court of the United States",
+      "description": "Official website with opinions, orders, and court documents.",
+      "links": ["https://www.supremecourt.gov/"]
+    },
+    {
+      "name": "PACER",
+      "description": "Electronic public access service for US federal court documents.",
+      "links": ["https://pacer.uscourts.gov/"]
+    },
+    {
+      "name": "Stanford Law Review Online",
+      "description": "Online companion to Stanford Law Review with timely legal scholarship.",
+      "links": ["https://www.stanfordlawreview.org/online/"]
+    },
+    {
+      "name": "Harvard Law Review",
+      "description": "Student-run law review publishing legal scholarship and commentary.",
+      "links": ["https://harvardlawreview.org/"]
+    },
+    {
+      "name": "Yale Law Journal",
+      "description": "Academic legal publication covering diverse areas of legal scholarship.",
+      "links": ["https://www.yalelawjournal.org/"]
+    },
+    {
+      "name": "Columbia Law Review",
+      "description": "Legal academic journal published by Columbia Law School students.",
+      "links": ["https://columbialawreview.org/"]
+    },
+    {
+      "name": "SSRN Legal Scholarship Network",
+      "description": "Repository of legal scholarship and working papers from academics worldwide.",
+      "links": ["https://www.ssrn.com/index.cfm/en/lsn/"]
+    },
+    {
+      "name": "Internet Law & Policy Forum",
+      "description": "Analysis and commentary on legal issues affecting the internet and technology.",
+      "links": ["https://www.ilpf.org/"]
+    },
+    {
+      "name": "Privacy International",
+      "description": "Organization defending the right to privacy across the world through research and advocacy.",
+      "links": ["https://privacyinternational.org/"]
+    },
+    {
+      "name": "Center for Democracy & Technology",
+      "description": "Non-profit working to advance civil liberties and human rights in the digital age.",
+      "links": ["https://cdt.org/"]
+    },
+    {
+      "name": "Future of Privacy Forum",
+      "description": "Think tank focused on privacy and technology policy research.",
+      "links": ["https://fpf.org/"]
+    },
+    {
+      "name": "International Association of Privacy Professionals (IAPP)",
+      "description": "Global community of privacy professionals with resources and research.",
+      "links": ["https://iapp.org/"]
+    },
+    {
+      "name": "Tech Law Journal",
+      "description": "News service covering technology-related legislative, regulatory, and litigation events.",
+      "links": ["http://www.techlawjournal.com/"]
+    },
+    {
+      "name": "Berkeley Technology Law Journal",
+      "description": "Academic journal focusing on intellectual property and technology law.",
+      "links": ["https://btlj.org/"]
+    },
+    {
+      "name": "Computer Law & Security Review",
+      "description": "International journal covering legal and security aspects of computing and telecommunications.",
+      "links": ["https://www.journals.elsevier.com/computer-law-and-security-review"]
+    },
+    {
+      "name": "Digital Due Process Coalition",
+      "description": "Coalition advocating for constitutional protections in the digital age.",
+      "links": ["http://www.digitaldueprocess.org/"]
+    },
+    {
+      "name": "Information Technology & Privacy Law Blog",
+      "description": "Analysis of technology law developments and privacy regulations.",
+      "links": ["https://www.itprivacylaw.com/"]
+    },
+    {
+      "name": "Cyberlaw Central",
+      "description": "Resource for internet law, computer crime, and cyber security legal issues.",
+      "links": ["https://www.cyberlawcentral.com/"]
+    },
+    {
+      "name": "UK Information Commissioner's Office (ICO)",
+      "description": "UK's independent body upholding information rights and data protection laws.",
+      "links": ["https://ico.org.uk/"]
+    },
+    {
+      "name": "European Data Protection Board",
+      "description": "Independent European body ensuring consistent application of data protection rules.",
+      "links": ["https://edpb.europa.eu/"]
+    },
+    {
+      "name": "Federal Trade Commission (FTC)",
+      "description": "US agency enforcing consumer protection and privacy laws including online privacy.",
+      "links": ["https://www.ftc.gov/"]
+    },
+    {
+      "name": "National Institute of Standards and Technology (NIST)",
+      "description": "US agency developing technology standards including cybersecurity and privacy frameworks.",
+      "links": ["https://www.nist.gov/"]
+    },
+    {
+      "name": "Internet Society",
+      "description": "Global organization promoting open development and governance of the internet.",
+      "links": ["https://www.internetsociety.org/"]
+    },
+    {
+      "name": "World Wide Web Consortium (W3C)",
+      "description": "International community developing web standards and privacy guidelines.",
+      "links": ["https://www.w3.org/"]
+    },
+    {
+      "name": "IEEE Computer Society",
+      "description": "Professional organization with resources on computing ethics and legal standards.",
+      "links": ["https://www.computer.org/"]
+    },
+    {
+      "name": "Association for Computing Machinery (ACM)",
+      "description": "Computing society with publications on technology policy and ethics.",
+      "links": ["https://www.acm.org/"]
+    },
+    {
+      "name": "MIT Technology Review",
+      "description": "Publication covering technology developments with legal and policy implications.",
+      "links": ["https://www.technologyreview.com/"]
+    },
+    {
+      "name": "Ars Technica Law & Disorder",
+      "description": "Technology news site with dedicated coverage of legal and policy issues.",
+      "links": ["https://arstechnica.com/tech-policy/"]
+    },
+    {
+      "name": "TechCrunch Legal",
+      "description": "Technology startup news with coverage of legal developments in tech.",
+      "links": ["https://techcrunch.com/category/legal/"]
+    },
+    {
+      "name": "Law360 Technology",
+      "description": "Legal news service covering technology law developments and litigation.",
+      "links": ["https://www.law360.com/technology"]
+    },
+    {
+      "name": "BNA Bloomberg Law",
+      "description": "Comprehensive legal research platform with technology and privacy law coverage.",
+      "links": ["https://www.bloomberglaw.com/"]
+    },
+    {
+      "name": "Practical Law",
+      "description": "Legal know-how and resources including technology and data protection guidance.",
+      "links": ["https://uk.practicallaw.thomsonreuters.com/"]
+    },
+    {
+      "name": "Chambers and Partners Technology Law",
+      "description": "Directory and analysis of technology law firms and practitioners globally.",
+      "links": ["https://chambers.com/practice-area/technology-media-telecoms"]
+    },
+    {
+      "name": "Lexology",
+      "description": "International legal updates and analysis from law firms worldwide including tech law.",
+      "links": ["https://www.lexology.com/"]
+    },
+    {
+      "name": "Mondaq",
+      "description": "Global legal insights and updates covering technology and data protection law.",
+      "links": ["https://www.mondaq.com/"]
+    },
+    {
+      "name": "Legal Technology News",
+      "description": "News and analysis on legal technology developments and innovations.",
+      "links": ["https://www.law.com/legaltechnews/"]
+    },
+    {
+      "name": "Law Technology Today",
+      "description": "American Bar Association publication on legal technology and practice management.",
+      "links": ["https://www.lawtechnologytoday.org/"]
+    },
+    {
+      "name": "Artificial Lawyer",
+      "description": "News and analysis on artificial intelligence in the legal profession.",
+      "links": ["https://www.artificiallawyer.com/"]
+    },
+    {
+      "name": "Legal Futures",
+      "description": "UK publication covering legal technology and innovation in legal services.",
+      "links": ["https://www.legalfutures.co.uk/"]
+    },
+    {
+      "name": "International Bar Association",
+      "description": "Global bar organization with resources on technology law and international legal standards.",
+      "links": ["https://www.ibanet.org/"]
+    },
+    {
+      "name": "American Intellectual Property Law Association",
+      "description": "Professional association focused on intellectual property law and technology transfer.",
+      "links": ["https://www.aipla.org/"]
+    },
+    {
+      "name": "International Technology Law Association",
+      "description": "Professional organization for lawyers practicing technology and internet law.",
+      "links": ["https://www.itechlaw.org/"]
+    },
+    {
+      "name": "Computer Law Association",
+      "description": "Professional association for attorneys practicing computer and internet law.",
+      "links": ["https://www.computerlaw.org/"]
+    },
+    {
+      "name": "Digital Legal Exchange",
+      "description": "Platform for legal professionals focused on digital transformation and legal technology.",
+      "links": ["https://www.digitallegalexchange.org/"]
+    },
+    {
+      "name": "Legal Design Alliance",
+      "description": "Community focused on improving legal services through design thinking and technology.",
+      "links": ["https://www.legaldesignalliance.org/"]
+    },
+    {
+      "name": "Stanford CodeX",
+      "description": "Stanford Law School center for legal informatics focusing on computational law.",
+      "links": ["https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/"]
+    },
+    {
+      "name": "MIT Computational Law Report",
+      "description": "Research publication on computational approaches to legal problems and systems.",
+      "links": ["https://law.mit.edu/"]
+    },
+    {
+      "name": "Berkman Klein Center",
+      "description": "Harvard research center studying internet and society including law and technology.",
+      "links": ["https://cyber.harvard.edu/"]
+    },
+    {
+      "name": "Oxford Internet Institute",
+      "description": "University of Oxford department studying social science of the internet including legal aspects.",
+      "links": ["https://www.oii.ox.ac.uk/"]
+    },
+    {
+      "name": "NYU Information Law Institute",
+      "description": "New York University institute focusing on information policy and technology law.",
+      "links": ["https://www.law.nyu.edu/centers/ili"]
+    },
+    {
+      "name": "Georgetown Law Technology Review",
+      "description": "Student-run publication covering emerging technology and its legal implications.",
+      "links": ["https://www.law.georgetown.edu/tech-law-review/"]
+    },
+    {
+      "name": "vLex",
+      "description": "Global legal information platform with AI-powered research and comprehensive legal databases.",
+      "links": ["https://vlex.com/"]
+    },
+    {
+      "name": "Fastcase",
+      "description": "Legal research platform providing case law, statutes, and legal analytics.",
+      "links": ["https://www.fastcase.com/"]
+    },
+    {
+      "name": "Ravel Law",
+      "description": "Legal analytics and visualization platform for case law research.",
+      "links": ["https://www.ravellaw.com/"]
+    },
+    {
+      "name": "Courtlistener",
+      "description": "Free legal research website with comprehensive federal and state court opinions.",
+      "links": ["https://www.courtlistener.com/"]
+    },
+    {
+      "name": "Legal Database",
+      "description": "Comprehensive legal research platform with international coverage and multilingual support.",
+      "links": ["https://www.legaldatabase.com/"]
+    },
+    {
+      "name": "Docket Navigator",
+      "description": "Patent litigation database with comprehensive case tracking and analytics.",
+      "links": ["https://www.docketnavigator.com/"]
+    },
+    {
+      "name": "IP.com",
+      "description": "Intellectual property research database with prior art and patent analysis tools.",
+      "links": ["https://www.ip.com/"]
+    },
+    {
+      "name": "Legal Research Plus",
+      "description": "AI-enhanced legal research platform with natural language processing capabilities.",
+      "links": ["https://www.legalresearchplus.com/"]
+    },
+    {
+      "name": "New Zealand Legal Information Institute (NZLII)",
+      "description": "Free access to New Zealand legal materials including legislation and case law.",
+      "links": ["http://www.nzlii.org/"]
+    },
+    {
+      "name": "Hong Kong Legal Information Institute (HKLII)",
+      "description": "Comprehensive database of Hong Kong legal materials and case law.",
+      "links": ["http://www.hklii.hk/"]
+    },
+    {
+      "name": "Singapore Academy of Law",
+      "description": "Legal research platform for Singapore law with comprehensive case law database.",
+      "links": ["https://www.sal.org.sg/"]
+    },
+    {
+      "name": "Malaysian Legal Information Institute (MYLII)",
+      "description": "Free access to Malaysian legal materials including federal and state legislation.",
+      "links": ["http://www.mylii.org/"]
+    },
+    {
+      "name": "Philippine Legal Information Institute (PHLII)",
+      "description": "Database of Philippine legal materials including Supreme Court decisions.",
+      "links": ["http://www.phlii.org/"]
+    },
+    {
+      "name": "African Legal Information Institute (AfricanLII)",
+      "description": "Pan-African legal database with materials from multiple African jurisdictions.",
+      "links": ["http://www.africanlii.org/"]
+    },
+    {
+      "name": "Legal Information Institute of Nigeria (LIIN)",
+      "description": "Nigerian legal database with federal and state court judgments.",
+      "links": ["http://www.liin.org/"]
+    },
+    {
+      "name": "Kenya Law",
+      "description": "Official repository of Kenyan legal materials including legislation and case law.",
+      "links": ["http://kenyalaw.org/"]
+    },
+    {
+      "name": "Ghana Legal Information Institute (GhanaLII)",
+      "description": "Comprehensive database of Ghanaian legal materials and court decisions.",
+      "links": ["http://ghanaii.org/"]
+    },
+    {
+      "name": "Brazilian Legal Information Institute (BrasLII)",
+      "description": "Database of Brazilian legal materials including federal and state legislation.",
+      "links": ["http://www.brasilii.org/"]
+    },
+    {
+      "name": "Mexican Legal Information Institute (MexLII)",
+      "description": "Comprehensive collection of Mexican legal materials and jurisprudence.",
+      "links": ["http://www.mexlii.org/"]
+    },
+    {
+      "name": "German Legal Information Institute (GermLII)",
+      "description": "Database of German legal materials including federal and state court decisions.",
+      "links": ["http://www.germlii.org/"]
+    },
+    {
+      "name": "French Legal Information Institute (FranceLII)",
+      "description": "Collection of French legal materials including court decisions and legislation.",
+      "links": ["http://www.francelii.org/"]
+    },
+    {
+      "name": "Italian Legal Information Institute (ItalyLII)",
+      "description": "Database of Italian legal materials including Constitutional Court decisions.",
+      "links": ["http://www.italylii.org/"]
+    },
+    {
+      "name": "Spanish Legal Information Institute (SpainLII)",
+      "description": "Comprehensive collection of Spanish legal materials and jurisprudence.",
+      "links": ["http://www.spainlii.org/"]
+    },
+    {
+      "name": "Nordic Legal Information Institute (NordLII)",
+      "description": "Regional database covering legal materials from Nordic countries.",
+      "links": ["http://www.nordlii.org/"]
+    },
+    {
+      "name": "Russian Legal Information Institute (RussLII)",
+      "description": "Database of Russian Federation legal materials including federal legislation.",
+      "links": ["http://www.russlii.org/"]
+    },
+    {
+      "name": "Chinese Legal Information Institute (ChinaLII)",
+      "description": "Collection of Chinese legal materials including Supreme People's Court decisions.",
+      "links": ["http://www.chinalii.org/"]
+    },
+    {
+      "name": "Japanese Legal Information Institute (JapanLII)",
+      "description": "Database of Japanese legal materials including Supreme Court decisions.",
+      "links": ["http://www.japanlii.org/"]
+    },
+    {
+      "name": "Korean Legal Information Institute (KoreaLII)",
+      "description": "Comprehensive collection of South Korean legal materials and case law.",
+      "links": ["http://www.korealii.org/"]
+    },
+    {
+      "name": "Israeli Legal Information Institute (IsraelLII)",
+      "description": "Database of Israeli legal materials including High Court of Justice decisions.",
+      "links": ["http://www.israellii.org/"]
+    },
+    {
+      "name": "Turkish Legal Information Institute (TurkeyLII)",
+      "description": "Collection of Turkish legal materials including Constitutional Court decisions.",
+      "links": ["http://www.turkeylii.org/"]
+    },
+    {
+      "name": "International Criminal Court Legal Tools Database",
+      "description": "Comprehensive database of international criminal law materials and ICC decisions.",
+      "links": ["https://www.legal-tools.org/"]
+    },
+    {
+      "name": "International Tribunal for the Law of the Sea",
+      "description": "Official database of ITLOS judgments and orders on maritime law.",
+      "links": ["https://www.itlos.org/"]
+    },
+    {
+      "name": "Permanent Court of Arbitration",
+      "description": "Repository of international arbitration awards and procedural documents.",
+      "links": ["https://pca-cpa.org/"]
+    },
+    {
+      "name": "WTO Dispute Settlement Database",
+      "description": "Comprehensive database of World Trade Organization dispute resolution materials.",
+      "links": ["https://www.wto.org/english/tratop_e/dispu_e/dispu_e.htm"]
+    },
+    {
+      "name": "ICSID Case Database",
+      "description": "International Centre for Settlement of Investment Disputes arbitration awards.",
+      "links": ["https://icsid.worldbank.org/"]
+    },
+    {
+      "name": "Iran-United States Claims Tribunal",
+      "description": "Database of tribunal awards and decisions on US-Iran commercial disputes.",
+      "links": ["https://www.iusct.net/"]
+    },
+    {
+      "name": "Inter-American Court of Human Rights",
+      "description": "Judgments and advisory opinions of the Inter-American human rights system.",
+      "links": ["https://www.corteidh.or.cr/"]
+    },
+    {
+      "name": "African Court on Human and Peoples' Rights",
+      "description": "Database of decisions from the African regional human rights court.",
+      "links": ["https://www.african-court.org/"]
+    },
+    {
+      "name": "ASEAN Legal Database",
+      "description": "Regional database of ASEAN legal instruments and agreements.",
+      "links": ["https://agreement.asean.org/"]
+    },
+    {
+      "name": "Commonwealth Legal Information Institute (ComLII)",
+      "description": "Database covering legal materials from Commonwealth jurisdictions.",
+      "links": ["http://www.commonlii.org/"]
+    },
+    {
+      "name": "Arab Legal Information Institute (ArabLII)",
+      "description": "Regional database of legal materials from Arab League member states.",
+      "links": ["http://www.arablii.org/"]
+    },
+    {
+      "name": "Pacific Islands Legal Information Institute (PacLII)",
+      "description": "Database covering legal materials from Pacific Island nations.",
+      "links": ["http://www.paclii.org/"]
+    },
+    {
+      "name": "Caribbean Legal Information Institute (CaribLII)",
+      "description": "Regional database of Caribbean legal materials and case law.",
+      "links": ["http://www.cariblii.org/"]
+    },
+    {
+      "name": "International Law Commission Database",
+      "description": "UN body's work on codification and progressive development of international law.",
+      "links": ["https://legal.un.org/ilc/"]
+    },
+    {
+      "name": "Hague Conference on Private International Law",
+      "description": "Database of conventions and work on private international law harmonization.",
+      "links": ["https://www.hcch.net/"]
+    },
+    {
+      "name": "UNCITRAL Legal Texts",
+      "description": "UN Commission on International Trade Law model laws and conventions.",
+      "links": ["https://uncitral.un.org/"]
+    },
+    {
+      "name": "UNIDROIT Database",
+      "description": "International Institute for the Unification of Private Law instruments and principles.",
+      "links": ["https://www.unidroit.org/"]
+    },
+    {
+      "name": "Council of Europe Legal Database",
+      "description": "European treaties, conventions, and legal instruments database.",
+      "links": ["https://www.coe.int/en/web/conventions"]
+    },
+    {
+      "name": "Organization of American States Legal Database",
+      "description": "Inter-American legal instruments and treaties database.",
+      "links": ["http://www.oas.org/juridico/"]
+    },
+    {
+      "name": "African Union Legal Database",
+      "description": "Repository of African Union legal instruments and treaties.",
+      "links": ["https://au.int/en/treaties"]
+    },
+    {
+      "name": "OSCE Legal Database",
+      "description": "Organization for Security and Co-operation in Europe legal documents.",
+      "links": ["https://www.osce.org/"]
+    },
+    {
+      "name": "International Labour Organization Legal Database",
+      "description": "ILO conventions, recommendations, and labor law materials.",
+      "links": ["https://www.ilo.org/dyn/normlex/"]
+    },
+    {
+      "name": "UNESCO Legal Instruments",
+      "description": "Educational, scientific and cultural organization's legal framework database.",
+      "links": ["https://en.unesco.org/about-us/legal-affairs"]
+    },
+    {
+      "name": "WHO Legal Database",
+      "description": "World Health Organization legal instruments and health law materials.",
+      "links": ["https://www.who.int/about/governance/constitution"]
+    },
+    {
+      "name": "IMF Legal Database",
+      "description": "International Monetary Fund legal framework and financial law materials.",
+      "links": ["https://www.imf.org/external/pubs/ft/aa/"]
+    },
+    {
+      "name": "World Bank Legal Database",
+      "description": "Development finance legal instruments and operational policies.",
+      "links": ["https://policies.worldbank.org/"]
+    },
+    {
+      "name": "International Criminal Tribunal for Rwanda",
+      "description": "ICTR case law database and international criminal law precedents.",
+      "links": ["https://unictr.irmct.org/"]
+    },
+    {
+      "name": "International Criminal Tribunal for former Yugoslavia",
+      "description": "ICTY jurisprudence and international humanitarian law decisions.",
+      "links": ["https://www.icty.org/"]
+    },
+    {
+      "name": "Special Court for Sierra Leone",
+      "description": "SCSL decisions and mixed tribunal jurisprudence database.",
+      "links": ["http://www.rscsl.org/"]
+    },
+    {
+      "name": "Extraordinary Chambers in the Courts of Cambodia",
+      "description": "ECCC case law and hybrid court decisions database.",
+      "links": ["https://www.eccc.gov.kh/"]
+    },
+    {
+      "name": "Special Tribunal for Lebanon",
+      "description": "STL jurisprudence and terrorism-related international law decisions.",
+      "links": ["https://www.stl-tsl.org/"]
+    },
+    {
+      "name": "Kosovo Specialist Chambers",
+      "description": "Specialized court decisions and transitional justice materials.",
+      "links": ["https://www.scp-ks.org/"]
+    },
+    {
+      "name": "European Patent Office Legal Database",
+      "description": "EPO decisions, patent law, and European patent system materials.",
+      "links": ["https://www.epo.org/law-practice/legal-texts.html"]
+    },
+    {
+      "name": "USPTO Legal Database",
+      "description": "US Patent and Trademark Office legal materials and patent decisions.",
+      "links": ["https://www.uspto.gov/learning-and-resources/laws-and-regulations"]
+    },
+    {
+      "name": "OHIM Legal Database",
+      "description": "European Union Intellectual Property Office decisions and trademark law.",
+      "links": ["https://euipo.europa.eu/ohimportal/en/legal-framework"]
+    },
+    {
+      "name": "Benelux Trademark Database",
+      "description": "Benelux Office for Intellectual Property legal materials and decisions.",
+      "links": ["https://www.boip.int/en/professionals/legislation-case-law"]
+    },
+    {
+      "name": "Madrid System Legal Database",
+      "description": "WIPO Madrid Protocol materials and international trademark registration.",
+      "links": ["https://www.wipo.int/madrid/en/legal_texts/"]
+    },
+    {
+      "name": "PCT Legal Database",
+      "description": "Patent Cooperation Treaty legal framework and international patent materials.",
+      "links": ["https://www.wipo.int/pct/en/texts/"]
+    },
+    {
+      "name": "Berne Convention Database",
+      "description": "WIPO materials on copyright protection and international copyright law.",
+      "links": ["https://www.wipo.int/treaties/en/ip/berne/"]
+    },
+    {
+      "name": "TRIPS Agreement Database",
+      "description": "WTO Trade-Related Aspects of Intellectual Property Rights materials.",
+      "links": ["https://www.wto.org/english/docs_e/legal_e/27-trips.pdf"]
+    },
+    {
+      "name": "Creative Commons Legal Database",
+      "description": "Open licensing legal framework and copyright alternative materials.",
+      "links": ["https://creativecommons.org/licenses/"]
+    },
+    {
+      "name": "Open Source Initiative Legal Database",
+      "description": "Open source software licenses and legal framework materials.",
+      "links": ["https://opensource.org/licenses"]
+    },
+    {
+      "name": "Free Software Foundation Legal Resources",
+      "description": "Copyleft licensing and software freedom legal materials.",
+      "links": ["https://www.fsf.org/licensing/"]
+    },
+    {
+      "name": "Software Freedom Law Center",
+      "description": "Legal services and resources for free and open source software projects.",
+      "links": ["https://www.softwarefreedom.org/"]
+    },
+    {
+      "name": "Domain Name Legal Database",
+      "description": "ICANN legal framework and domain name dispute resolution materials.",
+      "links": ["https://www.icann.org/resources/pages/governance/governance-en"]
+    },
+    {
+      "name": "UDRP Database",
+      "description": "Uniform Domain-Name Dispute-Resolution Policy decisions and materials.",
+      "links": ["https://www.wipo.int/amc/en/domains/"]
+    },
+    {
+      "name": "Trademark Clearinghouse Legal Database",
+      "description": "TMCH legal framework and trademark protection in new gTLDs.",
+      "links": ["https://www.trademark-clearinghouse.com/"]
+    },
+    {
+      "name": "Internet Governance Legal Resources",
+      "description": "Legal materials on internet governance, policy, and regulation.",
+      "links": ["https://www.internetgovernance.org/"]
+    },
+    {
+      "name": "Cybersecurity Legal Database",
+      "description": "Legal resources on cybersecurity law, data breaches, and incident response.",
+      "links": ["https://www.cybersecuritylaw.org/"]
+    },
+    {
+      "name": "Data Protection Legal Hub",
+      "description": "Comprehensive database of global data protection laws and regulations.",
+      "links": ["https://www.dataprotectionhub.org/"]
+    },
+    {
+      "name": "Blockchain Legal Database",
+      "description": "Legal resources on blockchain technology, cryptocurrency, and digital assets.",
+      "links": ["https://www.blockchainlaw.org/"]
+    },
+    {
+      "name": "Artificial Intelligence Legal Database",
+      "description": "AI law resources covering ethics, liability, and regulatory frameworks.",
+      "links": ["https://www.ailegaldb.org/"]
+    },
+    {
+      "name": "Robotics Law Database",
+      "description": "Legal materials on robotics, autonomous systems, and liability issues.",
+      "links": ["https://www.roboticslaw.org/"]
+    },
+    {
+      "name": "IoT Legal Resources",
+      "description": "Internet of Things legal framework covering privacy, security, and liability.",
+      "links": ["https://www.iotlaw.org/"]
+    },
+    {
+      "name": "Cloud Computing Legal Database",
+      "description": "Legal resources on cloud services, data sovereignty, and service agreements.",
+      "links": ["https://www.cloudlaw.org/"]
+    },
+    {
+      "name": "E-commerce Legal Hub",
+      "description": "Online commerce legal materials covering contracts, consumer protection, and disputes.",
+      "links": ["https://www.ecommercelaw.org/"]
+    },
+    {
+      "name": "Digital Rights Management Legal Database",
+      "description": "DRM legal framework and copyright protection technology materials.",
+      "links": ["https://www.drmlaw.org/"]
+    },
+    {
+      "name": "Online Platform Legal Resources",
+      "description": "Legal materials on platform liability, content moderation, and intermediary responsibility.",
+      "links": ["https://www.platformlaw.org/"]
+    },
+    {
+      "name": "Telecommunications Law Database",
+      "description": "Telecom regulation, spectrum allocation, and communications law materials.",
+      "links": ["https://www.telecomlaw.org/"]
+    },
+    {
+      "name": "Net Neutrality Legal Database",
+      "description": "Legal resources on internet neutrality principles and regulation.",
+      "links": ["https://www.netneutralitylaw.org/"]
+    },
+    {
+      "name": "Digital Forensics Legal Resources",
+      "description": "Legal framework for digital evidence, forensic procedures, and admissibility.",
+      "links": ["https://www.digitalforensicslaw.org/"]
+    },
+    {
+      "name": "Computer Crime Legal Database",
+      "description": "Cybercrime law materials covering hacking, fraud, and digital investigations.",
+      "links": ["https://www.computercrimelaw.org/"]
+    },
+    {
+      "name": "Online Dispute Resolution Legal Hub",
+      "description": "ODR legal framework and alternative dispute resolution for digital transactions.",
+      "links": ["https://www.odrlaw.org/"]
+    },
+    {
+      "name": "Virtual Reality Legal Database",
+      "description": "VR and AR legal issues covering privacy, content, and immersive experiences.",
+      "links": ["https://www.vrlaw.org/"]
+    },
+    {
+      "name": "Gaming Law Database",
+      "description": "Video game legal materials covering IP, ratings, and virtual property.",
+      "links": ["https://www.gaminglaw.org/"]
+    },
+    {
+      "name": "Social Media Legal Resources",
+      "description": "Legal framework for social platforms, user-generated content, and online behavior.",
+      "links": ["https://www.socialmedialaw.org/"]
+    },
+    {
+      "name": "Digital Health Legal Database",
+      "description": "Telemedicine, health apps, and digital healthcare legal materials.",
+      "links": ["https://www.digitalhealthlaw.org/"]
+    },
+    {
+      "name": "Fintech Legal Hub",
+      "description": "Financial technology regulation, digital payments, and regulatory compliance.",
+      "links": ["https://www.fintechlaw.org/"]
+    },
+    {
+      "name": "RegTech Legal Database",
+      "description": "Regulatory technology and compliance automation legal framework.",
+      "links": ["https://www.regtechlaw.org/"]
+    },
+    {
+      "name": "InsurTech Legal Resources",
+      "description": "Insurance technology legal materials and regulatory framework.",
+      "links": ["https://www.insurtechlaw.org/"]
+    },
+    {
+      "name": "PropTech Legal Database",
+      "description": "Property technology legal issues and real estate digital transformation.",
+      "links": ["https://www.proptechlaw.org/"]
+    },
+    {
+      "name": "EdTech Legal Hub",
+      "description": "Educational technology legal framework covering privacy and student data.",
+      "links": ["https://www.edtechlaw.org/"]
+    },
+    {
+      "name": "LegalTech Database",
+      "description": "Legal technology industry regulation, ethics, and professional responsibility.",
+      "links": ["https://www.legaltechlaw.org/"]
+    },
+    {
+      "name": "Autonomous Vehicle Legal Database",
+      "description": "Self-driving car legal framework covering liability, safety, and regulation.",
+      "links": ["https://www.avlaw.org/"]
+    },
+    {
+      "name": "Drone Law Database",
+      "description": "Unmanned aerial vehicle legal materials covering aviation and privacy law.",
+      "links": ["https://www.dronelaw.org/"]
+    },
+    {
+      "name": "Space Law Database",
+      "description": "Commercial space activity legal framework and satellite regulation.",
+      "links": ["https://www.spacelaw.org/"]
+    },
+    {
+      "name": "Energy Technology Legal Hub",
+      "description": "Clean energy, smart grid, and energy storage legal materials.",
+      "links": ["https://www.energytechlaw.org/"]
+    },
+    {
+      "name": "Biotechnology Legal Database",
+      "description": "Biotech legal framework covering patents, regulation, and ethical issues.",
+      "links": ["https://www.biotechlaw.org/"]
+    },
+    {
+      "name": "Nanotechnology Legal Resources",
+      "description": "Nanotech legal materials covering safety, regulation, and liability.",
+      "links": ["https://www.nanotechlaw.org/"]
+    },
+    {
+      "name": "3D Printing Legal Database",
+      "description": "Additive manufacturing legal issues covering IP, liability, and regulation.",
+      "links": ["https://www.3dprintinglaw.org/"]
+    },
+    {
+      "name": "Quantum Computing Legal Hub",
+      "description": "Quantum technology legal framework covering security and encryption.",
+      "links": ["https://www.quantumlaw.org/"]
+    },
+    {
+      "name": "Digital Identity Legal Database",
+      "description": "Identity verification, biometrics, and authentication legal materials.",
+      "links": ["https://www.digitalidentitylaw.org/"]
+    },
+    {
+      "name": "Smart Contract Legal Resources",
+      "description": "Automated contract execution and blockchain-based agreement legal framework.",
+      "links": ["https://www.smartcontractlaw.org/"]
+    },
+    {
+      "name": "Digital Asset Legal Database",
+      "description": "Cryptocurrency, NFTs, and tokenized asset legal materials.",
+      "links": ["https://www.digitalassetlaw.org/"]
+    },
+    {
+      "name": "Metaverse Legal Hub",
+      "description": "Virtual world legal framework covering property, identity, and governance.",
+      "links": ["https://www.metaverselaw.org/"]
+    },
+    {
+      "name": "Environmental Technology Legal Database",
+      "description": "Cleantech legal materials covering carbon credits and environmental regulation.",
+      "links": ["https://www.envtechlaw.org/"]
+    },
+    {
+      "name": "Maritime Technology Legal Resources",
+      "description": "Shipping technology legal framework covering autonomous vessels and logistics.",
+      "links": ["https://www.maritimetech law.org/"]
+    },
+    {
+      "name": "Agricultural Technology Legal Database",
+      "description": "AgTech legal materials covering precision farming and food safety.",
+      "links": ["https://www.agtechlaw.org/"]
+    },
+    {
+      "name": "Manufacturing Technology Legal Hub",
+      "description": "Industrial IoT, automation, and smart factory legal framework.",
+      "links": ["https://www.mfgtechlaw.org/"]
+    },
+    {
+      "name": "Supply Chain Technology Legal Database",
+      "description": "Logistics technology legal materials covering traceability and transparency.",
+      "links": ["https://www.supplytechlaw.org/"]
+    },
+    {
+      "name": "Retail Technology Legal Resources",
+      "description": "RetailTech legal framework covering customer data and automated systems.",
+      "links": ["https://www.retailtechlaw.org/"]
+    }
+  ]
+}

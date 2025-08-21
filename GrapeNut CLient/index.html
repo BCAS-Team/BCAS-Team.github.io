@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+     <link rel="icon" href="../../../BCAS.svg">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>GrapeNut CLient</title>
+  </head>
+  <body>
+    <div id="login" class="overlay">
+      <input
+        class="login_field"
+        id="username_input"
+        type="text"
+        placeholder="Username"
+      />
+      <input
+        class="login_field"
+        id="password_input"
+        type="password"
+        placeholder="Password"
+      />
+      <button class="login_field" id="login_btn">Log In</button>
+    </div>
+
+    <div id="hw_panel" class="overlay">
+      <h2>Homeworks</h2>
+      <div id="hw_container" class="overflow_container"></div>
+      <button id="do_hw">Do the Homework</button>
+    </div>
+
+    <div id="log_panel" class="overlay" style="right: 1em">
+      <h2>Logs</h2>
+      <div id="hw_bar" class="progress_bar"></div>
+      <div id="log_container" class="overflow_container"></div>
+    </div>
+
+    <dialog id="settings">
+      <p>[Esc] to exit</p>
+      <p>Select the time you want your homework to appear to be done in:</p>
+      <input type="range" min="-3" max="18" value="2" id="speed_slider" step="0.1" />
+      <p>Current speed: <span id="speed_display"></span></p>
+    </dialog>
+
+    <button id="settings_button" class="settings_button">Settings</button>
+
+    <script src="index.js"></script>
+  </body>
+</html>

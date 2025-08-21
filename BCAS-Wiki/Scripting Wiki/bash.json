@@ -1,0 +1,494 @@
+{
+  "guide": {
+    "resources": [
+      {
+        "name": "File Navigation",
+        "category": "File System",
+        "description": "Navigate and explore the file system",
+        "usage": "cd [directory]",
+        "examples": ["cd /home/user", "cd ..", "cd ~", "pwd", "ls -la", "find . -name '*.txt'"],
+        "notes": "Use tab completion for faster navigation. ~ represents home directory"
+      },
+      {
+        "name": "File Operations",
+        "category": "File Management",
+        "description": "Create, copy, move, and delete files",
+        "usage": "cp source destination",
+        "examples": ["cp file.txt backup.txt", "mv oldname.txt newname.txt", "rm unwanted.txt", "mkdir new_directory", "rmdir empty_directory", "touch newfile.txt"],
+        "notes": "Use -r flag for recursive operations on directories"
+      },
+      {
+        "name": "Text Processing",
+        "category": "Text Manipulation",
+        "description": "Process and manipulate text files",
+        "usage": "cat filename",
+        "examples": ["cat file.txt", "head -n 10 file.txt", "tail -f /var/log/syslog", "grep 'pattern' file.txt", "sed 's/old/new/g' file.txt", "awk '{print $1}' data.txt"],
+        "notes": "Use pipes (|) to chain commands together"
+      },
+      {
+        "name": "Process Management",
+        "category": "System",
+        "description": "Manage running processes",
+        "usage": "ps aux",
+        "examples": ["ps aux", "ps aux | grep firefox", "kill 1234", "killall firefox", "jobs", "bg %1", "fg %1", "nohup command &"],
+        "notes": "Use kill -9 for force termination. & runs commands in background"
+      },
+      {
+        "name": "Permissions",
+        "category": "Security",
+        "description": "Manage file and directory permissions",
+        "usage": "chmod [permissions] [file]",
+        "examples": ["chmod 755 script.sh", "chmod +x script.sh", "chmod -w file.txt", "chown user:group file.txt", "sudo chown root:root /etc/config", "umask 022"],
+        "notes": "755 = rwxr-xr-x, 644 = rw-r--r--. Use sudo for system files"
+      },
+      {
+        "name": "Archives and Compression",
+        "category": "File Management",
+        "description": "Create and extract archives",
+        "usage": "tar -czf archive.tar.gz files",
+        "examples": ["tar -czf backup.tar.gz /home/user/documents", "tar -xzf archive.tar.gz", "zip -r archive.zip folder/", "unzip archive.zip", "gzip file.txt", "gunzip file.txt.gz"],
+        "notes": "c=create, x=extract, z=gzip, f=file, v=verbose"
+      },
+      {
+        "name": "Network Operations",
+        "category": "Network",
+        "description": "Network diagnostic and transfer tools",
+        "usage": "ping hostname",
+        "examples": ["ping google.com", "wget https://example.com/file.zip", "curl -O https://example.com/api/data", "ssh user@hostname", "scp file.txt user@host:/path/", "netstat -tuln"],
+        "notes": "Use -c flag with ping to limit packets. curl supports many protocols"
+      },
+      {
+        "name": "System Information",
+        "category": "System",
+        "description": "Get system and hardware information",
+        "usage": "uname -a",
+        "examples": ["uname -a", "df -h", "du -sh /home/user", "free -h", "top", "htop", "lscpu", "lsusb", "whoami", "id"],
+        "notes": "Use -h flag for human-readable sizes"
+      },
+      {
+        "name": "Environment Variables",
+        "category": "System",
+        "description": "Manage environment variables",
+        "usage": "export VAR=value",
+        "examples": ["export PATH=$PATH:/usr/local/bin", "echo $HOME", "env", "printenv", "unset VARIABLE", "export EDITOR=nano"],
+        "notes": "Add to ~/.bashrc or ~/.profile for persistence"
+      },
+      {
+        "name": "Input/Output Redirection",
+        "category": "Shell Features",
+        "description": "Redirect command input and output",
+        "usage": "command > file",
+        "examples": ["ls > filelist.txt", "cat file1 file2 > combined.txt", "echo 'new line' >> file.txt", "grep error log.txt 2> errors.txt", "command < input.txt", "command1 | command2"],
+        "notes": "> overwrites, >> appends, 2> redirects stderr, | creates pipes"
+      },
+      {
+        "name": "Command History",
+        "category": "Shell Features",
+        "description": "Navigate and use command history",
+        "usage": "history",
+        "examples": ["history", "history | grep git", "!123", "!!", "!git", "^old^new", "ctrl+r"],
+        "notes": "Use ctrl+r for reverse search, !! repeats last command"
+      },
+      {
+        "name": "Scheduling Tasks",
+        "category": "Automation",
+        "description": "Schedule and automate tasks",
+        "usage": "crontab -e",
+        "examples": ["crontab -e", "0 2 * * * /path/to/backup.sh", "*/15 * * * * /usr/bin/check_status.sh", "at now + 1 hour", "at 2:30 PM", "batch"],
+        "notes": "Cron format: minute hour day month weekday command"
+      },
+      {
+        "name": "Regular Expressions",
+        "category": "Pattern Matching",
+        "description": "Use regex for pattern matching",
+        "usage": "grep -E 'pattern' file",
+        "examples": ["grep -E '[0-9]+' file.txt", "grep '^start' file.txt", "grep 'end$' file.txt", "sed -E 's/[0-9]+/NUMBER/g' file.txt", "awk '/pattern/ {print}' file.txt"],
+        "notes": "Use -E for extended regex, -P for Perl regex"
+      },
+      {
+        "name": "Scripting Basics",
+        "category": "Automation",
+        "description": "Create and run bash scripts",
+        "usage": "#!/bin/bash",
+        "examples": ["#!/bin/bash", "if [ -f \"$1\" ]; then echo \"File exists\"; fi", "for file in *.txt; do echo $file; done", "while read line; do echo $line; done < file.txt", "function greet() { echo \"Hello $1\"; }", "greet \"World\""],
+        "notes": "Make scripts executable with chmod +x script.sh"
+      },
+      {
+        "name": "Package Management",
+        "category": "System",
+        "description": "Install and manage software packages",
+        "usage": "apt install package",
+        "examples": ["sudo apt update", "sudo apt install git", "sudo apt remove package", "sudo apt search keyword", "sudo yum install package", "sudo dnf install package", "brew install package"],
+        "notes": "Commands vary by distribution: apt (Debian/Ubuntu), yum/dnf (RedHat/Fedora)"
+      },
+      {
+        "name": "File Search",
+        "category": "File System",
+        "description": "Search for files and directories",
+        "usage": "find [options] path pattern",
+        "examples": ["find /home -name '*.txt'", "locate file.txt", "find /var/log -type f -mtime +7"],
+        "notes": "-type f for files, -size +10M for size"
+      },
+      {
+        "name": "Network Diagnostics",
+        "category": "Network",
+        "description": "Diagnose network issues",
+        "usage": "ping hostname",
+        "examples": ["ping google.com", "traceroute example.com", "nslookup example.com", "dig @8.8.8.8 example.com"],
+        "notes": "Use -c flag with ping to limit packets"
+      },
+      {
+        "name": "Log Management",
+        "category": "System",
+        "description": "Manage system and application logs",
+        "usage": "journalctl",
+        "examples": ["journalctl -u ssh", "tail -f /var/log/syslog", "grep 'error' /var/log/auth.log"],
+        "notes": "Use --since to filter by time"
+      },
+      {
+        "name": "Disk Management",
+        "category": "System",
+        "description": "Manage disk space and partitions",
+        "usage": "df -h",
+        "examples": ["df -h", "du -sh /home/user", "fdisk -l", "lsblk"],
+        "notes": "Use -h for human-readable sizes"
+      },
+      {
+        "name": "User Management",
+        "category": "System",
+        "description": "Manage user accounts and groups",
+        "usage": "useradd username",
+        "examples": ["sudo useradd newuser", "sudo passwd newuser", "sudo groupadd developers", "sudo chgrp developers file.txt"],
+        "notes": "Use sudo for system modifications"
+      },
+      {
+        "name": "SSH Configuration",
+        "category": "Network",
+        "description": "Configure SSH and key-based authentication",
+        "usage": "ssh user@hostname",
+        "examples": ["ssh -i id_rsa user@host", "scp file.txt user@host:/path/", "ssh-config"],
+        "notes": "Use ~/.ssh/config for custom settings"
+      },
+      {
+        "name": "Terminal Multiplexing",
+        "category": "Shell Features",
+        "description": "Run multiple sessions in one terminal",
+        "usage": "screen -S session_name",
+        "examples": ["tmux new-session", "screen -r", "screen -d -m command"],
+        "notes": "Use detach to exit"
+      },
+      {
+        "name": "Text Editors",
+        "category": "Utilities",
+        "description": "Edit files in the terminal",
+        "usage": "nano file.txt",
+        "examples": ["vi /etc/hosts", "nano ~/.bashrc", "vim /tmp/test.txt"],
+        "notes": "Use :wq to save and exit"
+      },
+      {
+        "name": "Log Rotation",
+        "category": "System",
+        "description": "Automate log file rotation",
+        "usage": "logrotate /etc/logrotate.conf",
+        "examples": ["logrotate -f /etc/logrotate.d/syslog", "rsyslogd -f /etc/rsyslog.conf"],
+        "notes": "Use --force to override retention"
+      },
+      {
+        "name": "System Monitoring",
+        "category": "System",
+        "description": "Monitor system performance and resources",
+        "usage": "top",
+        "examples": ["htop", "iostat -d 1", "vmstat 1"],
+        "notes": "Use -h for human-readable output"
+      },
+      {
+        "name": "Time Management",
+        "category": "System",
+        "description": "Manage system time and time zones",
+        "usage": "date",
+        "examples": ["timedatectl", "ntpdate pool.ntp.org", "tzselect"],
+        "notes": "Use sudo for timezone changes"
+      },
+      {
+        "name": "Disk Encryption",
+        "category": "Security",
+        "description": "Encrypt disks and partitions",
+        "usage": "cryptsetup luksFormat /dev/sdX",
+        "examples": ["sudo cryptsetup open /dev/sda1 my_encrypted_disk", "mount /dev/mapper/my_encrypted_disk /mnt"],
+        "notes": "Use sudo for encryption operations"
+      },
+      {
+        "name": "Firewall Tools",
+        "category": "Security",
+        "description": "Configure firewalls and network policies",
+        "usage": "ufw enable",
+        "examples": ["sudo ufw allow 80", "iptables -A INPUT -p tcp --dport 22 -j ACCEPT"],
+        "notes": "Use sudo for system-wide rules"
+      },
+      {
+        "name": "Package Building",
+        "category": "System",
+        "description": "Build and manage software packages",
+        "usage": "dpkg-buildpackage",
+        "examples": ["apt-get build-dep package", "make distclean"],
+        "notes": "Use -i to install dependencies"
+      },
+      {
+        "name": "Script Debugging",
+        "category": "Automation",
+        "description": "Debug bash scripts and commands",
+        "usage": "bash -x script.sh",
+        "examples": ["set -e", "trap 'echo \"Error in $0\"' ERR"],
+        "notes": "Use set for debugging flags"
+      },
+      {
+        "name": "Process Tracing",
+        "category": "System",
+        "description": "Trace and debug processes",
+        "usage": "strace command",
+        "examples": ["strace ls", "ltrace echo \"Hello\""],
+        "notes": "Use -f to trace child processes"
+      },
+      {
+        "name": "Memory Management",
+        "category": "System",
+        "description": "Manage system memory and swap",
+        "usage": "free -h",
+        "examples": ["swapon /dev/sda2", "mkswap /dev/sdb1"],
+        "notes": "-f to force check"
+      },
+      {
+        "name": "Kernel Modules",
+        "category": "System",
+        "description": "Manage kernel modules and drivers",
+        "usage": "lsmod",
+        "examples": ["modprobe usbcore", "rmmod bluetooth", "modinfo pci"],
+        "notes": "-r to remove a module"
+      },
+      {
+        "name": "USB Tools",
+        "category": "Hardware",
+        "description": "Manage USB devices and drivers",
+        "usage": "lsusb",
+        "examples": ["lsusb -d 1234:5678", "usb_modeswitch -v 0x1234 -p 0x5678"],
+        "notes": "-v for verbose output"
+      },
+      {
+        "name": "PCI Tools",
+        "category": "Hardware",
+        "description": "List PCI devices and configurations",
+        "usage": "lspci",
+        "examples": ["lspci -v", "lspci --help"],
+        "notes": "-v for verbose output"
+      },
+      {
+        "name": "Disk Tools",
+        "category": "System",
+        "description": "Manage disk partitions and file systems",
+        "usage": "fdisk /dev/sda",
+        "examples": ["mkfs.ext4 /dev/sdb1", "fsck -f /dev/nvme0n1"],
+        "notes": "-f to force check"
+      },
+      {
+        "name": "UUID Tools",
+        "category": "System",
+        "description": "Generate and manage UUIDs",
+        "usage": "uuidgen",
+        "examples": ["uuidgen", "dmidecode -t system"], 
+        "notes": "-q for quiet mode"
+      },
+      {
+        "name": "Cron Jobs",
+        "category": "Automation",
+        "description": "Schedule recurring tasks with cron",
+        "usage": "crontab -e",
+        "examples": ["0 2 * * * /path/to/backup.sh", "*/15 * * * * /usr/bin/check_status.sh"],
+        "notes": "Cron format: minute hour day month weekday command"
+      },
+      {
+        "name": "Screen Sharing",
+        "category": "Network",
+        "description": "Share terminal sessions over a network",
+        "usage": "screen -r session_name",
+        "examples": ["screen -x user@host", "ssh -L 80:localhost:80 remote_host"],
+        "notes": "Use -d to detach"
+      },
+      {
+        "name": "SSH Tunneling",
+        "category": "Network",
+        "description": "Create SSH tunnels for secure connections",
+        "usage": "ssh -L 8080:localhost:80 host",
+        "examples": ["ssh -R 12345:localhost:80 remote_host", "ssh -fN -L 8080:localhost:80 host"],
+        "notes": "-f for background mode"
+      },
+      {
+        "name": "SSH Key Management",
+        "category": "Security",
+        "description": "Manage SSH keys and authentication",
+        "usage": "ssh-keygen",
+        "examples": ["ssh-add id_rsa", "ssh-copy-id user@host"],
+        "notes": "Use ~/.ssh/id_rsa as default key"
+      },
+      {
+        "name": "Log Analysis",
+        "category": "System",
+        "description": "Analyze and filter log files",
+        "usage": "grep 'error' /var/log/syslog",
+        "examples": ["awk '{print $1}' /var/log/auth.log", "tail -f /var/log/messages"],
+        "notes": "-r for recursive searches"
+      },
+      {
+        "name": "Disk Usage",
+        "category": "System",
+        "description": "Analyze disk usage and file sizes",
+        "usage": "du -sh",
+        "examples": ["du -sh /home/user", "ncdu /path/to/directory"],
+        "notes": "-h for human-readable output"
+      },
+      {
+        "name": "Network Traffic Monitoring",
+        "category": "Network",
+        "description": "Monitor network traffic and bandwidth usage",
+        "usage": "nethogs eth0",
+        "examples": ["nethogs wlan0", "iftop -i eth0"],
+        "notes": "-r for recursive scan"
+      },
+      {
+        "name": "Systemd Services",
+        "category": "System",
+        "description": "Manage systemd services and units",
+        "usage": "systemctl start service_name",
+        "examples": ["systemctl enable nginx", "journalctl -u ssh"],
+        "notes": "Use --now for immediate restart"
+      },
+      {
+        "name": "APT Cache Management",
+        "category": "System",
+        "description": "Manage APT package cache and repositories",
+        "usage": "apt clean",
+        "examples": ["sudo apt update", "sudo apt autoclean"],
+        "notes": "Use --fix-missing to resolve conflicts"
+      },
+      {
+        "name": "YUM/DNF Management",
+        "category": "System",
+        "description": "Manage YUM and DNF package repositories",
+        "usage": "yum install package",
+        "examples": ["sudo yum update", "sudo dnf remove package"],
+        "notes": "Use --disablerepo to disable repositories"
+      },
+      {
+        "name": "Disk Imaging",
+        "category": "System",
+        "description": "Create and restore disk images",
+        "usage": "dd if=source of=target",
+        "examples": ["dd if=/dev/sda of=image.img bs=4M", "dd if=image.img of=/dev/sdb"],
+        "notes": "-v for verbose output"
+      },
+      {
+        "name": "Disk Encryption Tools",
+        "category": "Security",
+        "description": "Encrypt and decrypt disks with LUKS",
+        "usage": "cryptsetup luksFormat /dev/sdX",
+        "examples": ["sudo cryptsetup open /dev/sda1 my_encrypted_disk", "mount /dev/mapper/my_encrypted_disk /mnt"],
+        "notes": "Use sudo for encryption operations"
+      },
+      {
+        "name": "Firewall Configuration",
+        "category": "Security",
+        "description": "Configure firewalls and network policies",
+        "usage": "ufw enable",
+        "examples": ["sudo ufw allow 80", "iptables -A INPUT -p tcp --dport 22 -j ACCEPT"],
+        "notes": "Use sudo for system-wide rules"
+      },
+      {
+        "name": "SSH Tunneling",
+        "category": "Network",
+        "description": "Create SSH tunnels for secure connections",
+        "usage": "ssh -L 8080:localhost:80 host",
+        "examples": ["ssh -R 12345:localhost:80 remote_host", "ssh -fN -L 8080:localhost:80 host"],
+        "notes": "-f for background mode"
+      },
+      {
+        "name": "SSH Key Management",
+        "category": "Security",
+        "description": "Manage SSH keys and authentication",
+        "usage": "ssh-keygen",
+        "examples": ["ssh-add id_rsa", "ssh-copy-id user@host"],
+        "notes": "Use ~/.ssh/id_rsa as default key"
+      },
+      {
+        "name": "Log Analysis",
+        "category": "System",
+        "description": "Analyze and filter log files",
+        "usage": "grep 'error' /var/log/syslog",
+        "examples": ["awk '{print $1}' /var/log/auth.log", "tail -f /var/log/messages"],
+        "notes": "-r for recursive searches"
+      },
+      {
+        "name": "Disk Usage",
+        "category": "System",
+        "description": "Analyze disk usage and file sizes",
+        "usage": "du -sh",
+        "examples": ["du -sh /home/user", "ncdu /path/to/directory"],
+        "notes": "-h for human-readable output"
+      },
+      {
+        "name": "Network Traffic Monitoring",
+        "category": "Network",
+        "description": "Monitor network traffic and bandwidth usage",
+        "usage": "nethogs eth0",
+        "examples": ["nethogs wlan0", "iftop -i eth0"],
+        "notes": "-r for recursive scan"
+      },
+      {
+        "name": "Systemd Services",
+        "category": "System",
+        "description": "Manage systemd services and units",
+        "usage": "systemctl start service_name",
+        "examples": ["systemctl enable nginx", "journalctl -u ssh"],
+        "notes": "Use --now for immediate restart"
+      },
+      {
+        "name": "APT Cache Management",
+        "category": "System",
+        "description": "Manage APT package cache and repositories",
+        "usage": "apt clean",
+        "examples": ["sudo apt update", "sudo apt autoclean"],
+        "notes": "Use --fix-missing to resolve conflicts"
+      },
+      {
+        "name": "YUM/DNF Management",
+        "category": "System",
+        "description": "Manage YUM and DNF package repositories",
+        "usage": "yum install package",
+        "examples": ["sudo yum update", "sudo dnf remove package"],
+        "notes": "Use --disablerepo to disable repositories"
+      },
+      {
+        "name": "Disk Imaging",
+        "category": "System",
+        "description": "Create and restore disk images",
+        "usage": "dd if=source of=target",
+        "examples": ["dd if=/dev/sda of=image.img bs=4M", "dd if=image.img of=/dev/sdb"],
+        "notes": "-v for verbose output"
+      },
+      {
+        "name": "Disk Encryption Tools",
+        "category": "Security",
+        "description": "Encrypt and decrypt disks with LUKS",
+        "usage": "cryptsetup luksFormat /dev/sdX",
+        "examples": ["sudo cryptsetup open /dev/sda1 my_encrypted_disk", "mount /dev/mapper/my_encrypted_disk /mnt"],
+        "notes": "Use sudo for encryption operations"
+      },
+      {
+        "name": "Firewall Configuration",
+        "category": "Security",
+        "description": "Configure firewalls and network policies",
+        "usage": "ufw enable",
+        "examples": ["sudo ufw allow 80", "iptables -A INPUT -p tcp --dport 22 -j ACCEPT"],
+        "notes": "Use sudo for system-wide rules"
+      }
+    ]
+  }
+}

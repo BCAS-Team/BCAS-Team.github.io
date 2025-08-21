@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scripting Wiki</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>BCAS - Scripting Wiki</h1>
+  <input type="search" id="search" placeholder="Search..." />
+  <button id="hamburger" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<nav id="sidebar">
+  <ul>
+    <!-- Buttons for each specific JSON file, using the file name as data-category -->
+    <!-- The first button (Python) is now active by default -->
+    <li><button class="category-btn active" data-category="python">Python</button></li>
+    <li><button class="category-btn" data-category="powershell">PowerShell</button></li>
+    <li><button class="category-btn" data-category="bash">Bash</button></li>
+    <li><button class="category-btn" data-category="msdos">MSDos/Cmd</button></li>
+    <li><button class="category-btn" data-category="vbs">Visual Basic Script</button></li>
+    <li><button class="category-btn" data-category="batch">Batch</button></li>
+    <!-- Legal link, always present -->
+    <li><a href="legal.html" class="category-btn legal">Legal</a></li>
+  </ul>
+</nav>
+
+<main id="content">
+  <p>Loading...</p>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

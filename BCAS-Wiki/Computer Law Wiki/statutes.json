@@ -1,0 +1,1321 @@
+{
+  "statutes": [
+    {
+      "id": "1",
+      "name": "Computer Fraud and Abuse Act (CFAA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1984",
+      "last_amended": "2008",
+      "description": "U.S. federal anti-hacking law that prohibits unauthorized access to protected computers.",
+      "sections": [
+        "18 U.S.C. § 1030(a)(1) - Espionage and national security information",
+        "18 U.S.C. § 1030(a)(2) - Unauthorized access to obtain information",
+        "18 U.S.C. § 1030(a)(3) - Access to government computers",
+        "18 U.S.C. § 1030(a)(4) - Fraudulent access",
+        "18 U.S.C. § 1030(a)(5) - Damage to protected computers",
+        "18 U.S.C. § 1030(a)(6) - Trafficking in passwords",
+        "18 U.S.C. § 1030(a)(7) - Extortion involving computers"
+      ],
+      "key_terms": ["Protected computer", "Unauthorized access", "Exceeds authorized access", "Damage", "Loss"],
+      "penalties": "Fines and imprisonment up to 20 years for repeat offenses",
+      "notes": "Broadly interpreted, CFAA has been criticized for its vague language and potential to criminalize common computer use.",
+      "links": ["https://www.law.cornell.edu/uscode/text/18/1030"]
+    },
+    {
+      "id": "2",
+      "name": "General Data Protection Regulation (GDPR)",
+      "category": "European Union Law",
+      "jurisdiction": "European Union",
+      "enacted": "2016",
+      "effective_date": "2018-05-25",
+      "description": "EU regulation on data protection and privacy for all individuals within the European Union and the European Economic Area.",
+      "articles": [
+        "Article 5 - Principles relating to processing of personal data",
+        "Article 6 - Lawfulness of processing",
+        "Article 17 - Right to erasure ('right to be forgotten')",
+        "Article 32 - Security of processing"
+      ],
+      "penalties": "Up to €20 million or 4% of annual global turnover, whichever is higher",
+      "notes": "GDPR sets strict requirements for data handling and includes significant penalties for non-compliance.",
+      "links": ["https://gdpr-info.eu/"]
+    },
+    {
+      "id": "3",
+      "name": "California Consumer Privacy Act (CCPA)",
+      "category": "United States Law (State)",
+      "jurisdiction": "California",
+      "enacted": "2018",
+      "effective_date": "2020-01-01",
+      "description": "California statute intended to enhance privacy rights and consumer protection for residents of California.",
+      "provisions": [
+        "Right to know what personal information is collected",
+        "Right to delete personal information",
+        "Right to opt-out of the sale of personal information"
+      ],
+      "penalties": "Civil penalties up to $2,500 per violation or $7,500 for intentional violations",
+      "notes": "Often compared to GDPR, CCPA introduced similar data privacy concepts to U.S. law.",
+      "links": ["https://oag.ca.gov/privacy/ccpa"]
+    },
+    {
+      "id": "4",
+      "name": "Digital Millennium Copyright Act (DMCA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1998",
+      "description": "Federal law that criminalizes production and dissemination of technology intended to circumvent copyright protection measures.",
+      "sections": [
+        "17 U.S.C. § 512 - Safe harbor provisions for online service providers",
+        "17 U.S.C. § 1201 - Circumvention of copyright protection systems"
+      ],
+      "penalties": "Criminal penalties up to $1 million and 10 years imprisonment",
+      "notes": "Provides framework for copyright protection in digital environments while balancing innovation and content protection.",
+      "links": ["https://www.copyright.gov/legislation/dmca.pdf"]
+    },
+    {
+      "id": "5",
+      "name": "Electronic Communications Privacy Act (ECPA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1986",
+      "description": "Federal law extending government restrictions on wire taps to include transmissions of electronic data by computer.",
+      "titles": [
+        "Title I - Wiretap Act (18 U.S.C. § 2510-2522)",
+        "Title II - Stored Communications Act (18 U.S.C. § 2701-2712)"
+      ],
+      "notes": "Considered outdated by many legal experts due to rapid technological advancement since 1986.",
+      "links": ["https://www.law.cornell.edu/uscode/text/18/part-I/chapter-119"]
+    },
+    {
+      "id": "6",
+      "name": "Health Insurance Portability and Accountability Act (HIPAA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1996",
+      "description": "Federal law that provides data privacy and security provisions for safeguarding medical information.",
+      "key_rules": [
+        "Privacy Rule - protects individually identifiable health information",
+        "Security Rule - sets standards for protecting electronic health information"
+      ],
+      "penalties": "Civil penalties up to $1.5 million per incident; criminal penalties up to $250,000 and 10 years imprisonment",
+      "notes": "Applies to protected health information (PHI) in electronic, paper, and oral forms.",
+      "links": ["https://www.hhs.gov/hipaa/index.html"]
+    },
+    {
+      "id": "7",
+      "name": "Children's Online Privacy Protection Act (COPPA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1998",
+      "effective_date": "2000-04-21",
+      "description": "Federal law that regulates the online collection of personal information from children under 13 years of age.",
+      "requirements": [
+        "Parental notice of information practices",
+        "Parental consent for collection, use, or disclosure of personal information"
+      ],
+      "penalties": "Civil penalties up to $43,792 per violation",
+      "notes": "Requires verifiable parental consent before collecting personal information from children.",
+      "links": ["https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule"]
+    },
+    {
+      "id": "8",
+      "name": "CAN-SPAM Act",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "2003",
+      "full_name": "Controlling the Assault of Non-Solicited Pornography And Marketing Act",
+      "description": "Federal law that establishes requirements for commercial email messages and gives recipients the right to stop emails.",
+      "penalties": "Up to $43,792 per email in violation",
+      "notes": "Preempts most state laws but allows states to enforce laws prohibiting deceptive practices.",
+      "links": ["https://www.ftc.gov/tips-advice/business-center/guidance/can-spam-act-compliance-guide-business"]
+    },
+    {
+      "id": "9",
+      "name": "Computer Misuse Act",
+      "category": "United Kingdom Law",
+      "jurisdiction": "United Kingdom",
+      "enacted": "1990",
+      "last_amended": "2015",
+      "description": "UK law that criminalizes unauthorized access to computer systems and data.",
+      "offenses": [
+        "Section 1 - Unauthorized access to computer material",
+        "Section 2 - Unauthorized access with intent to commit further offenses"
+      ],
+      "penalties": "Up to 10 years imprisonment for the most serious offenses",
+      "notes": "Served as a model for similar legislation in other Commonwealth countries.",
+      "links": ["https://www.legislation.gov.uk/ukpga/1990/18/contents"]
+    },
+    {
+      "id": "10",
+      "name": "Personal Information Protection and Electronic Documents Act (PIPEDA)",
+      "category": "Canadian Law",
+      "jurisdiction": "Canada (Federal)",
+      "enacted": "2000",
+      "description": "Canadian federal privacy law governing how private sector organizations collect, use and disclose personal information.",
+      "principles": ["Accountability", "Consent", "Limiting collection", "Safeguards"],
+      "penalties": "Fines up to CAD $100,000",
+      "notes": "Applies to commercial activities across Canada, with some provinces having substantially similar legislation.",
+      "links": ["https://laws-lois.justice.gc.ca/eng/acts/p-8.6/"]
+    },
+    {
+      "id": "11",
+      "name": "Cybersecurity Information Sharing Act (CISA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "2015",
+      "description": "Federal law encouraging cybersecurity information sharing between government and private sector entities.",
+      "key_provisions": [
+        "Legal protections for sharing cyber threat information",
+        "Liability protections for participating entities"
+      ],
+      "notes": "Aims to improve cybersecurity through enhanced information sharing while addressing privacy concerns.",
+      "links": ["https://www.dhs.gov/cisa-cybersecurity-information-sharing-act"]
+    },
+    {
+      "id": "12",
+      "name": "Network and Information Security Directive (NIS Directive)",
+      "category": "European Union Law",
+      "jurisdiction": "European Union",
+      "enacted": "2016",
+      "description": "EU directive on security of network and information systems across the Union.",
+      "key_requirements": [
+        "National cybersecurity strategies",
+        "Security requirements for operators of essential services"
+      ],
+      "notes": "First piece of EU-wide cybersecurity legislation, succeeded by NIS2 Directive in 2022.",
+      "links": ["https://eur-lex.europa.eu/eli/dir/2016/1148/oj"]
+    },
+    {
+      "id": "13",
+      "name": "Gramm-Leach-Bliley Act (GLBA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1999",
+      "description": "Federal law that requires financial institutions to explain information-sharing practices and safeguard sensitive data.",
+      "key_provisions": [
+        "Financial Privacy Rule",
+        "Safeguards Rule"
+      ],
+      "notes": "Applies to companies that are 'significantly engaged' in providing financial services.",
+      "links": ["https://www.ftc.gov/tips-advice/business-center/privacy-and-security/gramm-leach-bliley-act"]
+    },
+    {
+      "id": "14",
+      "name": "Sarbanes-Oxley Act (SOX)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "2002",
+      "description": "Federal law that established auditing and financial regulations for public companies, including IT controls.",
+      "penalties": "Fines up to $5 million and 20 years imprisonment for executives",
+      "notes": "While not specifically an IT law, SOX has significant implications for IT governance and security in public companies.",
+      "links": ["https://www.sec.gov/about/laws/soa2002.pdf"]
+    },
+    {
+      "id": "15",
+      "name": "Stored Communications Act (SCA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1986",
+      "description": "Part of ECPA that governs privacy expectations in stored electronic communications.",
+      "penalties": "Fines and imprisonment up to 5 years",
+      "notes": "Creates framework for government access to electronic communications held by third parties.",
+      "links": ["https://www.law.cornell.edu/uscode/text/18/part-I/chapter-121"]
+    },
+    {
+      "id": "16",
+      "name": "Video Privacy Protection Act (VPPA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1988",
+      "description": "Federal law that governs the privacy of video rental and purchase records.",
+      "key_provisions": [
+        "Prohibition on disclosure of personally identifiable information",
+        "Required consent for disclosure"
+      ],
+      "penalties": "Civil damages and attorney fees",
+      "notes": "Originally focused on video stores, now applies to digital streaming services.",
+      "links": ["https://www.law.cornell.edu/uscode/text/18/2710"]
+    },
+    {
+      "id": "17",
+      "name": "Telephone Consumer Protection Act (TCPA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1991",
+      "description": "Federal law that restricts telephone solicitations and the use of automated telephone equipment.",
+      "key_restrictions": [
+        "Robocalls without consent",
+        "Unsolicited fax advertisements",
+        "Text messages to cell phones without consent"
+      ],
+      "penalties": "Up to $1,500 per violation",
+      "notes": "Frequently updated to address new technologies and communication methods.",
+      "links": ["https://www.fcc.gov/consumers/guides/stop-unwanted-robocalls-and-texts"]
+    },
+    {
+      "id": "18",
+      "name": "Fair Credit Reporting Act (FCRA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1970",
+      "last_amended": "2003",
+      "description": "Federal law that regulates the collection, dissemination, and use of consumer information, including consumer credit information.",
+      "key_provisions": [
+        "Consumer rights to access credit reports",
+        "Data accuracy requirements",
+        "Permissible purposes for accessing credit information"
+      ],
+      "penalties": "Civil damages and criminal penalties up to $5,000",
+      "notes": "Applies to background check companies and credit reporting agencies.",
+      "links": ["https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/fair-credit-reporting-act"]
+    },
+    {
+      "id": "19",
+      "name": "Electronic Signatures in Global and National Commerce Act (E-SIGN)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "2000",
+      "description": "Federal law that grants legal recognition to electronic signatures and records in interstate and foreign commerce.",
+      "key_provisions": [
+        "Electronic signatures validity",
+        "Electronic records retention",
+        "Consumer consent requirements"
+      ],
+      "notes": "Works in conjunction with state Uniform Electronic Transactions Acts (UETA).",
+      "links": ["https://www.law.cornell.edu/uscode/text/15/chapter-96"]
+    },
+    {
+      "id": "20",
+      "name": "Driver's Privacy Protection Act (DPPA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1994",
+      "description": "Federal law that governs the privacy and disclosure of personal information gathered by state motor vehicle departments.",
+      "key_provisions": [
+        "Restrictions on disclosure of personal information",
+        "Permissible uses exceptions",
+        "State compliance requirements"
+      ],
+      "penalties": "Civil damages up to $2,500 per violation",
+      "notes": "Applies to state DMV databases and their commercial use.",
+      "links": ["https://www.law.cornell.edu/uscode/text/18/part-I/chapter-123"]
+    },
+    {
+      "id": "21",
+      "name": "Payment Card Industry Data Security Standard (PCI DSS)",
+      "category": "Industry Standard",
+      "jurisdiction": "International",
+      "established": "2004",
+      "description": "Industry security standard for organizations that handle branded credit cards.",
+      "requirements": [
+        "Maintain secure network",
+        "Protect cardholder data",
+        "Maintain vulnerability management program",
+        "Implement strong access control measures"
+      ],
+      "compliance_levels": ["Level 1", "Level 2", "Level 3", "Level 4"],
+      "notes": "Not a law but a contractual obligation for merchants accepting credit cards.",
+      "links": ["https://www.pcisecuritystandards.org/"]
+    },
+    {
+      "id": "22",
+      "name": "Federal Information Security Management Act (FISMA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "2002",
+      "last_amended": "2014",
+      "description": "Federal law that provides a comprehensive framework for ensuring the effectiveness of information security controls over federal information systems.",
+      "key_requirements": [
+        "Annual security assessments",
+        "Risk-based security controls",
+        "Continuous monitoring"
+      ],
+      "notes": "Applies to federal agencies and their contractors handling federal information systems.",
+      "links": ["https://csrc.nist.gov/projects/risk-management/fisma-background"]
+    },
+    {
+      "id": "23",
+      "name": "Wiretap Act",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1968",
+      "last_amended": "1986",
+      "description": "Federal law that regulates the interception of electronic communications.",
+      "key_provisions": [
+        "Prohibition on interception without consent",
+        "Law enforcement exceptions with warrants",
+        "Civil and criminal penalties"
+      ],
+      "penalties": "Up to 5 years imprisonment and $250,000 fine",
+      "notes": "Part of the broader Electronic Communications Privacy Act framework.",
+      "links": ["https://www.law.cornell.edu/uscode/text/18/part-I/chapter-119"]
+    },
+    {
+      "id": "24",
+      "name": "Family Educational Rights and Privacy Act (FERPA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "1974",
+      "description": "Federal law that protects the privacy of student education records.",
+      "key_provisions": [
+        "Right to inspect education records",
+        "Right to request amendment of records",
+        "Control over disclosure of records"
+      ],
+      "penalties": "Withdrawal of federal education funding",
+      "notes": "Applies to all schools that receive funds under an applicable program of the U.S. Department of Education.",
+      "links": ["https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html"]
+    },
+    {
+      "id": "25",
+      "name": "Cybersecurity Enhancement Act",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "2014",
+      "description": "Federal law that promotes cybersecurity research and development and workforce development.",
+      "key_provisions": [
+        "NIST cybersecurity framework development",
+        "Cybersecurity research priorities",
+        "Public-private partnerships"
+      ],
+      "notes": "Focuses on improving national cybersecurity through research and collaboration.",
+      "links": ["https://www.nist.gov/cyberframework"]
+    },
+    {
+      "id": "26",
+      "name": "Cybersecurity Act of 2015 (CISA)",
+      "category": "United States Law",
+      "jurisdiction": "Federal",
+      "enacted": "2015",
+      "description": "Federal law that facilitates cybersecurity information sharing between the private sector and government.",
+      "key_provisions": [
+        "Voluntary information sharing",
+        "Liability protections",
+        "Privacy protections"
+      ],
+      "notes": "Encourages sharing of cyber threat indicators and defensive measures.",
+      "links": ["https://www.dhs.gov/cisa"]
+    },
+    {
+      "id": "27",
+      "name": "Digital Services Act (DSA)",
+      "category": "European Union Law",
+      "jurisdiction": "European Union",
+      "enacted": "2022",
+      "effective_date": "2024-02-17",
+      "description": "EU regulation establishing harmonized rules on the provision of digital services in the internal market.",
+      "key_obligations": [
+        "Content moderation requirements",
+        "Transparency reporting",
+        "Risk assessment for large platforms"
+      ],
+      "penalties": "Up to 6% of annual worldwide turnover",
+      "notes": "Complements the Digital Markets Act in regulating digital platforms.",
+      "links": ["https://digital-strategy.ec.europa.eu/en/policies/digital-services-act-package"]
+    },
+    {
+      "id": "28",
+      "name": "Digital Markets Act (DMA)",
+      "category": "European Union Law",
+      "jurisdiction": "European Union",
+      "enacted": "2022",
+      "effective_date": "2023-05-02",
+      "description": "EU regulation aimed at ensuring fair and open digital markets by preventing unfair practices by gatekeepers.",
+      "key_obligations": [
+        "Interoperability requirements",
+        "Data portability",
+        "Fair access to services"
+      ],
+      "penalties": "Up to 10% of annual worldwide turnover",
+      "notes": "Targets large digital platforms designated as 'gatekeepers'.",
+      "links": ["https://digital-strategy.ec.europa.eu/en/policies/digital-markets-act"]
+    },
+    {
+      "id": "29",
+      "name": "NIS2 Directive",
+      "category": "European Union Law",
+      "jurisdiction": "European Union",
+      "enacted": "2022",
+      "effective_date": "2024-10-17",
+      "description": "Updated EU directive on security of network and information systems, replacing the original NIS Directive.",
+      "key_improvements": [
+        "Expanded scope of covered entities",
+        "Stricter supervision and enforcement",
+        "Enhanced incident reporting"
+      ],
+      "penalties": "Up to €10 million or 2% of annual worldwide turnover",
+      "notes": "Significantly strengthens the EU's cybersecurity resilience.",
+      "links": ["https://eur-lex.europa.eu/eli/dir/2022/2555"]
+    },
+    {
+      "id": "30",
+      "name": "Artificial Intelligence Act (AI Act)",
+      "category": "European Union Law",
+      "jurisdiction": "European Union",
+      "enacted": "2024",
+      "description": "EU regulation establishing harmonized rules for artificial intelligence systems.",
+      "risk_categories": [
+        "Minimal risk",
+        "Limited risk",
+        "High risk",
+        "Unacceptable risk"
+      ],
+      "penalties": "Up to €35 million or 7% of annual worldwide turnover",
+      "notes": "World's first comprehensive AI regulation framework.",
+      "links": ["https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"]
+    },
+    {
+      "id": "31",
+      "name": "Virginia Consumer Data Protection Act (VCDPA)",
+      "category": "United States Law (State)",
+      "jurisdiction": "Virginia",
+      "enacted": "2021",
+      "effective_date": "2023-01-01",
+      "description": "Virginia's comprehensive consumer data privacy law.",
+      "consumer_rights": [
+        "Right to access personal data",
+        "Right to correct inaccuracies",
+        "Right to delete personal data",
+        "Right to data portability"
+      ],
+      "penalties": "Civil penalties up to $7,500 per violation",
+      "notes": "Second state after California to enact comprehensive privacy legislation.",
+      "links": ["https://law.lis.virginia.gov/vacode/title59.1/chapter53/"]
+    },
+    {
+      "id": "32",
+      "name": "Colorado Privacy Act (CPA)",
+      "category": "United States Law (State)",
+      "jurisdiction": "Colorado",
+      "enacted": "2021",
+      "effective_date": "2023-07-01",
+      "description": "Colorado's comprehensive consumer data privacy law.",
+      "consumer_rights": [
+        "Right to access personal data",
+        "Right to correct inaccuracies",
+        "Right to delete personal data",
+        "Right to opt out of data processing"
+      ],
+      "penalties": "Civil penalties up to $20,000 per violation",
+      "notes": "Includes unique provisions for profiling and automated decision-making.",
+      "links": ["https://leg.colorado.gov/sites/default/files/2021a_190_signed.pdf"]
+    },
+    {
+      "id": "33",
+      "name": "Connecticut Data Privacy Act (CTDPA)",
+      "category": "United States Law (State)",
+      "jurisdiction": "Connecticut",
+      "enacted": "2022",
+      "effective_date": "2023-07-01",
+      "description": "Connecticut's comprehensive consumer data privacy law.",
+      "consumer_rights": [
+        "Right to access personal data",
+        "Right to correct inaccuracies",
+        "Right to delete personal data",
+        "Right to data portability"
+      ],
+      "penalties": "Civil penalties up to $5,000 per violation",
+      "notes": "Similar structure to Virginia and Colorado privacy laws.",
+      "links": ["https://www.cga.ct.gov/2022/ACT/PA/PDF/2022PA-00015-R00SB-00006-PA.PDF"]
+    },
+    {
+      "id": "34",
+      "name": "Utah Consumer Privacy Act (UCPA)",
+      "category": "United States Law (State)",
+      "jurisdiction": "Utah",
+      "enacted": "2022",
+      "effective_date": "2023-12-31",
+      "description": "Utah's consumer data privacy law with a more business-friendly approach.",
+      "consumer_rights": [
+        "Right to access personal data",
+        "Right to delete personal data",
+        "Right to opt out of data processing"
+      ],
+      "penalties": "Civil penalties determined by state attorney general",
+      "notes": "Notable for not including a private right of action for consumers.",
+      "links": ["https://le.utah.gov/~2022/bills/static/SB0227.html"]
+    },
+    {
+      "id": "35",
+      "name": "Illinois Biometric Information Privacy Act (BIPA)",
+      "category": "United States Law (State)",
+      "jurisdiction": "Illinois",
+      "enacted": "2008",
+      "description": "Illinois law regulating the collection, use, and storage of biometric information.",
+      "key_requirements": [
+        "Written consent before collecting biometric data",
+        "Disclosure of storage and destruction timelines",
+        "Prohibition on selling biometric information"
+      ],
+      "penalties": "$1,000-$5,000 per violation plus attorney fees",
+      "notes": "One of the strictest biometric privacy laws in the US, frequently cited in class action lawsuits.",
+      "links": ["https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004"]
+    },
+    {
+      "id": "36",
+      "name": "Texas Identity Theft Enforcement and Protection Act",
+      "category": "United States Law (State)",
+      "jurisdiction": "Texas",
+      "enacted": "2009",
+      "description": "Texas law governing the use of biometric identifiers and biometric information.",
+      "key_provisions": [
+        "Notice requirements for biometric data collection",
+        "Consent requirements",
+        "Retention and destruction requirements"
+      ],
+      "penalties": "Civil penalties up to $25,000",
+      "notes": "Similar to Illinois BIPA but with different enforcement mechanisms.",
+      "links": ["https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm"]
+    },
+    {
+      "id": "37",
+      "name": "New York SHIELD Act",
+      "category": "United States Law (State)",
+      "jurisdiction": "New York",
+      "enacted": "2019",
+      "effective_date": "2020-03-21",
+      "description": "New York law requiring reasonable data security measures and breach notification.",
+      "key_requirements": [
+        "Reasonable data security measures",
+        "Breach notification to state attorney general",
+        "Expanded definition of private information"
+      ],
+      "penalties": "Civil penalties up to $5,000 per violation",
+      "notes": "Applies to any business that conducts business in New York and collects private information.",
+      "links": ["https://www.nysenate.gov/legislation/bills/2019/s5575"]
+    },
+    {
+      "id": "38",
+      "name": "Massachusetts Data Protection Regulation (201 CMR 17.00)",
+      "category": "United States Law (State)",
+      "jurisdiction": "Massachusetts",
+      "enacted": "2010",
+      "description": "Massachusetts regulation requiring comprehensive information security programs.",
+      "key_requirements": [
+        "Written information security program",
+        "Employee training",
+        "Encryption of personal information",
+        "Secure authentication"
+      ],
+      "penalties": "Civil penalties and private right of action",
+      "notes": "One of the most comprehensive state data security laws in the US.",
+      "links": ["https://www.mass.gov/regulations/201-CMR-1700-standards-for-the-protection-of-personal-information-of-residents-of-the"]
+    },
+    {
+      "id": "39",
+      "name": "Washington Privacy Act",
+      "category": "United States Law (State)",
+      "jurisdiction": "Washington",
+      "status": "Proposed",
+      "description": "Proposed comprehensive privacy legislation in Washington state (multiple attempts, not yet enacted).",
+      "proposed_rights": [
+        "Right to access personal data",
+        "Right to correct inaccuracies",
+        "Right to delete personal data",
+        "Right to data portability"
+      ],
+      "notes": "Multiple versions have been proposed but not yet enacted into law.",
+      "links": ["https://app.leg.wa.gov/billsummary?BillNumber=5062&Year=2023"]
+    },
+    {
+      "id": "40",
+      "name": "Canada's Privacy Act",
+      "category": "Canadian Law",
+      "jurisdiction": "Canada (Federal)",
+      "enacted": "1983",
+      "description": "Federal law governing how federal government institutions collect, use, and disclose personal information.",
+      "key_provisions": [
+        "Limits on collection of personal information",
+        "Individual access rights",
+        "Correction of personal information",
+        "Protection against unauthorized disclosure"
+      ],
+      "notes": "Applies only to federal government institutions, not private sector.",
+      "links": ["https://laws-lois.justice.gc.ca/eng/acts/p-21/"]
+    },
+    {
+      "id": "41",
+      "name": "Consumer Privacy Protection Act (Bill C-27)",
+      "category": "Canadian Law",
+      "jurisdiction": "Canada (Federal)",
+      "status": "Proposed",
+      "description": "Proposed Canadian federal privacy law to replace PIPEDA for private sector organizations.",
+      "proposed_rights": [
+        "Right to access personal information",
+        "Right to correction",
+        "Right to deletion",
+        "Right to data mobility"
+      ],
+      "notes": "Currently under legislative review, would modernize Canadian privacy law.",
+      "links": ["https://www.parl.ca/legisinfo/en/bill/44-1/c-27"]
+    },
+    {
+      "id": "42",
+      "name": "Quebec Act Respecting the Protection of Personal Information in the Private Sector",
+      "category": "Canadian Law",
+      "jurisdiction": "Quebec",
+      "enacted": "1993",
+      "last_amended": "2021",
+      "description": "Quebec's private sector privacy law, considered substantially similar to PIPEDA.",
+      "key_provisions": [
+        "Consent requirements",
+        "Access and correction rights",
+        "Security safeguards",
+        "Breach notification"
+      ],
+      "penalties": "Administrative monetary penalties up to CAD $25 million",
+      "notes": "Modernized in 2021 with GDPR-like provisions.",
+      "links": ["https://www.legisquebec.gouv.qc.ca/en/document/cs/P-39.1"]
+    },
+    {
+      "id": "43",
+      "name": "Alberta Personal Information Protection Act (PIPA)",
+      "category": "Canadian Law",
+      "jurisdiction": "Alberta",
+      "enacted": "2003",
+      "description": "Alberta's private sector privacy law governing collection, use and disclosure of personal information.",
+      "key_provisions": [
+        "Consent requirements",
+        "Individual access rights",
+        "Security safeguards",
+        "Privacy breach notification"
+      ],
+      "penalties": "Administrative penalties up to CAD $100,000",
+      "notes": "Considered substantially similar to PIPEDA.",
+      "links": ["https://www.qp.alberta.ca/1266.cfm?page=P06P5.cfm&leg_type=Acts&isbncln=9780779827459"]
+    },
+    {
+      "id": "44",
+      "name": "British Columbia Personal Information Protection Act (PIPA)",
+      "category": "Canadian Law",
+      "jurisdiction": "British Columbia",
+      "enacted": "2003",
+      "description": "British Columbia's private sector privacy law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Individual access rights",
+        "Security safeguards",
+        "Privacy breach notification"
+      ],
+      "penalties": "Administrative penalties up to CAD $100,000",
+      "notes": "Considered substantially similar to PIPEDA.",
+      "links": ["https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/03063_01"]
+    },
+    {
+      "id": "45",
+      "name": "Australia Privacy Act",
+      "category": "Australian Law",
+      "jurisdiction": "Australia (Federal)",
+      "enacted": "1988",
+      "last_amended": "2022",
+      "description": "Australian federal law governing the handling of personal information by Australian government agencies and private sector organizations.",
+      "key_principles": [
+        "Australian Privacy Principles (APPs)",
+        "Notifiable data breaches scheme",
+        "Credit reporting provisions"
+      ],
+      "penalties": "Civil penalties up to AUD $50 million",
+      "notes": "Applies to organizations with annual turnover of AUD $3 million or more.",
+      "links": ["https://www.legislation.gov.au/Details/C2022C00361"]
+    },
+    {
+      "id": "46",
+      "name": "New Zealand Privacy Act",
+      "category": "New Zealand Law",
+      "jurisdiction": "New Zealand",
+      "enacted": "1993",
+      "last_amended": "2020",
+      "description": "New Zealand's comprehensive privacy law governing personal information handling.",
+      "key_principles": [
+        "Information Privacy Principles (IPPs)",
+        "Mandatory data breach notification",
+        "Individual access and correction rights"
+      ],
+      "penalties": "Civil penalties up to NZD $10,000",
+      "notes": "Significantly updated in 2020 with modern privacy protections.",
+      "links": ["https://www.legislation.govt.nz/act/public/2020/0031/latest/LMS23223.html"]
+    },
+    {
+      "id": "47",
+      "name": "Singapore Personal Data Protection Act (PDPA)",
+      "category": "Singapore Law",
+      "jurisdiction": "Singapore",
+      "enacted": "2012",
+      "last_amended": "2020",
+      "description": "Singapore's comprehensive personal data protection law.",
+      "key_obligations": [
+        "Consent for collection, use and disclosure",
+        "Data protection provisions",
+        "Data breach notification",
+        "Do Not Call Registry provisions"
+      ],
+      "penalties": "Financial penalties up to SGD $1 million",
+      "notes": "Covers both private and public sector organizations.",
+      "links": ["https://sso.agc.gov.sg/Act/PDPA2012"]
+    },
+    {
+      "id": "48",
+      "name": "Japan Act on Protection of Personal Information (APPI)",
+      "category": "Japanese Law",
+      "jurisdiction": "Japan",
+      "enacted": "2003",
+      "last_amended": "2020",
+      "description": "Japan's comprehensive personal information protection law.",
+      "key_provisions": [
+        "Proper acquisition of personal information",
+        "Purpose specification and use limitation",
+        "Security management measures",
+        "Cross-border data transfer restrictions"
+      ],
+      "penalties": "Criminal penalties up to 1 year imprisonment or JPY 500,000 fine",
+      "notes": "Significantly amended in 2020 to strengthen privacy protections.",
+      "links": ["https://www.ppc.go.jp/en/legal/"]
+    },
+    {
+      "id": "49",
+      "name": "South Korea Personal Information Protection Act (PIPA)",
+      "category": "South Korean Law",
+      "jurisdiction": "South Korea",
+      "enacted": "2011",
+      "description": "South Korea's comprehensive personal information protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Security measures",
+        "Cross-border transfer restrictions"
+      ],
+      "penalties": "Fines up to KRW 3% of annual revenue",
+      "notes": "One of the strictest privacy laws in Asia.",
+      "links": ["https://elaw.klri.re.kr/eng_service/lawView.do?hseq=25332"]
+    },
+    {
+      "id": "50",
+      "name": "Brazil General Data Protection Law (LGPD)",
+      "category": "Brazilian Law",
+      "jurisdiction": "Brazil",
+      "enacted": "2018",
+      "effective_date": "2020-09-18",
+      "description": "Brazil's comprehensive data protection law, heavily inspired by GDPR.",
+      "key_principles": [
+        "Purpose limitation",
+        "Adequacy and necessity",
+        "Transparency",
+        "Free access",
+        "Data quality"
+      ],
+      "penalties": "Fines up to BRL 50 million or 2% of revenue",
+      "notes": "Brazil's answer to GDPR, creating similar privacy rights for Brazilian citizens.",
+      "links": ["http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"]
+    },
+    {
+      "id": "51",
+      "name": "India Personal Data Protection Bill",
+      "category": "Indian Law",
+      "jurisdiction": "India",
+      "status": "Withdrawn/Under Review",
+      "description": "India's proposed comprehensive data protection legislation (withdrawn in 2022, new version in development).",
+      "proposed_provisions": [
+        "Data localization requirements",
+        "Consent framework",
+        "Individual rights",
+        "Cross-border transfer restrictions"
+      ],
+      "notes": "Original bill withdrawn in 2022; government working on new comprehensive data protection framework.",
+      "links": ["https://www.meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2019.pdf"]
+    },
+    {
+      "id": "52",
+      "name": "Russia Federal Law on Personal Data",
+      "category": "Russian Law",
+      "jurisdiction": "Russia",
+      "enacted": "2006",
+      "description": "Russia's personal data protection law with data localization requirements.",
+      "key_requirements": [
+        "Data localization within Russia",
+        "Consent for processing",
+        "Data subject rights",
+        "Security measures"
+      ],
+      "penalties": "Administrative fines and potential service blocking",
+      "notes": "Notable for strict data localization requirements.",
+      "links": ["http://www.consultant.ru/document/cons_doc_LAW_61801/"]
+    },
+    {
+      "id": "53",
+      "name": "China Cybersecurity Law",
+      "category": "Chinese Law",
+      "jurisdiction": "China",
+      "enacted": "2016",
+      "effective_date": "2017-06-01",
+      "description": "China's comprehensive cybersecurity law establishing cybersecurity requirements.",
+      "key_provisions": [
+        "Data localization requirements",
+        "Network security protection",
+        "Personal information protection",
+        "Critical information infrastructure protection"
+      ],
+      "penalties": "Fines up to CNY 1 million and business suspension",
+      "notes": "Establishes broad cybersecurity framework with data localization requirements.",
+      "links": ["http://www.npc.gov.cn/npc/c30834/201611/c1647078e66a4ee7b33e6b77f57d8b7a.shtml"]
+    },
+    {
+      "id": "54",
+      "name": "China Personal Information Protection Law (PIPL)",
+      "category": "Chinese Law",
+      "jurisdiction": "China",
+      "enacted": "2021",
+      "effective_date": "2021-11-01",
+      "description": "China's comprehensive personal information protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Individual rights",
+        "Cross-border transfer restrictions",
+        "Automated decision-making rules"
+      ],
+      "penalties": "Fines up to CNY 50 million or 5% of annual revenue",
+      "notes": "China's most comprehensive privacy law, similar in scope to GDPR.",
+      "links": ["http://www.npc.gov.cn/npc/c30834/202108/a8c4e3672c74491a80b53a172bb753fe.shtml"]
+    },
+    {
+      "id": "55",
+      "name": "China Data Security Law",
+      "category": "Chinese Law",
+      "jurisdiction": "China",
+      "enacted": "2021",
+      "effective_date": "2021-09-01",
+      "description": "China's national data security law establishing data classification and protection requirements.",
+      "key_provisions": [
+        "Data classification system",
+        "Data security review mechanism",
+        "Cross-border data transfer controls",
+        "National security protections"
+      ],
+      "penalties": "Fines up to CNY 10 million",
+      "notes": "Establishes national framework for data security and sovereignty.",
+      "links": ["http://www.npc.gov.cn/npc/c30834/202106/7c9af12f51334a73b56d7938f99a788a.shtml"]
+    },
+    {
+      "id": "56",
+      "name": "Ukraine Law on Personal Data Protection",
+      "category": "Ukrainian Law",
+      "jurisdiction": "Ukraine",
+      "enacted": "2010",
+      "description": "Ukraine's personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer restrictions",
+        "Security measures"
+      ],
+      "penalties": "Administrative fines and criminal liability",
+      "notes": "Based on EU data protection principles.",
+      "links": ["https://zakon.rada.gov.ua/laws/show/2297-17"]
+    },
+    {
+      "id": "57",
+      "name": "Turkey Law on Protection of Personal Data (KVKK)",
+      "category": "Turkish Law",
+      "jurisdiction": "Turkey",
+      "enacted": "2016",
+      "description": "Turkey's comprehensive personal data protection law.",
+      "key_provisions": [
+        "Lawful basis for processing",
+        "Data subject rights",
+        "Cross-border transfer rules",
+        "Data breach notification"
+      ],
+      "penalties": "Administrative fines up to TRY 20 million",
+      "notes": "Heavily influenced by EU data protection law.",
+      "links": ["https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6698.pdf"]
+    },
+    {
+      "id": "58",
+      "name": "Israel Privacy Protection Law",
+      "category": "Israeli Law",
+      "jurisdiction": "Israel",
+      "enacted": "1981",
+      "last_amended": "2017",
+      "description": "Israel's privacy protection law governing personal data.",
+      "key_provisions": [
+        "Registration of databases",
+        "Data subject rights",
+        "Security measures",
+        "Cross-border transfer restrictions"
+      ],
+      "penalties": "Criminal penalties up to 3 years imprisonment",
+      "notes": "EU has recognized Israel as providing adequate level of data protection.",
+      "links": ["https://www.nevo.co.il/law_html/law01/015_001.htm"]
+    },
+    {
+      "id": "59",
+      "name": "Argentina Personal Data Protection Law",
+      "category": "Argentine Law",
+      "jurisdiction": "Argentina",
+      "enacted": "2000",
+      "description": "Argentina's personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Registration requirements",
+        "Cross-border transfer rules"
+      ],
+      "penalties": "Administrative fines and criminal penalties",
+      "notes": "EU has recognized Argentina as providing adequate level of data protection.",
+      "links": ["http://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/norma.htm"]
+    },
+    {
+      "id": "60",
+      "name": "Mexico Federal Law on Protection of Personal Data",
+      "category": "Mexican Law",
+      "jurisdiction": "Mexico",
+      "enacted": "2010",
+      "description": "Mexico's comprehensive personal data protection law for private sector.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights (ARCO rights)",
+        "Privacy notice requirements",
+        "Security measures"
+      ],
+      "penalties": "Fines up to MXN 32 million",
+      "notes": "Applies to private sector; separate law governs public sector.",
+      "links": ["https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf"]
+    },
+    {
+      "id": "61",
+      "name": "Colombia Law 1581 on Personal Data Protection",
+      "category": "Colombian Law",
+      "jurisdiction": "Colombia",
+      "enacted": "2012",
+      "description": "Colombia's personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer rules",
+        "Breach notification"
+      ],
+      "penalties": "Fines up to COP 2 billion",
+      "notes": "Establishes comprehensive data protection framework.",
+      "links": ["https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981"]
+    },
+    {
+      "id": "62",
+      "name": "Chile Law 19628 on Protection of Private Life",
+      "category": "Chilean Law",
+      "jurisdiction": "Chile",
+      "enacted": "1999",
+      "description": "Chile's privacy law governing personal data processing.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Purpose limitation",
+        "Security measures"
+      ],
+      "penalties": "Criminal penalties up to 5 years imprisonment",
+      "notes": "One of the earlier comprehensive privacy laws in Latin America.",
+      "links": ["https://www.leychile.cl/Navegar?idNorma=141599"]
+    },
+    {
+      "id": "63",
+      "name": "Peru Personal Data Protection Law",
+      "category": "Peruvian Law",
+      "jurisdiction": "Peru",
+      "enacted": "2011",
+      "description": "Peru's personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Registration of databases",
+        "Cross-border transfer rules"
+      ],
+      "penalties": "Administrative fines up to 100 UIT",
+      "notes": "Based on Spanish and European data protection models.",
+      "links": ["https://www.leyes.congreso.gob.pe/Documentos/2016_2021/ADLP/Normas_Legales/29733-LEY.pdf"]
+    },
+    {
+      "id": "64",
+      "name": "Uruguay Personal Data Protection Law",
+      "category": "Uruguayan Law",
+      "jurisdiction": "Uruguay",
+      "enacted": "2008",
+      "description": "Uruguay's personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Registration requirements",
+        "Cross-border transfer rules"
+      ],
+      "penalties": "Administrative fines and criminal penalties",
+      "notes": "EU has recognized Uruguay as providing adequate level of data protection.",
+      "links": ["https://www.impo.com.uy/bases/leyes/18331-2008"]
+    },
+    {
+      "id": "65",
+      "name": "South Africa Protection of Personal Information Act (POPIA)",
+      "category": "South African Law",
+      "jurisdiction": "South Africa",
+      "enacted": "2013",
+      "effective_date": "2021-07-01",
+      "description": "South Africa's comprehensive personal information protection law.",
+      "key_principles": [
+        "Accountability",
+        "Processing limitation",
+        "Purpose specification",
+        "Further processing limitation",
+        "Information quality"
+      ],
+      "penalties": "Criminal penalties up to 10 years imprisonment or fines up to ZAR 10 million",
+      "notes": "Similar structure to GDPR with African context considerations.",
+      "links": ["https://www.gov.za/sites/default/files/gcis_document/201409/3706726-11act4of2013popia.pdf"]
+    },
+    {
+      "id": "66",
+      "name": "Kenya Data Protection Act",
+      "category": "Kenyan Law",
+      "jurisdiction": "Kenya",
+      "enacted": "2019",
+      "description": "Kenya's comprehensive data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer restrictions",
+        "Data breach notification"
+      ],
+      "penalties": "Fines up to KES 5 million or 4% of annual turnover",
+      "notes": "Modern data protection law influenced by GDPR.",
+      "links": ["http://kenyalaw.org/kl/fileadmin/pdfdownloads/Acts/2019/TheDataProtectionAct__No24of2019.pdf"]
+    },
+    {
+      "id": "67",
+      "name": "Nigeria Data Protection Regulation (NDPR)",
+      "category": "Nigerian Law",
+      "jurisdiction": "Nigeria",
+      "enacted": "2019",
+      "description": "Nigeria's data protection regulation.",
+      "key_provisions": [
+        "Lawful basis for processing",
+        "Data subject rights",
+        "Data localization requirements",
+        "Breach notification"
+      ],
+      "penalties": "Fines up to 2% of annual gross revenue or NGN 10 million",
+      "notes": "Subsidiary legislation under the Nigeria Information Technology Development Agency Act.",
+      "links": ["https://nitda.gov.ng/wp-content/uploads/2019/01/NDPR-2019.pdf"]
+    },
+    {
+      "id": "68",
+      "name": "Ghana Data Protection Act",
+      "category": "Ghanaian Law",
+      "jurisdiction": "Ghana",
+      "enacted": "2012",
+      "description": "Ghana's data protection law.",
+      "key_provisions": [
+        "Registration of data controllers",
+        "Data subject rights",
+        "Consent requirements",
+        "Security measures"
+      ],
+      "penalties": "Fines up to GHS 250,000",
+      "notes": "One of the first comprehensive data protection laws in West Africa.",
+      "links": ["https://www.parliament.gh/assets/file/ACTS_PDF/DATA%20PROTECTION%20ACT,%202012%20(ACT%20843).pdf"]
+    },
+    {
+      "id": "69",
+      "name": "Egypt Data Protection Law",
+      "category": "Egyptian Law",
+      "jurisdiction": "Egypt",
+      "enacted": "2020",
+      "description": "Egypt's personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer rules",
+        "Data localization for certain data"
+      ],
+      "penalties": "Fines up to EGP 1 million and imprisonment",
+      "notes": "Part of Egypt's broader digital transformation initiative.",
+      "links": ["https://www.itida.gov.eg/English/Pages/PDPL.aspx"]
+    },
+    {
+      "id": "70",
+      "name": "UAE Data Protection Law",
+      "category": "UAE Law",
+      "jurisdiction": "United Arab Emirates",
+      "enacted": "2021",
+      "effective_date": "2022-01-02",
+      "description": "UAE's federal personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer rules",
+        "Breach notification"
+      ],
+      "penalties": "Fines up to AED 3 million",
+      "notes": "Modern data protection law aligning UAE with international standards.",
+      "links": ["https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/federal-governments-strategies-and-plans/uae-data-law"]
+    },
+    {
+      "id": "71",
+      "name": "Saudi Arabia Personal Data Protection Law (PDPL)",
+      "category": "Saudi Arabian Law",
+      "jurisdiction": "Saudi Arabia",
+      "enacted": "2021",
+      "effective_date": "2023-09-14",
+      "description": "Saudi Arabia's comprehensive personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer restrictions",
+        "Data breach notification"
+      ],
+      "penalties": "Fines up to SAR 5 million",
+      "notes": "Part of Saudi Arabia's Vision 2030 digital transformation.",
+      "links": ["https://sdaia.gov.sa/en/MediaCenter/KnowledgeCenter/ResearchRepository/PDPL%20-%20English%20Translation.pdf"]
+    },
+    {
+      "id": "72",
+      "name": "Thailand Personal Data Protection Act (PDPA)",
+      "category": "Thai Law",
+      "jurisdiction": "Thailand",
+      "enacted": "2019",
+      "effective_date": "2022-06-01",
+      "description": "Thailand's comprehensive personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer rules",
+        "Data breach notification"
+      ],
+      "penalties": "Fines up to THB 5 million",
+      "notes": "GDPR-inspired legislation adapted for Thai context.",
+      "links": ["https://www.pdpc.gov.th/upload/download/file_1566463985_9125.pdf"]
+    },
+    {
+      "id": "73",
+      "name": "Philippines Data Privacy Act",
+      "category": "Philippine Law",
+      "jurisdiction": "Philippines",
+      "enacted": "2012",
+      "effective_date": "2016-08-08",
+      "description": "Philippines' comprehensive data privacy law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Registration of data processing systems",
+        "Breach notification"
+      ],
+      "penalties": "Imprisonment up to 6 years and fines up to PHP 5 million",
+      "notes": "One of the first comprehensive data privacy laws in Southeast Asia.",
+      "links": ["https://www.privacy.gov.ph/data-privacy-act/"]
+    },
+    {
+      "id": "74",
+      "name": "Indonesia Law on Personal Data Protection",
+      "category": "Indonesian Law",
+      "jurisdiction": "Indonesia",
+      "enacted": "2022",
+      "effective_date": "2024-10-17",
+      "description": "Indonesia's comprehensive personal data protection law.",
+      "key_provisions": [
+        "Consent requirements",
+        "Data subject rights",
+        "Cross-border transfer rules",
+        "Data breach notification"
+      ],
+      "penalties": "Fines up to IDR 50 billion or 4% of annual revenue",
+      "notes": "Modern data protection law bringing Indonesia in line with global standards.",
+      "links": ["https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022"]
+    },
+    {
+      "id": "75",
+      "name": "Vietnam Law on Cybersecurity",
+      "category": "Vietnamese Law",
+      "jurisdiction": "Vietnam",
+      "enacted": "2018",
+      "effective_date": "2019-01-01",
+      "description": "Vietnam's cybersecurity law with personal data protection provisions.",
+      "key_provisions": [
+        "Data localization requirements",
+        "Content removal obligations",
+        "Personal data protection requirements",
+        "Cybersecurity incident reporting"
+      ],
+      "penalties": "Fines up to VND 200 million for individuals, VND 2 billion for organizations",
+      "notes": "Comprehensive cybersecurity law with controversial data localization requirements.",
+      "links": ["https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Luat-an-ninh-mang-2018-351416.aspx"]
+    }
+  ],
+  "metadata": {
+    "version": "3.0",
+    "last_updated": "2025-07-21",
+    "total_statutes": 75,
+    "jurisdictions_covered": [
+      "United States (Federal)",
+      "United States (State - California, Virginia, Colorado, Connecticut, Utah, Illinois, Texas, New York, Massachusetts)",
+      "European Union",
+      "United Kingdom",
+      "Canada (Federal and Provincial)",
+      "Australia",
+      "New Zealand",
+      "Singapore",
+      "Japan",
+      "South Korea",
+      "Brazil",
+      "India",
+      "Russia",
+      "China",
+      "Ukraine",
+      "Turkey",
+      "Israel",
+      "Argentina",
+      "Mexico",
+      "Colombia",
+      "Chile",
+      "Peru",
+      "Uruguay",
+      "South Africa",
+      "Kenya",
+      "Nigeria",
+      "Ghana",
+      "Egypt",
+      "UAE",
+      "Saudi Arabia",
+      "Thailand",
+      "Philippines",
+      "Indonesia",
+      "Vietnam"
+    ],
+    "categories": [
+      "Cybersecurity",
+      "Data Privacy",
+      "Computer Crime",
+      "Electronic Communications",
+      "Financial Services",
+      "Healthcare",
+      "Children's Privacy",
+      "Copyright",
+      "Email Marketing",
+      "Biometric Privacy",
+      "Artificial Intelligence",
+      "Cross-border Data Transfers",
+      "Data Localization",
+      "Breach Notification",
+      "Consumer Protection"
+    ],
+    "regional_coverage": {
+      "North America": 23,
+      "Europe": 8,
+      "Asia Pacific": 11,
+      "Latin America": 8,
+      "Africa": 4,
+      "Middle East": 3
+    },
+    "law_types": {
+      "Comprehensive Privacy Laws": 45,
+      "Cybersecurity Laws": 12,
+      "Sector-Specific Laws": 8,
+      "Computer Crime Laws": 6,
+      "Industry Standards": 4
+    },
+    "notes": "This comprehensive database covers major computer and data protection laws from 35+ jurisdictions worldwide. Laws are subject to amendments and interpretations that may affect their application. Always consult current legal sources and qualified legal counsel for specific legal advice. The database includes federal laws, state/provincial laws, and major international regulations affecting digital privacy, cybersecurity, and computer use."
+  }
+}

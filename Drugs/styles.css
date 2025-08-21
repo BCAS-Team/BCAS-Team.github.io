@@ -1,0 +1,141 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0 0.5rem; /* slight horizontal padding */
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem; /* reduced horizontal padding for smaller screens */
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+}
+
+/* Container wrapper for centering and horizontal padding */
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Search filter section */
+.search-filter {
+  max-width: 600px;
+  margin: 0 auto 2rem auto; /* center horizontally, add bottom margin */
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.search-filter input,
+.search-filter select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  flex: 1 1 100%; /* full width on small screens */
+  min-width: 150px;
+  box-sizing: border-box;
+}
+
+/* Inputs side by side on wider screens */
+@media (min-width: 500px) {
+  .search-filter input,
+  .search-filter select {
+    flex: 1 1 auto;
+  }
+}
+
+/* Drug cards container */
+#drugs-container {
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Drug card styling */
+.drug-card {
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+
+.drug-card:hover {
+  background-color: #111;
+}
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 1.5rem;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Scrollbar styling for modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background-color: #222;
+}

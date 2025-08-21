@@ -1,0 +1,242 @@
+{
+  "guide": {
+    "concepts": [
+      {
+        "name": "Directory Navigation",
+        "category": "File System",
+        "description": "Navigate through directories in MS-DOS/Command Prompt",
+        "usage": "cd [directory]",
+        "examples": [
+          "cd C:\\Users\\John",
+          "cd ..",
+          "cd\\",
+          "dir",
+          "dir /w",
+          "dir *.txt"
+        ],
+        "notes": "Use backslashes (\\) for paths. cd\\ goes to root directory"
+      },
+      {
+        "name": "File Operations",
+        "category": "File Management",
+        "description": "Basic file operations like copy, move, delete",
+        "usage": "copy source destination",
+        "examples": [
+          "copy file.txt backup.txt",
+          "move oldfile.txt newfile.txt",
+          "del unwanted.txt",
+          "ren oldname.txt newname.txt",
+          "type file.txt",
+          "xcopy C:\\Source C:\\Dest /E /I"
+        ],
+        "notes": "Use xcopy for advanced copying with subdirectories"
+      },
+      {
+        "name": "Directory Management",
+        "category": "File System",
+        "description": "Create and remove directories",
+        "usage": "mkdir directory_name",
+        "examples": [
+          "mkdir NewFolder",
+          "md \"Folder with Spaces\"",
+          "rmdir EmptyFolder",
+          "rd /s FolderWithContents",
+          "tree C:\\Users"
+        ],
+        "notes": "Use /s with rmdir to delete non-empty directories"
+      },
+      {
+        "name": "Text File Operations",
+        "category": "Text Processing",
+        "description": "View and manipulate text files",
+        "usage": "type filename.txt",
+        "examples": [
+          "type config.txt",
+          "more longfile.txt",
+          "echo Hello World > output.txt",
+          "echo Additional text >> output.txt",
+          "findstr \"error\" logfile.txt",
+          "sort < input.txt > sorted.txt"
+        ],
+        "notes": "> overwrites file, >> appends to file"
+      },
+      {
+        "name": "System Information",
+        "category": "System",
+        "description": "Get system and hardware information",
+        "usage": "systeminfo",
+        "examples": [
+          "ver",
+          "systeminfo",
+          "hostname",
+          "whoami",
+          "date",
+          "time",
+          "vol C:"
+        ],
+        "notes": "systeminfo provides detailed system configuration"
+      },
+      {
+        "name": "Process Management",
+        "category": "System",
+        "description": "View and manage running processes",
+        "usage": "tasklist",
+        "examples": [
+          "tasklist",
+          "tasklist /fi \"imagename eq notepad.exe\"",
+          "taskkill /pid 1234",
+          "taskkill /im notepad.exe",
+          "taskkill /f /im process.exe"
+        ],
+        "notes": "Use /f for force termination, /im for image name"
+      },
+      {
+        "name": "Network Commands",
+        "category": "Network",
+        "description": "Network diagnostic and configuration tools",
+        "usage": "ping hostname",
+        "examples": [
+          "ping google.com",
+          "ping -t 8.8.8.8",
+          "ipconfig",
+          "ipconfig /all",
+          "nslookup google.com",
+          "netstat -an",
+          "tracert google.com"
+        ],
+        "notes": "-t option pings continuously until stopped with Ctrl+C"
+      },
+      {
+        "name": "Environment Variables",
+        "category": "System",
+        "description": "View and modify environment variables",
+        "usage": "set VARIABLE=value",
+        "examples": [
+          "set",
+          "set PATH",
+          "set TEMP=C:\\MyTemp",
+          "echo %PATH%",
+          "echo %USERNAME%",
+          "setx PATH \"%PATH%;C:\\NewPath\" /M"
+        ],
+        "notes": "Use setx for permanent changes, set for session-only"
+      },
+      {
+        "name": "Batch File Basics",
+        "category": "Scripting",
+        "description": "Create and run batch files",
+        "usage": "@echo off",
+        "examples": [
+          "@echo off",
+          "echo Hello World",
+          "pause",
+          "if exist file.txt echo File found",
+          "for %%f in (*.txt) do echo %%f",
+          "goto :label"
+        ],
+        "notes": "Save as .bat or .cmd file, @echo off hides commands"
+      },
+      {
+        "name": "File Attributes",
+        "category": "File Management",
+        "description": "View and modify file attributes",
+        "usage": "attrib [options] filename",
+        "examples": [
+          "attrib file.txt",
+          "attrib +r file.txt",
+          "attrib -h file.txt",
+          "attrib +s +h folder",
+          "attrib *.txt /s"
+        ],
+        "notes": "+r=read-only, +h=hidden, +s=system, +a=archive"
+      },
+      {
+        "name": "Disk Operations",
+        "category": "System",
+        "description": "Disk and drive management commands",
+        "usage": "chkdsk drive:",
+        "examples": [
+          "chkdsk C:",
+          "chkdsk C: /f",
+          "diskpart",
+          "format A: /s",
+          "sfc /scannow",
+          "defrag C: /a"
+        ],
+        "notes": "/f fixes errors, /a analyzes without defragmenting"
+      },
+      {
+        "name": "Command History and Editing",
+        "category": "Shell Features",
+        "description": "Navigate command history and edit commands",
+        "usage": "F3 (repeat last command)",
+        "examples": [
+          "F1 - Character by character recall",
+          "F3 - Repeat last command",
+          "F7 - Command history window",
+          "F8 - Search command history",
+          "F9 - Select command by number",
+          "doskey /history"
+        ],
+        "notes": "Use arrow keys for command editing in newer versions"
+      },
+      {
+        "name": "Redirection and Pipes",
+        "category": "Shell Features",
+        "description": "Redirect input/output and use pipes",
+        "usage": "command > file",
+        "examples": [
+          "dir > filelist.txt",
+          "dir >> filelist.txt",
+          "sort < input.txt > output.txt",
+          "dir | find \"txt\"",
+          "type file.txt | more",
+          "command 2> errors.txt"
+        ],
+        "notes": "| pipes output to another command, 2> redirects error output"
+      },
+      {
+        "name": "Wildcards and Pattern Matching",
+        "category": "File Operations",
+        "description": "Use wildcards for file operations",
+        "usage": "* and ? wildcards",
+        "examples": [
+          "dir *.txt",
+          "copy *.doc backup\\",
+          "del temp?.*",
+          "ren *.bak *.old",
+          "for %f in (*.log) do type \"%f\""
+        ],
+        "notes": "* matches any characters, ? matches single character"
+      },
+      {
+        "name": "System Configuration",
+        "category": "System",
+        "description": "System configuration and registry tools",
+        "usage": "msconfig",
+        "examples": [
+          "msconfig",
+          "regedit",
+          "services.msc",
+          "gpedit.msc",
+          "control",
+          "appwiz.cpl"
+        ],
+        "notes": "These open GUI tools for system configuration"
+      },
+      {
+        "name": "File Comparison",
+        "category": "File Operations",
+        "description": "Compare files and directories",
+        "usage": "fc file1 file2",
+        "examples": [
+          "fc file1.txt file2.txt",
+          "fc /b binary1.exe binary2.exe",
+          "comp file1.txt file2.txt",
+          "xcopy source dest /d /l"
+        ],
+        "notes": "/b for binary comparison, /l lists files without copying"
+      }
+    ]
+  }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrossFire CLI - Documentation</title>
+<style>
+/* Base & Reset */
+* {margin:0;padding:0;box-sizing:border-box;text-decoration:none;}
+html,body {font-family:'Helvetica Neue',sans-serif;background-color:#000;color:#fff;line-height:1.6;scroll-behavior:smooth;cursor:none;position:relative;z-index:1;overflow-x:hidden;}
+*,*::before,*::after {cursor:none !important;}
+a,button,input,textarea,select,label,span {position:relative;z-index:1;cursor:none !important;}
+
+/* Container */
+.container {max-width:1000px;margin:auto;padding:2rem;}
+header{text-align:center;margin-bottom:2rem;}
+header h1{font-size:3rem;color:#a855f7;margin-bottom:0.5rem;}
+header p{color:#bbb;font-size:1.2rem;}
+
+/* Table of contents */
+.toc{margin:1.5rem 0 2rem 0; padding:1rem; border:1px solid #333; border-radius:12px;}
+.toc h2{color:#a855f7;margin-bottom:1rem;text-align:center;}
+.toc ul{list-style:none;padding-left:0;}
+.toc ul li{margin-bottom:0.75rem;}
+.toc a{color:#ccc; transition:all 0.3s ease;}
+.toc a:hover{color:#a855f7;}
+
+/* Sections */
+.section{margin-bottom:2rem;background-color:#111;padding:1.5rem;border-radius:12px;border:1px solid #333;}
+.section h2{color:#a855f7;margin-bottom:1rem;}
+.section pre{background:#000;border:1px solid #555;padding:1rem;border-radius:8px;overflow-x:auto;}
+.section code{color:#a855f7;}
+.section table{width:100%;border-collapse:collapse;margin-top:1rem;}
+.section table, .section th, .section td{border:1px solid #444;}
+.section th, .section td{padding:0.75rem;text-align:left;color:#ccc;}
+.section th{color:#a855f7;background:#111;}
+
+/* CTA */
+.cta-buttons{display:flex;justify-content:center;margin-bottom:2rem;}
+.cta-buttons a{padding:0.75rem 1.5rem;border-radius:9999px;background:#000;color:#fff;border:1px solid #555;font-weight:500;transition:all 0.3s ease;}
+.cta-buttons a:hover{box-shadow:0 0 12px 4px #a855f7;border-color:#a855f7;}
+
+/* Footer */
+footer{text-align:center;padding:2rem 1rem;font-size:0.875rem;color:#777;border-top:1px solid #333;}
+footer a{color:#fff;}
+footer a:hover{color:#c084fc;}
+
+/* Custom cursor */
+.cursor{position:fixed;top:0;left:0;width:20px;height:20px;background-color:#a855f7;border-radius:50%;pointer-events:none;mix-blend-mode:difference;box-shadow:0 0 12px 6px #a855f7;transform:translate(-50%,-50%);z-index:999999999;transition:transform 0.05s ease-out;will-change:transform;user-select:none;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>CrossFire CLI</h1>
+    <p>Global Package Manager | Documentation & Setup</p>
+  </header>
+
+  <div class="cta-buttons">
+    <a href="forum.html">Go to Community Forum</a>
+  </div>
+
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#language-install">Language Package Setup</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#updating-managers">Updating Managers</a></li>
+      <li><a href="#supported-languages">Supported Languages & Package Managers</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#license">License</a></li>
+    </ul>
+  </div>
+
+  <div class="section" id="installation">
+    <h2>Installation</h2>
+    <pre><code>git clone https://github.com/BCAS-Team/CrossFire.git
+cd CrossFire/CrossFireL
+</code></pre>
+    <p>Make <code>crossfire.py</code> executable and optionally add it to your system PATH:</p>
+    <pre><code># Linux/macOS
+chmod +x crossfire.py
+sudo ln -s $(pwd)/crossfire.py /usr/local/bin/crossfire
+
+# Windows (PowerShell)
+setx PATH "%PATH%;C:\Path\To\CrossFireL"</code></pre>
+  </div>
+
+  <div class="section" id="language-install">
+    <h2>Language Package Setup</h2>
+    <ul>
+      <li><b>Python:</b> Install Python 3.9+ from <a href="https://www.python.org/downloads/" target="_blank">python.org</a>, then pip is included.</li>
+      <li><b>NodeJS:</b> Install NodeJS (16+) from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>, npm comes bundled.</li>
+      <li><b>Rust:</b> <code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
+      <li><b>Ruby:</b> <code>sudo apt install ruby-full</code> (Linux), <code>brew install ruby</code> (macOS), <a href="https://rubyinstaller.org/">Windows Installer</a></li>
+      <li><b>PHP:</b> <code>sudo apt install php-cli composer</code> or <a href="https://getcomposer.org/">Composer installer</a></li>
+      <li><b>Java:</b> Install OpenJDK 11+ via <code>sudo apt install openjdk-11-jdk</code> or <a href="https://adoptium.net/">Adoptium</a></li>
+      <li><b>C++:</b> Install vcpkg: <code>git clone https://github.com/microsoft/vcpkg.git && ./bootstrap-vcpkg.sh</code></li>
+      <li><b>Swift:</b> Install Swift from <a href="https://swift.org/download/" target="_blank">swift.org</a></li>
+      <li><b>Go:</b> Install Go 1.18+ from <a href="https://golang.org/dl/" target="_blank">golang.org</a></li>
+      <li><b>R:</b> Install R from <a href="https://cran.r-project.org/" target="_blank">CRAN</a></li>
+    </ul>
+    <p>System Package Managers:</p>
+    <ul>
+      <li><b>Linux:</b> apt, dnf, pacman, snap, flatpak</li>
+      <li><b>macOS:</b> Homebrew, MacPorts</li>
+      <li><b>Windows:</b> Chocolatey, Winget, Scoop</li>
+    </ul>
+  </div>
+
+  <div class="section" id="usage">
+    <h2>Usage</h2>
+    <pre><code>crossfire &lt;package_name&gt;
+crossfire -um            # Update all managers
+crossfire -um &lt;manager&gt;  # Update a specific manager
+crossfire -up &lt;package&gt;  # Update a specific package</code></pre>
+  </div>
+
+  <div class="section" id="arguments">
+    <h2>Arguments</h2>
+    <ul>
+      <li>&lt;package_name&gt; : Install or update the package. CrossFire auto-detects the manager.</li>
+      <li>-um, --update-manager : Update managers. Use ALL to update all supported managers.</li>
+      <li>-up, --update-package : Update a specific package using its manager.</li>
+      <li>-h, --help : Show help message and exit.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="updating-managers">
+    <h2>Updating Managers</h2>
+    <pre><code># Update a specific manager
+crossfire -um pip
+crossfire -um npm
+
+# Update all managers
+crossfire -um</code></pre>
+  </div>
+
+  <div class="section" id="supported-languages">
+    <h2>Supported Languages & Package Managers</h2>
+    <table>
+      <tr><th>Language</th><th>Manager(s)</th></tr>
+      <tr><td>Python</td><td>pip</td></tr>
+      <tr><td>JavaScript</td><td>npm</td></tr>
+      <tr><td>Rust</td><td>cargo</td></tr>
+      <tr><td>Ruby</td><td>gem</td></tr>
+      <tr><td>PHP</td><td>composer</td></tr>
+      <tr><td>Java</td><td>maven</td></tr>
+      <tr><td>C++</td><td>vcpkg</td></tr>
+      <tr><td>Swift</td><td>SwiftPM</td></tr>
+      <tr><td>Go</td><td>go modules</td></tr>
+      <tr><td>R</td><td>CRAN</td></tr>
+      <tr><td>Linux OS</td><td>apt, dnf, pacman, snap, flatpak</td></tr>
+      <tr><td>macOS</td><td>Homebrew, MacPorts</td></tr>
+      <tr><td>Windows</td><td>Chocolatey, Winget, Scoop</td></tr>
+    </table>
+  </div>
+
+  <div class="section" id="examples">
+    <h2>Examples</h2>
+    <pre><code># Install a Python package
+crossfire requests
+
+# Install a NodeJS package
+crossfire express
+
+# Update a package
+crossfire -up PyQt6
+
+# Update all managers
+crossfire -um
+
+# Update a specific manager
+crossfire -um npm</code></pre>
+  </div>
+
+  <div class="section" id="notes">
+    <h2>Notes</h2>
+    <ul>
+      <li>Cross-platform: Works on Linux, macOS, and Windows.</li>
+      <li>Automatic detection: No need to specify pip, npm, or other managers explicitly.</li>
+      <li>Extensible: Easily add more languages or managers in crossfire.py.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="license">
+    <h2>License</h2>
+    <p>MIT License – Free to use, modify, and distribute.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 CrossFire CLI | <a href="forum.html">Community Forum</a>
+  </footer>
+</div>
+
+<div class="cursor" id="custom-cursor"></div>
+<script>
+const cursor=document.getElementById('custom-cursor');
+document.addEventListener('mousemove',e=>{cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;});
+</script>
+
+</body>
+</html>

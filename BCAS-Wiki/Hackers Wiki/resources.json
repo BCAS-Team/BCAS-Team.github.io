@@ -1,0 +1,361 @@
+
+{
+  "resources": [
+    {
+      "name": "Tor Project Manual",
+      "description": "Official documentation for using Tor Browser, including setup and anonymity tips.",
+      "links": ["https://tb-manual.torproject.org/"]
+    },
+    {
+      "name": "AlgoVPN GitHub Repository",
+      "description": "Open-source tool for setting up a personal VPN server with automated scripts.",
+      "links": ["https://github.com/trailofbits/algo"]
+    },
+    {
+      "name": "OpenVPN Official Website",
+      "description": "Official documentation and resources for configuring OpenVPN servers and clients.",
+      "links": ["https://openvpn.net/"]
+    },
+    {
+      "name": "John the Ripper Tool",
+      "description": "Password-cracking tool used in ethical penetration testing scenarios.",
+      "links": ["https://www.openwall.com/john/"]
+    },
+    {
+      "name": "Nmap Book (Official Documentation)",
+      "description": "Comprehensive guide to using Nmap for network discovery and vulnerability scanning.",
+      "links": ["https://nmap.org/book/man.html"]
+    },
+    {
+      "name": "Metasploit Framework Documentation",
+      "description": "Official resources for learning and using the Metasploit penetration testing framework.",
+      "links": ["https://metasploit.help.rapid7.com/docs"]
+    },
+    {
+      "name": "Aircrack-ng Suite Website",
+      "description": "Tools for wireless network analysis, packet capture, and Wi-Fi password cracking.",
+      "links": ["https://www.aircrack-ng.org/"]
+    },
+    {
+      "name": "YouTube (General Security Tutorials)",
+      "description": "YouTube channels like 'The Cyber Mentor' or 'Cybrary' for beginner-to-advanced tutorials on cybersecurity tools and techniques.",
+      "links": [
+        "https://www.youtube.com/@TheCyberMentor",
+        "https://www.youtube.com/c/Cybrary"
+      ]
+    },
+    {
+      "name": "Wikipedia (General Security Concepts)",
+      "description": "For foundational knowledge on cryptography, networking protocols, and ethical hacking principles.",
+      "links": ["https://en.wikipedia.org/wiki/Category:Computer_security"]
+    },
+    {
+      "name": "Ethical Hacking Forums",
+      "description": "Community-driven platforms like Hack The Box (HTB) or Reddit’s r/netsec for peer discussions and real-world examples.",
+      "links": [
+        "https://www.hackthebox.com/",
+        "https://www.reddit.com/r/netsec/"
+      ]
+    },
+    {
+      "name": "Kali Linux Official Website",
+      "description": "Official documentation and tools for penetration testing with Kali Linux distribution.",
+      "links": ["https://kali.org"]
+    },
+    {
+      "name": "Wireshark Official Website",
+      "description": "Network protocol analyzer used in packet capture and analysis during security audits.",
+      "links": ["https://www.wireshark.org/"]
+    },
+    {
+      "name": "OWASP ZAP (Zed Attack Proxy)",
+      "description": "Open-source web application security scanner for vulnerability testing.",
+      "links": ["https://owasp.org/www-project-zap/"]
+    },
+    {
+      "name": "Burp Suite",
+      "description": "Commercial web application security testing tool with a powerful proxy and scan engine.",
+      "links": ["https://portswigger.net/burpsuite"]
+    },
+    {
+      "name": "SQLMap Tool Documentation",
+      "description": "Automated SQL injection tool for detecting and exploiting vulnerabilities in databases.",
+      "links": ["https://sqlmap.org/"]
+    },
+    {
+      "name": "Nessus by Tenable",
+      "description": "Network vulnerability scanner used to assess security weaknesses in systems.",
+      "links": ["https://www.tenable.com/products/nessus"]
+    },
+    {
+      "name": "Vuls (Open-Source Vulnerability Scanner)",
+      "description": "Lightweight, fast, and flexible open-source vulnerability scanning tool for Linux servers.",
+      "links": ["https://vuls.io/"]
+    },
+    {
+      "name": "Metasploit Community Modules",
+      "description": "User-contributed Metasploit modules for exploiting various software vulnerabilities.",
+      "links": ["https://www.rapid7.com/db/modules/"]
+    },
+    {
+      "name": "Hack The Box (HTB)",
+      "description": "Platform for learning pentesting through real-world CTF challenges and practice boxes.",
+      "links": ["https://www.hackthebox.com/"]
+    },
+    {
+      "name": "CTFtime.org",
+      "description": "A community-driven platform listing Capture the Flag (CTF) events, competitions, and write-ups.",
+      "links": ["https://ctftime.org/"]
+    },
+    {
+      "name": "Hackademic Challenge",
+      "description": "Challenges to sharpen your skills in ethical hacking, web exploitation, and binary analysis.",
+      "links": ["https://www.hackademic.com/"]
+    },
+    {
+      "name": "OWASP Top Ten Project",
+      "description": "Official list of the top 10 most critical web application security risks to be aware of.",
+      "links": ["https://owasp.org/www-project-top-ten/"]
+    },
+    {
+      "name": "OSCP Exam Preparation Resources",
+      "description": "Study guides, labs, and practice for the Offensive Security Certified Professional (OSCP) certification.",
+      "links": [
+        "https://www.offensive-security.com/oscp/",
+        "https://github.com/SecureYourCode/oscp-training-materials"
+      ]
+    },
+    {
+      "name": "Hack The Box - Practice VMs",
+      "description": "Pre-built virtual machines for hands-on practice in penetration testing and exploitation.",
+      "links": ["https://www.hackthebox.com/learn"]
+    },
+    {
+      "name": "Metasploitable 2",
+      "description": "A custom Linux distribution with vulnerable services to practice exploit development.",
+      "links": ["http://metasploitable.com/"]
+    },
+    {
+      "name": "WebGoat by OWASP",
+      "description": "A platform designed for web application security training through interactive exercises.",
+      "links": ["https://owasp.org/www-project-webgoat/"]
+    },
+    {
+      "name": "HackMeIfYouCan (HMIC)",
+      "description": "An offensive security challenge where users can submit exploit code to be reviewed by experts.",
+      "links": ["https://hackmeifyoucan.com/"]
+    },
+    {
+      "name": "Linux Exploit Suggester",
+      "description": "A script that suggests Linux kernel exploits based on the system's version and configuration.",
+      "links": ["https://github.com/bitsadmin/Linux-Exploit-Suggester"]
+    },
+    {
+      "name": "CVE Details",
+      "description": "Database of Common Vulnerabilities and Exposures (CVEs) with detailed descriptions and references.",
+      "links": ["https://cve.mitre.org/"]
+    },
+    {
+      "name": "Exploit Database (Exploit-DB)",
+      "description": "A comprehensive collection of exploits, vulnerabilities, and related technical details for research purposes.",
+      "links": ["https://www.exploit-db.com/"]
+    },
+    {
+      "name": "CVE Portal",
+      "description": "Official repository of known software vulnerabilities with detailed metadata and patch information.",
+      "links": ["https://cveportal.org/"]
+    },
+    {
+      "name": "Kali Linux Tools List",
+      "description": "List of all tools available in the Kali Linux distribution for penetration testing, forensics, and network analysis.",
+      "links": ["https://kali.org/tools/"]
+    },
+    {
+      "name": "Metasploit Exploit Database",
+      "description": "A collection of Metasploit modules that can be used to exploit known software vulnerabilities.",
+      "links": ["https://github.com/rapid7/metasploit-framework"]
+    },
+    {
+      "name": "OWASP ZAP CLI Tool",
+      "description": "Command-line interface for OWASP ZAP, useful in automation and integration with CI/CD pipelines.",
+      "links": ["https://www.zaproxy.org/docs/cli/"]
+    },
+    {
+      "name": "Burp Suite Extension Marketplace",
+      "description": "A marketplace where developers can share custom Burp Suite extensions to enhance its functionality.",
+      "links": ["https://portswigger.net/burpsuite/extensions"]
+    },
+    {
+      "name": "SQLMap GitHub Repository",
+      "description": "Official source code and development documentation for the SQL injection tool.",
+      "links": ["https://github.com/sqlmapproject/sqlmap"]
+    },
+    {
+      "name": "Nmap Scripting Engine",
+      "description": "A collection of Nmap scripts that can be used to automate tasks like vulnerability detection, banner grabbing, etc.",
+      "links": ["https://nmap.org/nsedoc/scripts/"]
+    },
+    {
+      "name": "WireShark Wireshark Tutorials",
+      "description": "YouTube and official documentation for learning how to use Wireshark for packet analysis.",
+      "links": [
+        "https://www.youtube.com/@Wireshark",
+        "https://www.wireshark.org/docs/wsug_html_chunked/"
+      ]
+    },
+    {
+      "name": "OWASP Dependency-Check",
+      "description": "Tool to identify known vulnerable dependencies in Java-based projects.",
+      "links": ["https://owasp.org/dependency-check/"]
+    },
+    {
+      "name": "Cobalt Strike",
+      "description": "Advanced penetration testing tool used for simulating APT-style attacks and post-exploitation activities.",
+      "links": ["https://cobaltstrike.com/"]
+    },
+    {
+      "name": "Metasploit Post-Exploitation Modules",
+      "description": "Modules to maintain access, execute commands, or extract data from compromised systems.",
+      "links": [
+        "https://www.rapid7.com/db/modules/post/",
+        "https://www.rapid7.com/db/modules/generic/"
+      ]
+    },
+    {
+      "name": "Nmap Scripting Engine (NSE) Repository",
+      "description": "Repository of all available Nmap scripts for advanced network scanning and vulnerability detection.",
+      "links": ["https://nmap.org/nsedoc/scripts/"]
+    },
+    {
+      "name": "Linux Privilege Escalation Techniques",
+      "description": "List of Linux-based privilege escalation methods used in penetration testing.",
+      "links": ["https://www.hackerone.com/blog/linux-privilege-escalation-techniques"]
+    },
+    {
+      "name": "Metasploit Exploit Development Guide",
+      "description": "Resources for learning how to write custom Metasploit exploits from scratch.",
+      "links": [
+        "https://www.rapid7.com/resources/white-papers/metasploit-exploit-development-guide/",
+        "https://github.com/rapid7/metasploit-framework"
+      ]
+    },
+    {
+      "name": "OSCP Preparation Video Tutorials",
+      "description": "YouTube channels with video content for preparing for the Offensive Security Certified Professional (OSCP) exam.",
+      "links": [
+        "https://www.youtube.com/@TheCyberMentor",
+        "https://www.youtube.com/c/Cybrary"
+      ]
+    },
+    {
+      "name": "Linux Kernel Exploitation Guide",
+      "description": "A guide to exploiting Linux kernel vulnerabilities and maintaining access.",
+      "links": ["https://github.com/0x41414141/linux-exploit"]
+    },
+    {
+      "name": "Metasploit Community Modules Repository",
+      "description": "A GitHub repository of user-contributed Metasploit modules for various software vulnerabilities.",
+      "links": ["https://github.com/rapid7/metasploit-framework/tree/master/modules"]
+    },
+    {
+      "name": "OWASP Top Ten 2017 (and later versions)",
+      "description": "Updated version of the OWASP Top Ten list, focusing on modern web application vulnerabilities.",
+      "links": ["https://owasp.org/www-project-top-ten/"]
+    },
+    {
+      "name": "Metasploit Exploitation Framework",
+      "description": "A powerful framework for developing and testing exploits against known vulnerabilities in software systems.",
+      "links": ["https://www.rapid7.com/db"]
+    },
+    {
+      "name": "Linux Privilege Escalation Toolkit",
+      "description": "Collection of tools and scripts to perform Linux privilege escalation during a penetration test.",
+      "links": ["https://github.com/carlospolop/privilege-escalation-linux-box"]
+    },
+    {
+      "name": "Metasploit Post-Exploitation Techniques",
+      "description": "A collection of techniques used in Metasploit to maintain access and perform post-exploitation activities.",
+      "links": [
+        "https://www.rapid7.com/db/modules/post/",
+        "https://www.rapid7.com/db/modules/generic/"
+      ]
+    },
+    {
+      "name": "Linux Kernel Exploitation Tools",
+      "description": "A list of tools and resources for exploiting Linux kernel vulnerabilities during a penetration test.",
+      "links": ["https://github.com/carlospolop/privilege-escalation-linux-box"]
+    },
+    {
+      "name": "Metasploit Modules List (by Category)",
+      "description": "Organized list of Metasploit modules categorized for easier navigation and use in exploitation scenarios.",
+      "links": [
+        "https://www.rapid7.com/db/modules/",
+        "https://github.com/rapid7/metasploit-framework/tree/master/lib/msf/core/exploits"
+      ]
+    },
+    {
+      "name": "OWASP Application Security Verification Standard (ASVS)",
+      "description": "A standard for assessing the security of web applications, often used in penetration testing.",
+      "links": ["https://owasp.org/www-project-asvs/"]
+    },
+    {
+      "name": "Linux Kernel Exploitation Research",
+      "description": "Research papers and articles on Linux kernel vulnerability exploitation techniques.",
+      "links": ["https://www.researchgate.net/publication/291617054_Exploiting_Linux_Kernel_Vulnerabilities"]
+    },
+    {
+      "name": "Metasploit Framework API",
+      "description": "APIs for interacting with the Metasploit framework programmatically, useful in automation and integration.",
+      "links": ["https://www.rapid7.com/documentation/metasploit-framework/"]
+    },
+    {
+      "name": "Linux Privilege Escalation Cheatsheet",
+      "description": "A summary of common Linux privilege escalation techniques for quick reference during a penetration test.",
+      "links": ["https://book.hacktricks.xyz/linux-hardening/privilege-escalation"]
+    },
+    {
+      "name": "Metasploit Post-Exploitation Techniques (Tutorials)",
+      "description": "YouTube tutorials and documentation covering Metasploit post-exploitation techniques for maintaining access.",
+      "links": [
+        "https://www.youtube.com/@TheCyberMentor",
+        "https://www.youtube.com/c/Cybrary"
+      ]
+    },
+    {
+      "name": "Linux Kernel Vulnerability Exploitation Guide",
+      "description": "A guide on how to exploit Linux kernel vulnerabilities and maintain access after a successful exploitation.",
+      "links": ["https://github.com/0x41414141/linux-exploit"]
+    },
+    {
+      "name": "Metasploit Modules for Common Vulnerabilities",
+      "description": "List of Metasploit modules that are specifically designed to exploit known vulnerabilities in common software.",
+      "links": ["https://www.rapid7.com/db/"]
+    },
+    {
+      "name": "Linux Kernel Exploitation Tools and Techniques",
+      "description": "A collection of tools, scripts, and methods used for exploiting Linux kernel vulnerabilities during a penetration test.",
+      "links": [
+        "https://github.com/carlospolop/privilege-escalation-linux-box",
+        "https://www.researchgate.net/publication/291617054_Exploiting_Linux_Kernel_Vulnerabilities"
+      ]
+    },
+    {
+      "name": "Metasploit Exploitation Framework Tutorials",
+      "description": "YouTube tutorials and documentation for learning how to use the Metasploit framework for exploitation purposes.",
+      "links": [
+        "https://www.youtube.com/@TheCyberMentor",
+        "https://www.youtube.com/c/Cybrary"
+      ]
+    },
+    {
+      "name": "Linux Kernel Exploitation Research Papers",
+      "description": "Academic research papers on Linux kernel vulnerabilities and their exploitation methods.",
+      "links": ["https://dl.acm.org/doi/10.1145/2976839.2978341"]
+    },
+    {
+      "name": "Metasploit Exploitation Tools",
+      "description": "A list of tools and modules that can be used in conjunction with the Metasploit framework for network exploitation.",
+      "links": ["https://www.rapid7.com/db/"]
+    }
+  ]
+}

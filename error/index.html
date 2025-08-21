@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCAS | Error</title>
+  <!-- Link to the main styles.css, assuming it's one level up from the error directory -->
+  <link rel="stylesheet" href="../styles.css" /> 
+  <style>
+    /* Specific styles for the error page to override/enhance main styles */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', sans-serif;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .error-container {
+      background-color: #1a1a1a;
+      padding: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.5); /* Red glow for error */
+      max-width: 600px;
+      width: 90%;
+      animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both; /* Subtle shake animation */
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-1px, 0, 0); }
+      20%, 80% { transform: translate3d(2px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+
+    .error-container h1 {
+      font-size: 3rem;
+      color: #ff6347; /* Tomato red for error */
+      margin-bottom: 1.5rem;
+    }
+    .error-container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+    .error-container a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      border-radius: 9999px;
+      background-color: #a855f7;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px #a855f7cc;
+    }
+    .error-container a:hover {
+      background-color: #c084fc;
+      box-shadow: 0 0 15px #c084fc;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>Error! Something Went Wrong.</h1>
+    <p>We're sorry, but an unexpected error occurred while trying to load the page you requested.</p>
+    <p>This could be due to a missing file, an incorrect path, or an internal issue.</p>
+    <a href="../index.html">Return to Home Page</a> <!-- Link back to the age gate (index.html) -->
+  </div>
+</body>
+</html>
