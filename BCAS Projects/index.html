@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCAS - Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>BCAS - Projects</h1>
+    <p class="tagline">Power For the People!</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="portfolio">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>CrossFire</h3>
+        <p>CrossFire: A universal package manager that unifies software installation across Windows, macOS, and Linux. Built in Python to manage apt, winget, brew, and more with one command.</p>
+        <a href="https://github.com/BCAS-Team/CrossFire" target="_blank">GitHub Repo</a>
+        <a href="https://www.youtube.com/watch?v=Sd4ze3Zz5lE" target="_blank">Youtube Video</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>PaL - HyperSecure</h3>
+        <p>Message With complete security, PaL is an UNCOMPLETE project and currently has ALOT of issues, however its cool non the less</p>
+        <a href="https://github.com/BCAS-Team/PaL-HyperSecure" target="_blank">GitHub Repo</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Legal Section -->
+  <section class="legal-section">
+    <h2>About This Site</h2>
+    <p>This site is a personal showcase of my projects. All code is available on GitHub, and each project may include a live demo where possible.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 BCAS — Built with Consistant Coolness</p>
+    <p>
+      <a href="https://github.com/BCAS-Team" target="_blank">GitHub</a> |
+      <a href="https://www.youtube.com/@BCAS.Projects" target="_blank">Youtube</a>
+    </p>
+  </footer>
+
+  <!-- JS for Cursor -->
+  <script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  </script>
+</body>
+</html>
