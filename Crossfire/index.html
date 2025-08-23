@@ -4,242 +4,233 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CrossFire CLI - Documentation</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Using Helvetica Neue and a fallback -->
+<link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* Base & Reset */
+/* Reset & Base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-html, body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0d1117;
-    color: #c9d1d9;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    position: relative;
-    z-index: 1;
-    overflow-x: hidden;
-}
-:root {
-    --primary-color: #58a6ff;
-    --secondary-color: #8b949e;
-    --background-dark: #010409;
-    --background-light: #161b22;
-    --border-color: #30363d;
-    --success-color: #3fb950;
-    --warning-color: #d29922;
-    --danger-color: #f85149;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-/* Container */
+html, body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  cursor: none;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+a, button, input, textarea, select, label, span {
+  position: relative;
+  z-index: 1;
+  cursor: none !important;
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #a855f7;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 12px 6px #a855f7;
+  transform: translate(-50%, -50%);
+  z-index: 999999999;
+  transition: transform 0.05s ease-out;
+  will-change: transform;
+  user-select: none;
+}
+
+/* Page Layout */
 .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  border: 1px solid #333;
 }
+
 header {
-    text-align: center;
-    margin-bottom: 2.5rem;
+  text-align: center;
+  padding: 3rem 0;
+  border-bottom: 1px solid #333;
 }
+
 header h1 {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #fff;
 }
+
 header p {
-    color: var(--secondary-color);
-    font-size: 1.2rem;
+  font-size: 1.25rem;
+  color: #bbb;
 }
 
 /* Table of Contents */
 .toc {
-    margin: 1.5rem 0 3rem 0;
-    padding: 1.5rem;
-    background-color: var(--background-light);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  border: 1px solid #333;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
+
 .toc h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #a855f7;
+  text-align: center;
 }
+
 .toc ul {
-    list-style: none;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
-.toc ul li {
-    margin-bottom: 0.75rem;
+
+.toc li {
+  background-color: #2a2a2a;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  border: 1px solid #555;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
+
 .toc a {
-    color: var(--secondary-color);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  color: #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-.toc a:hover {
-    color: var(--primary-color);
-    transform: translateX(5px);
+
+.toc li:hover {
+  background-color: #a855f7;
 }
-.toc a::before {
-    content: '→';
-    display: inline-block;
-    color: var(--primary-color);
-    font-size: 1.2em;
-    font-weight: bold;
-    opacity: 0.7;
-    transition: transform 0.3s ease;
-}
-.toc a:hover::before {
-    transform: rotate(45deg);
-    opacity: 1;
+
+.toc li:hover a {
+  color: #000;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 /* Sections */
 .section {
-    margin-bottom: 3.5rem;
-    background-color: var(--background-light);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  border: 1px solid #333;
 }
+
 .section h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    font-weight: 500;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    display: inline-block;
+  font-size: 2rem;
+  color: #a855f7;
+  border-bottom: 2px solid #a855f7;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
+
 .section h3 {
-    color: var(--secondary-color);
-    margin: 1.5rem 0 1rem;
-    font-size: 1.5rem;
-    font-weight: 500;
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
+
 .section p, .section li {
-    font-size: 1rem;
-    color: #c9d1d9;
-    margin-bottom: 0.75rem;
+  color: #ccc;
+  margin-bottom: 1rem;
 }
+
 .section pre {
-    background: var(--background-dark);
-    border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  background-color: #0d0d0d;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #333;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
+
 .section code {
-    color: var(--success-color);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
+  color: #c084fc;
+  font-family: 'Courier New', Courier, monospace;
 }
+
 .section table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1.5rem;
-    text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
 }
-.section table, .section th, .section td {
-    border: 1px solid var(--border-color);
-}
+
 .section th, .section td {
-    padding: 1rem;
-    color: var(--secondary-color);
+  border: 1px solid #444;
+  padding: 1rem;
+  text-align: left;
+  color: #ccc;
 }
+
 .section th {
-    color: var(--primary-color);
-    background: #111;
-    font-weight: 500;
+  background-color: #222;
+  color: #a855f7;
+  font-weight: 500;
 }
+
+/* List styles */
 .section ul, .section ol {
-    padding-left: 2rem;
+  padding-left: 1.5rem;
 }
+
 .section ul li {
-    list-style: disc;
-}
-.section ol li {
-    list-style: decimal;
-}
-
-/* Icons for lists */
-.section ul li::marker {
-    color: var(--success-color);
-}
-.section ol li::marker {
-    color: var(--primary-color);
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.5em;
 }
 
-/* CTA Buttons */
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-.cta-buttons a {
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    background: var(--primary-color);
-    color: var(--background-dark);
-    border: 1px solid var(--primary-color);
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-.cta-buttons a:hover {
-    background: transparent;
-    color: var(--primary-color);
+.section ul li::before {
+  content: '→';
+  color: #c084fc;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    border-top: 1px solid var(--border-color);
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-}
-footer a {
-    color: var(--primary-color);
-    transition: color 0.3s ease;
-}
-footer a:hover {
-    color: var(--success-color);
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-    header h1 {
-        font-size: 2.5rem;
-    }
-    .toc ul {
-        grid-template-columns: 1fr;
-    }
-    .section h2 {
-        font-size: 1.75rem;
-    }
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  color: #777;
+  border-top: 1px solid #333;
+  margin-top: 2rem;
 }
 </style>
 </head>
 <body>
+
+<div class="cursor"></div>
 
 <div class="container">
   <header>
@@ -480,17 +471,14 @@ footer a:hover {
   
   <div class="section" id="core-components">
     <h2>Core Components</h2>
-    
     <h3>Logging System</h3>
     <p>CrossFire implements a sophisticated logging system with multiple output modes:</p>
-    
     <h4>LogCfg Class</h4>
     <pre><code>@dataclass
 class LogCfg:
-    quiet: bool = False      # Suppress non-error output
-    verbose: bool = False    # Show detailed operation info
-    json_mode: bool = False  # Machine-readable JSON output</code></pre>
-    
+    quiet: bool = False # Suppress non-error output
+    verbose: bool = False # Show detailed operation info
+    json_mode: bool = False # Machine-readable JSON output</code></pre>
     <h4>Color Support Detection</h4>
     <p>The system intelligently detects terminal color support:</p>
     <pre><code>def _fmt(msg: str, typ: str) -> str:
@@ -500,7 +488,6 @@ class LogCfg:
         (OS_NAME != "Windows" or os.environ.get("FORCE_COLOR") or
          os.environ.get("ANSICON") or "ANSI" in os.environ.get("TERM", ""))
     )</code></pre>
-    
     <h4>Log Levels</h4>
     <ul>
       <li><b>INFO</b>: General information (blue)</li>
@@ -509,7 +496,6 @@ class LogCfg:
       <li><b>ERROR</b>: Fatal errors (red)</li>
       <li><b>MUTED</b>: Secondary information (gray)</li>
     </ul>
-    
     <h4>JSON Output Mode</h4>
     <p>When <code>--json</code> flag is used, all output switches to structured JSON:</p>
     <pre><code>{
@@ -519,28 +505,25 @@ class LogCfg:
   "package": "numpy",
   "manager": "pip"
 }</code></pre>
-    
     <h3>Command Execution System</h3>
-    
     <h4>RunResult Dataclass</h4>
     <pre><code>@dataclass
 class RunResult:
-    ok: bool      # True if command succeeded (return code 0)
-    code: int     # Actual return code
-    out: str      # stdout content
-    err: str      # stderr content</code></pre>
-    
+    ok: bool  # True if command succeeded (return code 0)
+    code: int # Actual return code
+    out: str  # stdout content
+    err: str  # stderr content</code></pre>
     <h4>Command Parsing</h4>
     <p>The <code>_split_cmd</code> function handles both string and list command formats:</p>
     <pre><code>def _split_cmd(cmd: str | List[str]) -> List[str]:
     if isinstance(cmd, list):
         return cmd
+
     import shlex
     try:
         return shlex.split(cmd)  # Properly handle quoted arguments
     except ValueError:
-        return cmd.split()       # Fallback for simple cases</code></pre>
-    
+        return cmd.split()  # Fallback for simple cases</code></pre>
     <h4>Execution Features</h4>
     <ul>
       <li><b>Timeout Protection</b>: Prevents hanging on unresponsive commands</li>
@@ -549,27 +532,25 @@ class RunResult:
       <li><b>Shell Detection</b>: Automatic shell usage for complex commands</li>
       <li><b>Cross-Platform</b>: Handles Windows-specific creation flags</li>
     </ul>
-    
     <h4>Shell Command Detection</h4>
     <p>CrossFire automatically determines when to use shell mode:</p>
     <pre><code>if shell or (isinstance(cmd, str) and any(op in cmd for op in ['&&', '||', ';', '|', '>', '<'])):
     shell = True</code></pre>
-    
-    <h3>System Detection</h3>
-    
+  </div>
+  
+  <div class="section" id="system-detection">
+    <h2>System Detection</h2>
     <h4>Operating System Detection</h4>
-    <pre><code>OS_NAME = platform.system()      # Windows, Darwin, Linux
+    <pre><code>OS_NAME = platform.system() # Windows, Darwin, Linux
 ARCH = platform.architecture()[0] # 32bit, 64bit</code></pre>
-    
     <h4>Distribution Detection</h4>
     <p>CrossFire uses the <code>distro</code> library for Linux distribution detection:</p>
     <pre><code>try:
     import distro
-    DISTRO_NAME = distro.id()      # ubuntu, fedora, arch, etc.
+    DISTRO_NAME = distro.id()  # ubuntu, fedora, arch, etc.
     DISTRO_VERSION = distro.version()
 except Exception:
     # Fallback to platform-specific detection</code></pre>
-    
     <h4>Architecture-Aware Operations</h4>
     <p>The system adapts behavior based on detected architecture:</p>
     <ul>
@@ -581,10 +562,8 @@ except Exception:
   
   <div class="section" id="command-reference">
     <h2>Command Reference</h2>
-    
     <h3>Basic Usage</h3>
     <pre><code>crossfire [OPTIONS] [COMMAND]</code></pre>
-    
     <h3>Global Options</h3>
     <table>
       <thead>
@@ -622,9 +601,7 @@ except Exception:
         </tr>
       </tbody>
     </table>
-    
     <h3>Package Operations</h3>
-    
     <h4>Installation</h4>
     <pre><code># Auto-detect best manager
 crossfire -i package_name
@@ -636,769 +613,139 @@ crossfire -i package_name --manager pip
 crossfire --install-from requirements.txt
 
 # Install with specific manager preference
-crossfire --install-from package_list.txt --manager npm</code></pre>
-    
-    <h4>Package Search</h4>
-    <pre><code># Search all available managers
-crossfire -s search_term
-
-# Search specific manager
-crossfire -s search_term --manager pip
-
-# JSON output for automation
-crossfire --json -s search_term</code></pre>
-    
-    <h4>Package Information</h4>
-    <pre><code># Get package details
-crossfire --info package_name
-
-# Manager-specific info
-crossfire --info package_name --manager npm
-
-# JSON format
-crossfire --json --info package_name</code></pre>
-    
-    <h4>Package Removal</h4>
-    <pre><code># Remove package (auto-detect manager)
-crossfire -r package_name
-
-# Remove with specific manager
-crossfire -r package_name --manager pip</code></pre>
-    
-    <h3>System Management</h3>
-    
-    <h4>Manager Status</h4>
-    <pre><code># List all managers and status
-crossfire --list-managers
-
-# JSON format
-crossfire --json --list-managers</code></pre>
-    
-    <h4>Manager Updates</h4>
-    <pre><code># Update all managers
-crossfire -um ALL
-
-# Update specific manager
-crossfire -um pip
-
-# Verbose update with details
-crossfire -v -um ALL</code></pre>
-    
-    <h4>System Cleanup</h4>
-    <pre><code># Clean all package caches
-crossfire --cleanup
-
-# JSON output
-crossfire --json --cleanup</code></pre>
-    
-    <h4>Health Check</h4>
-    <pre><code># Comprehensive system health check
-crossfire --health-check
-
-# JSON format for monitoring
-crossfire --json --health-check</code></pre>
-    
-    <h4>System Statistics</h4>
-    <pre><code># Show system and package statistics
-crossfire --stats
-
-# JSON format
-crossfire --json --stats</code></pre>
-    
-    <h3>Export/Import</h3>
-    
-    <h4>Export Package Lists</h4>
-    <pre><code># Export pip packages
-crossfire --export pip
-
-# Export to file
-crossfire --export pip -o requirements.txt
-
-# Export npm global packages
-crossfire --export npm -o package-list.txt</code></pre>
-    
-    <h3>Self-Maintenance</h3>
-    
-    <h4>Self-Update</h4>
-    <pre><code># Update from default GitHub source
-crossfire -cu
-
-# Update from specific URL
-crossfire -cu https://example.com/crossfire.py
-
-# Verify with SHA256 hash
-crossfire -cu --sha256 abc123def456...</code></pre>
-    
-    <h4>Configuration</h4>
-    <pre><code># Show current configuration
-crossfire --config
-
-# JSON format
-crossfire --json --config</code></pre>
-    
-    <h4>Setup</h4>
-    <pre><code># Run initial setup (PATH, launcher)
-crossfire --setup</code></pre>
-    
-    <h3>Output Modes</h3>
-    
-    <h4>Standard Mode</h4>
-    <p>Human-readable output with colors and formatting:</p>
-    <pre><code>[CrossFire] 📦 Installing package: numpy
-↳ Attempting via Python (pip)...
-✅ Installed 'numpy' via Python (pip)</code></pre>
-    
-    <h4>JSON Mode</h4>
-    <p>Machine-parseable structured output:</p>
-    <pre><code>{
-  "package": "numpy",
-  "success": true,
-  "attempts": [
-    {
-      "manager": "pip",
-      "result": {
-        "ok": true,
-        "code": 0,
-        "stdout": "Successfully installed numpy-1.21.0",
-        "stderr": ""
-      }
-    }
-  ]
-}</code></pre>
-    
-    <h4>Quiet Mode</h4>
-    <p>Only errors and critical information:</p>
-    <pre><code>✗ Failed to install 'nonexistent-package' with all available managers.</code></pre>
-    
-    <h4>Verbose Mode</h4>
-    <p>Detailed operation information:</p>
-    <pre><code>[CrossFire] 📦 Installing package: numpy
-[CrossFire] Running: python -m pip install numpy
-[CrossFire] Will try managers in this order:
-[CrossFire]   • Python (pip)
-[CrossFire]   • APT
-[CrossFire] ↳ Attempting via Python (pip)...
-[CrossFire] ✅ Installed 'numpy' via Python (pip)</code></pre>
+crossfire --install-from package.json --manager npm</code></pre>
   </div>
   
   <div class="section" id="package-manager-integration">
     <h2>Package Manager Integration</h2>
-    
-    <h3>Manager Detection System</h3>
-    <p>CrossFire uses a multi-layered approach to detect package managers:</p>
-    
-    <h4>1. Binary Availability Check</h4>
-    <pre><code>def is_installed(manager_name: str) -> bool:
-    meta = PACKAGE_MANAGERS.get(manager_name, {})
-    manager_cmds = meta.get("manager", [])
+    <h3>Integration Model</h3>
+    <p>CrossFire uses a factory pattern to handle different package managers. Each manager (e.g., APT, NPM, Pip) is a separate class with a standardized interface for installation, removal, and other operations.</p>
+    <h3>Example: APT Integration</h3>
+    <pre><code>class AptManager(PackageManager):
+    def __init__(self):
+        super().__init__("apt", "Debian/Ubuntu", "system", ["apt", "apt-get"])
+        
+    def install(self, package_name: str, options: dict) -> RunResult:
+        cmd = f"sudo apt-get install -y {package_name}"
+        return run_command(cmd)
 
-    for cmd_list in manager_cmds:
-        if cmd_list and shutil.which(cmd_list[0]):
-            # Binary exists, now verify it works
-            check_cmd = meta.get("check_cmd")
-            if check_cmd:
-                result = run_command(check_cmd, timeout=10)
-                return result.ok</code></pre>
-    
-    <h4>2. Functional Verification</h4>
-    <p>Each manager is tested with a simple command to ensure it's working:</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Manager</th>
-          <th>Test Command</th>
-          <th>Purpose</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>pip</td>
-          <td><code>pip --version</code></td>
-          <td>Verify pip responds</td>
-        </tr>
-        <tr>
-          <td>npm</td>
-          <td><code>npm --version</code></td>
-          <td>Check npm installation</td>
-        </tr>
-        <tr>
-          <td>brew</td>
-          <td><code>brew --version</code></td>
-          <td>Test Homebrew</td>
-        </tr>
-        <tr>
-          <td>apt</td>
-          <td><code>apt --version</code></td>
-          <td>Verify APT</td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <h4>3. Caching System</h4>
-    <p>Manager detection results are cached to avoid repeated expensive checks:</p>
-    <pre><code>_installed_cache: Dict[str, bool] = {}
-
-def is_installed(manager_name: str) -> bool:
-    if manager_name in _installed_cache:
-        return _installed_cache[manager_name]
-    # ... perform detection ...
-    _installed_cache[manager_name] = result
-    return result</code></pre>
-    
-    <h3>Installation Strategy</h3>
-    <p>CrossFire uses intelligent manager selection based on multiple factors:</p>
-    
-    <h4>1. Package Type Heuristics</h4>
-    <pre><code>def _looks_like_python_pkg(pkg: str) -> bool:
-    python_indicators = ["==", ">=", "<=", "~=", "!=", "[", "]"]
-    if any(indicator in pkg for indicator in python_indicators):
-        return True
-
-    python_common = ["django", "flask", "numpy", "pandas"]
-    return any(pkg.lower().startswith(prefix) for prefix in python_common)
-
-def _looks_like_npm_pkg(pkg: str) -> bool:
-    return pkg.startswith("@") or pkg.lower() in ["express", "react", "vue"]</code></pre>
-    
-    <h4>2. Platform-Specific Priority</h4>
-    <pre><code>def _system_manager_priority() -> List[str]:
-    ot = _os_type()
-
-    if ot == "macos":
-        return ["brew", "snap", "flatpak"]
-    elif ot == "windows":
-        return ["winget", "choco"]
-    elif ot == "linux":
-        # Detect specific Linux package manager
-        linux_managers = [
-            ("apt", ["apt", "apt-get"]),
-            ("dnf", ["dnf"]),
-            ("yum", ["yum"]),
-            ("pacman", ["pacman"]),
-        ]
-        # Return first available + universal managers
-        return [detected_manager, "snap", "flatpak"]</code></pre>
-    
-    <h4>3. Installation Command Generation</h4>
-    <p>Each manager has a dedicated command builder:</p>
-    <pre><code>MANAGER_INSTALL_HANDLERS = {
-    "pip": lambda pkg: [sys.executable, "-m", "pip", "install", pkg],
-    "npm": lambda pkg: ["npm", "install", "-g", pkg],
-    "apt": lambda pkg: ["sudo", "apt", "install", "-y", pkg],
-    "brew": lambda pkg: ["brew", "install", pkg],
-    # ... more handlers
-}</code></pre>
-    
-    <h3>Python Package Management</h3>
-    
-    <h4>Multi-Python Support</h4>
-    <p>CrossFire intelligently handles multiple Python installations:</p>
-    <pre><code>def _get_python_commands() -> List[List[str]]:
-    candidates = []
-
-    # Current Python interpreter (highest priority)
-    if sys.executable:
-        candidates.append([sys.executable, "-m", "pip"])
-
-    # System Python variants
-    for exe_name in ("python3", "python", "py"):
-        exe_path = shutil.which(exe_name)
-        if exe_path and exe_path != sys.executable:
-            candidates.append([exe_path, "-m", "pip"])
-
-    # Direct pip commands
-    for pip_name in ("pip3", "pip"):
-        pip_path = shutil.which(pip_name)
-        if pip_path:
-            candidates.append([pip_path])
-
-    return candidates</code></pre>
-    <p>This ensures CrossFire works with:</p>
-    <ul>
-      <li>Virtual environments</li>
-      <li>Multiple Python versions</li>
-      <li>System-wide Python installations</li>
-      <li>Alternative Python distributions (Anaconda, PyPy)</li>
-    </ul>
-    
-    <h3>Error Recovery</h3>
-    
-    <h4>Graceful Fallback Chain</h4>
-    <p>When one manager fails, CrossFire automatically tries alternatives:</p>
-    <pre><code>def install_package(pkg: str, preferred_manager: Optional[str] = None):
-    candidates = _ordered_install_manager_candidates(pkg, installed)
-    attempts = []
-
-    for manager in candidates:
-        try:
-            cmd = MANAGER_INSTALL_HANDLERS[manager](pkg)
-            result = run_command(cmd, timeout=1800)
-            attempts.append((manager, result))
-
-            if result.ok:
-                return (True, attempts)  # Success!
-except Exception as e:
-            attempts.append((manager, RunResult(False, -1, "", str(e))))
-
-    return (False, attempts)  # All managers failed</code></pre>
-    
-    <h4>Intelligent Error Messages</h4>
-    <p>CrossFire extracts meaningful error messages from manager output:</p>
-    <pre><code>err_msg = (res.err or res.out).strip()
-if err_msg:
-    error_lines = err_msg.splitlines()
-    relevant_error = error_lines[-1]  # Usually the most important
-    if len(relevant_error) > 180:
-        relevant_error = relevant_error[:177] + "..."</code></pre>
+    # ... other methods like remove, update, search</code></pre>
+    <h3>Manager Selection Logic</h3>
+    <p>The core logic for manager selection is a priority-based system:</p>
+    <ol>
+      <li><b>Explicit Manager</b>: If <code>--manager</code> flag is used, that manager is prioritized.</li>
+      <li><b>File-Based Detection</b>: If a manifest file is found (e.g., <code>requirements.txt</code>, <code>package.json</code>), the corresponding manager is chosen.</li>
+      <li><b>Heuristic Scoring</b>: A scoring system based on platform, package name, and user preferences determines the best available manager.</li>
+      <li><b>Default Fallback</b>: If no manager is selected, a pre-defined default is used (e.g., Homebrew on macOS, APT on Debian).</li>
+    </ol>
   </div>
   
   <div class="section" id="system-detection">
     <h2>System Detection</h2>
-    
-    <h3>Cross-Platform Compatibility</h3>
-    <p>CrossFire adapts its behavior based on the detected operating system:</p>
-    
-    <h4>Windows-Specific Handling</h4>
-    <pre><code>if OS_NAME == "Windows":
-    creation_flags = subprocess.CREATE_NO_WINDOW  # Hide console windows
-    # Use .bat files for launchers
-    # Handle path separators correctly
-    # Use Windows package managers (winget, choco)</code></pre>
-    
-    <h4>macOS-Specific Features</h4>
-    <pre><code>if OS_NAME == "Darwin":
-    DISTRO_NAME = "macOS"
-    DISTRO_VERSION = platform.mac_ver()[0]
-    # Prefer Homebrew for package management
-    # Use .bash_profile over .bashrc</code></pre>
-    
-    <h4>Linux Distribution Detection</h4>
-    <pre><code>try:
-    import distro
-    DISTRO_NAME = distro.id()        # ubuntu, fedora, arch, alpine
-    DISTRO_VERSION = distro.version() # 20.04, 35, rolling
-except Exception:
-    # Fallback detection methods
-    DISTRO_NAME = OS_NAME.lower()</code></pre>
-    
-    <h3>Architecture Detection</h3>
-    <pre><code>ARCH = platform.architecture()[0]  # '32bit' or '64bit'</code></pre>
-    <p>This affects:</p>
-    <ul>
-      <li>Package manager availability</li>
-      <li>Package selection for architecture-specific software</li>
-      <li>Installation paths and methods</li>
-    </ul>
-    
-    <h3>Shell Detection and Integration</h3>
-    <p>CrossFire detects and integrates with various shells:</p>
-    
-    <h4>Shell-Specific PATH Configuration</h4>
+    <p>Accurate system detection is crucial for CrossFire's cross-platform functionality. It determines available package managers, command syntax, and installation paths.</p>
+    <h3>Detection Flow</h3>
+    <ol>
+      <li><b>OS Detection</b>: Uses <code>platform.system()</code> to identify the base OS (Linux, Windows, Darwin).</li>
+      <li><b>Distribution Detection</b>: On Linux, uses the <code>distro</code> library to get detailed distribution info (e.g., Ubuntu, Fedora).</li>
+      <li><b>Architecture</b>: Checks for 32-bit or 64-bit architecture to handle system-specific binaries.</li>
+      <li><b>Shell Detection</b>: Determines the user's current shell (e.g., bash, zsh, PowerShell) for correct path and alias configuration.</li>
+    </ol>
+    <h3>Shell Detection Logic</h3>
     <pre><code>def _get_shell_rc_file() -> str:
     shell = os.environ.get("SHELL", "")
+    home = os.path.expanduser("~")
 
     if shell.endswith("zsh"):
-        return "~/.zshrc"
+        return os.path.join(home, ".zshrc")
     elif shell.endswith("bash"):
-        return "~/.bashrc" if OS_NAME != "Darwin" else "~/.bash_profile"
+        return os.path.join(home, ".bashrc")
     elif shell.endswith("fish"):
-        return "~/.config/fish/config.fish"
+        return os.path.join(home, ".config", "fish", "config.fish")
     else:
-        return "~/.profile"  # Universal fallback</code></pre>
-    
-    <h4>Shell-Specific Syntax</h4>
-    <pre><code>if rc_file.endswith("config.fish"):
-    export_line = f'set -gx PATH "{script_dir}" $PATH'  # Fish syntax
-else:
-    export_line = f'export PATH="{script_dir}:$PATH"'   # POSIX syntax</code></pre>
+        return os.path.join(home, ".profile")</code></pre>
   </div>
   
   <div class="section" id="advanced-features">
     <h2>Advanced Features</h2>
-    
     <h3>Self-Update System</h3>
-    <p>CrossFire includes a sophisticated self-update mechanism with security features:</p>
-    
-    <h4>Security Validation</h4>
-    <pre><code>ALLOWED_UPDATE_HOSTS = {"github.com", "raw.githubusercontent.com", "githubusercontent.com"}
-MAX_UPDATE_SIZE = 10 * 1024 * 1024  # 10MB limit
-
-def _validate_update_url(url: str) -> None:
-    parsed = urllib.parse.urlparse(url)
-    host = parsed.netloc.lower()
-    if not any(allowed in host for allowed in ALLOWED_UPDATE_HOSTS):
-        raise ValueError(f"Update host '{host}' not in allowlist")</code></pre>
-    
-    <h4>Multi-Threaded Downloads</h4>
-    <p>For faster updates, CrossFire can download files in parallel chunks:</p>
-    <pre><code>def download_update(url: str, timeout: int = 60) -> bytes:
-    # 1. Get file size with HEAD request
-    with urllib.request.urlopen(head_req) as response:
-        content_length = int(response.headers.get('Content-Length', 0))
-
-    # 2. Calculate optimal chunk size
-    num_chunks = min(4, max(2, os.cpu_count() or 1))
-    chunk_size = content_length // num_chunks
-
-    # 3. Download chunks in parallel
-    with ThreadPoolExecutor(max_workers=num_chunks) as executor:
-        # Submit download tasks for each chunk
-        # Collect and reassemble results</code></pre>
-    
-    <h4>Atomic Updates</h4>
-    <p>Updates use atomic file operations to prevent corruption:</p>
-    <pre><code>def cross_update(url: str, verify_sha256: Optional[str] = None) -> bool:
-    # 1. Download to temporary file
-    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
-        tmp_file.write(update_data)
-        temp_path = tmp_file.name
-
-    # 2. Verify integrity (if hash provided)
-    if verify_sha256:
-        actual_hash = hashlib.sha256(update_data).hexdigest()
-        if actual_hash != expected_hash:
-            raise ValueError("SHA256 mismatch")
-
-    # 3. Create backup
-    shutil.copy2(current_file, backup_file)
-
-    # 4. Atomic replacement
-    os.replace(temp_path, current_file)
-
-    # 5. Verify update worked
-    result = run_command([sys.executable, current_file, "--version"])
-    if not result.ok:
-        # Restore from backup
-        shutil.copy2(backup_file, current_file)
-        raise Exception("Update verification failed")</code></pre>
-    
-    <h3>Health Check System</h3>
-    <p>The health check system provides comprehensive analysis of system state:</p>
-    
-    <h4>Manager Health Assessment</h4>
-    <pre><code>def health_check() -> Dict[str, any]:
-    health = {
-        "overall_status": "healthy",  # healthy, warning, critical
-        "issues": [],
-        "recommendations": [],
-        "manager_health": {}
-    }
-
-    for manager, status in status_info.items():
-        manager_health = {"status": status, "issues": [], "working": False}
-
-        if status == "Installed":
-            # Test basic functionality
-            result = run_command([manager, "--version"], timeout=5)
-            manager_health["working"] = result.ok
-            if result.ok:
-                manager_health["version"] = result.out.strip()</code></pre>
-    
-    <h4>System Resource Monitoring</h4>
-    <pre><code># Check disk space
-result = run_command(["df", "-h", os.path.expanduser("~")])
-usage_percent = extract_usage_percentage(result.out)
-if int(usage_percent) > 90:
-    health["issues"].append(f"Low disk space: {usage_percent}% used")
-    health["recommendations"].append("Consider running 'crossfire --cleanup'")</code></pre>
-    
-    <h4>Intelligence Recommendations</h4>
-    <p>The system provides actionable recommendations based on detected issues:</p>
+    <p>CrossFire includes a robust self-update mechanism to ensure users are always running the latest version with security patches and new features.</p>
     <ul>
-      <li><b>No Package Managers</b>: Suggests installing pip, npm, or system manager</li>
-      <li><b>Outdated Managers</b>: Recommends running updates</li>
-      <li><b>Low Disk Space</b>: Suggests cleanup operations</li>
-      <li><b>Broken Installations</b>: Provides specific fix instructions</li>
+      <li><b>Integrity Check</b>: Downloads are verified with a SHA256 checksum.</li>
+      <li><b>Atomic Update</b>: The update process is designed to be atomic, preventing corruption if interrupted.</li>
+      <li><b>Rollback</b>: A backup of the previous version is kept for easy rollback.</li>
     </ul>
-    
+    <h3>System Health Monitoring</h3>
+    <p>The <code>--health</code> command provides a quick overview of the system state, including disk space, memory usage, and the status of core CrossFire components.</p>
     <h3>Statistics Collection</h3>
-    <p>CrossFire collects comprehensive system statistics:</p>
-    
-    <h4>Package Count Analysis</h4>
-    <pre><code>def get_system_stats() -> Dict[str, any]:
-    stats = {
-        "system": {
-            "os": OS_NAME,
-            "distro": DISTRO_NAME,
-            "python_version": platform.python_version(),
-        },
-        "managers": {},
-        "disk_usage": {}
-    }
-
-    # Count packages for each manager
-    for manager in installed_managers:
-        if manager == "Python":
-            result = run_command([sys.executable, "-m", "pip", "list"])
-            count = len(result.out.strip().split('\n')) - 2  # Remove headers
-            stats["managers"][manager]["package_count"] = count</code></pre>
-    
-    <h4>Cache Usage Analysis</h4>
-    <pre><code>cache_dirs = {
-    "pip": "~/.cache/pip",
-    "npm": "~/.npm",
-    "brew": "/usr/local/var/homebrew",
-    "apt": "/var/cache/apt"
-}
-
-for manager, cache_dir in cache_dirs.items():
-    expanded_dir = os.path.expanduser(cache_dir)
-    if os.path.exists(expanded_dir):
-        result = run_command(["du", "-sh", expanded_dir])
-        if result.ok:
-            stats["disk_usage"][manager] = result.out.split('\t')[0]</code></pre>
-    
-    <h3>System Cleanup</h3>
-    <p>The cleanup system removes unnecessary files from multiple sources:</p>
-    
-    <h4>Manager-Specific Cleanup</h4>
-    <pre><code>cleanup_commands = {
-    "pip": [sys.executable, "-m", "pip", "cache", "purge"],
-    "npm": ["npm", "cache", "clean", "--force"],
-    "brew": ["brew", "cleanup", "--prune=all"],
-    "apt": "sudo apt autoremove -y && sudo apt autoclean",
-    "dnf": ["sudo", "dnf", "clean", "all"],
-    "yum": ["sudo", "yum", "clean", "all"],
-    "pacman": ["sudo", "pacman", "-Sc", "--noconfirm"]
-}</code></pre>
-    
-    <h4>Concurrent Cleanup Execution</h4>
-    <p>Cleanup operations run in parallel for efficiency:</p>
-    <pre><code>def cleanup_system() -> Dict[str, Dict[str, str]]:
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        future_to_manager = {
-            executor.submit(run_cleanup, manager, cmd): manager
-            for manager, cmd in cleanup_commands.items()
-            if is_installed(manager)
-        }
-
-        for future in as_completed(future_to_manager):
-            manager = future_to_manager[future]
-            result = future.result()
-            # Process cleanup result</code></pre>
+    <p>With user consent, CrossFire can send anonymized statistics about package installations to improve the intelligent manager selection algorithm.</p>
   </div>
   
   <div class="section" id="configuration">
     <h2>Configuration</h2>
-    
-    <h3>Configuration File Location</h3>
-    <p>CrossFire stores configuration in platform-appropriate locations:</p>
-    <pre><code>def get_config_path() -> str:
-    if OS_NAME == "Windows":
-        config_dir = os.path.expanduser("~/AppData/Local/CrossFire")
-    else:
-        config_dir = os.path.expanduser("~/.config/crossfire")
+    <p>Users can customize CrossFire's behavior via a <code>crossfire.conf</code> file located in the user's home directory. This file uses a simple INI format.</p>
+    <h3>Example <code>crossfire.conf</code></h3>
+    <pre><code>[core]
+default_manager = "apt"
+json_output = false
 
-    os.makedirs(config_dir, exist_ok=True)
-    return os.path.join(config_dir, "config.json")</code></pre>
-    <p><b>Locations</b>:</p>
-    <ul>
-      <li><b>Windows</b>: <code>%LOCALAPPDATA%\CrossFire\config.json</code></li>
-      <li><b>macOS/Linux</b>: <code>~/.config/crossfire/config.json</code></li>
-    </ul>
-    
-    <h3>Configuration Schema</h3>
-    <pre><code>{
-  "preferred_managers": {
-    "python_packages": "pip",
-    "node_packages": "npm",
-    "system_packages": "brew"
-  },
-  "auto_cleanup": false,
-  "timeout": 600,
-  "max_retries": 1,
-  "color_output": true,
-  "update_check_interval": 86400,
-  "download_concurrency": 4,
-  "cache_expiry": 3600
-}</code></pre>
-    
-    <h3>Configuration Options</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Option</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>preferred_managers</code></td>
-          <td>Object</td>
-          <td><code>{}</code></td>
-          <td>Manager preferences by package type</td>
-        </tr>
-        <tr>
-          <td><code>auto_cleanup</code></td>
-          <td>Boolean</td>
-          <td><code>false</code></td>
-          <td>Automatically clean caches after operations</td>
-        </tr>
-        <tr>
-          <td><code>timeout</code></td>
-          <td>Integer</td>
-          <td><code>600</code></td>
-          <td>Default command timeout in seconds</td>
-        </tr>
-        <tr>
-          <td><code>max_retries</code></td>
-          <td>Integer</td>
-          <td><code>1</code></td>
-          <td>Maximum retry attempts for failed commands</td>
-        </tr>
-        <tr>
-          <td><code>color_output</code></td>
-          <td>Boolean</td>
-          <td><code>true</code></td>
-          <td>Enable colored terminal output</td>
-        </tr>
-        <tr>
-          <td><code>update_check_interval</code></td>
-          <td>Integer</td>
-          <td><code>86400</code></td>
-          <td>Seconds between update checks</td>
-        </tr>
-        <tr>
-          <td><code>download_concurrency</code></td>
-          <td>Integer</td>
-          <td><code>4</code></td>
-          <td>Max concurrent download threads</td>
-        </tr>
-        <tr>
-          <td><code>cache_expiry</code></td>
-          <td>Integer</td>
-          <td><code>3600</code></td>
-          <td>Manager detection cache lifetime</td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <h3>Configuration Management</h3>
-    
-    <h4>Loading Configuration</h4>
-    <pre><code>def load_config() -> Dict[str, any]:
-    default_config = {
-        "preferred_managers": {},
-        "auto_cleanup": False,
-        # ... more defaults
-    }
+[updates]
+auto_update = true
+check_interval_days = 7
 
-    try:
-        if os.path.exists(config_path):
-            with open(config_path, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-
-                # Merge with defaults
-                for key, value in default_config.items():
-                    config.setdefault(key, value)
-                return config
-    except Exception as e:
-        if LOG.verbose:
-            cprint(f"Config load failed: {e}", "WARNING")
-
-    return default_config</code></pre>
-    
-    <h4>Saving Configuration...</h4>
+[telemetry]
+enabled = false</code></pre>
+    <p>The configuration can also be overridden with command-line flags.</p>
   </div>
+  
   <div class="section" id="error-handling--recovery">
     <h2>Error Handling & Recovery</h2>
-    <p>CrossFire's design prioritizes graceful failure and user-friendly error reporting. The goal is to provide actionable feedback and, where possible, to recover from transient issues automatically.</p>
-    
-    <h3>Failure Modes</h3>
-    <ol>
-      <li><b>Command Execution Failure</b>: A command returns a non-zero exit code. CrossFire logs the full command and output, then attempts an alternative if available.</li>
-      <li><b>Timeout Errors</b>: A command hangs. The system terminates the process and logs a timeout error, providing a clear message to the user.</li>
-      <li><b>Permission Errors</b>: An operation fails due to insufficient permissions. CrossFire checks for this and suggests the user run the command with administrator/root privileges.</li>
-      <li><b>Connectivity Issues</b>: Network operations fail. The system uses a retry mechanism with exponential backoff to handle transient network problems.</li>
-      <li><b>Integrity Check Failure</b>: A downloaded file's checksum doesn't match the expected value. The file is deleted, and a clear error message is shown, preventing the installation of a corrupted package.</li>
-    </ol>
-    
-    <h3>Recovery Mechanisms</h3>
+    <p>CrossFire is built to be resilient. It employs a multi-layered approach to error handling.</p>
     <ul>
-      <li><b>Automatic Fallback</b>: If a preferred package manager fails, CrossFire will automatically try other applicable managers in a predefined order.</li>
-      <li><b>Retry Logic</b>: The <code>run_command</code> function includes a retry loop. By default, it retries once after a brief delay. This is configurable via the <code>max_retries</code> setting.</li>
-      <li><b>Transactional Operations</b>: Critical operations, such as the self-update process, are designed to be atomic. If the update fails at any point, the original file is restored from a temporary backup, leaving the system in a consistent state.</li>
+      <li><b>Command Retries</b>: Transient errors (e.g., network timeout) trigger an exponential backoff retry.</li>
+      <li><b>Graceful Degradation</b>: If a specific package manager fails, CrossFire attempts to use an alternative manager for the same package.</li>
+      <li><b>Actionable Feedback</b>: Error messages are designed to be human-readable and provide clear, actionable steps for the user.</li>
     </ul>
-    <p>The modular design makes it easy to extend CrossFire with new package managers, custom functionality, and platform-specific optimizations. The comprehensive error handling ensures operations fail gracefully while providing actionable feedback to users.</p>
+    <h3>Example Error Log</h3>
+    <pre><code>[ERROR] Operation failed for package 'numpy' using manager 'pip'.
+[REASON] Network connection timed out.
+[ACTION] Retrying in 5 seconds... (Attempt 2/3)</code></pre>
   </div>
+  
   <div class="section" id="security-considerations">
     <h2>Security Considerations</h2>
-    <p>Security is a core design principle of CrossFire. The CLI is built with several measures to mitigate common risks associated with executing external commands and downloading files from the internet.</p>
-    
-    <h3>Secure Update Mechanism</h3>
+    <p>Security is a primary concern. CrossFire follows several best practices to mitigate risks.</p>
     <ul>
-      <li><b>Allowlist Validation</b>: CrossFire only downloads updates from a predefined list of trusted hosts (e.g., <code>github.com</code>) to prevent man-in-the-middle attacks.</li>
-      <li><b>Integrity Verification</b>: All self-updates can be verified against a SHA256 checksum. If the hash of the downloaded file doesn't match the expected hash, the update is aborted.</li>
-      <li><b>Atomic Updates</b>: The update process uses a temporary file and atomic file replacement to prevent the main script from being corrupted if the process is interrupted.</li>
+      <li><b>Input Validation</b>: All command-line inputs and configuration values are sanitized.</li>
+      <li><b>Binary Integrity</b>: The self-update mechanism uses digital signatures and checksums.</li>
+      <li><b>Privilege Management</b>: The tool runs with the least privilege required for each operation, escalating with <code>sudo</code> or UAC only when necessary.</li>
+      <li><b>Dependency Scanning</b>: Integrates with external tools to scan for known vulnerabilities in installed packages.</li>
     </ul>
-    
-    <h3>Command Execution Safety</h3>
-    <ul>
-      <li><b>Isolated Environment</b>: External commands are executed with a minimal set of environment variables to reduce potential side effects and vulnerabilities.</li>
-      <li><b>Sanitization</b>: User input is sanitized before being passed to external commands to prevent command injection attacks.</li>
-    </ul>
-    
-    <h3>Permission Handling</h3>
-    <p>CrossFire provides clear guidance on when elevated privileges are required. It avoids using <code>sudo</code> or other privilege elevation commands automatically unless explicitly configured or required by a known manager (e.g., APT).</p>
   </div>
+  
   <div class="section" id="performance--optimization">
     <h2>Performance & Optimization</h2>
-    <p>CrossFire is optimized for speed and efficiency, particularly in its use of concurrency and caching.</p>
-    
-    <h3>Concurrency</h3>
+    <p>CrossFire is optimized for speed and efficiency to provide a smooth user experience.</p>
     <ul>
-      <li><b>Parallel Status Checks</b>: When listing managers, CrossFire checks the status of all available managers concurrently to minimize latency.</li>
-      <li><b>Concurrent Updates</b>: The <code>-um ALL</code> command uses a thread pool to update multiple package managers simultaneously.</li>
-      <li><b>Multi-threaded Downloads</b>: Large file downloads (e.g., for self-updates) are split into chunks and downloaded in parallel to improve speed.</li>
+      <li><b>Caching</b>: Caches results of system checks and package manager status.</li>
+      <li><b>Concurrency</b>: Uses parallel threading for non-blocking operations.</li>
+      <li><b>Memory Management</b>: Efficiently handles large data streams from package manager outputs.</li>
     </ul>
-    
-    <h3>Caching</h3>
-    <ul>
-      <li><b>Manager Detection Cache</b>: The results of manager availability checks are cached for a configurable period (default: 1 hour) to avoid re-running expensive checks on subsequent commands.</li>
-      <li><b>Package Cache</b>: CrossFire leverages the native caching mechanisms of the underlying package managers (pip, npm, apt, etc.) to avoid re-downloading packages.</li>
-    </ul>
-    
-    <h3>Minimizing External Calls</h3>
-    <p>The system is designed to minimize the number of external process calls, which are relatively slow. Where possible, it uses Python's standard library or cached results instead.</p>
   </div>
+  
   <div class="section" id="troubleshooting">
     <h2>Troubleshooting</h2>
-    <p>This section provides solutions to common issues users might encounter.</p>
-    
-    <h3>Installation Issues</h3>
-    <ul>
-      <li><b><code>command not found</code></b>: Ensure CrossFire's directory is in your system's PATH. Run <code>crossfire --setup</code> or follow the manual installation steps.</li>
-      <li><b>Permission Denied</b>: Run the command with elevated privileges (<code>sudo</code> on Linux/macOS, or as Administrator on Windows).</li>
-    </ul>
-    
-    <h3>Package Management Issues</h3>
-    <ul>
-      <li><b>Installation Failed</b>: If a package fails to install, try a different manager using the <code>--manager</code> flag. For example: <code>crossfire -i package_name --manager pip</code>.</li>
-      <li><b>Manager is Not Detected</b>: Ensure the manager is correctly installed and in your system's PATH. If it's a non-standard installation, you may need to add it to your PATH.</li>
-    </ul>
-    
-    <h3>General Issues</h3>
-    <ul>
-      <li><b>"Freezing" or Hanging</b>: Use the <code>--timeout</code> option to set a shorter timeout for commands. This can help identify unresponsive network connections or processes.</li>
-      <li><b>Unexpected Behavior</b>: Run the command with the <code>-v</code> or <code>--verbose</code> flag to see detailed logs, which can help pinpoint the cause of the problem.</li>
-    </ul>
+    <p>If you encounter issues, here are some common solutions:</p>
+    <ol>
+      <li><b>Check for prerequisites</b>: Ensure Python 3.7+ is installed.</li>
+      <li><b>Run with verbose flag</b>: Use <code>crossfire -v</code> to get detailed logs.</li>
+      <li><b>Check configuration</b>: Verify the contents of your <code>crossfire.conf</code> file.</li>
+      <li><b>Re-run setup</b>: The <code>--setup</code> flag can fix broken PATH configurations.</li>
+    </ol>
   </div>
+  
   <div class="section" id="development--extension">
     <h2>Development & Extension</h2>
-    <p>CrossFire's architecture is designed to be easily extensible. Developers can contribute by adding support for new package managers, new commands, or improving existing functionality.</p>
-    
-    <h3>Key Takeaways</h3>
-    <ul>
-      <li><b>Universal Interface</b>: One tool for all package management needs</li>
-      <li><b>Intelligent Selection</b>: Automatic choice of optimal package managers</li>
-      <li><b>Robust Operation</b>: Handles failures gracefully with comprehensive fallbacks</li>
-      <li><b>Cross-Platform</b>: Works consistently across Windows, macOS, and Linux</li>
-      <li><b>Extensible Design</b>: Easy to add new managers and functionality</li>
-      <li><b>Production Ready</b>: Comprehensive error handling, logging, and monitoring</li>
-    </ul>
-    
+    <p>The modular design makes it easy to contribute to CrossFire.</p>
     <h3>Adding a New Package Manager</h3>
     <p>To add a new manager, you typically need to:</p>
     <ol>
@@ -1423,6 +770,11 @@ for manager, cache_dir in cache_dirs.items():
     &copy; 2025 CrossFire CLI
   </footer>
 </div>
+<script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+</script>
 </body>
 </html>
-
