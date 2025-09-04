@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFire Downloads</title>
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        html, body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            cursor: none;
+            position: relative;
+            z-index: 1;
+            overflow-x: hidden;
+        }
+
+        *, *::before, *::after {
+            cursor: none !important;
+        }
+
+        a, button, input, textarea, select, label, span {
+            position: relative;
+            z-index: 1;
+            cursor: none !important;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #a855f7;
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            box-shadow: 0 0 12px 6px #a855f7;
+            transform: translate(-50%, -50%);
+            z-index: 999999999;
+            transition: transform 0.05s ease-out;
+            will-change: transform;
+            user-select: none;
+        }
+
+        /* Page Layout */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #111;
+            border-radius: 1rem;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header {
+            padding: 3rem 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #a855f7;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #bbb;
+            margin-bottom: 2rem;
+        }
+
+        /* Download Section */
+        .downloads {
+            padding: 2rem;
+            background-color: #1a1a1a;
+            border-radius: 1rem;
+            border: 1px solid #333;
+            margin-bottom: 3rem;
+        }
+
+        .downloads h2 {
+            font-size: 1.8rem;
+            color: #a855f7;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #a855f7;
+            padding-bottom: 0.5rem;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .download-btn {
+            display: block;
+            padding: 2rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        .blackbase {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            border-color: #555;
+        }
+
+        .blackbase:hover {
+            background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+            border-color: #a855f7;
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+            color: #000;
+        }
+
+        .obsidian {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
+            color: #fff;
+            border-color: #333;
+        }
+
+        .obsidian:hover {
+            background: linear-gradient(135deg, #7c3aed 0%, #6b21a8 100%);
+            border-color: #7c3aed;
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+            color: #000;
+        }
+
+        .version-info {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        .download-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background-color: #2a2a2a;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #555;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation */
+        .nav-section {
+            margin-top: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 1rem 0.5rem;
+            padding: 0.8rem 1.5rem;
+            color: #a855f7;
+            background: transparent;
+            border: 2px solid #a855f7;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #a855f7;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.875rem;
+            color: #777;
+            border-top: 1px solid #333;
+            margin-top: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                margin: 1rem;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .download-btn {
+                padding: 1.5rem 1rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Download CrossFire</h1>
+            <p>Choose your preferred version and start managing packages like a pro</p>
+        </header>
+
+        <div class="downloads">
+            <h2>Available Versions</h2>
+            <div class="download-grid">
+                <div>
+                    <a href="#" class="download-btn blackbase" download>
+                        <div>CrossFire BlackBase</div>
+                        <div class="version-info">v4.0 - Old Stable</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="download-btn obsidian" download>
+                        <div>CrossFire Obsidian</div>
+                        <div class="version-info">v5.2f1 - New Unstable</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="download-features">
+                <div class="feature-item">
+                    <strong>🔧 Single File</strong><br>
+                    Zero dependencies, just download and run
+                </div>
+                <div class="feature-item">
+                    <strong>🌐 Cross-Platform</strong><br>
+                    Works on Windows, macOS, and Linux
+                </div>
+                <div class="feature-item">
+                    <strong>⚡ Self-Updating</strong><br>
+                    Automatic updates keep you current
+                </div>
+                <div class="feature-item">
+                    <strong>📦 Multi-Manager</strong><br>
+                    Supports 13+ package managers
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <a href="https://bcas-team.github.io" class="back-link">← Back to Home</a>
+            <a href="underconstruction.html" class="back-link">View Documentation</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 CrossFire Project. Made with Power in Mind
+    </footer>
+
+    <script>
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                cursor.style.width = '30px';
+                cursor.style.height = '30px';
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+            });
+        });
+    </script>
+</body>
+</html>

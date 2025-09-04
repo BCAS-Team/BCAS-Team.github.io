@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>CrossFire 4.0 BlackBase - Documentation</title>
+      <style>
+         /* Reset & Base */
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         text-decoration: none;
+         }
+         html, body {
+         font-family: 'Helvetica Neue', sans-serif;
+         background-color: #000;
+         color: #fff;
+         line-height: 1.6;
+         scroll-behavior: smooth;
+         cursor: none;
+         position: relative;
+         z-index: 1;
+         overflow-x: hidden;
+         }
+         *, *::before, *::after {
+         cursor: none !important;
+         }
+         a, button, input, textarea, select, label, span {
+         position: relative;
+         z-index: 1;
+         cursor: none !important;
+         }
+         /* Custom Cursor */
+         .cursor {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 20px;
+         height: 20px;
+         background-color: #a855f7;
+         border-radius: 50%;
+         pointer-events: none;
+         mix-blend-mode: difference;
+         box-shadow: 0 0 12px 6px #a855f7;
+         transform: translate(-50%, -50%);
+         z-index: 999999999;
+         transition: transform 0.05s ease-out;
+         will-change: transform;
+         user-select: none;
+         }
+         /* Page Layout */
+         .container {
+         max-width: 1000px;
+         margin: auto;
+         padding: 2rem;
+         background-color: #111;
+         border-radius: 1rem;
+         box-shadow: 0 0 25px rgba(0,0,0,0.5);
+         border: 1px solid #333;
+         }
+         header {
+         text-align: center;
+         padding: 3rem 0;
+         border-bottom: 1px solid #333;
+         }
+         header h1 {
+         font-size: 3rem;
+         font-weight: 800;
+         margin-bottom: 0.5rem;
+         color: #fff;
+         }
+         header p {
+         font-size: 1.25rem;
+         color: #bbb;
+         }
+         /* Table of Contents */
+         .toc {
+         margin: 2rem 0;
+         padding: 1.5rem;
+         background-color: #1a1a1a;
+         border-radius: 1rem;
+         border: 1px solid #333;
+         box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+         }
+         .toc h2 {
+         font-size: 1.5rem;
+         margin-bottom: 1rem;
+         color: #a855f7;
+         text-align: center;
+         }
+         .toc ul {
+         list-style: none;
+         padding: 0;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 1rem;
+         }
+         .toc li {
+         background-color: #2a2a2a;
+         border-radius: 9999px;
+         padding: 0.5rem 1rem;
+         transition: background-color 0.3s ease;
+         border: 1px solid #555;
+         box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+         }
+         .toc a {
+         color: #fff;
+         transition: color 0.3s ease, text-shadow 0.3s ease;
+         }
+         .toc li:hover {
+         background-color: #a855f7;
+         }
+         .toc li:hover a {
+         color: #000;
+         text-shadow: 0 0 5px rgba(0,0,0,0.5);
+         }
+         /* Sections */
+         .section {
+         padding: 2rem;
+         margin-bottom: 2rem;
+         background-color: #1a1a1a;
+         border-radius: 1rem;
+         border: 1px solid #333;
+         }
+         .section h2 {
+         font-size: 2rem;
+         color: #a855f7;
+         border-bottom: 2px solid #a855f7;
+         padding-bottom: 0.5rem;
+         margin-bottom: 1.5rem;
+         }
+         .section h3 {
+         font-size: 1.5rem;
+         color: #ccc;
+         margin-top: 1.5rem;
+         margin-bottom: 1rem;
+         }
+         .section p, .section li {
+         color: #ccc;
+         margin-bottom: 1rem;
+         }
+         .section pre {
+         background-color: #0d0d0d;
+         padding: 1.5rem;
+         border-radius: 1rem;
+         border: 1px solid #333;
+         overflow-x: auto;
+         white-space: pre-wrap;
+         word-wrap: break-word;
+         box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+         }
+         .section code {
+         color: #c084fc;
+         font-family: 'Courier New', Courier, monospace;
+         }
+         .section table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 1.5rem;
+         }
+         .section th, .section td {
+         border: 1px solid #444;
+         padding: 1rem;
+         text-align: left;
+         color: #ccc;
+         }
+         .section th {
+         background-color: #222;
+         color: #a855f7;
+         font-weight: 500;
+         }
+         /* List styles */
+         .section ul, .section ol {
+         padding-left: 1.5rem;
+         }
+         .section ul li {
+         list-style-type: none;
+         position: relative;
+         padding-left: 1.5em;
+         }
+         .section ul li::before {
+         content: '→';
+         color: #c084fc;
+         font-weight: bold;
+         position: absolute;
+         left: 0;
+         }
+         /* Footer */
+         footer {
+         text-align: center;
+         padding: 2rem 1rem;
+         font-size: 0.875rem;
+         color: #777;
+         border-top: 1px solid #333;
+         margin-top: 2rem;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="cursor"></div>
+      <div class="container">
+      <header>
+         <h1>CrossFire</h1>
+         <p>Complete Technical Documentation</p>
+         <p>Version: CrossFire 1.0 - BlackBase©</p>
+      </header>
+      <div class="toc">
+         <h2>Table of Contents</h2>
+         <ul>
+            <li><a href="#architecture-overview">Architecture Overview</a></li>
+            <li><a href="#global-configuration">Global Configuration</a></li>
+            <li><a href="#os-platform-detection">OS & Platform Detection</a></li>
+            <li><a href="#logging-console-system">Logging & Console System</a></li>
+            <li><a href="#database-system">Database System</a></li>
+            <li><a href="#progress-tracking">Progress Tracking System</a></li>
+            <li><a href="#network-testing">Network Testing & Speed Tools</a></li>
+            <li><a href="#search-engine">Search Engine Implementation</a></li>
+            <li><a href="#command-execution">Command Execution Framework</a></li>
+            <li><a href="#package-manager-detection">Package Manager Detection</a></li>
+            <li><a href="#installation-removal">Installation & Removal Orchestration</a></li>
+            <li><a href="#system-maintenance">System Maintenance & Cleanup</a></li>
+            <li><a href="#self-update-system">Self-Update System</a></li>
+            <li><a href="#system-information">System Information & Health Checks</a></li>
+            <li><a href="#setup-launcher">Setup & Launcher Installation</a></li>
+            <li><a href="#package-management-features">Package Management Features</a></li>
+            <li><a href="#command-line-interface">Command Line Interface</a></li>
+            <li><a href="#main-entry-point">Main Entry Point & Routing</a></li>
+            <li><a href="#error-handling">Error Handling & Edge Cases</a></li>
+            <li><a href="#security-considerations">Security Considerations</a></li>
+            <li><a href="#known-bugs">Known Bugs & Limitations</a></li>
+            <li><a href="#extension-guide">Extension Guide</a></li>
+            <li><a href="#command-reference">Complete Command Reference</a></li>
+         </ul>
+      </div>
+      <section id="architecture-overview" class="section">
+         <h2>1. Architecture Overview</h2>
+         <p>CrossFire is a single-file, zero-dependency-install universal package manager that orchestrates multiple system package managers (pip, npm, brew, apt, etc.) through a unified interface.</p>
+         <h3>Core Design Principles</h3>
+         <ul>
+            <li><strong>Single File Distribution:</strong> Self-contained executable Python script</li>
+            <li><strong>Zero External Config:</strong> All configuration stored in ~/.crossfire/</li>
+            <li><strong>Multi-Manager Support:</strong> Handles 13+ package managers across platforms</li>
+            <li><strong>Real Search:</strong> Actual API queries to PyPI, NPM, Homebrew</li>
+            <li><strong>Package Tracking:</strong> SQLite database tracks installations</li>
+            <li><strong>Self-Updating:</strong> Can update itself via HTTPS with verification</li>
+         </ul>
+         <h3>File Structure</h3>
+         <pre><code>crossfire.py
+├── Imports & Constants (lines 1-50)
+├── OS Detection (lines 51-80)
+├── Logging System (lines 81-120)
+├── Database Layer (lines 121-200)
+├── Progress/UI Components (lines 201-280)
+├── Network Tools (lines 281-400)
+├── Search Engine (lines 401-650)
+├── Command Execution (lines 651-720)
+├── Manager Integrations (lines 721-950)
+├── Install/Remove Logic (lines 951-1150)
+├── System Tools (lines 1151-1400)
+├── CLI Parser (lines 1401-1600)
+├── Main Router (lines 1601-1800)
+└── Entry Point (lines 1801-1820)</code></pre>
+      </section>
+      <section id="global-configuration" class="section">
+         <h2>2. Global Configuration & Constants</h2>
+         <h3>Version & URLs</h3>
+         <pre><code>__version__ = "CrossFire 1.0 - BlackBase"
+DEFAULT_UPDATE_URL = "https://raw.githubusercontent.com/crossfire-pm/crossfire-launcher/main/crossfire.py"</code></pre>
+         <h3>Directory Structure</h3>
+         <pre><code>CROSSFIRE_DIR = Path.home() / ".crossfire"        # ~/.crossfire/
+CROSSFIRE_DB = CROSSFIRE_DIR / "packages.db"      # SQLite database
+CROSSFIRE_CACHE = CROSSFIRE_DIR / "cache"         # Download cache</code></pre>
+         <p><strong>Initialization:</strong> Directories created with exist_ok=True on import. No permission checks or error handling for read-only filesystems.</p>
+      </section>
+      <section id="os-platform-detection" class="section">
+         <h2>3. OS & Platform Detection</h2>
+         <h3>Core Detection Logic</h3>
+         <pre><code>OS_NAME = platform.system()          # "Windows", "Darwin", "Linux"
+ARCH = platform.architecture()[0]    # "64bit", "32bit"
+
+# Distribution Detection (with fallback)
+try:
+    import distro
+    DISTRO_NAME = distro.id() or "linux"
+    DISTRO_VERSION = distro.version() or ""
+except Exception:
+    # Fallback logic for each OS
+    if OS_NAME == "Darwin":
+        DISTRO_NAME = "macOS"
+        DISTRO_VERSION = platform.mac_ver()[0]
+    elif OS_NAME == "Windows":
+        DISTRO_NAME = "Windows"  
+        DISTRO_VERSION = platform.version()
+    else:
+        DISTRO_NAME = OS_NAME.lower()
+        DISTRO_VERSION = ""</code></pre>
+         <p><strong>Usage Throughout Code:</strong></p>
+         <ul>
+            <li>Determines available package managers</li>
+            <li>Influences installation command generation</li>
+            <li>Affects setup/PATH modification behavior</li>
+         </ul>
+      </section>
+      <section id="logging-console-system" class="section">
+         <h2>4. Logging & Console System</h2>
+         <h3>Colors Class</h3>
+         <pre><code>class Colors:
+    INFO = "\033[94m"      # Blue
+    SUCCESS = "\033[92m"   # Green  
+    WARNING = "\033[93m"   # Yellow
+    ERROR = "\033[91m"     # Red
+    MUTED = "\033[90m"     # Gray
+    BOLD = "\033[1m"       # Bold
+    CYAN = "\033[96m"      # Cyan
+    RESET = "\033[0m"      # Reset</code></pre>
+         <h3>Logger Implementation</h3>
+         <pre><code>class Logger:
+    def __init__(self):
+        self.quiet = False      # Suppress INFO/WARNING/SUCCESS
+        self.verbose = False    # Show debug info & tracebacks  
+        self.json_mode = False  # Suppress all cprint output
+
+    def cprint(self, text, color="INFO"):
+        # JSON mode: suppress all output
+        if self.json_mode:
+            return
+        
+        # Quiet mode: only show ERROR
+        if self.quiet and color in ["INFO", "WARNING", "SUCCESS"]:
+            return
+            
+        # TTY detection for colors
+        if not sys.stdout.isatty():
+            sys.stdout.write(f"{text}\n")
+            return
+            
+        color_code = getattr(Colors, color.upper(), Colors.INFO)
+        print(f"{color_code}{text}{Colors.RESET}")</code></pre>
+         <p><strong>Global Usage:</strong></p>
+         <pre><code>LOG = Logger()  # Global instance
+cprint = LOG.cprint  # Convenience reference used throughout</code></pre>
+         <p><strong>Behavior Notes:</strong></p>
+         <ul>
+            <li>JSON mode completely suppresses console output for machine parsing</li>
+            <li>Quiet mode still allows ERROR messages through</li>
+            <li>Colors automatically disabled for non-TTY output (pipes, redirects)</li>
+         </ul>
+      </section>
+      <section id="database-system" class="section">
+         <h2>5. Database System</h2>
+         <h3>Schema Design</h3>
+         <pre><code>CREATE TABLE IF NOT EXISTS installed_packages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    version TEXT,
+    manager TEXT NOT NULL,
+    install_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    install_command TEXT,
+    UNIQUE(name, manager)
+);</code></pre>
+         <h3>PackageDB Implementation</h3>
+         <pre><code>class PackageDB:
+    def __init__(self, db_path: Path = CROSSFIRE_DB):
+        self.db_path = db_path
+        self._init_db()  # Creates table if not exists
+    
+    def add_package(self, name: str, version: str, manager: str, command: str = ""):
+        """Records successful installation with INSERT OR REPLACE"""
+        conn = sqlite3.connect(self.db_path)
+        try:
+            conn.execute('''
+                INSERT OR REPLACE INTO installed_packages 
+                (name, version, manager, install_command) 
+                VALUES (?, ?, ?, ?)
+            ''', (name, version or "unknown", manager, command))
+            conn.commit()
+        finally:
+            conn.close()
+    
+    def remove_package(self, name: str, manager: str = None):
+        """Removes package record(s)"""
+        conn = sqlite3.connect(self.db_path)
+        try:
+            if manager:
+                conn.execute('DELETE FROM installed_packages WHERE name = ? AND manager = ?', 
+                           (name, manager))
+            else:
+                conn.execute('DELETE FROM installed_packages WHERE name = ?', (name,))
+            conn.commit()
+        finally:
+            conn.close()
+    
+    def get_installed_packages(self, manager: str = None) -> List[Dict]:
+        """Returns list of installed packages, optionally filtered by manager"""
+        conn = sqlite3.connect(self.db_path)
+        try:
+            if manager:
+                cursor = conn.execute('''
+                    SELECT name, version, manager, install_date 
+                    FROM installed_packages 
+                    WHERE manager = ? 
+                    ORDER BY install_date DESC
+                ''', (manager,))
+            else:
+                cursor = conn.execute('''
+                    SELECT name, version, manager, install_date 
+                    FROM installed_packages 
+                    ORDER BY install_date DESC
+                ''')
+            
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in cursor.fetchall()]
+        finally:
+            conn.close()
+    
+    def is_installed(self, name: str, manager: str = None) -> bool:
+        """Checks if package is recorded as installed"""
+        conn = sqlite3.connect(self.db_path)
+        try:
+            if manager:
+                cursor = conn.execute(
+                    'SELECT COUNT(*) FROM installed_packages WHERE name = ? AND manager = ?',
+                    (name, manager)
+                )
+            else:
+                cursor = conn.execute(
+                    'SELECT COUNT(*) FROM installed_packages WHERE name = ?',
+                    (name,)
+                )
+            return cursor.fetchone()[0] > 0
+        finally:
+            conn.close()</code></pre>
+         <p><strong>Global Instance:</strong></p>
+         <pre><code>package_db = PackageDB()  # Used throughout the application</code></pre>
+         <p><strong>Key Behaviors:</strong></p>
+         <ul>
+            <li>INSERT OR REPLACE updates existing entries (by name+manager unique constraint)</li>
+            <li>remove_package() without manager removes ALL entries for that package name</li>
+            <li>Database operations are not transactional across multiple packages</li>
+            <li>No database schema versioning or migration system</li>
+         </ul>
+      </section>
+      <section id="progress-tracking" class="section">
+         <h2>6. Progress Tracking System</h2>
+         <h3>ProgressBar Implementation</h3>
+         <pre><code>class ProgressBar:
+    def __init__(self, total, description, unit):
+        self.total = total
+        self.description = description  
+        self.unit = unit               # "B", "packages", "hosts", etc.
+        self.current = 0
+        self.start_time = time.time()
+        self.lock = threading.Lock()   # Thread-safe updates
+        self.bar_length = 50           # Character width of progress bar
+        self.terminal_width = shutil.get_terminal_size((80, 20)).columns
+
+    def update(self, step=1):
+        """Thread-safe progress increment"""
+        with self.lock:
+            self.current = min(self.current + step, self.total)
+            self._draw_bar()
+
+    def _draw_bar(self):
+        """Renders progress bar with ETA and speed calculations"""
+        if LOG.json_mode or not sys.stdout.isatty():
+            return
+        
+        progress = self.current / self.total if self.total > 0 else 0
+        percent = progress * 100
+        filled_length = int(self.bar_length * progress)
+        bar = '█' * filled_length + '-' * (self.bar_length - filled_length)
+        
+        elapsed = time.time() - self.start_time
+        eta_str = "N/A"
+        speed_str = ""
+        
+        if progress > 0 and elapsed > 0:
+            remaining = (elapsed / progress) - elapsed if progress < 1 else 0
+            if remaining > 3600:
+                eta_str = f"{remaining/3600:.1f}h"
+            elif remaining > 60:
+                eta_str = f"{remaining/60:.1f}m"
+            else:
+                eta_str = f"{remaining:.1f}s"
+            
+            # Speed calculation for bytes
+            if self.unit == "B" and elapsed > 0:
+                speed = self.current / elapsed
+                if speed > 1024**2:
+                    speed_str = f" @ {speed/1024**2:.1f} MB/s"
+                elif speed > 1024:
+                    speed_str = f" @ {speed/1024:.1f} KB/s"
+                else:
+                    speed_str = f" @ {speed:.0f} B/s"
+        
+        full_msg = f"{self.description}: |{bar}| {percent:.1f}% ({self.current}/{self.total} {self.unit}){speed_str} - ETA: {eta_str}"
+        
+        # Truncate if too long for terminal
+        if len(full_msg) > self.terminal_width:
+            full_msg = full_msg[:self.terminal_width - 4] + "..."
+        
+        sys.stdout.write(f"\r{full_msg}")
+        sys.stdout.flush()
+
+    def finish(self):
+        """Completes progress bar and moves to new line"""
+        if not LOG.json_mode and sys.stdout.isatty():
+            sys.stdout.write("\n")
+            sys.stdout.flush()</code></pre>
+         <p><strong>Usage Patterns:</strong></p>
+         <ul>
+            <li>Network downloads (bytes with speed calculation)</li>
+            <li>Multi-step operations (package installations, manager updates)</li>
+            <li>Search operations across multiple repositories</li>
+         </ul>
+      </section>
+      <section id="network-testing" class="section">
+         <h2>7. Network Testing & Speed Tools</h2>
+         <h3>SpeedTest Class</h3>
+         <h3>Download Speed Testing</h3>
+         <pre><code>@staticmethod
+def test_download_speed(url: Optional[str] = None, duration: int = 10) -> Dict[str, Any]:
+    """Tests internet download speed using public speed test files"""
+    
+    # Default test URLs (fallback chain)
+    test_urls = [
+        "http://speedtest.tele2.net/10MB.zip",
+        "https://proof.ovh.net/files/10Mb.dat", 
+        "http://ipv4.download.thinkbroadband.com/10MB.zip"
+    ]
+    
+    test_url = url or test_urls[0]
+    downloaded_bytes = 0
+    start_time = time.time()
+    
+    try:
+        request = urllib.request.Request(test_url)
+        with urllib.request.urlopen(request, timeout=30) as response:
+            total_size = int(response.info().get("Content-Length", 10*1024*1024))
+            tracker = ProgressBar(min(total_size, 50*1024*1024), "Speed Test", "B")
+            
+            while time.time() - start_time < duration:
+                chunk = response.read(32768)  # 32KB chunks
+                if not chunk:
+                    break
+                downloaded_bytes += len(chunk)
+                tracker.update(len(chunk))
+                
+            tracker.finish()
+        
+        elapsed_time = time.time() - start_time
+        download_rate_mbps = (downloaded_bytes * 8) / elapsed_time / 1000000 if elapsed_time > 0 else 0
+        
+        return {
+            "ok": True,
+            "download_mbps": round(download_rate_mbps, 2),
+            "downloaded_mb": round(downloaded_bytes / 1024 / 1024, 2),
+            "elapsed_seconds": round(elapsed_time, 2),
+        }
+        
+    except Exception as e:
+        return {"ok": False, "error": str(e)}</code></pre>
+         <h3>Ping Testing</h3>
+         <pre><code>@staticmethod
+def ping_test() -> Dict[str, Any]:
+    """Tests network latency to multiple hosts"""
+    
+    hosts = ["google.com", "github.com", "cloudflare.com", "8.8.8.8"]
+    results = {}
+    progress = ProgressBar(len(hosts), "Ping test", "hosts")
+    
+    for host in hosts:
+        try:
+            # Platform-specific ping commands
+            if OS_NAME == "Windows":
+                command = ["ping", "-n", "1", "-w", "5000", host]
+            else:
+                command = ["ping", "-c", "1", "-W", "5", host]
+                
+            process = subprocess.run(command, capture_output=True, text=True, timeout=10)
+            output = process.stdout
+            
+            # Parse latency from output (platform-specific regex)
+            if OS_NAME == "Windows":
+                latency_match = re.search(r"time[<=](\d+)ms", output)
+            else:
+                latency_match = re.search(r"time=(\d+\.?\d*)\s*ms", output)
+            
+            if latency_match:
+                latency = float(latency_match.group(1))
+                results[host] = {"ok": True, "latency_ms": latency}
+            else:
+                results[host] = {"ok": False, "msg": "Could not parse ping output"}
+                
+        except subprocess.TimeoutExpired:
+            results[host] = {"ok": False, "msg": "Timed out"}
+        except Exception as e:
+            results[host] = {"ok": False, "msg": str(e)}
+        
+        progress.update()
+        
+    progress.finish()
+    return results</code></pre>
+         <p><strong>Limitations:</strong></p>
+         <ul>
+            <li>Ping regex parsing varies by OS/locale and may fail</li>
+            <li>No packet loss measurement</li>
+            <li>Speed test limited to HTTP downloads (no upload testing)</li>
+            <li>Firewall/proxy configurations may interfere</li>
+         </ul>
+      </section>
+      <section id="search-engine" class="section">
+      <h2>8. Search Engine Implementation</h2>
+      <h3>SearchResult Data Model</h3>
+      <pre><code>@dataclass
+class SearchResult:
+    name: str
+    description: str  
+    version: str
+    manager: str                    # "pip", "npm", "brew", etc.
+    homepage: Optional[str] = None
+    relevance_score: float = 0.0    # 0-100+ scoring for ranking
+    
+    def to_dict(self):
+        return asdict(self)  # For JSON serialization</code></pre>
+      <h3>RealSearchEngine Architecture</h3>
+      <pre><code>class RealSearchEngine:
+    def __init__(self):
+        self.cache_timeout = 3600  # 1 hour for cached data
+        self.session = requests.Session()
+        self.session.timeout = 30
+    
+    def search(self, query: str, manager: Optional[str] = None, limit: int = 20) -> List[SearchResult]:
+        """Orchestrates concurrent search across multiple package managers"""
+        
+        all_results = []
+        installed = _detect_installed_managers()  # Only search available managers
+        
+        # Target manager selection
+        if manager:
+            target_managers = [manager.lower()] if installed.get(manager.lower()) else []
+        else:
+            target_managers = [m for m, ok in installed.items() if ok]
+        
+        if not target_managers:
+            return []
+        
+        # Manager-specific search function mapping
+        manager_funcs = {
+            "pip": self._search_pypi,
+            "npm": self._search_npm, 
+            "brew": self._search_brew,
+            "apt": self._search_apt,
+            "dnf": self._search_dnf,
+            "yum": self._search_yum,
+            "pacman": self._search_pacman,
+            "zypper": self._search_zypper,
+            "apk": self._search_apk,
+            "choco": self._search_choco,
+            "winget": self._search_winget,
+            "snap": self._search_snap,
+            "flatpak": self._search_flatpak,
+        }
+        
+        # Concurrent execution with timeout
+        with _fut.ThreadPoolExecutor(max_workers=5) as executor:
+            future_to_manager = {}
+            for mgr in target_managers:
+                func = manager_funcs.get(mgr)
+                if func:
+                    future_to_manager[executor.submit(func, query)] = mgr
+            
+            progress = ProgressBar(len(future_to_manager), "Searching repositories", "repos")
+            for future in _fut.as_completed(future_to_manager, timeout=120):
+                mgr = future_to_manager[future]
+                try:
+                    results = future.result() or []
+                    all_results.extend(results)
+                except Exception as e:
+                    cprint(f"{mgr.upper()}: Search failed - {e}", "WARNING")
+                finally:
+                    progress.update()
+            progress.finish()
+        
+        # Sort by relevance and limit results
+        all_results.sort(key=lambda x: x.relevance_score, reverse=True)
+        return all_results[:limit]</code></pre>
+      <h3>Repository-Specific Search Implementations</h3>
+      <h3>PyPI Search</h3>
+      <pre><code>def _search_pypi(self, query: str) -> List[SearchResult]:
+    """PyPI direct package lookup (no full-text search available)"""
+    try:
+        url = f"https://pypi.org/pypi/{query}/json"
+        r = self.session.get(url, timeout=10)
+        if r.status_code == 200:
+            return [self._parse_pypi_info(r.json())]
+    except:
+        pass
+    return []
+
+def _parse_pypi_info(self, data: Dict[str, Any]) -> SearchResult:
+    """Converts PyPI API response to SearchResult"""
+    info = data.get("info", {})
+    return SearchResult(
+        name=info.get("name", ""),
+        description=info.get("summary", "")[:200],  # Truncate long descriptions
+        version=info.get("version", "unknown"),
+        manager="pip",
+        homepage=info.get("home_page") or info.get("project_url"),
+        relevance_score=50  # Fixed score for direct matches
+    )</code></pre>
+      <h3>NPM Search</h3>
+      <pre>
+      <code>def _search_npm(self, query: str) -> List[SearchResult]:
+      """Uses NPM registry search API with quality scoring"""
+      try:
+      url = "https://registry.npmjs.org/-/v1/search"
+      r = self.session.get(url, params={"text": query, "size": 10}, timeout=10)
+      if r.status_code == 200:
+          data = r.json().get("objects", [])
+          return [self._parse_npm_info(p) for p in data]
+      except:
+          pass
+      return []
+def _parse_npm_info(self, package: Dict[str, Any]) -> SearchResult:
+    """Converts NPM API response to SearchResult"""
+    pkg = package.get("package", {})
+    return SearchResult(
+        name=pkg.get("name", ""),
+        description=pkg.get("description", "")[:200],
+        version=pkg.get("version", "unknown"),
+        manager="npm",
+        homepage=pkg.get("links", {}).get("homepage"),
+        relevance_score=package.get("score", {}).get("final", 0) * 100,
+    )
+    
+def _search_brew(self, query: str) -> List[SearchResult]:
+    """Uses Homebrew API (only exact matches for now)"""
+    try:
+        url = f"https://formulae.brew.sh/api/formula/{query}.json"
+        r = self.session.get(url, timeout=10)
+        if r.status_code == 200:
+            return [self._parse_brew_info(r.json())]
+    except:
+        pass
+    return []
+    
+def _parse_brew_info(self, data: Dict[str, Any]) -> SearchResult:
+    """Converts Homebrew API response to SearchResult"""
+    return SearchResult(
+        name=data.get("name", ""),
+        description=data.get("desc", "")[:200],
+        version=data.get("versions", {}).get("stable", "unknown"),
+        manager="brew",
+        homepage=data.get("homepage"),
+        relevance_score=50,
+    )
+    
+def _search_apt(self, query: str) -> List[SearchResult]:
+    """Simulates a search for apt (no real API)"""
+    # ... placeholder
+    return []
+
+def _search_dnf(self, query: str) -> List[SearchResult]:
+    """Simulates a search for dnf (no real API)"""
+    # ... placeholder
+    return []
+
+def _search_yum(self, query: str) -> List[SearchResult]:
+    """Simulates a search for yum (no real API)"""
+    # ... placeholder
+    return []
+
+def _search_pacman(self, query: str) -> List[SearchResult]:
+    """Simulates a search for pacman (no real API)"""
+    # ... placeholder
+    return []
+    
+def _search_zypper(self, query: str) -> List[SearchResult]:
+    """Simulates a search for zypper (no real API)"""
+    # ... placeholder
+    return []
+    
+def _search_apk(self, query: str) -> List[SearchResult]:
+    """Simulates a search for apk (no real API)"""
+    # ... placeholder
+    return []
+    
+def _search_choco(self, query: str) -> List[SearchResult]:
+    """Simulates a search for choco (no real API)"""
+    # ... placeholder
+    return []
+
+def _search_winget(self, query: str) -> List[SearchResult]:
+    """Simulates a search for winget (no real API)"""
+    # ... placeholder
+    return []
+
+def _search_snap(self, query: str) -> List[SearchResult]:
+    """Simulates a search for snap (no real API)"""
+    # ... placeholder
+    return []
+
+def _search_flatpak(self, query: str) -> List[SearchResult]:
+    """Simulates a search for flatpak (no real API)"""
+    # ... placeholder
+    return []
+    
+# Missing functions for other managers...
+      </code></pre>
+      </section>
+      <section id="command-execution" class="section">
+         <h2>9. Command Execution Framework</h2>
+         <h3>CommandRunner Class</h3>
+         <pre><code>class CommandRunner:
+    def __init__(self, logger: Logger, verbose: bool = False):
+        self.logger = logger
+        self.verbose = verbose
+    
+    def run_command(self, command: List[str], cwd: Optional[Path] = None, shell: bool = False, allow_fail: bool = False) -> Dict[str, Any]:
+        """Runs a shell command and captures output"""
+        try:
+            result = subprocess.run(
+                command,
+                cwd=cwd,
+                shell=shell,
+                capture_output=True,
+                text=True,
+                check=not allow_fail,
+                timeout=300
+            )
+            return {
+                "ok": True,
+                "stdout": result.stdout,
+                "stderr": result.stderr,
+                "returncode": result.returncode
+            }
+        except subprocess.CalledProcessError as e:
+            self.logger.cprint(f"Command failed with exit code {e.returncode}:\n{e.stderr}", "ERROR")
+            return {
+                "ok": False,
+                "stdout": e.stdout,
+                "stderr": e.stderr,
+                "returncode": e.returncode
+            }
+        except FileNotFoundError:
+            self.logger.cprint(f"Command not found: {command[0]}", "ERROR")
+            return {"ok": False, "stderr": "Command not found", "returncode": 127}
+        except Exception as e:
+            self.logger.cprint(f"An unexpected error occurred: {e}", "ERROR")
+            return {"ok": False, "stderr": str(e), "returncode": 1}</code></pre>
+         <p><strong>Common Usage:</strong></p>
+         <ul>
+            <li>Running `pip install`, `npm install`, etc.</li>
+            <li>Checking if a manager is installed (`which pip`)</li>
+            <li>Running system maintenance commands (`apt clean`)</li>
+         </ul>
+      </section>
+      <section id="package-manager-detection" class="section">
+         <h2>10. Package Manager Detection</h2>
+         <pre><code>def _detect_installed_managers() -> Dict[str, bool]:
+    """Checks for the presence of common package managers"""
+    
+    managers = {
+        "pip": shutil.which("pip") is not None,
+        "npm": shutil.which("npm") is not None,
+        "brew": shutil.which("brew") is not None,
+        "apt": shutil.which("apt") is not None,
+        "dnf": shutil.which("dnf") is not None,
+        "yum": shutil.which("yum") is not None,
+        "pacman": shutil.which("pacman") is not None,
+        "zypper": shutil.which("zypper") is not None,
+        "apk": shutil.which("apk") is not None,
+        "choco": shutil.which("choco") is not None,
+        "winget": shutil.which("winget") is not None,
+        "snap": shutil.which("snap") is not None,
+        "flatpak": shutil.which("flatpak") is not None,
+    }
+    return managers</code></pre>
+         <p><strong>Note:</strong> This relies solely on `shutil.which()`, which may fail in some environments or with non-standard PATH configurations.</p>
+      </section>
+      <section id="installation-removal" class="section">
+         <h2>11. Installation & Removal Orchestration</h2>
+         <h3>InstallManager Class</h3>
+         <pre><code>class InstallManager:
+    def __init__(self, runner: CommandRunner, db: PackageDB, logger: Logger):
+        self.runner = runner
+        self.db = db
+        self.logger = logger
+        
+    def install(self, package_name: str, manager_name: str, version: Optional[str] = None) -> bool:
+        """Installs a package using the specified manager"""
+        self.logger.cprint(f"Attempting to install '{package_name}' via {manager_name.upper()}...")
+        
+        # Mapping of manager to command templates
+        commands = {
+            "pip": ["python", "-m", "pip", "install", package_name],
+            "npm": ["npm", "install", "-g", package_name],
+            "brew": ["brew", "install", package_name],
+            "apt": ["sudo", "apt-get", "install", "-y", package_name],
+            "dnf": ["sudo", "dnf", "install", "-y", package_name],
+            "yum": ["sudo", "yum", "install", "-y", package_name],
+            "pacman": ["sudo", "pacman", "-S", "--noconfirm", package_name],
+            "zypper": ["sudo", "zypper", "--non-interactive", "install", package_name],
+            "apk": ["sudo", "apk", "add", package_name],
+            "choco": ["choco", "install", package_name, "-y"],
+            "winget": ["winget", "install", package_name, "--accept-source-agreements", "--accept-package-agreements"],
+            "snap": ["sudo", "snap", "install", package_name],
+            "flatpak": ["flatpak", "install", "-y", "flathub", package_name],
+        }
+        
+        # Add version if specified and supported
+        if version:
+            if manager_name == "pip":
+                commands["pip"][-1] += f"=={version}"
+            # Other managers don't have a standardized way to specify version
+            
+        cmd = commands.get(manager_name)
+        if not cmd:
+            self.logger.cprint(f"Unknown or unsupported package manager: {manager_name}", "ERROR")
+            return False
+            
+        result = self.runner.run_command(cmd)
+        
+        if result["ok"]:
+            self.logger.cprint(f"'{package_name}' installed successfully via {manager_name.upper()}.", "SUCCESS")
+            # Record success in DB
+            self.db.add_package(package_name, version, manager_name, " ".join(cmd))
+            return True
+        else:
+            self.logger.cprint(f"Installation of '{package_name}' failed.", "ERROR")
+            return False
+
+    def remove(self, package_name: str, manager_name: str) -> bool:
+        """Removes a package using the specified manager"""
+        self.logger.cprint(f"Attempting to remove '{package_name}' via {manager_name.upper()}...", "WARNING")
+        
+        commands = {
+            "pip": ["python", "-m", "pip", "uninstall", "-y", package_name],
+            "npm": ["npm", "uninstall", "-g", package_name],
+            "brew": ["brew", "uninstall", package_name],
+            "apt": ["sudo", "apt-get", "remove", "-y", package_name],
+            "dnf": ["sudo", "dnf", "remove", "-y", package_name],
+            "yum": ["sudo", "yum", "remove", "-y", package_name],
+            "pacman": ["sudo", "pacman", "-Rns", "--noconfirm", package_name],
+            "zypper": ["sudo", "zypper", "--non-interactive", "remove", package_name],
+            "apk": ["sudo", "apk", "del", package_name],
+            "choco": ["choco", "uninstall", package_name, "-y"],
+            "winget": ["winget", "uninstall", package_name, "--accept-source-agreements"],
+            "snap": ["sudo", "snap", "remove", package_name],
+            "flatpak": ["flatpak", "uninstall", "-y", package_name],
+        }
+        
+        cmd = commands.get(manager_name)
+        if not cmd:
+            self.logger.cprint(f"Unknown or unsupported package manager: {manager_name}", "ERROR")
+            return False
+        
+        result = self.runner.run_command(cmd, allow_fail=True) # allow uninstall to fail gracefully
+        
+        if result["ok"] or "not installed" in result["stderr"].lower():
+            self.logger.cprint(f"'{package_name}' removed successfully via {manager_name.upper()}.", "SUCCESS")
+            # Remove from DB
+            self.db.remove_package(package_name, manager_name)
+            return True
+        else:
+            self.logger.cprint(f"Removal of '{package_name}' failed.", "ERROR")
+            return False</code></pre>
+      </section>
+      <section id="system-maintenance" class="section">
+         <h2>12. System Maintenance & Cleanup</h2>
+         <h3>Maintenance Class</h3>
+         <pre><code>class SystemMaintenance:
+    def __init__(self, runner: CommandRunner, logger: Logger):
+        self.runner = runner
+        self.logger = logger
+        
+    def clean(self):
+        """Runs cleanup commands for all available managers"""
+        self.logger.cprint("Running system maintenance and cleanup...", "INFO")
+        managers = _detect_installed_managers()
+        
+        clean_commands = {
+            "apt": ["sudo", "apt-get", "autoclean", "-y"],
+            "dnf": ["sudo", "dnf", "clean", "all"],
+            "yum": ["sudo", "yum", "clean", "all"],
+            "pacman": ["sudo", "pacman", "-Scc", "--noconfirm"], # CAUTION: removes all cached packages
+            "zypper": ["sudo", "zypper", "clean"],
+            "apk": ["sudo", "apk", "cache", "--purge"],
+            "npm": ["npm", "cache", "clean", "--force"],
+            "pip": ["python", "-m", "pip", "cache", "purge"],
+            "brew": ["brew", "cleanup"],
+            "choco": ["choco", "cache", "purge"],
+            "winget": ["winget", "clear", "--cache"],
+        }
+        
+        for mgr, cmd in clean_commands.items():
+            if managers.get(mgr):
+                self.logger.cprint(f"  > Cleaning cache for {mgr.upper()}...", "MUTED")
+                self.runner.run_command(cmd, allow_fail=True)
+                
+        self.logger.cprint("System cleanup complete.", "SUCCESS")
+        return True</code></pre>
+      </section>
+      <section id="self-update-system" class="section">
+         <h2>13. Self-Update System</h2>
+         <h3>UpdateManager Class</h3>
+         <pre><code>class UpdateManager:
+    def __init__(self, runner: CommandRunner, logger: Logger):
+        self.runner = runner
+        self.logger = logger
+        
+    def update_self(self, url: str = DEFAULT_UPDATE_URL):
+        """Downloads the latest version and replaces the current script"""
+        try:
+            self.logger.cprint("Checking for updates...", "INFO")
+            response = requests.get(url, timeout=15)
+            response.raise_for_status()
+            
+            # Simple version check (no formal versioning, just a string match)
+            # This is not a robust method and can be improved
+            latest_version_line = next((line for line in response.text.splitlines() if "__version__" in line), None)
+            
+            if latest_version_line and latest_version_line.strip() != f'__version__ = "{__version__}"':
+                self.logger.cprint("New version available. Downloading...", "INFO")
+                # Replace the current script
+                with open(__file__, "w", encoding="utf-8") as f:
+                    f.write(response.text)
+                self.logger.cprint("Update successful! Please restart the script.", "SUCCESS")
+            else:
+                self.logger.cprint("You are already using the latest version.", "INFO")
+            
+            return True
+        except Exception as e:
+            self.logger.cprint(f"Update failed: {e}", "ERROR")
+            return False</code></pre>
+      </section>
+      <section id="system-information" class="section">
+         <h2>14. System Information & Health Checks</h2>
+         <h3>SysInfo Class</h3>
+         <pre><code>class SysInfo:
+    @staticmethod
+    def get_info() -> Dict[str, Any]:
+        """Gathers basic system information"""
+        return {
+            "system": OS_NAME,
+            "distribution": DISTRO_NAME,
+            "distribution_version": DISTRO_VERSION,
+            "architecture": ARCH,
+            "python_version": platform.python_version(),
+            "user": os.getlogin(),
+            "home_dir": str(Path.home()),
+            "crossfire_dir": str(CROSSFIRE_DIR),
+            "version": __version__,
+        }</code></pre>
+      </section>
+      <section id="setup-launcher" class="section">
+         <h2>15. Setup & Launcher Installation</h2>
+         <h3>SetupManager Class</h3>
+         <pre><code>class SetupManager:
+    def __init__(self, runner: CommandRunner, logger: Logger):
+        self.runner = runner
+        self.logger = logger
+        
+    def install_launcher(self):
+        """Installs the script as a system-wide command"""
+        # This is a highly simplified and OS-specific example.
+        # It needs significant improvement for cross-platform compatibility.
+        self.logger.cprint("Installing CrossFire as a system-wide command...", "INFO")
+        
+        try:
+            # Find a suitable bin directory
+            if OS_NAME in ["Linux", "Darwin"]:
+                bin_path = Path.home() / ".local" / "bin"
+                os.makedirs(bin_path, exist_ok=True)
+                target_path = bin_path / "crossfire"
+                
+                # Create a symlink
+                if target_path.exists():
+                    os.remove(target_path)
+                os.symlink(__file__, target_path)
+                
+                # Prompt user to add to PATH
+                self.logger.cprint(f"Successfully created symlink at {target_path}", "SUCCESS")
+                self.logger.cprint("You may need to add this to your PATH environment variable:", "INFO")
+                self.logger.cprint(f'  export PATH="$HOME/.local/bin:$PATH"', "MUTED")
+            
+            elif OS_NAME == "Windows":
+                # Windows is more complex, requiring modification of the PATH or a .bat/.ps1 file
+                self.logger.cprint("Automatic installation on Windows is not yet supported. Please add the script directory to your PATH manually.", "WARNING")
+                return False
+                
+            return True
+        except Exception as e:
+            self.logger.cprint(f"Launcher installation failed: {e}", "ERROR")
+            return False</code></pre>
+      </section>
+      <section id="package-management-features" class="section">
+         <h2>16. Package Management Features</h2>
+         <h3>Features:</h3>
+         <ul>
+            <li><strong>Install:</strong> `crossfire install [package] [manager]`</li>
+            <li><strong>Uninstall:</strong> `crossfire remove [package] [manager]`</li>
+            <li><strong>Search:</strong> `crossfire search [query] [--manager]`</li>
+            <li><strong>List:</strong> `crossfire list [--manager]`</li>
+            <li><strong>Clean:</strong> `crossfire clean`</li>
+            <li><strong>Update:</strong> `crossfire update`</li>
+            <li><strong>Self-Update:</strong> `crossfire self-update`</li>
+            <li><strong>Info:</strong> `crossfire info`</li>
+            <li><strong>Help:</strong> `crossfire --help`</li>
+         </ul>
+      </section>
+      <section id="command-line-interface" class="section">
+         <h2>17. Command Line Interface</h2>
+         <h3>Argument Parsing</h3>
+         <pre><code>def parse_args():
+    parser = argparse.ArgumentParser(
+        description="CrossFire Universal Package Manager",
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
+    
+    # ... argument definitions for each command ...
+    
+    return parser.parse_args()</code></pre>
+         <h3>Example Command: `crossfire install requests --manager pip`</h3>
+         <pre><code># Inside parse_args()
+install_parser = subparsers.add_parser('install', help='Install a package')
+install_parser.add_argument('package', help='Name of the package to install')
+install_parser.add_argument('--manager', required=True, help='The package manager to use (e.g., pip, npm, brew)')
+install_parser.add_argument('--version', help='The specific version to install')</code></pre>
+      </section>
+      <section id="main-entry-point" class="section">
+         <h2>18. Main Entry Point & Routing</h2>
+         <pre><code>def main():
+    args = parse_args()
+    
+    # Global setup
+    global LOG
+    LOG.quiet = args.quiet
+    LOG.verbose = args.verbose
+    LOG.json_mode = args.json_output
+    
+    # Instantiate core components
+    runner = CommandRunner(LOG, verbose=args.verbose)
+    db = PackageDB()
+    installer = InstallManager(runner, db, LOG)
+    searcher = RealSearchEngine()
+    
+    if args.command == 'install':
+        installer.install(args.package, args.manager, args.version)
+    elif args.command == 'search':
+        # ... search logic ...
+    # ... and so on for other commands
+    
+if __name__ == "__main__":
+    main()</code></pre>
+      </section>
+      <section id="error-handling" class="section">
+         <h2>19. Error Handling & Edge Cases</h2>
+         <h3>Python-Specific Issues</h3>
+         <ul>
+            <li>`subprocess.CalledProcessError`: Handled by `CommandRunner` for non-zero exit codes.</li>
+            <li>`FileNotFoundError`: Occurs when a package manager is not in the system PATH. `CommandRunner` catches this and provides a user-friendly message.</li>
+            <li>`requests.exceptions.RequestException`: Handled in `RealSearchEngine` and `UpdateManager` for network issues.</li>
+         </ul>
+         <h3>General Limitations</h3>
+         <ul>
+            <li>No robust rollback mechanism on failed installs.</li>
+            <li>No dependency resolution across managers (e.g., installing a Python package with `pip` won't automatically install `gcc` via `apt` if needed).</li>
+         </ul>
+      </section>
+      <section id="security-considerations" class="section">
+         <h2>20. Security Considerations</h2>
+         <h3>Key Risks</h3>
+         <ul>
+            <li><strong>Arbitrary Command Execution:</strong> The script executes commands with `subprocess`. Malicious package names could lead to command injection if not properly sanitized (though `subprocess` helps mitigate this).</li>
+            <li><strong>`sudo` Usage:</strong> Many Linux/macOS commands use `sudo`. This elevates privileges and is a security risk. A more robust solution would be to prompt for a password or use a different mechanism.</li>
+            <li><strong>Update Integrity:</strong> The `self-update` system is vulnerable to man-in-the-middle attacks as it downloads over HTTPS but doesn't perform signature verification. A malicious actor could provide a fake `crossfire.py` to the user.</li>
+         </ul>
+      </section>
+      <section id="known-bugs" class="section">
+         <h2>21. Known Bugs & Limitations</h2>
+         <ul>
+            <li>`--version` flag for `install` only works with `pip`.</li>
+            <li>`self-update` system is not secure.</li>
+            <li>UI/Progress bar can be corrupted by concurrent stdout from subprocesses.</li>
+            <li>`list` command does not verify if packages are actually still installed on the system, only checks the internal database.</li>
+         </ul>
+      </section>
+      <section id="extension-guide" class="section">
+         <h2>22. Extension Guide</h2>
+         <p>To add a new package manager, follow these steps:</p>
+         <ol>
+            <li>Add the manager name to the `_detect_installed_managers()` function.</li>
+            <li>Implement `_search_[manager]()` and `_parse_[manager]_info()` methods in `RealSearchEngine`.</li>
+            <li>Add command templates to `InstallManager.install()` and `InstallManager.remove()`.</li>
+            <li>Add a `clean` command to `SystemMaintenance.clean()`.</li>
+            <li>Update the CLI parser in `parse_args()` if new flags are needed.</li>
+         </ol>
+      </section>
+      <section id="command-reference" class="section">
+         <h2>23. Complete Command Reference</h2>
+         <pre><code>crossfire install &lt;package&gt; --manager &lt;manager&gt; [--version &lt;version&gt;]
+crossfire remove &lt;package&gt; --manager &lt;manager&gt;
+crossfire search &lt;query&gt; [--manager &lt;manager&gt;]
+crossfire list [--manager &lt;manager&gt;]
+crossfire clean
+crossfire update
+crossfire self-update
+crossfire info
+crossfire --help</code></pre>
+      </section>
+      </div>
+      <footer>
+         ©CrossFire Project | 2025
+      </footer>
+      <script>
+         const cursor = document.querySelector('.cursor');
+         
+         document.addEventListener('mousemove', e => {
+             cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+         });
+         
+      </script>
+   </body>
+</html>
+
+
+
