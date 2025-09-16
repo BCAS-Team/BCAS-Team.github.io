@@ -153,7 +153,7 @@ details summary ~ * {
     bodyDiv.appendChild(footer);
     footer.style.fontSize = '0.9rem';
     footer.style.paddingBottom = '5px';
-    footer.innerHTML = (`<span>Created by Bryden</span>`);
+    footer.innerHTML = (`<span>Created by BCAS-Team</span>`);
 
     var getValues = () => new Promise((e, t) => {
         try {
