@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feb's Birthday Plan v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    /* BODY & GENERAL */
+    body {
+        background-color: black;
+        color: aliceblue;
+        font-family: 'Poppins', 'Courier New', Courier, monospace;
+        font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+        line-height: 1.6;
+        margin: 0;
+        padding: clamp(10px, 2vw, 20px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* HEADINGS */
+    h1 {
+        text-decoration: underline;
+        margin-bottom: clamp(10px, 2vw, 20px);
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+    h2 {
+        color: purple;
+        margin: clamp(10px, 2vw, 20px) 0 10px;
+        font-size: clamp(1.2rem, 3vw, 2rem);
+    }
+    h3 {
+        color: purple;
+        margin: clamp(5px, 1.5vw, 15px) 0 5px;
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    /* PARAGRAPHS & LIST ITEMS */
+    p, li {
+        margin: clamp(5px, 1vw, 10px) 0;
+        text-align: left;
+        width: 100%;
+    }
+    .subsection, .list-item {
+        width: 90%;
+        max-width: 800px;
+        margin-left: clamp(10px, 3vw, 50px);
+    }
+
+    /* SECTIONS */
+    .section {
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+        margin-top: clamp(15px, 3vw, 30px);
+    }
+    .section.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* SELECT BOX */
+    select {
+        background-color: black;
+        color: purple;
+        border: 1px solid purple;
+        padding: clamp(5px, 1vw, 10px);
+        font-family: 'Poppins', monospace;
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        margin-bottom: clamp(15px, 3vw, 30px);
+        width: 90%;
+        max-width: 400px;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES */
+    @media (max-width: 600px) {
+        body {
+            font-size: clamp(0.8rem, 3vw, 1rem);
+            padding: 5px;
+        }
+        .subsection {
+            margin-left: 5%;
+        }
+        .list-item {
+            margin-left: 10%;
+        }
+    }
+</style>
+</head>
+<body> 
+
+<h1>Operation Feb's Birthday Venture</h1>
+<p><strong>Operating on:</strong> 8/2/26 @ 1100 Hours</p>
+<p><strong>Drafted by:</strong> Jacob</p>
+
+<select id="sectionSelector">
+    <option value="">Select a Section</option>
+    <option value="article01">Article 01A: Members</option>
+    <option value="article02">Article 02A: Members (Parents)</option>
+    <option value="article03">Article 03A: Pickups</option>
+    <option value="article04">Article 04A: Drop-Off Location</option>
+    <option value="article05">Article 05A: First Contact</option>
+    <option value="article08">Article 08: Communication</option>
+    <option value="article09">Article 09A: Behavioural Boundaries</option>
+    <option value="article10">Article 10A: Charge</option>
+    <option value="article11">Article 11A: Emergency Scenarios</option>
+    <option value="article12">Article 12A: Risk Assessment & Mitigation</option>
+</select>
+
+<!-- Article 01A -->
+<div class="section" id="article01">
+    <h2>Article 01A: Members</h2>
+    <div class="subsection">
+        <h3>Subsection A: Actual (Sure of Arrival)</h3>
+        <p class="list-item">Ollie</p>
+        <p class="list-item">Vincent</p>
+        <p class="list-item">Ruby</p>
+        <p class="list-item">Feb</p>
+        <p class="list-item">Jacob</p>
+        <p class="list-item">Lucy</p>
+    </div>
+    <div class="subsection">
+        <h3>Subsection B: Unsure of Arrival</h3>
+        <p class="list-item">Kitty (*)</p>
+        <p class="list-item">Alex (*)</p>
+    </div>
+</div>
+
+<!-- Article 02A -->
+<div class="section" id="article02">
+    <h2>Article 02A: Members (Parents)</h2>
+    <p>Feb's Parent(s)</p>
+    <p>Jacob's Parent(s)</p>
+    <p>Ruby's Parent(s)</p>
+</div>
+
+<!-- Article 03A -->
+<div class="section" id="article03">
+    <h2>Article 03A: Pickups</h2>
+    <div class="subsection">
+        <h3>Subsection A: Parent Logistic Planning</h3>
+        <p>Parents mentioned in Article 02A will be used for pickups.</p>
+        <p>Current uncertainty between Feb & Jacob's Parents as it could shorten car amount.</p>
+        <p>Proximity is out of range of Site (Article 05).</p>
+    </div>
+    <div class="subsection">
+        <h3>Subsection B: Registry Planning</h3>
+        <p>Ollie & Jacob as collective (due to close proximity)</p>
+        <p>Ruby, Vincent & Lucy as collective (due to request, cannot specify proximity)</p>
+    </div>
+</div>
+
+<!-- Article 04A -->
+<div class="section" id="article04">
+    <h2>Article 04A: Drop-Off Location</h2>
+    <p>Location: Meadowhall Centre, Sheffield, S9 1EP (53°24'36.0"N 1°24'36.0"W)</p>
+</div>
+
+<!-- Article 05A -->
+<div class="section" id="article05">
+    <h2>Article 05A: First Contact</h2>
+    <div class="subsection">
+        <h3>Subsection A: Time Window Tolerance</h3>
+        <p>Designated adult must depart around 1000 Hours to arrive on time at Article 04A.</p>
+        <p>Worst-case Sheffield traffic considered: 60 min window + 30 min tolerance.</p>
+    </div>
+    <div class="subsection">
+        <h3>Subsection B: Location</h3>
+        <p>1st Choice: Boots (Inside Meadowhall)</p>
+        <p>2nd Choice: Oasis (Inside Meadowhall) if required</p>
+    </div>
+    <div class="subsection">
+        <h3>Subsection C: Post-Drop-Off</h3>
+        <p>After drop-off, regroup at designated zone (Subsection B).</p>
+    </div>
+</div>
+
+<!-- Article 08 -->
+<div class="section" id="article08">
+    <h2>Article 08: Communication</h2>
+    <p>Non-verbal communication may occur for safety & optimal fun.</p>
+    <p><strong>Option A (Standard):</strong> WhatsApp Group Chat</p>
+    <p><strong>Option B (Secondary Protocol):</strong> Direct Phone Call</p>
+</div>
+
+<!-- Article 09A -->
+<div class="section" id="article09">
+    <h2>Article 09A: Behavioural Boundaries</h2>
+    <p>All members must remain within public areas and maintain group awareness (exempt under Article 11).</p>
+</div>
+
+<!-- Article 10A -->
+<div class="section" id="article10">
+    <h2>Article 10A: Charge</h2>
+    <p>Person in charge: Feb</p>
+    <p>Exemptions are rare; see Article 11.</p>
+</div>
+
+<!-- Article 11A -->
+<div class="section" id="article11">
+    <h2>Article 11A: Emergency Scenarios</h2>
+    <p>Feb's command is no longer absolute if legal or emergency situation occurs.</p>
+    <p>Safe zone determined by authority or, if non-lethal, by regroup location (Article 05A Subsection B).</p>
+</div>
+
+<!-- Article 12A -->
+<div class="section" id="article12">
+    <h2>Article 12A: Risk Assessment & Mitigation</h2>
+    <p>Risk Level Classification: LOW (Controlled public environment with safety protocols)</p>
+    <div class="subsection">
+        <h3>Identified Risks & Response Protocols</h3>
+
+        <p><strong>R1: Personnel Separation</strong> (Medium Probability, Low Impact)</p>
+        <p>Scenario: Individual becomes separated from main group</p>
+        <p>Mitigation: Article 05A Subsection B establishes primary RV point (Boots)</p>
+        <p>Response: Separated individual proceeds to Boots; group conducts headcount every 60-90 minutes</p>
+
+        <p><strong>R2: Communication Failure</strong> (Low Probability, Medium Impact)</p>
+        <p>Scenario: Mobile phone battery depletion or network issues</p>
+        <p>Mitigation: Dual-protocol system (Article 08: WhatsApp + Direct Call)</p>
+        <p>Response: Default to physical RV point (Boots); all personnel aware of fallback location</p>
+
+        <p><strong>R3: Medical Incident</strong> (Low Probability, High Impact)</p>
+        <p>Scenario: Injury, illness, or medical emergency</p>
+        <p>Mitigation: Meadowhall has security and first aid facilities</p>
+        <p>Response: Invoke Article 11A emergency protocols; contact Meadowhall security; notify parents immediately</p>
+
+        <p><strong>R4: Transport Disruption</strong> (Low Probability, Medium Impact)</p>
+        <p>Scenario: Parent vehicle breakdown or significant traffic delay</p>
+        <p>Mitigation: 30-minute tolerance buffer (Article 05A)</p>
+        <p>Response: Affected group notifies via WhatsApp; backup parent transport or delayed start time</p>
+
+        <p><strong>R5: Behavioral Issues</strong> (Very Low Probability, Variable Impact)</p>
+        <p>Scenario: External conflict or unwanted attention from public</p>
+        <p>Mitigation: Article 09A (remain in public areas, maintain group awareness)</p>
+        <p>Response: Relocate to high-traffic area; contact Meadowhall security if necessary; invoke Article 11A if escalates</p>
+
+        <p><strong>R6: Weather-Related Transport Issues</strong> (Low Probability, Low Impact)</p>
+        <p>Scenario: Severe weather affecting road conditions (February conditions)</p>
+        <p>Mitigation: Parents assess conditions pre-departure</p>
+        <p>Response: Postponement decision made by parent consensus; alternative date proposed</p>
+    </div>
+</div>
+
+<script>
+    const selector = document.getElementById('sectionSelector');
+    const sections = document.querySelectorAll('.section');
+
+    selector.addEventListener('change', () => {
+        const value = selector.value;
+        sections.forEach(sec => {
+            sec.classList.toggle('show', sec.id === value);
+        });
+    });
+</script>
+
+</body>
+</html>
