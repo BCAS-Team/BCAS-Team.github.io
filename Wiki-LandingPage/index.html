@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCAS Wiki Hub</title>
+    <link rel="stylesheet" href="/Wiki-LandingPage/CSS/styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <main>
+        <section class="hero">
+            <h1>BCAS Wiki Hub</h1>
+            <p class="tagline">Your gateway to BCAS-Wiki 2.0 knowledge bases</p>
+        </section>
+
+        <!-- Search UI -->
+        <section class="search-refine-section">
+            <h2>Search All Wikis</h2>
+            <input type="text" id="search-query" placeholder="e.g. nmap, python-lists, firewall rules..." autocomplete="off">
+            <br>
+            <button id="refine-search-button">Search</button>
+            <div id="refined-query-output"></div>
+            
+            <!-- Loading Spinner -->
+            <div id="search-loading-indicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <span>Fetching wiki data...</span>
+            </div>
+        </section>
+
+        <!-- Results Popup -->
+        <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+            <div class="popup-header">
+                <h3 id="popup-title">Search Results</h3>
+                <button id="close-popup" aria-label="Close search results">&times;</button>
+            </div>
+            <div id="popup-results-container">
+                <!-- Results injected by main.js -->
+            </div>
+        </div>
+
+        <!-- Wiki Navigation Cards -->
+        <section class="cta-buttons">
+            <a href="../BCAS-Wiki 2.0/Computer Law Wiki/index.html">Computer Law Wiki</a>
+            <a href="../BCAS-Wiki 2.0/Hackers Wiki/index.html">Hackers Wiki</a>
+            <a href="../BCAS-Wiki 2.0/Scripting Wiki/index.html">Scripting Wiki</a>
+            <a href="../BCAS-Wiki 2.0/The Hardware Wiki/index.html">The Hardware Wiki</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BCAS Wiki Project | BCAS-Wiki 2.0</p>
+    </footer>
+
+    <script src="/Wiki-LandingPage/JS/main.js" defer></script>
+</body>
+</html>

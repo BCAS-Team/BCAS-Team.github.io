@@ -1,0 +1,349 @@
+/* =========================================
+   OPTICAL MEDIA WIKI - FULL STYLES.CSS
+   Internet’s Largest CD Database v2.0
+   ========================================= */
+
+* {
+  text-decoration: none;
+}
+
+:root {
+  --header-height: 80px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: #eee;
+  line-height: 1.5;
+}
+
+/* ==================== HEADER ==================== */
+header {
+  background-color: #111;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 1000;
+  border-bottom: 1px solid #444;
+}
+
+header h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+#search {
+  background: #222;
+  border: 1px solid #444;
+  color: #eee;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 300px;
+  max-width: 100%;
+}
+
+/* Hamburger */
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: 1em;
+}
+
+#hamburger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+/* ==================== SIDEBAR ==================== */
+nav {
+  background-color: #111;
+  border-right: 1px solid #444;
+  width: 200px;
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 900;
+  transition: transform 0.3s ease;
+}
+
+nav.closed {
+  transform: translateX(-100%);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  border-bottom: 1px solid #222;
+}
+
+.category-btn,
+nav li a.category-btn {
+  display: inline-block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #eee;
+  padding: 1em;
+  font-size: 1em;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 0;
+  user-select: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn:focus,
+.category-btn.active {
+  background-color: #333;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+main {
+  margin-left: 200px;
+  margin-top: var(--header-height);
+  padding: 2em;
+  max-width: 900px;
+}
+
+/* Items */
+.item {
+  border: 1px solid #444;
+  background-color: #111;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.item h2 {
+  cursor: pointer;
+  margin: 0;
+  font-size: 1.3em;
+}
+
+.details {
+  display: none;
+  border-top: 1px solid #444;
+  padding-top: 0.8em;
+  margin-top: 0.8em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Technical Details Box */
+.tech-details {
+  background: #1a1a1a;
+  padding: 1.2em;
+  border-radius: 6px;
+  border: 1px solid #444;
+  margin-top: 1.2em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.tech-details dl {
+  margin: 0;
+}
+
+.tech-details dt {
+  color: #c084fc;
+  font-weight: bold;
+  margin-top: 1em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #333;
+}
+
+.tech-details dd {
+  margin: 0 0 0.8em 1.2em;
+  color: #ddd;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.tech-details .array-item {
+  background: #222;
+  padding: 0.4em 0.8em;
+  border-radius: 3px;
+  margin-bottom: 0.4em;
+}
+
+/* Specs Grid */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8em;
+  margin: 1em 0;
+}
+
+.spec {
+  background: #1a1a1a;
+  padding: 0.7em;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.spec span {
+  display: block;
+  font-size: 0.82em;
+  color: #999;
+}
+
+.spec strong {
+  color: #0af;
+  font-size: 1.05em;
+}
+
+/* Sources */
+.sources-section {
+  margin-top: 1.2em;
+}
+
+.source-link {
+  background: #2a0a4a;
+  color: #c084fc;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #6a0dad;
+}
+
+.source-link:hover {
+  background: #4a1a7a;
+  color: #e0bbff;
+}
+
+/* Image Button */
+.img-btn {
+  background: #0af;
+  color: #fff;
+  border: none;
+  padding: 0.4em 0.9em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-left: 8px;
+}
+
+.img-btn:hover {
+  background: #09f;
+}
+
+/* Empty & Error States */
+.empty-state {
+  text-align: center;
+  padding: 3em;
+  color: #777;
+}
+
+.error {
+  color: #f66;
+  background: #220000;
+  padding: 2em;
+  border: 1px solid #600;
+  border-radius: 6px;
+}
+
+/* ==================== FLOATING IMAGE MODAL ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.modal-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #fff;
+  color: #000;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  nav {
+    transform: translateX(-100%);
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  main {
+    margin-left: 0;
+    padding: 1em;
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #search {
+    width: 100%;
+    margin-top: 0.5em;
+  }
+}

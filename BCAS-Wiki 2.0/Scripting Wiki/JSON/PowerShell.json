@@ -1,0 +1,234 @@
+{
+  "guide": {
+    "tutorials": [
+      {
+        "name": "Get-Process",
+        "category": "Process Management",
+        "description": "List and manage running processes",
+        "usage": "Get-Process [-Name] <String[]>",
+        "examples": [
+          "Get-Process",
+          "Get-Process -Name notepad",
+          "Get-Process | Where-Object {$_.CPU -gt 100}"
+        ],
+        "notes": "Use Stop-Process to terminate processes. Be careful with system processes."
+      },
+      {
+        "name": "Get-Service",
+        "category": "Service Management",
+        "description": "Manage Windows services",
+        "usage": "Get-Service [-Name] <String[]>",
+        "examples": [
+          "Get-Service",
+          "Get-Service -Name W32Time",
+          "Get-Service | Where-Object {$_.Status -eq 'Running'}"
+        ],
+        "notes": "Use Start-Service, Stop-Service, and Restart-Service for service control"
+      },
+      {
+        "name": "Get-ChildItem",
+        "category": "File System",
+        "description": "List files and directories (equivalent to ls/dir)",
+        "usage": "Get-ChildItem [-Path] <String[]>",
+        "examples": [
+          "Get-ChildItem C:\\",
+          "Get-ChildItem -Recurse -Filter '*.txt'",
+          "ls -la"
+        ],
+        "notes": "Alias: ls, dir, gci. Use -Recurse for subdirectories"
+      },
+      {
+        "name": "Copy-Item",
+        "category": "File Operations",
+        "description": "Copy files and directories",
+        "usage": "Copy-Item [-Path] <String[]> [-Destination] <String>",
+        "examples": [
+          "Copy-Item file.txt backup.txt",
+          "Copy-Item C:\\Source\\* C:\\Destination\\ -Recurse",
+          "cp file.txt ~/backup/"
+        ],
+        "notes": "Use -Recurse for directories, -Force to overwrite existing files"
+      },
+      {
+        "name": "Move-Item",
+        "category": "File Operations",
+        "description": "Move or rename files and directories",
+        "usage": "Move-Item [-Path] <String[]> [-Destination] <String>",
+        "examples": [
+          "Move-Item oldfile.txt newfile.txt",
+          "Move-Item C:\\temp\\* C:\\archive\\",
+          "mv file.txt ~/documents/"
+        ],
+        "notes": "Can be used for both moving and renaming operations"
+      },
+      {
+        "name": "Remove-Item",
+        "category": "File Operations",
+        "description": "Delete files and directories",
+        "usage": "Remove-Item [-Path] <String[]>",
+        "examples": [
+          "Remove-Item file.txt",
+          "Remove-Item C:\\temp\\* -Recurse -Force",
+          "rm -rf ~/old_project/"
+        ],
+        "notes": "Use -Recurse for directories, -Force for read-only items"
+      },
+      {
+        "name": "New-Item",
+        "category": "File System",
+        "description": "Create new files and directories",
+        "usage": "New-Item [-Path] <String[]> [-ItemType] <String>",
+        "examples": [
+          "New-Item -ItemType Directory -Path C:\\NewFolder",
+          "New-Item -ItemType File -Path script.ps1",
+          "mkdir new_directory"
+        ],
+        "notes": "ItemType can be File, Directory, SymbolicLink, etc."
+      },
+      {
+        "name": "Get-Content",
+        "category": "File Operations",
+        "description": "Read file contents",
+        "usage": "Get-Content [-Path] <String[]>",
+        "examples": [
+          "Get-Content file.txt",
+          "Get-Content log.txt -Tail 10",
+          "cat file.txt | Select-String 'error'"
+        ],
+        "notes": "Use -Tail for last N lines, -Wait for live monitoring"
+      },
+      {
+        "name": "Set-Content",
+        "category": "File Operations",
+        "description": "Write content to files",
+        "usage": "Set-Content [-Path] <String[]> [-Value] <Object[]>",
+        "examples": [
+          "Set-Content file.txt 'Hello World'",
+          "'Line 1', 'Line 2' | Set-Content multi.txt",
+          "Get-Process | Out-File processes.txt"
+        ],
+        "notes": "Use Add-Content to append, Out-File for command output"
+      },
+      {
+        "name": "Select-String",
+        "category": "Text Processing",
+        "description": "Search for text patterns in files",
+        "usage": "Select-String [-Pattern] <String[]> [-Path] <String[]>",
+        "examples": [
+          "Select-String 'error' *.log",
+          "Get-Content file.txt | Select-String -Pattern 'warning|error'",
+          "Select-String -Path C:\\logs\\* -Pattern 'failed' -Recurse"
+        ],
+        "notes": "Supports regular expressions and multiple patterns"
+      },
+      {
+        "name": "Where-Object",
+        "category": "Filtering",
+        "description": "Filter objects based on conditions",
+        "usage": "Where-Object [-FilterScript] <ScriptBlock>",
+        "examples": [
+          "Get-Process | Where-Object {$_.Name -eq 'notepad'}",
+          "Get-ChildItem | Where-Object {$_.Length -gt 1MB}",
+          "1..10 | Where-Object {$_ % 2 -eq 0}"
+        ],
+        "notes": "Alias: where, ?. Use comparison operators like -eq, -ne, -gt, -lt"
+      },
+      {
+        "name": "ForEach-Object",
+        "category": "Iteration",
+        "description": "Perform operations on each object in a collection",
+        "usage": "ForEach-Object [-Process] <ScriptBlock[]>",
+        "examples": [
+          "1..5 | ForEach-Object {$_ * 2}",
+          "Get-ChildItem *.txt | ForEach-Object {$_.Name.ToUpper()}",
+          "Get-Service | ForEach-Object {Write-Host $_.Name $_.Status}"
+        ],
+        "notes": "Alias: foreach, %. Use $_ to reference current object"
+      },
+      {
+        "name": "Sort-Object",
+        "category": "Data Manipulation",
+        "description": "Sort objects by property values",
+        "usage": "Sort-Object [[-Property] <Object[]>]",
+        "examples": [
+          "Get-Process | Sort-Object CPU -Descending",
+          "Get-ChildItem | Sort-Object Name",
+          "'apple','banana','cherry' | Sort-Object"
+        ],
+        "notes": "Use -Descending for reverse order, -Unique to remove duplicates"
+      },
+      {
+        "name": "Group-Object",
+        "category": "Data Analysis",
+        "description": "Group objects by property values",
+        "usage": "Group-Object [[-Property] <Object[]>]",
+        "examples": [
+          "Get-Process | Group-Object ProcessName",
+          "Get-Service | Group-Object Status",
+          "Get-ChildItem | Group-Object Extension"
+        ],
+        "notes": "Useful for counting and analyzing data patterns"
+      },
+      {
+        "name": "Measure-Object",
+        "category": "Data Analysis",
+        "description": "Calculate statistical properties of objects",
+        "usage": "Measure-Object [[-Property] <String[]>]",
+        "examples": [
+          "1..100 | Measure-Object -Sum -Average -Maximum -Minimum",
+          "Get-ChildItem | Measure-Object Length -Sum",
+          "Get-Content file.txt | Measure-Object -Line -Word -Character"
+        ],
+        "notes": "Can calculate Sum, Average, Maximum, Minimum, and Count"
+      },
+      {
+        "name": "Test-Path",
+        "category": "File System",
+        "description": "Check if a path exists",
+        "usage": "Test-Path [-Path] <String[]>",
+        "examples": [
+          "Test-Path C:\\Windows",
+          "if (Test-Path $env:USERPROFILE\\Documents) { 'Exists' }",
+          "Test-Path *.txt"
+        ],
+        "notes": "Returns True/False, supports wildcards"
+      },
+      {
+        "name": "Get-Location",
+        "category": "Navigation",
+        "description": "Get current directory location",
+        "usage": "Get-Location",
+        "examples": [
+          "Get-Location",
+          "pwd",
+          "$currentDir = Get-Location"
+        ],
+        "notes": "Alias: pwd, gl. Use Set-Location (cd) to change directories"
+      },
+      {
+        "name": "Set-Location",
+        "category": "Navigation",
+        "description": "Change current directory",
+        "usage": "Set-Location [[-Path] <String>]",
+        "examples": [
+          "Set-Location C:\\Users",
+          "cd ~/Documents",
+          "Set-Location .."
+        ],
+        "notes": "Alias: cd, chdir, sl. Use Push-Location/Pop-Location for directory stack"
+      },
+      {
+        "name": "Invoke-WebRequest",
+        "category": "Network",
+        "description": "Make HTTP requests",
+        "usage": "Invoke-WebRequest [-Uri] <Uri>",
+        "examples": [
+          "Invoke-WebRequest https://api.github.com/users/octocat",
+          "$response = Invoke-WebRequest -Uri 'https://httpbin.org/get' -Method GET",
+          "Invoke-WebRequest -Uri 'https://example.com' -OutFile page.html"
+        ],
+        "notes": "Alias: wget, curl. Use -Method for HTTP verbs, -Body for POST data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "guide": {
+    "resources": [
+      {
+        "name": "Message Boxes",
+        "category": "User Interface",
+        "description": "Display message boxes and get user input",
+        "usage": "MsgBox \"message\"",
+        "examples": [
+          "MsgBox \"Hello World\"",
+          "MsgBox \"Error occurred!\", vbCritical, \"Error\"",
+          "result = MsgBox(\"Continue?\", vbYesNo + vbQuestion)",
+          "MsgBox \"Value: \" & variable"
+        ],
+        "notes": "vbOKOnly, vbYesNo, vbInformation, vbCritical are common constants"
+      },
+      {
+        "name": "Input Boxes",
+        "category": "User Interface",
+        "description": "Get text input from users",
+        "usage": "InputBox(\"prompt\")",
+        "examples": [
+          "name = InputBox(\"Enter your name:\")",
+          "age = InputBox(\"Enter age:\", \"Age Input\", \"25\")",
+          "If name <> \"\" Then MsgBox \"Hello \" & name"
+        ],
+        "notes": "Returns empty string if cancelled, third parameter is default value"
+      },
+      {
+        "name": "File System Operations",
+        "category": "File Management",
+        "description": "Work with files and folders using FileSystemObject",
+        "usage": "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+        "examples": [
+          "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+          "If fso.FileExists(\"C:\\test.txt\") Then MsgBox \"File exists\"",
+          "fso.CopyFile \"source.txt\", \"destination.txt\"",
+          "fso.CreateFolder \"C:\\NewFolder\"",
+          "Set file = fso.OpenTextFile(\"data.txt\", 1)"
+        ],
+        "notes": "1=ForReading, 2=ForWriting, 8=ForAppending"
+      },
+      {
+        "name": "Text File Operations",
+        "category": "File Management",
+        "description": "Read from and write to text files",
+        "usage": "Set file = fso.OpenTextFile(filename, mode)",
+        "examples": [
+          "Set file = fso.OpenTextFile(\"data.txt\", 1)",
+          "content = file.ReadAll",
+          "file.Close",
+          "Set file = fso.CreateTextFile(\"output.txt\")",
+          "file.WriteLine \"Hello World\"",
+          "Do Until file.AtEndOfStream"
+        ],
+        "notes": "Always close files after use to free resources"
+      },
+      {
+        "name": "Variables and Data Types",
+        "category": "Programming Basics",
+        "description": "Declare and use variables in VBScript",
+        "usage": "Dim variableName",
+        "examples": [
+          "Dim name, age, isActive",
+          "name = \"John Doe\"",
+          "age = 25",
+          "isActive = True",
+          "Const PI = 3.14159",
+          "ReDim arrayName(10)"
+        ],
+        "notes": "VBScript is loosely typed, variables can hold any data type"
+      },
+      {
+        "name": "Arrays",
+        "category": "Data Structures",
+        "description": "Create and manipulate arrays",
+        "usage": "Dim arrayName(size)",
+        "examples": [
+          "Dim numbers(5)",
+          "numbers(0) = 10",
+          "Dim fruits",
+          "fruits = Array(\"apple\", \"banana\", \"cherry\")",
+          "For i = 0 To UBound(fruits)",
+          "ReDim Preserve fruits(10)"
+        ],
+        "notes": "Arrays are zero-based, use UBound() for upper bound"
+      },
+      {
+        "name": "Control Structures - If/Then",
+        "category": "Programming Logic",
+        "description": "Conditional statements and branching",
+        "usage": "If condition Then ... End If",
+        "examples": [
+          "If age >= 18 Then MsgBox \"Adult\"",
+          "If score > 90 Then",
+          "    grade = \"A\"",
+          "ElseIf score > 80 Then",
+          "    grade = \"B\"",
+          "Else",
+          "    grade = \"C\"",
+          "End If"
+        ],
+        "notes": "Use ElseIf for multiple conditions, comparison operators: =, <>, <, >, <=, >="
+      },
+      {
+        "name": "Loops - For/Next",
+        "category": "Programming Logic",
+        "description": "For loops for repetitive tasks",
+        "usage": "For counter = start To end ... Next",
+        "examples": [
+          "For i = 1 To 10",
+          "    MsgBox \"Number: \" & i",
+          "Next",
+          "For i = 10 To 1 Step -1",
+          "For Each item In collection",
+          "    WScript.Echo item",
+          "Next"
+        ],
+        "notes": "Use Step for custom increments, For Each for collections"
+      },
+      {
+        "name": "Loops - Do/While",
+        "category": "Programming Logic",
+        "description": "While and Do loops for conditional repetition",
+        "usage": "Do While condition ... Loop",
+        "examples": [
+          "Do While x < 10",
+          "    x = x + 1",
+          "Loop",
+          "Do",
+          "    input = InputBox(\"Enter number:\")",
+          "Loop Until IsNumeric(input)",
+          "While Not file.AtEndOfStream"
+        ],
+        "notes": "Do While checks condition first, Do Until loops until condition is true"
+      },
+      {
+        "name": "Functions and Subroutines",
+        "category": "Code Organization",
+        "description": "Create reusable code blocks",
+        "usage": "Function functionName(parameters)",
+        "examples": [
+          "Function AddNumbers(a, b)",
+          "    AddNumbers = a + b",
+          "End Function",
+          "Sub DisplayMessage(msg)",
+          "    MsgBox msg",
+          "End Sub",
+          "result = AddNumbers(5, 3)"
+        ],
+        "notes": "Functions return values, Subroutines perform actions"
+      },
+      {
+        "name": "String Manipulation",
+        "category": "Text Processing",
+        "description": "Work with text strings",
+        "usage": "Left(string, length)",
+        "examples": [
+          "name = \"John Doe\"",
+          "firstName = Left(name, 4)",
+          "lastName = Right(name, 3)",
+          "length = Len(name)",
+          "upperName = UCase(name)",
+          "pos = InStr(name, \"Doe\")",
+          "newName = Replace(name, \"Doe\", \"Smith\")"
+        ],
+        "notes": "InStr returns 0 if substring not found, strings are 1-based"
+      },
+      {
+        "name": "Date and Time",
+        "category": "System Functions",
+        "description": "Work with dates and times",
+        "usage": "Now()",
+        "examples": [
+          "currentTime = Now()",
+          "currentDate = Date()",
+          "currentTime = Time()",
+          "formatted = FormatDateTime(Now(), 1)",
+          "dayName = WeekdayName(Weekday(Now()))",
+          "monthName = MonthName(Month(Now()))"
+        ],
+        "notes": "Use DateAdd(), DateDiff() for date calculations"
+      },
+      {
+        "name": "Registry Operations",
+        "category": "System Administration",
+        "description": "Read from and write to Windows Registry",
+        "usage": "Set shell = CreateObject(\"WScript.Shell\")",
+        "examples": [
+          "Set shell = CreateObject(\"WScript.Shell\")",
+          "value = shell.RegRead(\"HKEY_CURRENT_USER\\Software\\Test\\Value\")",
+          "shell.RegWrite \"HKLM\\Software\\Test\\NewValue\", \"Hello\", \"REG_SZ\"",
+          "shell.RegDelete \"HKEY_CURRENT_USER\\Software\\Test\\OldValue\""
+        ],
+        "notes": "REG_SZ for strings, REG_DWORD for numbers, be careful with registry edits"
+      },
+      {
+        "name": "COM Objects",
+        "category": "System Integration",
+        "description": "Create and use COM objects for system interaction",
+        "usage": "Set obj = CreateObject(\"Application.Name\")",
+        "examples": [
+          "Set excel = CreateObject(\"Excel.Application\")",
+          "Set word = CreateObject(\"Word.Application\")",
+          "Set ie = CreateObject(\"InternetExplorer.Application\")",
+          "Set shell = CreateObject(\"Shell.Application\")",
+          "Set network = CreateObject(\"WScript.Network\")"
+        ],
+        "notes": "Always set objects to Nothing when done to free memory"
+      },
+      {
+        "name": "Error Handling",
+        "category": "Debugging",
+        "description": "Handle errors gracefully in scripts",
+        "usage": "On Error Resume Next",
+        "examples": [
+          "On Error Resume Next",
+          "result = someOperation()",
+          "If Err.Number <> 0 Then",
+          "    MsgBox \"Error: \" & Err.Description",
+          "    Err.Clear",
+          "End If",
+          "On Error Goto 0"
+        ],
+        "notes": "Always clear errors with Err.Clear, use On Error Goto 0 to reset"
+      },
+      {
+        "name": "WMI Queries",
+        "category": "System Information",
+        "description": "Query system information using WMI",
+        "usage": "Set wmi = GetObject(\"winmgmts:\")",
+        "examples": [
+          "Set wmi = GetObject(\"winmgmts:\")",
+          "Set processes = wmi.ExecQuery(\"SELECT * FROM Win32_Process\")",
+          "For Each process In processes",
+          "    WScript.Echo process.Name",
+          "Next",
+          "Set services = wmi.ExecQuery(\"SELECT * FROM Win32_Service\")"
+        ],
+        "notes": "WMI provides extensive system information and management capabilities"
+      },
+      {
+        "name": "Command Line Arguments",
+        "category": "Script Parameters",
+        "description": "Access command line arguments passed to script",
+        "usage": "Set args = WScript.Arguments",
+        "examples": [
+          "Set args = WScript.Arguments",
+          "If args.Count > 0 Then",
+          "    fileName = args(0)",
+          "End If",
+          "For i = 0 To args.Count - 1",
+          "    MsgBox \"Arg \" & i & \": \" & args(i)",
+          "Next"
+        ],
+        "notes": "Arguments are zero-based, check Count property before accessing"
+      },
+      {
+        "name": "Environment Variables",
+        "category": "System Information",
+        "description": "Access system environment variables",
+        "usage": "Set env = CreateObject(\"WScript.Shell\").Environment",
+        "examples": [
+          "Set shell = CreateObject(\"WScript.Shell\")",
+          "Set env = shell.Environment(\"SYSTEM\")",
+          "path = env(\"PATH\")",
+          "username = env(\"USERNAME\")",
+          "env(\"TEMP_VAR\") = \"temporary value\""
+        ],
+        "notes": "Environment types: SYSTEM, USER, VOLATILE, PROCESS"
+      },
+      {
+        "name": "Network Operations",
+        "category": "Network",
+        "description": "Network-related operations and information",
+        "usage": "Set network = CreateObject(\"WScript.Network\")",
+        "examples": [
+          "Set network = CreateObject(\"WScript.Network\")",
+          "computerName = network.ComputerName",
+          "userName = network.UserName",
+          "network.MapNetworkDrive \"Z:\", \"\\\\server\\share\"",
+          "network.RemoveNetworkDrive \"Z:\""
+        ],
+        "notes": "Useful for logon scripts and network administration"
+      }
+    ]
+  }
+}

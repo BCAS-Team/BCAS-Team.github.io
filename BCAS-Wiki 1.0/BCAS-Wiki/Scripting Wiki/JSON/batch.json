@@ -1,0 +1,592 @@
+{
+  "guide": {
+    "resources": [
+      {
+        "name": "Basic Structure and Commands",
+        "category": "Script Basics",
+        "description": "Fundamental commands and structure for batch files, including hiding commands, pausing execution, and commenting.",
+        "usage": "@echo off",
+        "examples": [
+          "@echo off",
+          "title My Batch Script",
+          "color 0A",
+          "echo Hello World!",
+          "echo This is a multi-",
+          "echo line message.",
+          "cls",
+          "echo Screen cleared!",
+          "pause",
+          "echo Script finished. Exiting...",
+          "exit /b 0",
+          "rem This is a single-line comment.",
+          ":: This is another way to comment, often preferred for entire lines."
+        ],
+        "notes": "@echo off hides commands from display. 'title' sets the console window title. 'color' changes foreground/background. 'cls' clears the screen. 'pause' waits for user input. 'exit /b 0' exits the script with a success code. 'rem' and '::' are for comments; '::' is often used for full-line comments as 'rem' can have issues with redirection symbols."
+      },
+      {
+        "name": "Variables and Data Handling",
+        "category": "Data Handling",
+        "description": "Creating, assigning, and manipulating variables, including user input and system variables.",
+        "usage": "set variable=value",
+        "examples": [
+          "set myVar=FirstValue",
+          "echo Current value: %myVar%",
+          "set myVar=NewValue With Spaces",
+          "echo Updated value: \"%myVar%\"",
+          "set /p userInput=Please enter your name: ",
+          "echo Hello, %userInput%!",
+          "set /a num1=10",
+          "set /a num2=5",
+          "set /a sum=num1+num2",
+          "echo Sum: %sum%",
+          "set /a product=num1*num2",
+          "echo Product: %product%",
+          "set \"scriptPath=%~dp0\"",
+          "echo Script is located at: %scriptPath%",
+          "echo Current date: %date%",
+          "echo Current time: %time%",
+          "echo All environment variables:",
+          "set"
+        ],
+        "notes": "'set' assigns values. Use quotes for values with spaces. '/p' prompts for user input. '/a' performs arithmetic operations. '%~dp0' gets the full path of the script. '%date%' and '%time%' are built-in system variables. 'set' alone lists all current environment variables."
+      },
+      {
+        "name": "Command Line Arguments",
+        "category": "Script Parameters",
+        "description": "Accessing and utilizing parameters passed to the batch script from the command line.",
+        "usage": "%1, %2, etc.",
+        "examples": [
+          "echo Script name: %0",
+          "echo First parameter: %1",
+          "echo Second parameter: %2",
+          "echo Third parameter: %3",
+          "echo All parameters: %*",
+          "if \"%1\"==\"\" (",
+          "  echo Usage: script.bat [parameter1] [parameter2]",
+          "  goto :eof",
+          ")",
+          "shift",
+          "echo Remaining parameters after shift: %*"
+        ],
+        "notes": "'%0' refers to the script itself. '%1' through '%9' refer to the first nine command-line arguments. '%*' refers to all arguments. 'shift' moves arguments down (e.g., %2 becomes %1), useful for processing an unknown number of arguments."
+      },
+      {
+        "name": "Conditional Statements and Logic",
+        "category": "Control Flow",
+        "description": "Implementing decision-making logic using IF statements based on various conditions.",
+        "usage": "if condition command",
+        "examples": [
+          "if exist \"my_file.txt\" echo File 'my_file.txt' exists.",
+          "if not exist \"temp_dir\" mkdir \"temp_dir\"",
+          "set myVar=test",
+          "if defined myVar echo myVar is defined.",
+          "if not defined anotherVar echo anotherVar is not defined.",
+          "set /a num=10",
+          "if %num% equ 10 echo Number is 10 (equal to).",
+          "if %num% neq 5 echo Number is not 5 (not equal to).",
+          "if %num% gtr 8 echo Number is greater than 8.",
+          "if %num% lss 12 echo Number is less than 12.",
+          "if %num% geq 10 echo Number is greater than or equal to 10.",
+          "if %num% leq 10 echo Number is less than or equal to 10.",
+          "set choice=Y",
+          "if /i \"%choice%\"==\"y\" echo User chose Yes (case-insensitive).",
+          "call script.bat",
+          "if %errorlevel% equ 0 echo Previous command succeeded.",
+          "if %errorlevel% neq 0 echo Previous command failed.",
+          "if %OS%==Windows_NT echo Running on Windows NT-based system."
+        ],
+        "notes": "Common conditions: 'exist' (file/dir), 'defined' (variable), 'errorlevel' (return code). Comparison operators for numbers: 'equ' (equal), 'neq' (not equal), 'gtr' (greater than), 'lss' (less than), 'geq' (greater or equal), 'leq' (less or equal). '/i' for case-insensitive string comparison. 'if not' inverts the condition. Parentheses allow multiple commands within an 'if' block."
+      },
+      {
+        "name": "Loops and Iteration",
+        "category": "Control Flow",
+        "description": "Executing commands repeatedly using FOR loops for files, numbers, directories, and file content.",
+        "usage": "for %%variable in (set) do command",
+        "examples": [
+          "for %%f in (*.txt *.log) do echo Processing file: %%f",
+          "for /l %%i in (1,1,5) do echo Iteration number: %%i",
+          "for /d %%d in (*) do echo Directory found: %%d",
+          "for /r \"C:\\MyFolder\" %%f in (*.bak) do del \"%%f\"",
+          "for /f \"tokens=1,2,3 delims=,\" %%a in ('type data.csv') do echo First: %%a, Second: %%b, Third: %%c",
+          "for /f \"skip=1 tokens=1-2\" %%a in ('systeminfo ^| findstr /b \"OS Name\"') do echo OS Info: %%a %%b",
+          "setlocal enabledelayedexpansion",
+          "set count=0",
+          "for %%f in (*.txt) do (",
+          "   set /a count+=1",
+          "   echo File !count!: %%f",
+          ")",
+          "endlocal"
+        ],
+        "notes": "Use '%%' for variables in batch files, '%' for command line. '/l' for numeric loops ('start,step,end'). '/d' for directories. '/r' for recursive search. '/f' for parsing file content or command output. 'tokens' specifies which items to extract, 'delims' specifies delimiters. 'usebackq' allows quoted filenames with /f. 'setlocal enabledelayedexpansion' is crucial for modifying and reading variables within a loop's block."
+      },
+      {
+        "name": "Functions, Labels, and Flow Control",
+        "category": "Code Organization",
+        "description": "Structuring scripts with labels, calling subroutines, and managing script execution flow.",
+        "usage": ":label",
+        "examples": [
+          ":main",
+          "echo Starting main routine...",
+          "call :logMessage \"Script started.\"",
+          "call :doSomething 123",
+          "echo Main routine finished.",
+          "goto :eof",
+          "",
+          ":logMessage",
+          "echo [%time%] %~1",
+          "goto :eof",
+          "",
+          ":doSomething",
+          "echo Doing something with parameter: %1",
+          "if \"%1\"==\"123\" (",
+          "  echo Specific action for 123.",
+          "  exit /b 0",
+          ")",
+          "echo Parameter not 123.",
+          "exit /b 1"
+        ],
+        "notes": "Labels start with a colon (e.g., ':label'). 'goto :label' jumps to a label. 'call :label' executes a subroutine (function) and returns to the calling point after the subroutine finishes or hits 'goto :eof'. 'exit /b' exits the current script or subroutine with an errorlevel. 'goto :eof' is the standard way to exit a subroutine or the main script cleanly."
+      },
+      {
+        "name": "File and Directory Operations",
+        "category": "File Management",
+        "description": "Commands for copying, moving, deleting, creating, and managing files and folders.",
+        "usage": "copy source destination",
+        "examples": [
+          "copy \"source_file.txt\" \"destination_folder\\\"",
+          "xcopy \"source_folder\" \"destination_folder\" /e /i /h /k /y",
+          "move \"old_name.txt\" \"new_name.txt\"",
+          "del \"temp_*.log\" /q",
+          "rd /s /q \"empty_folder\"",
+          "mkdir \"New Project\\Assets\"",
+          "ren \"old_document.docx\" \"new_document_final.docx\"",
+          "attrib +h +s \"hidden_file.txt\"",
+          "attrib -h -s \"hidden_file.txt\"",
+          "type \"report.txt\"",
+          "dir /s /b *.exe > all_executables.txt",
+          "pushd \"C:\\Program Files\\My Application\"",
+          "echo Current directory: %cd%",
+          "popd",
+          "echo Back to: %cd%"
+        ],
+        "notes": "'copy' is for simple file copy. 'xcopy' is more powerful for directories and advanced options ('/e' empty dirs, '/i' assume dir, '/h' hidden/system, '/k' preserve attribs, '/y' suppress prompt). 'move' renames or moves. 'del' deletes files. 'rmdir' or 'rd' deletes directories ('/s' all contents, '/q' quiet). 'mkdir' or 'md' creates directories. 'ren' renames files/directories. 'attrib' changes file attributes. 'type' displays file content. 'pushd' saves current directory and changes to new one, 'popd' restores."
+      },
+      {
+        "name": "String Manipulation and Text Processing",
+        "category": "Text Processing",
+        "description": "Techniques for extracting, replacing, and analyzing parts of strings.",
+        "usage": "%variable:old=new%",
+        "examples": [
+          "set myString=HelloWorldBatch",
+          "echo Original: %myString%",
+          "echo Substring (first 5): %myString:~0,5%",
+          "echo Substring (from 5th char): %myString:~5%",
+          "echo Substring (last 5): %myString:~-5%",
+          "echo Replace 'World' with 'Universe': %myString:World=Universe%",
+          "echo Remove 'Batch': %myString:Batch=%",
+          "set filePath=C:\\Users\\John\\Documents\\report.txt",
+          "echo Filename only: %filePath:~-12%",
+          "echo Drive: %filePath:~0,2%",
+          "setlocal enabledelayedexpansion",
+          "set text=This is a test string with spaces.",
+          "echo All words:",
+          "for %%w in (!text!) do echo %%w",
+          "endlocal"
+        ],
+        "notes": "Substring extraction: '%variable:~start,length%' (positive indices) or '%variable:~-offset%' (negative indices from end). Replacement: '%variable:old=new%'. Empty 'new' removes 'old'. For iterating words or processing variables modified within loops, 'setlocal enabledelayedexpansion' and '!' for variables are necessary."
+      },
+      {
+        "name": "Error Handling and Debugging",
+        "category": "Debugging",
+        "description": "Strategies for detecting and responding to errors, and common debugging techniques.",
+        "usage": "if %errorlevel% neq 0",
+        "examples": [
+          "copy non_existent_file.txt destination\\",
+          "if %errorlevel% neq 0 (",
+          "  echo ERROR: File copy failed! Errorlevel: %errorlevel%",
+          "  exit /b %errorlevel%",
+          ")",
+          "echo File copied successfully.",
+          "another_command && echo Command succeeded || echo Command failed",
+          "setlocal enabledelayedexpansion",
+          "set /a result=1/0 2>nul",
+          "if !errorlevel! neq 0 echo Division by zero occurred!",
+          "endlocal",
+          "echo This command will execute even if previous failed.",
+          "call :checkLogFile log.txt",
+          "goto :eof",
+          ":checkLogFile",
+          "findstr /c:\"ERROR\" %1 >nul",
+          "if %errorlevel% equ 0 echo Errors found in %1!",
+          "exit /b 0"
+        ],
+        "notes": "'%errorlevel%' holds the return code of the last command (0 usually means success). Use 'if %errorlevel% neq 0' for failure or 'if %errorlevel% equ 0' for success. '&&' executes next command only if previous succeeded. '||' executes next command only if previous failed. '2>nul' redirects error output to null, suppressing console error messages. Delayed expansion is crucial for checking errorlevel inside blocks if modified by multiple commands."
+      },
+      {
+        "name": "Environment Variables (System & User)",
+        "category": "System Information",
+        "description": "Managing system and user environment variables, temporary vs. permanent changes.",
+        "usage": "set variable=value",
+        "examples": [
+          "echo Path: %PATH%",
+          "echo Username: %USERNAME%",
+          "echo Temp Directory: %TEMP%",
+          "echo System Root: %SystemRoot%",
+          "set newPath=%PATH%;C:\\MyCustomTools",
+          "echo Temporarily modified path: %newPath%",
+          "setx MY_CUSTOM_VAR \"My permanent value\" /M",
+          "echo (Run this script again to see MY_CUSTOM_VAR, or restart cmd)",
+          "setx PATH \"%PATH%;C:\\AnotherTool\" /M",
+          "rem Remove a variable (session only):",
+          "set tempVar=SomeValue",
+          "echo TempVar defined: %tempVar%",
+          "set tempVar=",
+          "if not defined tempVar echo TempVar undefined."
+        ],
+        "notes": "'set' changes variables for the current command prompt session only. 'setx' makes changes permanent (requires admin for '/M' system-wide, takes effect in *new* command prompt sessions). Use 'set var=' to unset a session variable. Be cautious when modifying system PATH with 'setx', always include existing PATH."
+      },
+      {
+        "name": "Input/Output Redirection & Piping",
+        "category": "Data Flow",
+        "description": "Controlling where command input comes from and where output goes, including chaining commands.",
+        "usage": "command > file",
+        "examples": [
+          "dir C:\\ > filelist.txt",
+          "echo Additional log entry >> filelist.txt",
+          "sort < input.txt > sorted_output.txt",
+          "my_command 2> errors.log",
+          "my_command > output.txt 2>&1",
+          "type \"long_log.txt\" | findstr /i \"error warning\"",
+          "tasklist /svc | findstr /i \"explorer.exe\"",
+          "echo Enter some text, then Ctrl+Z and Enter:",
+          "copy con temp_input.txt",
+          "echo Content of temp_input.txt:",
+          "type temp_input.txt"
+        ],
+        "notes": "'>' redirects standard output (STDOUT) to a file, overwriting. '>>' appends STDOUT. '<' redirects standard input (STDIN) from a file. '2>' redirects standard error (STDERR). '2>&1' redirects STDERR to the same location as STDOUT. '|' (pipe) sends the STDOUT of one command as STDIN to another. 'copy con filename' allows entering text directly into a file from the console until Ctrl+Z then Enter."
+      },
+      {
+        "name": "Date and Time Operations",
+        "category": "System Functions",
+        "description": "Working with system date and time, including formatting and extraction.",
+        "usage": "%date% %time%",
+        "examples": [
+          "echo Current date: %date%",
+          "echo Current time: %time%",
+          "set TODAY_RAW=%date%",
+          "set TIME_RAW=%time%",
+          "rem Example for DD-MM-YYYY format (adjust tokens/delims for locale):",
+          "for /f \"tokens=1-3 delims=/\" %%a in (\"%date%\") do set DAY_NUM=%%b&set MONTH_NUM=%%a&set YEAR_NUM=%%c",
+          "set TODAY_FORMATTED=%DAY_NUM%-%MONTH_NUM%-%YEAR_NUM%",
+          "echo Formatted Date: %TODAY_FORMATTED%",
+          "rem Example for HHMMSS format:",
+          "set HH=%time:~0,2%",
+          "set MM=%time:~3,2%",
+          "set SS=%time:~6,2%",
+          "set TIME_FORMATTED=%HH%%MM%%SS%",
+          "echo Formatted Time: %TIME_FORMATTED%",
+          "set FILENAME_TIMESTAMP=%date:~-4,4%%date:~-10,2%%date:~-7,2%_%time:~0,2%-%time:~3,2%-%time:~6,2%.log",
+          "echo Log filename: %FILENAME_TIMESTAMP%"
+        ],
+        "notes": "The format of '%date%' and '%time%' is locale-dependent. String manipulation (`%variable:~start,length%`) and 'for /f' loops with 'delims' are essential for parsing and reformatting. Always test date/time parsing on the target system. Time components can be extracted (e.g., %time:~0,2% for hours, %time:~3,2% for minutes)."
+      },
+      {
+        "name": "Process Management",
+        "category": "System Control",
+        "description": "Starting, stopping, and inspecting running processes.",
+        "usage": "start \"title\" command",
+        "examples": [
+          "start \"My Notepad\" notepad.exe",
+          "start /wait \"Installer\" setup.exe /silent",
+          "start /min \"Background Task\" my_script.bat",
+          "tasklist /fi \"IMAGENAME eq chrome.exe\"",
+          "tasklist /fi \"PID eq 1234\"",
+          "taskkill /im notepad.exe /f",
+          "taskkill /pid 5678 /t /f",
+          "wmic process where \"name='notepad.exe'\" get ProcessId,CommandLine,CreationDate",
+          "timeout /t 5",
+          "timeout /t 10 /nobreak"
+        ],
+        "notes": "'start' runs a command in a new window. '/wait' makes the batch script wait for the new process to finish. '/min' starts minimized. 'tasklist' lists running processes. 'taskkill' terminates processes by image name ('/im') or Process ID ('/pid'). '/f' forces termination, '/t' terminates child processes. 'wmic process' provides more detailed process information. 'timeout' pauses execution for a specified number of seconds ('/nobreak' prevents keypress from stopping it)."
+      },
+      {
+        "name": "Registry Operations",
+        "category": "System Configuration",
+        "description": "Interacting with the Windows Registry for reading, writing, and deleting keys and values.",
+        "usage": "reg query \"keypath\"",
+        "examples": [
+          "reg query \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\"",
+          "reg add \"HKCU\\Software\\MyCompany\\MyApp\" /v \"InstallPath\" /t REG_SZ /d \"C:\\Program Files\\MyApp\"",
+          "reg add \"HKCU\\Software\\MyCompany\\MyApp\" /v \"Version\" /t REG_DWORD /d 100",
+          "reg delete \"HKCU\\Software\\MyCompany\\MyApp\" /v \"OldSetting\" /f",
+          "reg delete \"HKCU\\Software\\MyCompany\\OldApp\" /f /va",
+          "reg export \"HKCU\\Software\\MyCompany\\MyApp\" myapp_settings.reg",
+          "reg import myapp_settings.reg",
+          "for /f \"tokens=2,*\" %%a in ('reg query \"HKCU\\Software\\MyCompany\\MyApp\" /v \"InstallPath\" ^| findstr \"InstallPath\"') do set INSTALL_DIR=%%b",
+          "echo Install directory: %INSTALL_DIR%"
+        ],
+        "notes": "'reg query' reads. 'reg add' creates keys/values ('/t' type, '/d' data). 'reg delete' deletes keys/values ('/f' force, '/va' delete all values). 'reg export/import' backup/restore. Be extremely careful when modifying the registry; incorrect changes can destabilize the system. Use 'findstr' and 'for /f' to parse query output."
+      },
+      {
+        "name": "Network Operations and Utilities",
+        "category": "Network",
+        "description": "Commands for checking network connectivity, mapping drives, and configuring network settings.",
+        "usage": "ping hostname",
+        "examples": [
+          "ping -n 1 google.com > nul && echo Online || echo Offline",
+          "net use Z: \"\\\\server\\share\" /persistent:no",
+          "net use Y: /delete",
+          "ipconfig /all",
+          "ipconfig /release && ipconfig /renew",
+          "netstat -ano | findstr \"LISTENING\"",
+          "tracert www.microsoft.com",
+          "pathping www.google.com",
+          "route print",
+          "arp -a",
+          "nslookup example.com",
+          "netsh wlan show profiles",
+          "netsh interface ip show addresses"
+        ],
+        "notes": "'ping' tests connectivity. 'net use' maps/disconnects network drives. 'ipconfig' displays/manages network adapters. 'netstat' shows active connections. 'tracert' and 'pathping' diagnose network paths. 'route print' displays routing table. 'arp -a' shows ARP cache. 'nslookup' queries DNS. 'netsh' is a powerful utility for network configuration."
+      },
+      {
+        "name": "File Content Processing (Advanced)",
+        "category": "Text Processing",
+        "description": "Advanced methods for searching, filtering, and manipulating text within files.",
+        "usage": "findstr \"pattern\" file.txt",
+        "examples": [
+          "findstr /n /i \"error\" \"log_file.txt\"",
+          "findstr /v \"success\" \"output.log\" > \"errors_only.log\"",
+          "find /c \"warning\" \"event.log\"",
+          "type \"data.csv\" | findstr /b /e \"header$\"",
+          "for /f \"usebackq tokens=1-2 delims=:\" %%a in (`findstr /n \"important\" \"notes.txt\"`) do echo Line %%a: %%b",
+          "type \"config.ini\" | more"
+        ],
+        "notes": "'findstr' is powerful for searching text in files ('/n' line number, '/i' case-insensitive, '/v' non-matching lines, '/b' start of line, '/e' end of line). 'find' is simpler, case-sensitive. 'for /f' with backticks ('`...`') executes a command and parses its output. 'more' or 'less' can be used for paging long outputs."
+      },
+      {
+        "name": "Advanced Scripting Techniques",
+        "category": "Advanced Scripting",
+        "description": "Techniques like delayed expansion, command extensions, and handling complex paths.",
+        "usage": "setlocal enabledelayedexpansion",
+        "examples": [
+          "setlocal enabledelayedexpansion",
+          "set COUNTER=0",
+          "for %%f in (*.txt) do (",
+          "    set /a COUNTER+=1",
+          "    echo File !COUNTER!: %%f",
+          ")",
+          "endlocal",
+          "setlocal disableextensions",
+          "echo Command extensions disabled. 'if exist' will not work.",
+          "endlocal",
+          "set file_with_spaces=\"C:\\Program Files\\My App\\data file.txt\"",
+          "echo Full path: %file_with_spaces%",
+          "echo Parent directory: %~dp%file_with_spaces%",
+          "echo Filename only: %~n%file_with_spaces%",
+          "echo Extension only: %~x%file_with_spaces%",
+          "call script.bat \"argument with spaces\" \"another one\"",
+          "echo %ERRORLEVEL%"
+        ],
+        "notes": "'setlocal enabledelayedexpansion' allows variables modified within a 'for' loop or 'if' block to be read with '!' (exclamation marks) instead of '%' (percent signs). 'endlocal' restores environment. 'setlocal disableextensions' disables command extensions, changing behavior of some commands. Parameter modifiers ('%~dp0', '%~n1', etc.) extract parts of paths. 'call' is necessary for executing another batch file and returning to the caller."
+      },
+      {
+        "name": "Task Scheduling and Automation",
+        "category": "Task Management",
+        "description": "Automating batch file execution at specific times or intervals.",
+        "usage": "schtasks /create",
+        "examples": [
+          "schtasks /create /tn \"DailyBackup\" /tr \"C:\\Scripts\\backup.bat\" /sc daily /st 03:00 /ru System",
+          "schtasks /run /tn \"DailyBackup\"",
+          "schtasks /query /tn \"DailyBackup\" /fo LIST /v",
+          "schtasks /delete /tn \"DailyBackup\" /f",
+          "schtasks /change /tn \"DailyBackup\" /st 04:00",
+          "rem Deprecated but simple: at 10:00 C:\\Scripts\\cleanup.bat"
+        ],
+        "notes": "'schtasks' is the modern and robust way to manage scheduled tasks in Windows. '/tn' task name, '/tr' task run (script path), '/sc' schedule type, '/st' start time, '/ru' run as user. 'at' command is older and less flexible, often deprecated in newer Windows versions."
+      },
+      {
+        "name": "Security and Best Practices",
+        "category": "Security",
+        "description": "Guidelines for writing secure and robust batch scripts.",
+        "usage": "Security guidelines",
+        "examples": [
+          "rem 1. Always validate user input to prevent injection attacks:",
+          "set /p FILENAME=Enter filename: ",
+          "echo %FILENAME% | findstr /r \"[<>|&^]\" >nul && (",
+          "  echo ERROR: Invalid characters in filename!",
+          "  goto :eof",
+          ")",
+          "if not exist \"%FILENAME%\" echo File does not exist.",
+          "rem 2. Use quotes for all paths and filenames, especially with spaces:",
+          "copy \"C:\\My Files\\document.txt\" \"D:\\Backups\\\"",
+          "rem 3. Avoid hardcoding sensitive information like passwords.",
+          "rem 4. Use 'setlocal' and 'endlocal' to manage environment variables:",
+          "setlocal",
+          "set TEMP_VAR=TemporaryValue",
+          "echo Inside: %TEMP_VAR%",
+          "endlocal",
+          "echo Outside: %TEMP_VAR% (should be unset or original value)",
+          "rem 5. Restrict permissions on script files if sensitive.",
+          "rem 6. Log actions and errors for debugging and auditing:",
+          "echo [%date% %time%] Script started. >> script_log.txt",
+          "if %errorlevel% neq 0 echo [%date% %time%] ERROR: Command failed. >> script_log.txt"
+        ],
+        "notes": "Validate input to prevent malicious code injection. Always quote paths with spaces. Avoid hardcoding sensitive data. Use 'setlocal'/'endlocal' for local variable scope. Implement robust error handling and logging. Restrict script access if necessary."
+      },
+      {
+        "name": "User Interaction and Messaging",
+        "category": "Input/Output",
+        "description": "Methods for getting user input and displaying messages to the console or system.",
+        "usage": "choice /c YNC /m \"Proceed?\"",
+        "examples": [
+          "choice /c YN /m \"Do you want to proceed?\"",
+          "if errorlevel 2 echo User chose No.",
+          "if errorlevel 1 echo User chose Yes.",
+          "set /p USER_CHOICE=\"Type 'continue' to proceed: \"",
+          "if /i \"%USER_CHOICE%\"==\"continue\" echo Continuing...",
+          "else echo Exiting.",
+          "msg %USERNAME% \"Hello, this is a system message!\"",
+          "msg * \"This message goes to all active sessions.\"",
+          "echo. & echo Press any key to continue...",
+          "pause > nul"
+        ],
+        "notes": "'choice' offers multi-option prompts and returns errorlevel based on selection (1 for first option, 2 for second, etc.). 'set /p' reads a single line of user input into a variable. 'msg' sends messages to specific users or all logged-in users (requires Messenger service, often disabled by default). 'pause > nul' pauses without displaying the 'Press any key...' message."
+      },
+      {
+        "name": "System Information and Hardware Details",
+        "category": "System Information",
+        "description": "Retrieving various system, OS, and hardware specifications.",
+        "usage": "systeminfo",
+        "examples": [
+          "systeminfo | findstr /b /c:\"OS Name\" /c:\"OS Version\" /c:\"System Type\"",
+          "wmic computersystem get model,name,manufacturer,domain,NumberOfProcessors",
+          "driverquery /fo CSV > drivers.csv",
+          "echo Computer Name: %COMPUTERNAME%",
+          "echo User Domain: %USERDOMAIN%",
+          "echo Processor Architecture: %PROCESSOR_ARCHITECTURE%",
+          "echo Operating System: %OS%",
+          "echo Public IP: (curl ipinfo.io/ip 2>nul)",
+          "for /f \"tokens=2 delims==\" %%a in ('wmic OS get FreePhysicalMemory /value') do set FreeRAM=%%a",
+          "echo Free Physical Memory: %FreeRAM% KB"
+        ],
+        "notes": "'systeminfo' provides detailed OS and hardware information. 'wmic' is a powerful command-line utility for Windows Management Instrumentation (WMI), allowing detailed queries on various system components. 'driverquery' lists installed device drivers. Environment variables provide quick access to common system details. External tools like 'curl' might be needed for web requests (not built-in in older Windows versions)."
+      },
+      {
+        "name": "Service Management",
+        "category": "System Control",
+        "description": "Starting, stopping, querying, and configuring Windows services.",
+        "usage": "net start serviceName",
+        "examples": [
+          "net start \"Print Spooler\"",
+          "net stop \"Themes\"",
+          "sc query type= service state= all",
+          "sc qc \"Service Name Example\"",
+          "sc create MyService binPath= \"C:\\path\\to\\executable.exe\" DisplayName= \"My Custom Service\" start= auto",
+          "sc delete MyService",
+          "sc config WSearch start= disabled",
+          "sc description w3svc \"World Wide Web Publishing Service for IIS\""
+        ],
+        "notes": "'net start/stop' are for basic control. 'sc' (Service Control) is much more versatile for advanced service management. 'sc query' lists services. 'sc qc' queries configuration. 'sc create' registers a new service. 'sc delete' removes one. 'sc config' changes service properties (e.g., startup type). 'sc description' sets a service's description."
+      },
+      {
+        "name": "File Comparison and Integrity",
+        "category": "File Management",
+        "description": "Comparing files and verifying their integrity using various utilities.",
+        "usage": "fc file1.txt file2.txt",
+        "examples": [
+          "fc /l \"original.txt\" \"modified.txt\"",
+          "comp \"binary1.bin\" \"binary2.bin\"",
+          "certutil -hashfile \"my_document.pdf\" MD5",
+          "certutil -hashfile \"image.jpg\" SHA256",
+          "if exist \"checksum.md5\" (",
+          "  certutil -hashfile \"my_file.zip\" MD5 | findstr /i /c:\"%~f1\" | findstr /i /c:\"checksum.md5\" >nul",
+          "  if %errorlevel% equ 0 echo Checksum matches!",
+          "  else echo Checksum mismatch!",
+          ")"
+        ],
+        "notes": "'fc' (file compare) compares two text or binary files, showing differences. '/l' compares as ASCII. 'comp' (compare) compares file contents byte-by-byte, primarily for binary files. 'certutil -hashfile' generates cryptographic hashes (MD5, SHA1, SHA256 etc.) which can be used to verify file integrity."
+      },
+      {
+        "name": "Disk Management and Filesystem Utilities",
+        "category": "System Control",
+        "description": "Commands for checking disk health, managing volumes, and interacting with the file system at a deeper level.",
+        "usage": "chkdsk C:",
+        "examples": [
+          "chkdsk C: /f /r",
+          "fsutil fsinfo drives",
+          "fsutil volume diskfree C:",
+          "fsutil volume queryfatinfo C:",
+          "defrag C: /v",
+          "dism /online /cleanup-image /restorehealth",
+          "sfc /scannow"
+        ],
+        "notes": "'chkdsk' checks a disk for errors and attempts to fix them ('/f' fixes errors, '/r' locates bad sectors and recovers readable information). 'fsutil' is a versatile command for filesystem utilities. 'fsinfo drives' lists all drives. 'volume diskfree' shows free space. 'defrag' defragments disks. 'dism' and 'sfc' are for repairing system image and corrupted system files respectively (often require admin privileges)."
+      },
+      {
+        "name": "User and Group Management",
+        "category": "System Control",
+        "description": "Managing local user accounts and groups on a Windows machine.",
+        "usage": "net user username",
+        "examples": [
+          "net user",
+          "net user JohnDoe password123 /add",
+          "net user JaneDoe /active:no",
+          "net user JohnDoe /delete",
+          "net localgroup Administrators",
+          "net localgroup Users JohnDoe /add",
+          "net localgroup Developers JaneDoe /delete",
+          "whoami",
+          "whoami /groups"
+        ],
+        "notes": "'net user' manages local user accounts ('/add' creates, '/delete' removes, '/active:no' disables). 'net localgroup' manages local groups, adding or removing users from them. 'whoami' displays current user information. These commands typically require administrative privileges."
+      },
+      {
+        "name": "Event Logging",
+        "category": "System Information",
+        "description": "Interacting with Windows Event Logs to view or filter system events.",
+        "usage": "wevtutil",
+        "examples": [
+          "wevtutil el",
+          "wevtutil qe System /c:5 /f:text /rd:true",
+          "wevtutil qe Application /q:\"*[System[(Level=2 or Level=3)]]\" /f:xml /lf:true",
+          "eventvwr.msc",
+          "for /f \"tokens=*\" %%a in ('wevtutil qe Security /c:1 /f:text /rd:true /q:\"Event[System[EventID=4624]]\"') do echo %%a"
+        ],
+        "notes": "'wevtutil' is a command-line utility for managing and querying event logs. 'el' lists all logs. 'qe' queries events ('/c' count, '/f' format, '/rd' reverse chronological, '/q' XPath query). 'eventvwr.msc' opens the graphical Event Viewer. Querying specific Event IDs (like 4624 for successful logon) is powerful for auditing."
+      },
+      {
+        "name": "Power Management",
+        "category": "System Control",
+        "description": "Controlling power schemes, sleep settings, and system shutdown/restart options.",
+        "usage": "powercfg /list",
+        "examples": [
+          "powercfg /list",
+          "powercfg /change standby-timeout-ac 5",
+          "powercfg /change monitor-timeout-dc 2",
+          "powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e",
+          "powercfg /batteryreport",
+          "shutdown /s /t 0",
+          "shutdown /r /t 60 /c \"System rebooting in 1 minute for updates.\"",
+          "shutdown /l"
+        ],
+        "notes": "'powercfg' configures power settings and retrieves power-related information. 'list' shows available schemes. 'change' modifies timeouts. 'setactive' sets the active power scheme (use GUID from 'list'). 'batteryreport' generates a detailed battery report. 'shutdown' command is used to log off ('/l'), shut down ('/s'), or restart ('/r') the system ('/t' for delay, '/c' for comment)."
+      },
+      {
+        "name": "File Permissions and Ownership",
+        "category": "Security",
+        "description": "Managing access control lists (ACLs) and changing file/folder ownership.",
+        "usage": "icacls file_or_folder",
+        "examples": [
+          "icacls \"C:\\MySensitiveData\"",
+          "icacls \"C:\\MySensitiveData\" /grant Everyone:(OI)(CI)F",
+          "icacls \"C:\\MySensitiveData\" /remove Everyone",
+          "takeown /f \"C:\\LockedFile.txt\"",
+          "takeown /f \"C:\\Program Files\\LockedFolder\" /r /d y",
+          "icacls \"C:\\LockedFile.txt\" /grant Administrators:F"
+        ],
+        "notes": "'icacls' displays and modifies NTFS permissions (ACLs). '/grant' grants permissions. '/remove' removes them. (OI) and (CI) are inheritance flags. 'takeown' takes ownership of a file or folder, useful when access is denied even to administrators ('/r' recursive, '/d y' for yes to prompts). These commands require administrative privileges."
+      }
+    ]
+  }
+}

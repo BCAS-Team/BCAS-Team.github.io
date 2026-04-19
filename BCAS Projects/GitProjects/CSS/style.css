@@ -1,0 +1,189 @@
+/* === Reset & Base (from your stylesheet) === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  cursor: none;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* Hero Section */
+.hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+/* === Portfolio Section === */
+.portfolio {
+  padding: 4rem 2rem;
+  background-color: #000;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #a855f7;
+  font-weight: 700;
+}
+
+/* Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card */
+.project-card {
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.project-card:hover {
+  background-color: #2a2a2a;
+  border-color: #a855f7;
+  box-shadow: 0 8px 20px rgba(168,85,247,0.4);
+  transform: translateY(-4px);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #a855f7;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  background-color: #a855f7;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(168,85,247,0.3);
+}
+
+.project-card a:hover {
+  background-color: #c084fc;
+  box-shadow: 0 4px 12px #a855f7;
+}
+
+/* Legal Section */
+.legal-section {
+  background-color: #000;
+  color: white;
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 1rem;
+  border: 1px solid #333;
+  text-align: left;
+}
+
+.legal-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #a855f7;
+  text-align: center;
+}
+
+.legal-section p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  color: #777;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+footer a:hover {
+  color: #c084fc;
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #a855f7;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 12px 6px #a855f7;
+  transform: translate(-50%, -50%);
+  z-index: 999999999;
+  transition: transform 0.05s ease-out;
+  will-change: transform;
+  user-select: none;
+}
+
+/* Accessibility */
+a:focus, button:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}

@@ -1,0 +1,326 @@
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-height: 80px;
+  --accent-purple: #a855f7;
+  --accent-purple-hover: #9333ea;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: #eee;
+}
+
+/* Header */
+header {
+  background-color: #111;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 1000;
+  border-bottom: 1px solid #444;
+}
+
+header h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+#search {
+  background: #222;
+  border: 1px solid #444;
+  color: #eee;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 300px;
+  max-width: 100%;
+}
+
+/* Hamburger */
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: 1em;
+}
+
+#hamburger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+/* Sidebar */
+nav {
+  background-color: #111;
+  border-right: 1px solid #444;
+  width: 200px;
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 900;
+  transition: transform 0.3s ease;
+}
+
+nav.closed {
+  transform: translateX(-100%);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  border-bottom: 1px solid #222;
+}
+
+/* Category buttons */
+.category-btn, 
+.category-btn:link, 
+.category-btn:visited,
+nav li a.category-btn {
+  display: inline-block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #eee;
+  padding: 1em;
+  font-size: 1em;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 0;
+  user-select: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+nav li a.category-btn.legal {
+  background-color: #6a0dad;
+  color: #fff;
+}
+
+nav li a.category-btn.legal:hover,
+nav li a.category-btn.legal:focus {
+  background-color: #7b1fa2;
+}
+
+.category-btn:hover,
+.category-btn:focus,
+.category-btn.active {
+  background-color: #333;
+  outline: none;
+}
+
+/* Main */
+main {
+  margin-left: 200px;
+  margin-top: var(--header-height);
+  padding: 2em;
+  max-width: 900px;
+}
+
+/* Items */
+.item {
+  border: 1px solid #444;
+  background-color: #111;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+}
+
+/* ✅ UPDATED: Purple accent on hover & expanded state */
+.item h2 {
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  padding-right: 1.5em;
+  transition: color 0.2s ease;
+}
+
+.item h2:hover {
+  color: var(--accent-purple);
+}
+
+/* Arrow indicator */
+.item h2::after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+  color: #666;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.item h2.expanded::after {
+  transform: translateY(-50%) rotate(180deg);
+  color: var(--accent-purple);
+}
+
+/* Details section */
+.details {
+  display: block;
+  border-top: 1px solid #444;
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+  transition: opacity 0.2s ease;
+}
+
+.details.collapsed {
+  display: none;
+}
+
+/* ✅ UPDATED: Links are now purple */
+a {
+  color: var(--accent-purple);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Chat Toggle Button */
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--accent-purple);
+  color: #fff;
+  border: none;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.2s ease;
+}
+
+#chat-toggle:hover {
+  background-color: var(--accent-purple-hover);
+}
+
+/* Chatbox */
+#chatbox {
+  position: fixed;
+  bottom: 70px;
+  left: 20px;
+  width: 300px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1em;
+  z-index: 1001;
+  box-shadow: 0 0 10px #000;
+}
+
+#chatbox.hidden {
+  display: none;
+}
+
+#chat-log {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0.5em;
+  background-color: #000;
+  border: 1px solid #222;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  color: #ccc;
+}
+
+.chat-entry {
+  margin-bottom: 0.5em;
+}
+
+
+.user-msg {
+  color: var(--accent-purple);
+}
+
+.gemini-msg {
+  color: #afa;
+}
+
+#chat-input-container {
+  display: flex;
+  gap: 0.5em;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 0.4em;
+  background: #222;
+  border: 1px solid #444;
+  color: #eee;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+#send-btn {
+  background-color: var(--accent-purple);
+  color: #fff;
+  border: none;
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+}
+
+#send-btn:hover {
+  background-color: var(--accent-purple-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  nav {
+    transform: translateX(-100%);
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  main {
+    margin-left: 0;
+    padding: 1em;
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #search {
+    width: 100%;
+    margin-top: 0.5em;
+  }
+}

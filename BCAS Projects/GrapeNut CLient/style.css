@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: "ComicSansMS";
+  src: url("./comic-sans.woff"), format('woff');
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  margin: 0;
+  padding: 0;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+img:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: rgba(45, 45, 45, 0.85);
+  border-radius: 18px;
+  visibility: hidden;
+  z-index: 1000;
+  color: white;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+#login {
+  top: 20%;
+}
+
+#hw_panel {
+  left: 2vh;
+  max-height: 65%;
+}
+#log_panel {
+  right: 2vh;
+  max-height: 65%;
+}
+
+.overlay h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.overlay input[type="text"],
+.overlay input[type="password"],
+.overlay button,
+.overlay input[type="range"] {
+  width: 95%;
+  padding: 18px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: 2px solid #888;
+  font-size: 18px;
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.overlay input[type="text"]:focus,
+.overlay input[type="password"]:focus,
+.overlay button:hover {
+  background-color: #3a3a3a;
+  border-color: #7c4dff;
+}
+
+.settings_button {
+  top: 2%;
+  position: fixed;
+  width: 40vh;
+  padding: 14px 24px;
+  background-color: #2c2c2c;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.settings_button:hover {
+  background-color: #3a3a3a;
+  transform: scale(1.05);
+  border-color: #7c4dff;
+}
+
+.progress_bar {
+  width: 0%;
+  height: 20px;
+  background-color: #7c4dff;
+  margin: 12px 0;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hideable {
+  display: none;
+}
+
+.json_small {
+  font-family: "Space Mono", monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #e0e0e0;
+}
+
+.overflow_container {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 20px;
+  background-color: rgba(50, 50, 50, 0.8);
+  border-radius: 12px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.task label {
+  flex-grow: 1;
+  font-size: 18px;
+  color: #d1d1d1;
+}
+
+input[type="checkbox"] {
+  margin-right: 15px;
+  transform: scale(1.3);
+  transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  transform: scale(1.2);
+}
+
+button {
+  background-color: #7c4dff;
+  border: none;
+  padding: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #9c4dcc;
+  transform: scale(1.05);
+}
+
+#settings {
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  min-width: 320px;
+  max-width: 420px;
+  color: #444;
+}
+
+#settings span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#settings input[type="range"] {
+  width: 100%;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #7c4dff 0%, #b8a9c9 100%);
+  border-radius: 6px;
+  border: 2px solid #7c4dff;
+}

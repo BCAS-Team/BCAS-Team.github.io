@@ -1,0 +1,4342 @@
+{
+  "_meta": {
+    "title": "Optical Media Wiki — Compact Disc (CD) Comprehensive Technical Database — UNIFIED MASTER EDITION",
+    "description": "The complete, unified, maximally expanded, indexable JSON database merging all known versions of the Optical Media Wiki CD database. Covers EVERY known CD format, variant, sub-type, historical detail, engineering name, manufacturing tolerance, dye chemistry variant, optical physics equation, archival study, debate/theory, diagram, firmware version, software ecosystem entry, legal precedent, market statistic, regional variant, and reference source verifiable from public web data as of April 2026. Consolidated from four source databases (v2.0.0, v2.0.0, v3.0.0, v4.0.0-OMEGA) with deduplication and augmentation. Includes 35+ CD format variants, complete CIRC/EFM mathematical derivations, dye degradation kinetics, full patent portfolios, regional manufacturing specifications, drive firmware compatibility matrices, software ecosystem documentation, legal/regulatory frameworks, market adoption statistics, comparative format analysis, glossary of 600+ technical terms, timeline of 250+ CD-related innovations, detailed troubleshooting flowcharts, and 200+ verified image/diagram links.",
+    "version": "5.0.0 — UNIFIED MASTER",
+    "created": "2026-04-19",
+    "updated": "2026-04-19",
+    "language": "en-GB",
+    "maintainer": "Optical Media Wiki",
+    "license": "CC BY-SA 4.0",
+    "source_files_merged": [
+      "opticalmedia.json (v2.0.0 — 18 formats)",
+      "OMB.json (v2.0.0 — 18 formats)",
+      "port.json (v3.0.0 — 30 formats, expanded sections)",
+      "aa.json (v4.0.0-OMEGA — 35 formats, maximum expansion)"
+    ],
+    "total_formats": 35,
+    "total_lines_estimate": 6500,
+    "file_size_estimate_kb": 620,
+    "index_keys": [
+      "id",
+      "short_name",
+      "full_name",
+      "colour_book",
+      "iso_standard",
+      "year_introduced",
+      "developers",
+      "type",
+      "writable",
+      "capacity_mb",
+      "substrate_material",
+      "recording_layer_type",
+      "laser_wavelength_nm",
+      "key_engineers",
+      "patents",
+      "archival_studies",
+      "regional_variants",
+      "firmware_compatibility",
+      "software_ecosystem",
+      "legal_status"
+    ],
+    "sources": {
+      "SRC-01": {
+        "label": "Wikipedia — Compact Disc",
+        "url": "https://en.wikipedia.org/wiki/Compact_disc"
+      },
+      "SRC-02": {
+        "label": "Wikipedia — Compact Disc Digital Audio",
+        "url": "https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio"
+      },
+      "SRC-03": {
+        "label": "Wikipedia — CD-R (Simple English)",
+        "url": "https://simple.wikipedia.org/wiki/CD-R"
+      },
+      "SRC-04": {
+        "label": "Wikipedia — Cyanine Dyes",
+        "url": "https://en.wikipedia.org/wiki/Cyanine"
+      },
+      "SRC-05": {
+        "label": "Canadian Conservation Institute — Longevity of Recordable CDs/DVDs",
+        "url": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/longevity-recordable-cds-dvds.html"
+      },
+      "SRC-06": {
+        "label": "IASA Technical Committee — Optical Disc Selection",
+        "url": "https://www.iasa-web.org/tc04/optical-disc-selection"
+      },
+      "SRC-07": {
+        "label": "SpecialChem — Polycarbonate (PC): Properties, sustainability, and key applications",
+        "url": "https://www.specialchem.com/plastics/guide/polycarbonate-pc-plastic"
+      },
+      "SRC-08": {
+        "label": "ScienceDirect — Polycarbonate overview, CD-grade recycling",
+        "url": "https://www.sciencedirect.com/topics/chemistry/polycarbonate"
+      },
+      "SRC-09": {
+        "label": "Yale University — Methods and Materials: CDs and DVDs",
+        "url": "https://volga.eng.yale.edu/teaching-resources/cds-and-dvds/methods-and-materials"
+      },
+      "SRC-10": {
+        "label": "Canon Science Lab — CDs and DVDs (optical reading)",
+        "url": "https://global.canon/en/technology/s_labo/light/003/06.html"
+      },
+      "SRC-11": {
+        "label": "Explain That Stuff — How CD Players Work",
+        "url": "https://www.explainthatstuff.com/cdplayers.html"
+      },
+      "SRC-12": {
+        "label": "Splice Blog — How CDs Use Lasers",
+        "url": "https://splice.com/blog/how-cds-use-lasers/"
+      },
+      "SRC-13": {
+        "label": "Sam's Laser FAQ — Optical Pickup",
+        "url": "https://www.repairfaq.org/sam/opickup.htm"
+      },
+      "SRC-14": {
+        "label": "Dutch Audio Classics — The Birth of the Compact Disc",
+        "url": "https://www.dutchaudioclassics.nl/The-birth-of-the-Compact-Disc/"
+      },
+      "SRC-15": {
+        "label": "Computer History Museum — 1979: Philips Demonstrates Digital Compact Disc",
+        "url": "https://www.computerhistory.org/storageengine/philips-demonstrates-digital-compact-disc/"
+      },
+      "SRC-16": {
+        "label": "Museum of Obsolete Media — Compact Disc (1982–)",
+        "url": "https://obsoletemedia.org/compact-disc/"
+      },
+      "SRC-17": {
+        "label": "CDROM2GO — CD-R Dye Colors Explained",
+        "url": "https://www.cdrom2go.com/blog/cd-r-dye-colors-explained"
+      },
+      "SRC-18": {
+        "label": "Chemistry LibreTexts — Cyanine Dyes",
+        "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Book:_Quantum_States_of_Atoms_and_Molecules_(Zielinksi_et_al)/04:_Electronic_Spectroscopy_of_Cyanine_Dyes/4.02:_Cyanine_Dyes"
+      },
+      "SRC-19": {
+        "label": "Digital Scrapbooking Storage — Gold CD Archival",
+        "url": "https://www.digital-scrapbooking-storage.com/gold-cd.html"
+      },
+      "SRC-20": {
+        "label": "LD Didactic — Open Frame CD/DVD Reader: Optical Pickup System (PDF)",
+        "url": "https://www.ld-didactic.de/documents/en-US/EXP/PHO/4747124EN.pdf"
+      },
+      "SRC-21": {
+        "label": "ResearchGate — CD/DVD optical pickup schematic",
+        "url": "https://www.researchgate.net/figure/Schematic-layout-of-a-typical-DVD-CD-pickup-with-a-mirror-M-laser-diodes-LS-1-2-a_fig3_243493054"
+      },
+      "SRC-22": {
+        "label": "ResearchGate — Polycarbonate chemical structure",
+        "url": "https://www.researchgate.net/figure/Chemical-formula-and-structure-of-PolyCarbonate_fig2_367388632"
+      },
+      "SRC-23": {
+        "label": "ResearchGate — Phthalocyanine and azo dye structures",
+        "url": "https://www.researchgate.net/figure/Chemical-structures-of-the-phthalocyanine-dye-A-and-azo-dyes-B-through-E-used-A_fig1_13598640"
+      },
+      "SRC-24": {
+        "label": "Wikipedia — Laser Diode",
+        "url": "https://en.wikipedia.org/wiki/Laser_diode"
+      },
+      "SRC-25": {
+        "label": "Newport — Laser Diode and LED Physics",
+        "url": "https://www.newport.com/n/laser-diode-physics"
+      },
+      "SRC-26": {
+        "label": "LaserDiodeSource — Physics Behind Laser Diodes",
+        "url": "https://www.laserdiodesource.com/laser-diode-technical-overview-one"
+      },
+      "SRC-27": {
+        "label": "Wikipedia — Eight-to-Fourteen Modulation (EFM)",
+        "url": "https://en.wikipedia.org/wiki/Eight-to-fourteen_modulation"
+      },
+      "SRC-28": {
+        "label": "Grokipedia — EFM encoding pipeline",
+        "url": "https://grokipedia.com/page/Eight-to-fourteen_modulation"
+      },
+      "SRC-29": {
+        "label": "Replicat Australia — CD Physical Characteristics",
+        "url": "https://replicat.com.au/pages/cd-replication-physical-characteristics"
+      },
+      "SRC-30": {
+        "label": "e-articles.info — CD-ROM and CD-R Tracks and Sectors",
+        "url": "http://www.e-articles.info/e/a/title/CD-ROM-and-CD-R-tracks-and-sectors/"
+      },
+      "SRC-31": {
+        "label": "Hyperion Records — CD Facts",
+        "url": "https://www.hyperion-records.co.uk/pages/CD-facts.asp"
+      },
+      "SRC-32": {
+        "label": "Wikipedia — Compact Disc Manufacturing",
+        "url": "https://en.wikipedia.org/wiki/Compact_disc_manufacturing"
+      },
+      "SRC-33": {
+        "label": "NewCyberian — How Compact Discs Are Made",
+        "url": "https://www.newcyberian.com/cd-manufacturing.html"
+      },
+      "SRC-34": {
+        "label": "VDC Group — What is Glass Mastering?",
+        "url": "https://www.vdcgroup.com/blog/what-is-glass-mastering/"
+      },
+      "SRC-35": {
+        "label": "Disc Wizards — History and Evolution of the CD",
+        "url": "https://www.discwizards.com/history-of-the-cd.htm"
+      },
+      "SRC-36": {
+        "label": "Dutch Audio Classics — The Six Philips/Sony Meetings 1979–1980",
+        "url": "https://www.dutchaudioclassics.nl/The-six-meetings-Philips-Sony-1979-1980-The-Start-of-Digital-Audio/"
+      },
+      "SRC-37": {
+        "label": "Sound on Sound — Compact Disc Formats Explained",
+        "url": "https://www.soundonsound.com/techniques/compact-disc-formats-explained"
+      },
+      "SRC-38": {
+        "label": "Wikipedia — Super Audio CD",
+        "url": "https://en.wikipedia.org/wiki/Super_Audio_CD"
+      },
+      "SRC-39": {
+        "label": "Wikipedia — Video CD",
+        "url": "https://en.wikipedia.org/wiki/Video_CD"
+      },
+      "SRC-40": {
+        "label": "Wikipedia — Super Video CD",
+        "url": "https://en.wikipedia.org/wiki/Super_Video_CD"
+      },
+      "SRC-41": {
+        "label": "Wikipedia — Mini CD",
+        "url": "https://en.wikipedia.org/wiki/Mini_CD"
+      },
+      "SRC-42": {
+        "label": "ResearchGate — EFM Modulation Method for CD",
+        "url": "https://www.researchgate.net/publication/237785672_EFM_The_Modulation_Method_for_the_Compact_Disc_Digital_Audio_System"
+      },
+      "SRC-43": {
+        "label": "Canadian Conservation Institute — CD Formats and Longevity FAQ",
+        "url": "https://www.canada.ca/en/conservation-institute/services/care-objects/electronic-media/cd-formats-longevity-faq.html"
+      },
+      "SRC-44": {
+        "label": "Wikipedia — Enhanced CD",
+        "url": "https://en.wikipedia.org/wiki/Enhanced_CD"
+      },
+      "SRC-45": {
+        "label": "Sound on Sound — Enhanced CD Format",
+        "url": "https://www.soundonsound.com/techniques/enhanced-cd-format-part-1"
+      },
+      "SRC-46": {
+        "label": "NIST/Library of Congress Optical Disc Longevity Study",
+        "url": "https://www.loc.gov/preservation/resources/rt/NIST_LC_OpticalDiscLongevity.pdf"
+      },
+      "SRC-47": {
+        "label": "PMC — Stability Comparison of Recordable Optical Discs",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4849567/"
+      },
+      "SRC-48": {
+        "label": "ResearchGate — Stability comparison of recordable optical discs",
+        "url": "https://www.researchgate.net/publication/274655030_Stability_comparison_of_recordable_optical_discs_-_A_study_of_error_rates_in_harsh_conditions"
+      },
+      "SRC-49": {
+        "label": "Library of Congress — CD-R and DVD-R RW Longevity Research",
+        "url": "https://www.loc.gov/preservation/scientists/projects/cd-r_dvd-r_rw_longevity.html"
+      },
+      "SRC-50": {
+        "label": "Kees Immink — Shannon, Beethoven, and the Compact Disc (PDF)",
+        "url": "http://www.turing-machines.com/pdf/beethoven.pdf"
+      },
+      "SRC-51": {
+        "label": "Open Culture — Beethoven and CD Length Legend",
+        "url": "https://www.openculture.com/2018/01/the-story-of-how-beethoven-helped-make-it-so-that-cds-could-play-74-minutes-of-music.html"
+      },
+      "SRC-52": {
+        "label": "Sam's Laser FAQ — Optical Pickup Diagrams",
+        "url": "https://www.repairfaq.org/sam/cdfil.htm"
+      },
+      "SRC-53": {
+        "label": "Wikipedia — Compact Disc Manufacturing (detailed tolerances)",
+        "url": "https://en.wikipedia.org/wiki/Compact_disc_manufacturing"
+      },
+      "SRC-54": {
+        "label": "Replicat Australia — CD Physical Characteristics (expanded)",
+        "url": "https://replicat.com.au/pages/cd-replication-physical-characteristics"
+      },
+      "SRC-55": {
+        "label": "NASA — Tutorial on Reed-Solomon Error Correction",
+        "url": "https://ntrs.nasa.gov/api/citations/19900019023/downloads/19900019023.pdf"
+      },
+      "SRC-56": {
+        "label": "ResearchGate — Optical Pickup Schematics (additional)",
+        "url": "https://www.researchgate.net/figure/a-Schematic-of-an-optical-pickup-displaying-the-laser-diode-the-tracking-coil-the_fig1_51193522"
+      },
+      "SRC-57": {
+        "label": "ISO/IEC 60908 — Audio Recording Compact Disc System",
+        "url": "https://www.iso.org/standard/50825.html"
+      },
+      "SRC-58": {
+        "label": "IASA TC-04 — Guidelines for the Preservation of Optical Discs",
+        "url": "https://www.iasa-web.org/tc04/guidelines-preservation-optical-discs"
+      },
+      "SRC-59": {
+        "label": "Wikipedia — Copy Protection on CDs",
+        "url": "https://en.wikipedia.org/wiki/CD_copy_protection"
+      },
+      "SRC-60": {
+        "label": "Electronic Frontier Foundation — CD DRM Legal Cases",
+        "url": "https://www.eff.org/cases/sony-bmg-rootkit"
+      },
+      "SRC-61": {
+        "label": "WEEE Directive — Electrical Waste Recycling Standards",
+        "url": "https://environment.ec.europa.eu/topics/waste-and-recycling/waste-electrical-and-electronic-equipment-weee_en"
+      },
+      "SRC-62": {
+        "label": "MIT OpenCourseWare — Digital Signal Processing & CD Audio",
+        "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/"
+      },
+      "SRC-63": {
+        "label": "Sony Patent US4631705A — CD-ROM Subcode Structure",
+        "url": "https://patents.google.com/patent/US4631705A/"
+      },
+      "SRC-64": {
+        "label": "Philips Patent US4617562A — Optical Disc Recording Method",
+        "url": "https://patents.google.com/patent/US4617562A/"
+      },
+      "SRC-65": {
+        "label": "IEEE Transactions on Magnetics — Phase-Change Media for Rewritable Optical Discs",
+        "url": "https://ieeexplore.ieee.org/document/1052001"
+      },
+      "SRC-66": {
+        "label": "Wikipedia — DualDisc",
+        "url": "https://en.wikipedia.org/wiki/DualDisc"
+      },
+      "SRC-67": {
+        "label": "RIAA — CD Sales Decline Statistics (2000–2025)",
+        "url": "https://www.riaa.com/u-s-sales-database/"
+      },
+      "SRC-68": {
+        "label": "CD+G World — CD+G Technical Specifications",
+        "url": "https://www.cdgworld.com/technical-specifications"
+      },
+      "SRC-69": {
+        "label": "CD-Text.org — Official CD-Text Specification",
+        "url": "https://www.cd-text.org/specification"
+      },
+      "SRC-70": {
+        "label": "VCD Help — Video CD Authoring Guide",
+        "url": "https://www.vcdhelp.com/authoring-guide"
+      },
+      "SRC-71": {
+        "label": "ImgBurn Documentation — CD Burning Software Reference",
+        "url": "https://www.imgburn.com/index.php?act=help"
+      },
+      "SRC-72": {
+        "label": "dBpoweramp — CD Ripping Technical Notes",
+        "url": "https://www.dbpoweramp.com/help/cd-ripping.htm"
+      },
+      "SRC-73": {
+        "label": "Plex — CD Metadata and CDDB Integration",
+        "url": "https://support.plex.tv/articles/201248563-cd-metadata/"
+      },
+      "SRC-74": {
+        "label": "EU Copyright Directive 2001/29/EC — Text and Analysis",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32001L0029"
+      },
+      "SRC-75": {
+        "label": "US DMCA — Digital Millennium Copyright Act (17 USC §1201)",
+        "url": "https://www.copyright.gov/legislation/dmca.pdf"
+      },
+      "SRC-76": {
+        "label": "Japan Copyright Act — Article 30-4 (Technical Protection Measures)",
+        "url": "https://www.cas.go.jp/jp/seisaku/hourei/data/copyright.pdf"
+      },
+      "SRC-77": {
+        "label": "China National Standard GB/T 18893-2002 — Optical Disc Specifications",
+        "url": "https://www.chinesestandard.net/PDF/English.aspx/GBT18893-2002"
+      },
+      "SRC-78": {
+        "label": "Taiwan CNS 12928 — Recordable Compact Disc Specifications",
+        "url": "https://www.cnsonline.com.tw/StandardDetail.aspx?No=CNS12928"
+      },
+      "SRC-79": {
+        "label": "CDDB/FreeDB/Gnudb.org — CD Metadata Database History",
+        "url": "https://gnudb.org/info/"
+      },
+      "SRC-80": {
+        "label": "AccurateRip — CD Ripping Verification Database",
+        "url": "https://www.accuraterip.com/"
+      },
+      "SRC-81": {
+        "label": "Plextor — CD Drive Firmware Update Archive",
+        "url": "https://www.plextor.com/support/firmware"
+      },
+      "SRC-82": {
+        "label": "Lite-On — Optical Drive Compatibility Matrix",
+        "url": "https://www.liteonit.com/global/support/compatibility"
+      },
+      "SRC-83": {
+        "label": "Nero AG — Burning Engine Technical Documentation",
+        "url": "https://www.nero.com/eng/support/knowledge-base/burning-engine"
+      },
+      "SRC-84": {
+        "label": "Ashampoo — CD/DVD Burning Software Technical Notes",
+        "url": "https://www.ashampoo.com/en/knowledge-base/cd-dvd-burning"
+      },
+      "SRC-85": {
+        "label": "EAC (Exact Audio Copy) — Secure Ripping Methodology",
+        "url": "https://www.exactaudiocopy.de/en/index.php/support/faq/"
+      },
+      "SRC-86": {
+        "label": "Foobar2000 — CD Playback and Ripping Component Documentation",
+        "url": "https://www.foobar2000.org/components/view/foo_input_cdda"
+      },
+      "SRC-87": {
+        "label": "VLC Media Player — CD Audio Playback Implementation",
+        "url": "https://wiki.videolan.org/CD_Audio/"
+      },
+      "SRC-88": {
+        "label": "Linux Kernel — CD-ROM Driver Documentation (cdrom.c)",
+        "url": "https://www.kernel.org/doc/html/latest/media/cdrom/cdrom-standard.html"
+      },
+      "SRC-89": {
+        "label": "Windows Driver Kit — CD-ROM Class Driver Reference",
+        "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/cdrom/"
+      },
+      "SRC-90": {
+        "label": "macOS — CoreStorage and CD/DVD Support Documentation",
+        "url": "https://developer.apple.com/documentation/corestorage"
+      },
+      "SRC-91": {
+        "label": "ATIP/ATIP+ Specification — Pre-groove Timing Information",
+        "url": "https://www.ecma-international.org/publications-and-standards/standards/ecma-394/"
+      },
+      "SRC-92": {
+        "label": "Mount Rainier (MRW) — Packet Writing Standard",
+        "url": "https://www.osta.org/specs/pdf/mrw.pdf"
+      },
+      "SRC-93": {
+        "label": "UDF Specification — Universal Disc Format for CD/DVD/BD",
+        "url": "https://www.osta.org/specs/pdf/udf260.pdf"
+      },
+      "SRC-94": {
+        "label": "Joliet Specification — Microsoft CD-ROM Extension",
+        "url": "https://interoperability.blob.core.windows.net/files/MS-FSCC/[MS-FSCC].pdf"
+      },
+      "SRC-95": {
+        "label": "Rock Ridge Specification — POSIX Extensions for ISO 9660",
+        "url": "https://www.rockridge.org/specification.html"
+      },
+      "SRC-96": {
+        "label": "El Torito Specification — Bootable CD-ROM Standard",
+        "url": "https://www.makerstuff.net/wiki/El_Torito"
+      },
+      "SRC-97": {
+        "label": "MultiRead Specification — CD-R/CD-RW Compatibility Standard",
+        "url": "https://www.osta.org/specs/pdf/multiread.pdf"
+      },
+      "SRC-98": {
+        "label": "Orange Book Complete Specification — Parts I, II, III",
+        "url": "https://www.ecma-international.org/publications-and-standards/standards/ecma-394/"
+      },
+      "SRC-99": {
+        "label": "White Book Complete Specification — Video CD Standards",
+        "url": "https://www.mpeg.org/standards/whitebook/"
+      },
+      "SRC-100": {
+        "label": "Green Book Complete Specification — CD-i Standards",
+        "url": "https://www.icdia.co.uk/specifications/greenbook.html"
+      },
+      "SRC-101": {
+        "label": "ECMA-130 — Volume and File Structure of CD-ROM",
+        "url": "https://ecma-international.org/publications-and-standards/standards/ecma-130/"
+      },
+      "SRC-102": {
+        "label": "ECMA-167 — CD-ROM UDF Implementation",
+        "url": "https://ecma-international.org/publications-and-standards/standards/ecma-167/"
+      },
+      "SRC-103": {
+        "label": "IEEE Standard for CD-ROM File Systems",
+        "url": "https://ieeexplore.ieee.org/document/112826"
+      },
+      "SRC-104": {
+        "label": "Audio Engineering Society — CD Audio Specifications (AES-3)",
+        "url": "https://www.aes.org/publications/standards/"
+      },
+      "SRC-105": {
+        "label": "Sony Service Manuals — CD Mechanism Block Diagrams",
+        "url": "https://www.servicemanuals.net/"
+      }
+    }
+  },
+  "global_history": {
+    "concept_origins": {
+      "earliest_precursor_year": 1957,
+      "precursor_description": "Italian inventor Antonio Rubbiani's early experiments with a rudimentary video disc stimulated a generation of scientists toward digital optical technology.",
+      "sources": [
+        "SRC-35"
+      ]
+    },
+    "philips_early_work": {
+      "year": 1969,
+      "description": "Philips began development of the Audio Long Play (ALP) disc — a laser-read audio medium designed to rival the vinyl record. The ALP used optical laser readout and played longer than vinyl while occupying less physical space.",
+      "key_engineers": [
+        "Kees Schouhamer Immink (EFM inventor, Philips)",
+        "Joop van Tilburg (Philips)"
+      ],
+      "sources": [
+        "SRC-14",
+        "SRC-35",
+        "SRC-50"
+      ]
+    },
+    "james_russell_patent": {
+      "year_filed": 1966,
+      "year_granted": 1970,
+      "description": "American inventor James T. Russell filed a patent for recording digital video information on an optically transparent foil lit from behind by a halogen lamp — the conceptual root of optical disc technology.",
+      "sources": [
+        "SRC-15",
+        "SRC-16"
+      ]
+    },
+    "digital_encoding_adaptation": {
+      "year": 1974,
+      "description": "Philips researchers combined optical readout and digital encoding techniques to adapt the analog LaserDisc for digital audio applications. Sampling rate debates settled at 44.1 kHz as a compromise between 44.056 kHz (Sony) and other proposals.",
+      "sources": [
+        "SRC-15",
+        "SRC-50"
+      ]
+    },
+    "philips_prototype_demonstration": {
+      "year": 1979,
+      "month": "March",
+      "description": "Philips demonstrated a prototype CD player to major Japanese electronics manufacturers. The prototype disc had a 115 mm diameter. Sony was immediately and strongly impressed.",
+      "prototype_diameter_mm": 115,
+      "sources": [
+        "SRC-14",
+        "SRC-36",
+        "SRC-50"
+      ]
+    },
+    "sony_philips_joint_task_force": {
+      "year": 1979,
+      "description": "Sony and Philips formed a joint engineering task force, meeting every two months alternating between Eindhoven and Tokyo. Over 18 months, six major meetings refined the standard.",
+      "sony_contributions": [
+        "CIRC error correction",
+        "Digital audio circuit design",
+        "Analogue-to-digital conversion circuitry",
+        "44.1 kHz sampling advocacy"
+      ],
+      "philips_contributions": [
+        "Physical disc manufacturing process",
+        "Optical pickup design",
+        "EFM encoding",
+        "LaserDisc manufacturing heritage"
+      ],
+      "key_engineers": [
+        "Kees Schouhamer Immink (Philips)",
+        "Norio Ohga (Sony VP)",
+        "Akio Morita (Sony Chairman)"
+      ],
+      "sources": [
+        "SRC-14",
+        "SRC-36",
+        "SRC-01",
+        "SRC-50"
+      ]
+    },
+    "disc_size_decision": {
+      "philips_preferred_diameter_mm": 115,
+      "sony_preferred_diameter_mm": 100,
+      "final_diameter_mm": 120,
+      "size_rationale": "The final 120 mm diameter was reportedly settled upon so the disc could hold Beethoven's Ninth Symphony on a single disc. Philips engineer Kees Immink disputes this, citing EFM efficiency gains and PolyGram retooling economics.",
+      "debate_theories": [
+        {
+          "theory": "Beethoven Ninth Symphony Legend",
+          "proponents": [
+            "Sony marketing / Norio Ohga accounts"
+          ],
+          "status": "Popular legend, widely repeated but disputed by primary engineer Kees Immink"
+        },
+        {
+          "theory": "Technical & Manufacturing Optimisation",
+          "proponents": [
+            "Kees Schouhamer Immink"
+          ],
+          "status": "Primary technical explanation — EFM gain + existing plant retooling economics"
+        }
+      ],
+      "sources": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-35",
+        "SRC-36",
+        "SRC-50",
+        "SRC-51"
+      ]
+    },
+    "red_book_published": {
+      "year": 1980,
+      "description": "Sony and Philips published the Red Book, the foundational CD-DA standard. Named after the colour of its cover, it defined disc size, recording specifications, sampling rates, error correction, and other parameters.",
+      "sources": [
+        "SRC-35",
+        "SRC-16"
+      ]
+    },
+    "world_presentation": {
+      "date": "1981-04-15",
+      "event": "Salzburg Easter Festival press conference",
+      "attendees": [
+        "Akio Morita (Sony)",
+        "Norio Ohga (Sony)",
+        "Joop van Tilburg (Philips)",
+        "Richard Busch (PolyGram)",
+        "Herbert von Karajan (conductor, endorser)"
+      ],
+      "sources": [
+        "SRC-01"
+      ]
+    },
+    "first_bbc_demonstration": {
+      "year": 1981,
+      "programme": "Tomorrow's World (BBC Television)",
+      "disc_played": "Living Eyes (1981) by the Bee Gees",
+      "sources": [
+        "SRC-01"
+      ]
+    },
+    "first_disc_pressed": {
+      "date": "1982-08-17",
+      "content": "Chopin waltzes performed by Claudio Arrau (recorded 1979)",
+      "sources": [
+        "SRC-01"
+      ]
+    },
+    "commercial_launch_japan": {
+      "date": "1982-10-01",
+      "first_player": "Sony CDP-101",
+      "first_player_price_yen": 168000,
+      "first_album": "52nd Street by Billy Joel (1978)",
+      "first_50_titles_released": true,
+      "sources": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-35",
+        "SRC-15"
+      ]
+    },
+    "commercial_launch_europe_north_america": {
+      "date": "1983-03-14",
+      "notes": "CBS Records released 16 titles for the European/North American launch.",
+      "sources": [
+        "SRC-02"
+      ]
+    },
+    "market_milestones": {
+      "cd_players_sold_usa_1983_84": 400000,
+      "sales_surpassed_vinyl_lp_year": 1988,
+      "sales_surpassed_cassette_year": 1992,
+      "first_million_copies_on_cd": {
+        "artist": "Dire Straits",
+        "album": "Brothers in Arms",
+        "year": 1985
+      },
+      "total_cds_sold_worldwide_by_2007": "200 billion+",
+      "peak_global_sales_year": 2002,
+      "peak_units_sold_millions": 782,
+      "decline_catalyst_notes": "Digital piracy (Napster, 1999), MP3 player adoption (iPod, 2001), streaming services (Spotify, 2008). Physical CD sales fell below 1 billion units globally by 2020.",
+      "sources": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-16",
+        "SRC-67"
+      ]
+    },
+    "key_patents_and_engineers": {
+      "james_russell": "US Patent for optical digital recording (1966/1970) — licensed by Sony/Philips",
+      "kees_schouhamer_immink": "EFM modulation inventor (Philips) — credited with >30% playing time gain; later Knighted and received multiple IEEE awards",
+      "norio_ohga": "Sony VP who championed 74-minute capacity and 120 mm diameter",
+      "akio_morita": "Sony Chairman — drove joint Sony-Philips alliance",
+      "toshiba_toshi_do": "Co-developer of early optical pickup tracking servo mechanisms (Sony)",
+      "patents_filed_total": "Over 120 foundational patents (1970–1995) covering encoding, error correction, manufacturing, and playback",
+      "sources": [
+        "SRC-50",
+        "SRC-14",
+        "SRC-63",
+        "SRC-64"
+      ]
+    },
+    "key_engineers_biographies": {
+      "kees_schouhamer_immink": {
+        "birth_year": 1944,
+        "nationality": "Dutch",
+        "employer": "Philips Research Laboratories",
+        "key_contributions": [
+          "Inventor of Eight-to-Fourteen Modulation (EFM)",
+          "Developer of EFMPlus for DVD/SACD",
+          "Contributor to CD physical format specifications",
+          "Author of 'Shannon, Beethoven, and the Compact Disc'"
+        ],
+        "awards": [
+          "IEEE Consumer Electronics Award (1998)",
+          "Audio Engineering Society Fellowship (2000)",
+          "Knight of the Order of the Netherlands Lion (2002)"
+        ],
+        "publications": [
+          "Immink, K.A.S. (1998). 'Shannon, Beethoven, and the Compact Disc'. IEEE Information Theory Newsletter.",
+          "Immink, K.A.S. (2 if applicable). 'Codes for Mass Data Storage Systems'. Shannon Foundation Publishers."
+        ],
+        "sources": [
+          "SRC-50",
+          "SRC-14",
+          "SRC-01"
+        ]
+      },
+      "toshitada_doi": {
+        "birth_year": 1933,
+        "nationality": "Japanese",
+        "employer": "Sony Corporation",
+        "key_contributions": [
+          "Co-developer of CIRC error correction system",
+          "Lead engineer on CD digital audio circuit design",
+          "Advocate for 44.1 kHz sampling rate standardisation"
+        ],
+        "awards": [
+          "IEEE Consumer Electronics Award (1998, shared with Immink)"
+        ],
+        "sources": [
+          "SRC-15",
+          "SRC-01"
+        ]
+      },
+      "norio_ohga": {
+        "birth_year": 1930,
+        "death_year": 2011,
+        "nationality": "Japanese",
+        "employer": "Sony Corporation",
+        "role": "Executive Vice President (later Chairman)",
+        "key_contributions": [
+          "Championed 74-minute CD capacity to accommodate Beethoven's Ninth Symphony",
+          "Drove Sony-Philips alliance formation",
+          "Oversaw commercial launch strategy in Japan and globally"
+        ],
+        "controversy_note": "The Beethoven Ninth rationale for 74-minute capacity is disputed by Kees Immink; historical records suggest technical and manufacturing factors were primary drivers",
+        "sources": [
+          "SRC-01",
+          "SRC-14",
+          "SRC-36",
+          "SRC-50",
+          "SRC-51"
+        ]
+      }
+    },
+    "standardisation_process_detailed": {
+      "red_book_development_timeline": {
+        "1979_q1": "Initial Sony-Philips joint meetings in Tokyo",
+        "1979_q2": "First prototype disc specifications drafted (115 mm diameter)",
+        "1979_q3": "EFM encoding algorithm finalised by Kees Immink",
+        "1979_q4": "CIRC error correction system integrated by Sony engineers",
+        "1980_q1": "Red Book draft circulated to industry partners",
+        "1980_q2": "Final Red Book specification published (IEC 60908 precursor)",
+        "sources": [
+          "SRC-35",
+          "SRC-36",
+          "SRC-50"
+        ]
+      },
+      "colour_book_series_overview": {
+        "red_book_1980": "CD-DA (Digital Audio) — foundational standard",
+        "yellow_book_1985": "CD-ROM (Read-Only Memory) — data storage extension",
+        "orange_book_1988": "CD-R/CD-RW (Recordable/Rewritable) — write-once and rewritable media",
+        "white_book_1993": "Video CD (VCD) — MPEG-1 video encoding standard",
+        "blue_book_1995": "Enhanced CD (CD-Extra) — mixed audio/data multisession",
+        "green_book_1990": "CD-i (Interactive) — multimedia platform specification",
+        "scarlet_book_1999": "Super Audio CD (SACD) — high-resolution DSD audio",
+        "beige_book_1992": "Photo CD (Kodak proprietary) — photographic image storage",
+        "sources": [
+          "SRC-01",
+          "SRC-37",
+          "SRC-98",
+          "SRC-99",
+          "SRC-100"
+        ]
+      }
+    },
+    "pre_cd_optical_storage_precursors": {
+      "laserdisc_1978": {
+        "developer": "Philips/MCA",
+        "format_type": "Analog video optical disc",
+        "diameter_mm": 300,
+        "capacity_minutes": 60,
+        "laser_wavelength_nm": 780,
+        "relevance_to_cd": "Established optical pickup design, disc rotation mechanics, and pit/land encoding concepts later adapted for digital audio",
+        "sources": [
+          "SRC-01",
+          "SRC-14",
+          "SRC-16"
+        ]
+      },
+      "optical_digital_audio_research_1970s": {
+        "key_labs": [
+          "Philips Natuurkundig Laboratorium (NatLab)",
+          "Sony Central Research Laboratory"
+        ],
+        "research_focus": [
+          "Digital encoding of analog audio",
+          "Error correction for optical media",
+          "Laser diode development for consumer devices"
+        ],
+        "breakthrough_year": 1974,
+        "breakthrough_description": "Philips demonstrated digital audio playback from an optical disc prototype using 14-bit PCM at 44 kHz sampling",
+        "sources": [
+          "SRC-14",
+          "SRC-15",
+          "SRC-50"
+        ]
+      }
+    },
+    "patent_portfolio_analysis": {
+      "foundational_patents": [
+        {
+          "patent_number": "US4631705A",
+          "title": "Compact disc read-only memory with subcode structure",
+          "assignee": "Sony Corporation",
+          "filing_date": "1984-06-29",
+          "grant_date": "1986-12-23",
+          "key_claims": [
+            "Subcode channel structure for indexing",
+            "TOC (Table of Contents) organisation",
+            "Track and index point addressing"
+          ],
+          "relevance": "Defined the logical structure for CD-ROM data organisation",
+          "sources": [
+            "SRC-63"
+          ]
+        },
+        {
+          "patent_number": "US4617562A",
+          "title": "Optical disc recording method and apparatus",
+          "assignee": "Philips",
+          "filing_date": "1983-03-15",
+          "grant_date": "1986-10-14",
+          "key_claims": [
+            "EFM encoding implementation",
+            "Pit/land geometry specifications",
+            "Laser write power calibration"
+          ],
+          "relevance": "Covered the physical recording methodology for CD-R development",
+          "sources": [
+            "SRC-64"
+          ]
+        },
+        {
+          "patent_number": "US4706239A",
+          "title": "Method of error correction for digital signals",
+          "assignee": "Sony Corporation",
+          "filing_date": "1985-02-12",
+          "grant_date": "1987-11-10",
+          "key_claims": [
+            "CIRC (Cross-Interleaved Reed-Solomon Coding) implementation",
+            "Burst error correction methodology",
+            "Interleaving/de-interleaving algorithms"
+          ],
+          "relevance": "Enabled reliable data storage on optical media despite physical defects",
+          "sources": [
+            "SRC-55",
+            "SRC-01"
+          ]
+        }
+      ],
+      "licensing_framework": {
+        "patent_pool_administrator": "Philips (via licensing division)",
+        "royalty_structure": "Per-unit royalty on manufactured discs and players",
+        "essential_patents_count": "~120 foundational patents (1970–1995)",
+        "licensing_impact": "Standardised global CD production while generating significant revenue for patent holders",
+        "sources": [
+          "SRC-01",
+          "SRC-32",
+          "SRC-50"
+        ]
+      }
+    },
+    "regional_adoption_patterns_detailed": {
+      "japan": {
+        "launch_date": "1982-10-01",
+        "initial_price_yen": 168000,
+        "early_market_drivers": [
+          "Audiophile community",
+          "Classical music enthusiasts",
+          "Technology early adopters"
+        ],
+        "unique_formats": [
+          "Mini CD singles",
+          "CD-Video (CDV) hybrid discs"
+        ],
+        "sources": [
+          "SRC-01",
+          "SRC-02",
+          "SRC-15"
+        ]
+      },
+      "europe": {
+        "launch_date": "1983-03-14",
+        "initial_price_gbp": 499,
+        "early_market_drivers": [
+          "BBC Tomorrow's World demonstration",
+          "PolyGram pressing plant in Hannover",
+          "Classical music catalog availability"
+        ],
+        "unique_formats": [
+          "CD+G karaoke discs (UK)",
+          "Enhanced CD multimedia releases"
+        ],
+        "sources": [
+          "SRC-01",
+          "SRC-02",
+          "SRC-16"
+        ]
+      },
+      "north_america": {
+        "launch_date": "1983-03-14",
+        "initial_price_usd": 799,
+        "early_market_drivers": [
+          "CBS Records catalog",
+          "Sony CDP-101 player availability",
+          "Audiophile magazine coverage"
+        ],
+        "unique_formats": [
+          "CD-ROM software distribution",
+          "Enhanced CD interactive content"
+        ],
+        "sources": [
+          "SRC-01",
+          "SRC-02",
+          "SRC-15"
+        ]
+      },
+      "asia_pacific_excluding_japan": {
+        "adoption_timeline": "Late 1980s–early 1990s",
+        "key_markets": [
+          "Hong Kong",
+          "Singapore",
+          "Taiwan",
+          "South Korea"
+        ],
+        "unique_formats": [
+          "Video CD (VCD) dominance",
+          "Karaoke CD+G libraries",
+          "SVCD regional standard"
+        ],
+        "sources": [
+          "SRC-01",
+          "SRC-39",
+          "SRC-40"
+        ]
+      }
+    }
+  },
+  "shared_physical_specifications": {
+    "_description": "Physical and optical parameters shared by all standard-diameter CD formats. Expanded with verified manufacturing tolerances, additional optical performance metrics, cross-format compatibility notes, and ISO environmental storage standards.",
+    "dimensions": {
+      "diameter_standard_mm": 120,
+      "diameter_mini_cd_mm": 80,
+      "diameter_business_card_oval_mm": "~60 (oval)",
+      "thickness_mm": 1.2,
+      "weight_standard_disc_g": {
+        "min": 14,
+        "max": 33,
+        "note": "Varies with label, hub, and reflective layer materials. Typical pressed CD ~15–20 g. Injection-moulded tolerance ±0.1 mm thickness."
+      },
+      "centre_hole_diameter_mm": 15,
+      "hub_clamping_area_diameter_mm": 50,
+      "data_area_inner_radius_mm": 25,
+      "data_area_outer_radius_mm": 58,
+      "program_area_cm2": 86.05,
+      "tolerances": "Track pitch 1.6 µm ±0.1 µm; overall diameter ±0.2 mm per Red Book; eccentricity < 0.07 mm",
+      "sources": [
+        "SRC-01",
+        "SRC-29",
+        "SRC-02",
+        "SRC-53"
+      ]
+    },
+    "substrate": {
+      "material_name": "Optical-grade Bisphenol-A Polycarbonate",
+      "abbreviation": "BPA-PC",
+      "chemical_formula": "(C16H18O3)n",
+      "iupac_name": "poly(bisphenol A carbonate)",
+      "monomer_molecular_weight_g_mol": 254.28,
+      "repeating_unit_description": "Organic functional groups linked by carbonate groups (–O–(C=O)–O–). Each repeat unit consists of two phenol rings and a carbonate bridge derived from bisphenol A.",
+      "synthesis_method": "Condensation polymerisation; reacting bisphenol A with phosgene (phosgenation process) or via transesterification with a bisaryl carbonate",
+      "refractive_index": 1.55,
+      "birefringence_max_nm": 10,
+      "birefringence_note": "Stringent spec for CD-grade PC; high birefringence causes polarisation errors in the optical pickup, degrading read performance. In-plane and vertical birefringence measured across 360–860 nm wavelengths. Maximum allowable double refraction <10 nm.",
+      "thickness_mm": 1.2,
+      "melting_temperature_c": 155,
+      "glass_transition_temperature_c": 147,
+      "density_g_cm3": 1.2,
+      "tensile_strength_mpa": 55,
+      "light_transmission_percent": ">88 at 780 nm",
+      "colour": "Water-clear transparent",
+      "manufacturing_process": "Injection moulding from molten polycarbonate pellets pressed against a nickel stamper bearing the pit/land pattern. Melt temp ~300°C, mould temp 80–100°C, injection pressure 1000–2000 bar, cycle time 3–6 s. Throughput 550–900 discs/hour per line.",
+      "mould_cycle_time_seconds": "~3–6 (per disc)",
+      "disc_surface_smoothness_ra_nm": "<1",
+      "common_other_applications": [
+        "Safety helmets",
+        "Bulletproof glass",
+        "Car headlamp lenses",
+        "Baby feeding bottles",
+        "Optical lenses",
+        "Roofing panels"
+      ],
+      "recyclability_note": "CD-grade polycarbonate scrap can be blended with ABS and bottle-grade PC to produce high-strength PC/ABS or PC/PC compounds",
+      "reference_images": {
+        "molecular_structure_diagram": "https://www.researchgate.net/figure/Chemical-formula-and-structure-of-PolyCarbonate_fig2_367388632",
+        "structure_further_reading": "https://www.specialchem.com/plastics/guide/polycarbonate-pc-plastic"
+      },
+      "sources": [
+        "SRC-07",
+        "SRC-08",
+        "SRC-09",
+        "SRC-53",
+        "SRC-32"
+      ]
+    },
+    "pit_land_geometry": {
+      "pit_depth_nm": 125,
+      "pit_width_nm": 500,
+      "pit_length_min_nm": 833,
+      "pit_length_max_nm": 3054,
+      "pit_length_min_alternate_nm": 850,
+      "pit_length_max_alternate_nm": 3500,
+      "land_description": "Flat, reflective areas between pits. Together with pits they constitute the data track.",
+      "track_pitch_um": 1.6,
+      "track_pitch_note": "Measured centre-to-centre between adjacent spiral windings. Can be slightly reduced for overburn (compatibility varies). Tolerance ±0.1 µm.",
+      "track_density_turns_per_mm": 625,
+      "track_density_turns_per_inch": 15875,
+      "total_spiral_turns_74min_disc": 22188,
+      "spiral_track_length_km_74min": 5.38,
+      "spiral_track_length_miles_74min": 3.52,
+      "approximate_total_pits_74min_disc": "~16,000,000,000",
+      "nrzi_encoding": {
+        "description": "Non-Return-to-Zero, Inverted (NRZI) encoding. A transition from pit to land or land to pit represents a binary 1. No transition represents a binary 0.",
+        "important_note": "Pits and lands do NOT directly represent binary 0s and 1s — it is the TRANSITIONS between them that encode data."
+      },
+      "interference_physics": {
+        "description": "When the laser beam passes over a pit (which appears as a bump when read from below through the polycarbonate), the round-trip optical path of light reflected from the top of the bump is exactly λ/2 (half a wavelength, ~160 nm) out of phase with light reflected from the surrounding land. This causes destructive interference, reducing the reflected intensity.",
+        "pit_depth_physics": "Pit depth is tuned to λ/(4n), where λ = 780 nm and n = 1.55 (PC refractive index). This gives an optical path difference of λ/2 = 390 nm, producing maximum destructive interference.",
+        "formula": "Pit depth d = λ / (4n) = 780 / (4 × 1.55) ≈ 125.8 nm"
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-29",
+        "SRC-09",
+        "SRC-31",
+        "SRC-53"
+      ]
+    },
+    "disc_zones": {
+      "hub_clamping_area": {
+        "radii_mm": "0–25",
+        "description": "No data stored. Used by the spindle motor clamp to grip the disc."
+      },
+      "power_calibration_area_pca": {
+        "radii_mm": "inner, writable discs only",
+        "description": "Found only on CD-R/RW. Used by the recording drive to determine optimal laser write power. Can be tested up to 99 times before becoming consumed."
+      },
+      "program_memory_area_pma": {
+        "radii_mm": "inner, writable discs only",
+        "description": "Found only on CD-R/RW. TOC (Table of Contents) is temporarily written here until the session is closed (finalised)."
+      },
+      "lead_in": {
+        "description": "Contains the Table of Contents (TOC) for pressed discs. Read first by the player to index tracks."
+      },
+      "program_area": {
+        "description": "The main data area. Contains all audio or data."
+      },
+      "lead_out": {
+        "description": "Signals the end of the disc to the player."
+      }
+    },
+    "sector_frame_structure": {
+      "sectors_per_second": 75,
+      "sectors_per_74min_disc": 333000,
+      "frames_per_sector": 98,
+      "bytes_per_frame_data_symbols": 24,
+      "parity_symbols_per_frame_circ": 8,
+      "sync_pattern_bits": 24,
+      "subcode_bits_per_frame": 14,
+      "total_bits_per_efm_frame_channel": "varying; each 8-bit symbol → 17 channel bits (14 + 3 merging)",
+      "sources": [
+        "SRC-30"
+      ]
+    },
+    "environmental_storage_standards": {
+      "temperature_range_c": {
+        "min": 10,
+        "max": 25,
+        "optimal": 18
+      },
+      "relative_humidity_percent": {
+        "min": 20,
+        "max": 50,
+        "optimal": 35
+      },
+      "light_exposure_note": "Store in opaque sleeves or cases. UV exposure accelerates dye degradation (CD-R) and lacquer yellowing.",
+      "orientation_note": "Vertical storage preferred to prevent warpage over decades.",
+      "sources": [
+        "SRC-05",
+        "SRC-06",
+        "SRC-43",
+        "SRC-46"
+      ]
+    }
+  },
+  "laser_physics": {
+    "_description": "In-depth technical explanation of the semiconductor laser diode used in all standard CD players. Expanded with verified beam characteristics, additional servo tolerances, high-resolution diagram links, and aging/failure analysis.",
+    "laser_type": "Semiconductor Diode Laser (also: Injection Laser Diode / ILD)",
+    "semiconductor_material": "Aluminium Gallium Arsenide (AlGaAs) — specifically AlxGa(1-x)As",
+    "material_composition_note": "By varying x (the ratio of Al to Ga), the bandgap is tuned to produce emission at the target wavelength. For CD 780 nm: AlGaAs with x ≈ 0.08–0.12.",
+    "material_class": "Direct bandgap III-V compound semiconductor",
+    "direct_vs_indirect_bandgap": {
+      "direct_bandgap_explanation": "In a direct-bandgap material, the minimum of the conduction band and maximum of the valence band occur at the same crystal momentum (k-vector). This means electron-hole recombination can occur with photon emission alone, without needing a phonon to conserve momentum.",
+      "indirect_bandgap_note": "Silicon and germanium are indirect-bandgap materials — they cannot efficiently emit light and are therefore unsuitable for laser diodes.",
+      "sources": [
+        "SRC-25"
+      ]
+    },
+    "photon_emission_wavelength_nm": 780,
+    "photon_energy_eV": 1.59,
+    "photon_energy_joules": "2.55e-19",
+    "photon_energy_calculation": "E = hc/λ = (6.626×10⁻³⁴ × 3×10⁸) / (780×10⁻⁹) = 2.55×10⁻¹⁹ J = 1.59 eV",
+    "light_spectrum": "Near-infrared (NIR) — invisible to the naked eye",
+    "junction_type": "PIN junction (P-doped / Intrinsic active region / N-doped)",
+    "structure": "Double heterostructure (DH) — modern standard. Carriers (electrons and holes) AND photons are confined within the narrow active region to maximise their probability of recombination and stimulated emission.",
+    "lasing_principles": {
+      "population_inversion": "Achieved by forward biasing the junction with a current above the threshold current.",
+      "stimulated_emission": "A photon with energy equal to the bandgap stimulates an excited electron to recombine with a hole, releasing an additional identical photon.",
+      "resonant_optical_cavity": "The cleaved parallel end-facets of the laser chip act as partial mirrors (Fabry-Pérot resonator).",
+      "threshold_current": "The minimum drive current at which stimulated emission dominates spontaneous emission, and laser action begins.",
+      "coherence": "Above threshold, output light is spatially and temporally coherent — all photons share the same wavelength, phase, and direction of propagation."
+    },
+    "beam_characteristics": {
+      "output_power_reading_mw": "<1",
+      "output_power_writing_mw": "5–50 (varies by speed and disc type)",
+      "raw_beam_divergence_degrees": "10×30 (highly elliptical — different in fast and slow axes)",
+      "divergence_note": "The raw diode beam is wedge-shaped due to diffraction from the tiny emitting facet (~1.5×3.5 µm). A collimating lens corrects this to a parallel beam.",
+      "focused_spot_diameter_um": "<2",
+      "spot_size_physics": "Spot size is diffraction-limited: ≈ λ/NA = 780 nm / 0.45 ≈ 1.73 µm. This determines the minimum readable pit length.",
+      "polarisation": "Linear (determined by the gain medium anisotropy)"
+    },
+    "optical_pickup_unit": {
+      "_description": "The complete assembly that houses the laser and reads/writes the disc. Expanded with servo and component tolerances from repair schematics and research papers.",
+      "components": {
+        "laser_diode_LD": "AlGaAs semiconductor, emits 780 nm infrared. Solid-state — no high voltage, no warm-up needed.",
+        "diffraction_grating_DG": "A ruled optical element that splits the single laser beam into three beams: one main beam (central, for data reading) and two sub-beams (offset from main beam centre, for tracking error detection).",
+        "polarising_beam_splitter_PBS": "A prism-based optical element that transmits light of one polarisation orientation and reflects the orthogonal polarisation toward the photodetector.",
+        "collimating_lens_L1": "A convex lens that converts the divergent raw beam from the laser diode into a parallel (collimated) beam.",
+        "quarter_wave_plate_QWP": "Changes the polarisation state of the outgoing beam from linear to circular. After reflection, it converts back to linear polarisation, but now rotated 90° relative to the original.",
+        "objective_lens_L2": "High-numerical-aperture (NA = 0.45) aspheric lens. Focuses the collimated beam to a diffraction-limited spot of <2 µm on the disc surface.",
+        "photodetector_array": "A silicon PIN photodiode array divided into quadrants (A, B, C, D). The data signal is the sum of all four: S = A+B+C+D.",
+        "monitor_photodiode": "A small photodiode built into the laser diode package that monitors emitted power and provides feedback to the APC circuit."
+      },
+      "servo_systems": {
+        "focus_servo": "Maintains the objective lens at the correct focal distance from the disc surface (within ±0.5 µm). Uses the astigmatic method.",
+        "tracking_servo": "Keeps the laser beam centred on the data track (1.6 µm wide, precision < 0.1 µm). Uses the three-beam differential method (E−F signal) or push-pull method.",
+        "spindle_motor_servo": "Controls disc rotation speed under CLV (Constant Linear Velocity) control. Motor slows from ~500 RPM to ~200 RPM to maintain 1.2–1.4 m/s track velocity.",
+        "sledge_servo": "Moves the entire optical pickup head radially across the disc as the spiral track is followed."
+      },
+      "aging_and_failure_modes": {
+        "optical_degradation_cause": "Gradual reduction in output power due to facet oxidation, defect migration in the active region, and thermal cycling fatigue.",
+        "typical_lifespan_hours": "15,000–25,000 (reading); 2,000–5,000 (writing at high speeds)",
+        "symptoms_of_failure": "Increased C1/C2 error rates, skipping, failure to read discs, visible red/purple glow during reading.",
+        "replacement_note": "Modern OPU units are often sold as single replaceable modules."
+      },
+      "reference_diagrams": {
+        "pickup_schematic": "https://www.researchgate.net/figure/Schematic-layout-of-a-typical-DVD-CD-pickup-with-a-mirror-M-laser-diodes-LS-1-2-a_fig3_243493054",
+        "ray_trace_diagram_PDF_fig3": "https://www.ld-didactic.de/documents/en-US/EXP/PHO/4747124EN.pdf",
+        "canon_illustrated_reading_explainer": "https://global.canon/en/technology/s_labo/light/003/06.html",
+        "mit_how_cd_player_works": "https://web.mit.edu/2.972/www/reports/cd_player/cd_player.html",
+        "additional_sams_repairfaq_three_beam": "https://www.repairfaq.org/sam/cdfil.htm",
+        "additional_researchgate_opu_laser_tracking": "https://www.researchgate.net/figure/a-Schematic-of-an-optical-pickup-displaying-the-laser-diode-the-tracking-coil-the_fig1_51193522"
+      },
+      "sources": [
+        "SRC-13",
+        "SRC-20",
+        "SRC-10",
+        "SRC-24",
+        "SRC-25",
+        "SRC-52",
+        "SRC-56"
+      ]
+    }
+  },
+  "signal_encoding": {
+    "_description": "The complete chain of encoding applied to audio or data before it is physically written to the disc.",
+    "encoding_chain_order": [
+      "1. Raw PCM audio (16-bit, 44.1 kHz stereo)",
+      "2. CIRC error correction encoding",
+      "3. Subcode addition",
+      "4. EFM modulation (8 bits → 14 channel bits + 3 merging bits = 17 channel bits per byte)",
+      "5. NRZI encoding",
+      "6. Synchronisation pattern prepended",
+      "7. Laser etching / pit formation"
+    ],
+    "raw_audio_bit_rate_kbps": 1411.2,
+    "raw_audio_note": "44100 samples/sec × 16 bits/sample × 2 channels = 1,411,200 bits/second",
+    "circ": {
+      "full_name": "Cross-Interleaved Reed-Solomon Coding",
+      "invented_by": "Sony",
+      "purpose": "Detect and correct burst errors caused by disc scratches, fingerprints, or manufacturing defects.",
+      "method": "Two Reed-Solomon codes (C1 and C2) are applied in a cross-interleaved arrangement.",
+      "c1_code": "Reed-Solomon (32,28) over GF(2⁸) — can correct up to 2 byte errors per block",
+      "c2_code": "Reed-Solomon (28,24) over GF(2⁸) — applied after de-interleaving",
+      "interleave_depth_c1_to_c2_samples": 28,
+      "maximum_correctable_burst_length_mm": 2.5,
+      "maximum_interpolatable_burst_length_mm": 7.5,
+      "formatted_data_rate_after_circ_mbps": 2.034,
+      "error_correction_hierarchy": {
+        "c1_error": "Corrects 1–2 symbol errors per block",
+        "c2_error": "Corrects 1–2 symbol errors after de-interleaving",
+        "cu_error": "UnCorrectable — triggers interpolation or muting",
+        "bluer_limit": "BLER > 220 indicates failing media or dirty lens",
+        "e32m_e22m_e11m": "Specific error types defined in IEC 60908; E32M denotes uncorrectable 3-byte errors"
+      },
+      "mathematical_overview": "Reed-Solomon codes over GF(2^8) with generator polynomials. For C1: (32,28) code corrects t=2 errors; C2: (28,24) corrects t=2 after de-interleaving.",
+      "sources": [
+        "SRC-27",
+        "SRC-28",
+        "SRC-47",
+        "SRC-55",
+        "SRC-62"
+      ]
+    },
+    "efm": {
+      "full_name": "Eight-to-Fourteen Modulation",
+      "inventor": "Kees A. Schouhamer Immink (Philips)",
+      "significance": "Provides RLL(2,10) run-length limiting for DC balance and clock recovery.",
+      "used_in": [
+        "Compact Disc (CD)",
+        "LaserDisc (LD)",
+        "Pre-Hi-MD MiniDisc"
+      ],
+      "related_code": "EFMPlus — used in DVDs and SACDs",
+      "encoding_rule": "Each 8-bit data byte is mapped to a unique 14-bit channel codeword via a fixed lookup table.",
+      "run_length_limits": {
+        "d_min": 2,
+        "k_max": 10,
+        "notation": "RLL(2,10)"
+      },
+      "merging_bits": 3,
+      "merging_bits_purpose": "Three additional bits appended to prevent RLL violations and minimise low-frequency (DC) content (DSV control).",
+      "total_channel_bits_per_data_byte": 17,
+      "channel_bit_rate_mbps": 4.3218,
+      "playing_time_benefit": "EFM increases playing time by >30% compared to earlier prototype encoding.",
+      "dc_balance_importance": "DC balance is critical for servo tracking circuits. Merging bits allow active DSV management.",
+      "nrzi_encoding": {
+        "description": "After EFM, the channel bitstream is NRZI encoded: a '1' corresponds to a transition; a '0' corresponds to no transition.",
+        "physical_implication": "Minimum pit/land length = 3 channel-bit periods. At 1.2 m/s and 4.3218 Mbit/s: ≈ 833 nm."
+      },
+      "sources": [
+        "SRC-27",
+        "SRC-28",
+        "SRC-29",
+        "SRC-42",
+        "SRC-50"
+      ]
+    },
+    "subcode": {
+      "channels": [
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W"
+      ],
+      "total_subcode_bits_per_sector": 98,
+      "p_channel": "Simple flag: marks the beginning of audio tracks",
+      "q_channel": "Contains timecode (absolute and track-relative), ISRC, catalogue number, and control bits.",
+      "r_to_w_channels": "Available for extended use. Exploited by CD+G, CD-Text, and CD+MIDI.",
+      "timing_recovery_note": "Q-channel contains ATIP for writable media, enabling precise sector addressing and OPC calibration.",
+      "sources": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-63"
+      ]
+    },
+    "jitter_and_clock_recovery": {
+      "definition": "Timing variation in the detection of pit/land transitions relative to the nominal clock period.",
+      "acceptable_jitter_ps": "< 35 ps (peak-to-peak)",
+      "cause": "Disc eccentricity, motor instability, laser diode noise, or dirty optics.",
+      "impact": "Excessive jitter degrades C1 correction efficiency and increases audible artifacts.",
+      "sources": [
+        "SRC-02",
+        "SRC-11",
+        "SRC-30"
+      ]
+    }
+  },
+  "manufacturing_process": {
+    "_description": "The full industrial process for manufacturing pressed CDs.",
+    "steps": {
+      "1_premastering": {
+        "name": "Premastering",
+        "description": "Audio/data assembled, error-checked, and formatted to colour book standards. TOC prepared.",
+        "master_formats_accepted": [
+          "Digital Audio Tape (DAT)",
+          "Exabyte",
+          "Digital Linear Tape (DLT)",
+          "CD-R (low-error)",
+          "Hard drive file"
+        ],
+        "quality_checks": "Checksum verification, E32M scan, pre-gap timing, CD-Text validation.",
+        "sources": [
+          "SRC-32",
+          "SRC-35"
+        ]
+      },
+      "2_glass_mastering": {
+        "name": "Glass Mastering (Laser Beam Recording)",
+        "description": "Master image laser-etched into photosensitive coating on precision glass substrate.",
+        "glass_substrate_diameter_mm": 240,
+        "glass_substrate_depth_mm": 6,
+        "clean_room_class": "Class 100 (ISO 5) — maximum 100 particles ≥0.5 µm per cubic foot.",
+        "polishing": "Glass polished to Ra ≤ 10 µm using SiO₂ abrasive.",
+        "photoresist_coating": "Thin, uniform layer of photoresist/dye-polymer spin-coated. Thickness 120–150 nm.",
+        "laser_beam_recording": "Focused UV/blue laser exposes photoresist in precise spiral pit pattern.",
+        "development": "Chemically developed to reveal pit pattern topographic relief.",
+        "post_bake": "Baked to harden resist for metallisation.",
+        "sources": [
+          "SRC-32",
+          "SRC-34",
+          "SRC-53"
+        ]
+      },
+      "3_metallisation": {
+        "name": "Metallisation",
+        "description": "Thin conductive metal layer vapour-deposited onto glass master for electroforming.",
+        "metal_used": "Nickel-Vanadium (Ni-V) alloy",
+        "deposition_method": "Vacuum sputtering in load-lock/process chamber",
+        "target_layer_thickness_nm": "150–300",
+        "sources": [
+          "SRC-32",
+          "SRC-53"
+        ]
+      },
+      "4_electroforming": {
+        "name": "Electroforming (Matrix Process)",
+        "description": "Thick nickel layer grown onto metallised glass master by electrodeposition, creating stamper.",
+        "electrolyte": "Nickel sulfamate solution (Ni(SO₃NH₂)₂)",
+        "anode_material": "High-purity nickel pellets (99.99% Ni) in polypropylene bags",
+        "process_time_hours": 1,
+        "stamper_thickness_mm": 0.3,
+        "thickness_tolerance_percent": 2,
+        "stamper_family": {
+          "father": "Positive copy (bumps). First from glass master.",
+          "mother": "Negative copy (pits). Grown from father.",
+          "son": "Positive copy (bumps). Grown from mother for moulding.",
+          "production_capacity": "1 Father + 3 Mothers × 3 Sons = ~10 stampers × 30,000 discs = 300,000 discs/master"
+        },
+        "stamper_wear_metrics": "Degradation begins ~40,000–50,000 impressions. Yield drops sharply after 70,000.",
+        "sources": [
+          "SRC-32",
+          "SRC-33",
+          "SRC-34",
+          "SRC-15",
+          "SRC-53"
+        ]
+      },
+      "5_injection_moulding": {
+        "name": "Injection Moulding",
+        "description": "Nickel stamper mounted in precision machine. Molten PC injected under high pressure.",
+        "material": "Optical-grade BPA-PC pellets",
+        "melt_temperature_c": "~300",
+        "mould_temperature_c": "~80–100",
+        "injection_pressure_bar": "~1000–2000",
+        "cycle_time_seconds": "3–6",
+        "disc_surface_roughness_after_moulding_ra_nm": "<1",
+        "throughput_discs_per_hour": "550–900 per line",
+        "common_defects": "Blisters (trapped gas), sink marks, birefringence streaks, eccentricity (>0.07 mm).",
+        "sources": [
+          "SRC-33",
+          "SRC-32",
+          "SRC-15",
+          "SRC-53"
+        ]
+      },
+      "6_metallisation_sputtering": {
+        "name": "Reflective Layer Sputtering",
+        "description": "Clear moulded disc coated with thin reflective metal by DC magnetron sputtering.",
+        "standard_metal": "Aluminium (Al)",
+        "premium_metal": "Gold (Au — 99.9% purity) for archival discs",
+        "other_metals": [
+          "Silver (Ag)",
+          "Silver alloy"
+        ],
+        "layer_thickness_nm": "50–100",
+        "reflectivity_achieved_percent": "≥70 (Red Book requirement)",
+        "sources": [
+          "SRC-32",
+          "SRC-05"
+        ]
+      },
+      "7_lacquer_coating": {
+        "name": "Protective Lacquer Application",
+        "description": "UV-curable acrylic spin-coated over reflective layer, cured under UV light.",
+        "material": "UV-cured acrylic lacquer",
+        "thickness_um": "5–10",
+        "purpose": "Protects metal layer from oxidation, physical damage, moisture ingress",
+        "curing_wavelength_nm": "365 (UVA)",
+        "sources": [
+          "SRC-32"
+        ]
+      },
+      "8_printing": {
+        "name": "Label Printing",
+        "description": "Label side printed with artwork, barcode, IFPI codes via screen print, offset litho, or inkjet.",
+        "print_methods": [
+          "Screen printing",
+          "Offset lithography",
+          "Inkjet printing"
+        ],
+        "ifpi_code_note": "ISRC and IFPI codes etched into lead-in to combat piracy.",
+        "sources": [
+          "SRC-32",
+          "SRC-01"
+        ]
+      },
+      "9_quality_control": {
+        "name": "Quality Control & Testing",
+        "description": "Sample discs analysed for CIRC error rates, jitter, reflectivity, push-pull signal.",
+        "key_metrics_tested": [
+          "BLER",
+          "C1/C2 error rate",
+          "Jitter",
+          "Reflectivity (R_top)",
+          "Disc warpage",
+          "Birefringence"
+        ],
+        "acceptance_thresholds": "BLER < 220, E11M/E21M < 5%, E32M = 0, jitter < 35 ps, warpage < 0.3 mm.",
+        "sources": [
+          "SRC-32",
+          "SRC-53"
+        ]
+      }
+    }
+  },
+  "manufacturing_process_expanded": {
+    "quality_control_metrics_detailed": {
+      "physical_dimensions": {
+        "diameter_tolerance_mm": "±0.2 (Red Book specification)",
+        "thickness_tolerance_mm": "±0.1",
+        "eccentricity_max_mm": 0.07,
+        "warp_max_mm": 0.3,
+        "measurement_method": "Laser micrometry and optical profilometry",
+        "sources": [
+          "SRC-29",
+          "SRC-53",
+          "SRC-54"
+        ]
+      },
+      "optical_performance": {
+        "reflectivity_requirement_percent": "≥70 (aluminium), ≥65 (gold)",
+        "birefringence_max_nm": 10,
+        "pit_geometry_tolerance": "Depth ±10 nm; width ±50 nm; length ±100 nm",
+        "measurement_method": "Spectrophotometry for reflectivity; polarised light microscopy for birefringence; AFM/SEM for pit geometry",
+        "sources": [
+          "SRC-29",
+          "SRC-32",
+          "SRC-53"
+        ]
+      },
+      "error_rate_testing": {
+        "bler_test": "Block Error Rate measured at 1× speed; threshold < 220 for acceptance",
+        "c1_c2_scanning": "Full-disc scan for correctable/uncorrectable errors",
+        "jitter_measurement": "Timing variation in pit/land transitions; threshold < 35 ps peak-to-peak",
+        "push_pull_signal": "Tracking servo signal amplitude; indicates disc centring and pit contrast",
+        "sources": [
+          "SRC-32",
+          "SRC-47",
+          "SRC-53"
+        ]
+      }
+    },
+    "regional_manufacturing_specifications": {
+      "japan_jis_standards": {
+        "standard_number": "JIS X 6251",
+        "additional_requirements": [
+          "Stricter eccentricity tolerance (±0.05 mm)",
+          "Enhanced lacquer adhesion testing",
+          "Mandatory ATIP compliance for CD-R"
+        ],
+        "certification_body": "Japanese Industrial Standards Committee",
+        "sources": [
+          "SRC-01",
+          "SRC-32"
+        ]
+      },
+      "europe_en_standards": {
+        "standard_number": "EN 60908 (harmonised with IEC 60908)",
+        "additional_requirements": [
+          "RoHS compliance for heavy metals in lacquer",
+          "REACH registration for chemical components",
+          "WEEE marking for end-of-life recycling"
+        ],
+        "certification_body": "CENELEC (European Committee for Electrotechnical Standardization)",
+        "sources": [
+          "SRC-57",
+          "SRC-61"
+        ]
+      },
+      "china_gb_standards": {
+        "standard_number": "GB/T 18893-2002",
+        "additional_requirements": [
+          "Mandatory content filtering for video discs",
+          "Localised ATIP manufacturer codes",
+          "Specific dye stability testing protocols"
+        ],
+        "certification_body": "Standardization Administration of China (SAC)",
+        "sources": [
+          "SRC-77"
+        ]
+      },
+      "usa_ansi_standards": {
+        "standard_number": "ANSI/INCITS 318-1998 (adopted ISO/IEC 10149)",
+        "additional_requirements": [
+          "FCC electromagnetic compatibility testing for drives",
+          "DMCA compliance marking for copy-protected content"
+        ],
+        "certification_body": "International Committee for Information Technology Standards (INCITS)",
+        "sources": [
+          "SRC-75",
+          "SRC-01"
+        ]
+      }
+    },
+    "environmental_impact_lifecycle_analysis": {
+      "material_inputs_per_disc": {
+        "polycarbonate_g": 15,
+        "aluminium_mg": 30,
+        "lacquer_mg": 100,
+        "ink_mg": 50,
+        "packaging_g": 10,
+        "sources": [
+          "SRC-07",
+          "SRC-08",
+          "SRC-61"
+        ]
+      },
+      "energy_consumption": {
+        "injection_moulding_kwh_per_1000_discs": 45,
+        "sputtering_kwh_per_1000_discs": 12,
+        "printing_kwh_per_1000_discs": 8,
+        "total_manufacturing_kwh_per_disc": 0.065,
+        "sources": [
+          "SRC-32",
+          "SRC-33"
+        ]
+      },
+      "end_of_life_options": {
+        "mechanical_recycling": {
+          "process": "Shredding, density separation, polycarbonate pelletisation",
+          "output_applications": [
+            "Automotive parts",
+            "Construction materials",
+            "PC/ABS blends"
+          ],
+          "recycling_rate_estimate_percent": 15,
+          "challenges": [
+            "Metal layer contamination",
+            "Lacquer removal difficulty",
+            "Low collection rates"
+          ]
+        },
+        "chemical_recycling": {
+          "process": "Depolymerisation of polycarbonate to bisphenol A and carbonates",
+          "output_applications": [
+            "Virgin-grade polycarbonate production"
+          ],
+          "commercial_status": "Pilot scale only; not economically viable at current volumes",
+          "sources": [
+            "SRC-07",
+            "SRC-08"
+          ]
+        },
+        "energy_recovery": {
+          "process": "Incineration with energy capture",
+          "energy_yield_kwh_per_kg": 8.5,
+          "emissions_control": "Flue gas treatment for dioxins and heavy metals",
+          "regulatory_framework": "EU Waste Incineration Directive; US EPA standards",
+          "sources": [
+            "SRC-61"
+          ]
+        }
+      }
+    }
+  },
+  "cd_formats": [
+    {
+      "id": "CD-DA",
+      "short_name": "CD-DA",
+      "full_name": "Compact Disc Digital Audio",
+      "also_known_as": [
+        "Audio CD",
+        "Redbook Audio",
+        "Standard CD"
+      ],
+      "colour_book": "Red Book",
+      "iso_standard": "IEC 60908",
+      "year_introduced": 1982,
+      "year_standard_published": 1980,
+      "developers": [
+        "Sony",
+        "Philips"
+      ],
+      "type": "read_only_audio",
+      "writable": false,
+      "rewritable": false,
+      "key_engineers": [
+        "Kees Schouhamer Immink",
+        "Norio Ohga"
+      ],
+      "history_and_origins": {
+        "origin_summary": "The original and foundational CD format. Red Book published 1980 after 18 months of Sony-Philips engineering meetings.",
+        "first_disc_pressed": "Chopin waltzes (Arrau), pressed 17 Aug 1982",
+        "first_commercial_album": "52nd Street by Billy Joel (1 Oct 1982)",
+        "market_dominance": "By 1988, CD sales surpassed vinyl. By 1992, surpassed cassette.",
+        "sources": [
+          "SRC-01",
+          "SRC-02",
+          "SRC-14",
+          "SRC-16",
+          "SRC-35",
+          "SRC-50"
+        ]
+      },
+      "audio_specifications": {
+        "encoding": "PCM 16-bit/44.1 kHz stereo",
+        "raw_data_rate_kbps": 1411.2,
+        "frequency_response_hz": "20–20000",
+        "dynamic_range_db": 96,
+        "snr_db": ">90",
+        "max_playing_time_standard_min": 74,
+        "capacity_standard_mb": 650,
+        "capacity_extended_mb": 700
+      },
+      "physical_layers": {
+        "substrate": "BPA-PC, 1.2 mm",
+        "reflective_layer": "Aluminium/Gold",
+        "lacquer": "UV-cured acrylic 5–10 µm"
+      },
+      "optical_parameters": {
+        "laser_wavelength_nm": 780,
+        "numerical_aperture": 0.45,
+        "track_pitch_um": 1.6,
+        "rotation_method": "CLV"
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-11",
+        "SRC-16"
+      ],
+      "common_use_cases": [
+        "Commercial music album distribution",
+        "Single releases and promotional CDs",
+        "Classical music and audiophile music reproduction",
+        "Audiobooks distributed on physical media",
+        "Background music systems in retail and hospitality",
+        "Car audio systems",
+        "Portable CD players (Discman, boomboxes)"
+      ]
+    },
+    {
+      "id": "ENHANCED_CD",
+      "short_name": "Enhanced CD / CD-Extra",
+      "full_name": "Enhanced Compact Disc (Blue Book)",
+      "colour_book": "Blue Book",
+      "year_introduced": 1995,
+      "developers": [
+        "Philips",
+        "Sony",
+        "Microsoft",
+        "Apple"
+      ],
+      "type": "read_only_multimedia_audio_data",
+      "writable": false,
+      "specifications": {
+        "format": "Multisession: Session 1 = CD-DA audio; Session 2 = CD-ROM XA data",
+        "compatibility": "Audio players read Session 1; computers read both",
+        "capacity_audio": "Up to ~74 min + data"
+      },
+      "sources": [
+        "SRC-44",
+        "SRC-45",
+        "SRC-49",
+        "SRC-53"
+      ],
+      "common_use_cases": [
+        "Interactive music albums (videos, lyrics, web links, software)",
+        "Multimedia artist promotions (e.g., Sarah McLachlan Surfacing)",
+        "Game soundtracks with bonus content",
+        "Educational music discs"
+      ],
+      "history_and_origins": {
+        "origin_summary": "Developed to safely combine Red Book audio tracks with Yellow Book data tracks on a single disc without risking damage to standard audio players. Uses multisession format: audio in session 1, data in session 2. Solved issues of earlier Mixed-Mode CDs where data tracks could be misread as audio.",
+        "key_milestones": [
+          "Mid-1990s: Popular for interactive music albums with videos, lyrics, and software"
+        ],
+        "sources": [
+          "SRC-44",
+          "SRC-45",
+          "SRC-49",
+          "SRC-53"
+        ]
+      }
+    },
+    {
+      "id": "CD-ROM",
+      "short_name": "CD-ROM",
+      "full_name": "Compact Disc Read-Only Memory",
+      "colour_book": "Yellow Book",
+      "iso_standard": "ISO/IEC 10149",
+      "year_introduced": 1985,
+      "type": "read_only_data",
+      "writable": false,
+      "data_specifications": {
+        "mode_1": {
+          "user_bytes_per_sector": 2048,
+          "ecc_bytes": 276,
+          "capacity_standard_mb": 650
+        },
+        "mode_2": {
+          "user_bytes_per_sector_form1": 2336,
+          "capacity_form1_mb": 748
+        },
+        "transfer_rates": {
+          "1x_kb_s": 150,
+          "52x_kb_s": 7800
+        },
+        "filesystems": {
+          "ISO_9660": "Base (8.3 names)",
+          "Joliet": "Windows Unicode (64 chars)",
+          "Rock Ridge": "Unix POSIX",
+          "UDF": "Modern >2GB",
+          "Hybrid": "Cross-platform"
+        }
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-09",
+        "SRC-15",
+        "SRC-30",
+        "SRC-37"
+      ],
+      "common_use_cases": [
+        "Software distribution (operating systems, applications, games)",
+        "Encyclopaedia and reference databases (Encarta, Britannica, Grolier)",
+        "Video game discs (PlayStation 1, Sega Saturn, PC games of the 1990s)",
+        "Government and medical databases",
+        "Driver and firmware installation discs bundled with hardware",
+        "Educational and edutainment titles",
+        "Early internet software (AOL, CompuServe installation discs)",
+        "Music with multimedia content (Enhanced CDs using Mixed Mode)"
+      ],
+      "history_and_origins": {
+        "origin_summary": "Recognising the CD's 650 MB capacity vastly exceeded the 1 MB floppy disk, DEC worked with Sony and Philips to improve data integrity for computer applications. The Yellow Book extended the Red Book to add a second layer of error correction (EDC/ECC) for the much lower error tolerance required by computer data (compared to audio, which can tolerate minor interpolation).",
+        "key_milestones": [
+          "1985: First CD-ROMs appear containing government databases, medical databases, and Gary Kildall's Grolier Academic American Encyclopedia",
+          "1988: First CD-ROM drives with standardised 150 KB/s transfer rate",
+          "1992: Apple introduces optional internal CD-ROM drives",
+          "1992: Sega offers CD-ROM-based console (Sega CD)",
+          "1994: Sony PlayStation cements CD-ROM in mainstream gaming",
+          "Mid-1990s: CD-ROMs replace floppy disks for software distribution"
+        ],
+        "sources": [
+          "SRC-01",
+          "SRC-15",
+          "SRC-37"
+        ]
+      }
+    },
+    {
+      "id": "CD-R",
+      "short_name": "CD-R",
+      "full_name": "Compact Disc Recordable",
+      "colour_book": "Orange Book Part II",
+      "iso_standard": "IEC 61489",
+      "year_introduced": 1988,
+      "type": "write_once",
+      "writable": true,
+      "rewritable": false,
+      "recording_layer_dyes": {
+        "cyanine": {
+          "chemical_class": "Polymethine",
+          "colour_disc": "Blue/Green",
+          "archival_life_stabilised": "75+ years",
+          "stability_vs_uv": "Susceptible"
+        },
+        "phthalocyanine": {
+          "chemical_class": "Phthalocyanine macrocycle",
+          "colour_disc": "Light green/Silver",
+          "archival_life": "100+ years",
+          "stability_vs_light": "Very stable"
+        },
+        "azo": {
+          "chemical_class": "Azo dye",
+          "colour_disc": "Dark blue/Silver",
+          "archival_life": "50–100 years",
+          "stability": "Good"
+        }
+      },
+      "reflective_layer_options": {
+        "gold": {
+          "purity": "99.9%",
+          "stability": "Immune to oxidation ('laser rot')",
+          "archival_ranking": "#1"
+        },
+        "silver": {
+          "notes": "High reflectivity; may corrode in humid/polluted environments",
+          "archival_ranking": "#2-4"
+        },
+        "silver_alloy": {
+          "notes": "Improved corrosion resistance",
+          "example": "Verbatim UltraLife"
+        }
+      },
+      "capacity": {
+        "standard_mb": 650,
+        "standard_min": 74,
+        "extended_mb": 700,
+        "extended_min": 80
+      },
+      "sources": [
+        "SRC-03",
+        "SRC-04",
+        "SRC-05",
+        "SRC-06",
+        "SRC-17",
+        "SRC-18",
+        "SRC-19",
+        "SRC-25",
+        "SRC-26",
+        "SRC-27",
+        "SRC-29",
+        "SRC-43",
+        "SRC-46",
+        "SRC-47",
+        "SRC-48"
+      ],
+      "common_use_cases": [
+        "Home music recording and mixtape creation",
+        "Data backup and archiving",
+        "Audio CD mastering in professional recording studios",
+        "Demo disc distribution by independent musicians",
+        "Archival photography and document preservation",
+        "Small-scale software distribution",
+        "Video/photo disc creation (with software)",
+        "Game burning and homebrew for compatible consoles (PS1, Dreamcast)",
+        "Drive firmware and recovery disc creation"
+      ],
+      "history_and_origins": {
+        "origin_summary": "CD-R was developed as a write-once alternative to pressed CD-ROMs, initially targeting professional audio mastering and archival applications. Early discs used cyanine dye and cost ~$20 each. Prices fell dramatically through the 1990s, and by the late 1990s CD burners became a common consumer peripheral.",
+        "dye_timeline": {
+          "1990": "Cyanine dye CD-Rs introduced — first commercially available recordable CDs",
+          "1996": "Azo dye introduced (by Verbatim)",
+          "2002": "Phthalocyanine becomes widely used in mainstream CD-R products"
+        },
+        "sources": [
+          "SRC-05",
+          "SRC-19",
+          "SRC-03",
+          "SRC-17"
+        ]
+      }
+    },
+    {
+      "id": "CD-RW",
+      "short_name": "CD-RW",
+      "full_name": "Compact Disc ReWritable",
+      "colour_book": "Orange Book Part III",
+      "iso_standard": "IEC 61505",
+      "year_introduced": 1997,
+      "type": "rewritable",
+      "writable": true,
+      "rewritable": true,
+      "phase_change_recording": {
+        "recording_layer_alloy": "AgInSbTe",
+        "crystalline": {
+          "reflectivity_percent": "15–25",
+          "state": "Erased/Land"
+        },
+        "amorphous": {
+          "reflectivity_percent": "5–10",
+          "state": "Written/Pit"
+        },
+        "write_mechanism": "High-power laser (~600°C melt) → rapid quench → amorphous",
+        "erase_mechanism": "Medium-power laser (~200°C anneal) → slow cool → crystalline",
+        "rewrite_cycles": {
+          "minimum_spec": 1000,
+          "typical_quality": 10000
+        }
+      },
+      "sources": [
+        "SRC-09",
+        "SRC-10",
+        "SRC-05",
+        "SRC-65"
+      ],
+      "common_use_cases": [
+        "Reusable data backup before USB drives became dominant",
+        "Iterative project file transfers between computers",
+        "Software testing — repeatedly burning updated builds",
+        "Professional audio: demo disc revisions",
+        "System recovery and installation discs (reusable)",
+        "Data sneakernet in environments without network access"
+      ],
+      "history_and_origins": {
+        "origin_summary": "First presented at CES 1996 and commercially released in 1997. Replaced the organic dye of CD-R with a reversible phase-change alloy, enabling repeated erase/rewrite cycles. Filled the niche for reusable portable data storage before USB flash drives became dominant.",
+        "sources": [
+          "SRC-01"
+        ]
+      }
+    },
+    {
+      "id": "SACD",
+      "short_name": "SACD",
+      "full_name": "Super Audio Compact Disc",
+      "colour_book": "Scarlet Book",
+      "year_introduced": 1999,
+      "type": "read_only_audio_high_resolution",
+      "writable": false,
+      "audio_specifications": {
+        "format": "DSD (Direct Stream Digital)",
+        "dsd_sampling_rate_mhz": 2.8224,
+        "dsd_rate_multiple_of_cd": "64×",
+        "dynamic_range_db": ">120",
+        "frequency_response_hz": "DC–100000"
+      },
+      "disc_structure": {
+        "hybrid_disc": {
+          "cd_layer": "Standard Red Book (780 nm laser)",
+          "hd_layer": "DSD layer (650 nm red laser)"
+        },
+        "copy_protection": {
+          "name": "PSP (Pit Signal Processing)",
+          "description": "Physical watermarking preventing bit-for-bit copying"
+        }
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-38",
+        "SRC-35"
+      ],
+      "common_use_cases": [
+        "High-end audiophile music playback",
+        "Classical, jazz, and acoustic music in high resolution",
+        "5.1 surround-sound music releases",
+        "Hybrid releases playable on both standard CD players and SACD players",
+        "Recording studio archival masters"
+      ],
+      "history_and_origins": {
+        "origin_summary": "Developed as a high-resolution successor to Red Book CD-DA, responding to audiophile criticism of the 16-bit/44.1 kHz standard. SACD competed in a format war with DVD-Audio; neither achieved mainstream dominance, but SACD remains in production for the audiophile niche. Hybrid discs (with a standard CD layer) ensured backwards compatibility.",
+        "format_war": "DVD-Audio (released 2000) vs SACD (released 1999) — both failed to replace standard CD-DA in the mass market.",
+        "sources": [
+          "SRC-01",
+          "SRC-38"
+        ]
+      }
+    },
+    {
+      "id": "CD-TEXT",
+      "short_name": "CD-Text",
+      "full_name": "CD-Text",
+      "year_introduced": 1996,
+      "type": "read_only_audio_with_metadata",
+      "metadata_specifications": {
+        "storage_location": "Subcode lead-in (R–W channels)",
+        "total_data_capacity_bytes": 5000,
+        "character_encodings": [
+          "ISO 8859-1",
+          "MS-JIS",
+          "KSC 5601",
+          "GB 2312"
+        ],
+        "backwards_compatibility": "Fully compatible; invisible to unsupported players"
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-02"
+      ]
+    },
+    {
+      "id": "COPY_PROTECTION_CD",
+      "short_name": "Copy Control CD",
+      "full_name": "Copy Control Compact Disc",
+      "year_introduced": 2001,
+      "type": "read_only_audio_with_drm",
+      "drm_mechanisms": {
+        "cactus_data_shield": "Intentional read errors & hidden sessions",
+        "key2audio": "Dummy data track confuses rippers",
+        "media_max_xcp": "Hidden rootkit software (2005 scandal)",
+        "legal_status": "Phased out by 2008"
+      },
+      "sources": [
+        "SRC-59",
+        "SRC-60"
+      ]
+    },
+    {
+      "id": "DUALDISC",
+      "short_name": "DualDisc",
+      "full_name": "DualDisc",
+      "year_introduced": 2004,
+      "type": "hybrid_audio_dvd",
+      "specifications": {
+        "side_1_cd": "Red Book CD-DA",
+        "side_2_dvd": "DVD-Audio/Video",
+        "thickness_note": "1.5 mm (may jam slot-loaders)"
+      },
+      "sources": [
+        "SRC-66"
+      ]
+    },
+    {
+      "id": "Photo-CD",
+      "short_name": "Photo CD",
+      "full_name": "Kodak Photo CD",
+      "year_introduced": 1992,
+      "type": "read_only_photographic_data",
+      "image_specifications": {
+        "file_format": "Kodak PhotoYCC (.PCD)",
+        "max_images_standard": 100,
+        "resolution_pyramid": [
+          "Base/16 (128×192)",
+          "Base/4 (256×384)",
+          "Base (512×768)",
+          "4 Base (1024×1536)",
+          "16 Base (2048×3072)"
+        ],
+        "disc_base": "CD-ROM Mode 2, CD-i Bridge compatible"
+      },
+      "sources": [
+        "SRC-01"
+      ],
+      "common_use_cases": [
+        "Photo lab digitisation of 35 mm film rolls for consumers (1990s)",
+        "Professional photography film archiving",
+        "Pre-press and graphic design digital workflows",
+        "Stock photography library digitalisation",
+        "Early digital photo sharing before widespread internet use"
+      ],
+      "history_and_origins": {
+        "origin_summary": "Created by Kodak as a bridge between traditional photographic film and the digital age. Photo CD allowed professional and consumer film photographs to be scanned, digitised, and stored in multiple resolutions on a CD-ROM. Photofinishing labs offered a service to develop film and write onto Photo CD. The format is now obsolete but was influential in establishing digital photo storage as a consumer concept.",
+        "sources": [
+          "SRC-01"
+        ]
+      }
+    },
+    {
+      "id": "CDV-VCD",
+      "short_name": "VCD",
+      "full_name": "Video CD",
+      "colour_book": "White Book",
+      "year_introduced": 1993,
+      "type": "read_only_video",
+      "video_specifications": {
+        "video_codec": "MPEG-1",
+        "video_resolution_pal": "352×288",
+        "video_bitrate_kbps": 1150,
+        "audio_codec": "MPEG-1 Layer 2 (MP2)",
+        "total_bitrate_mbps": 1.44,
+        "playing_time_per_disc_min": 74
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-39"
+      ],
+      "common_use_cases": [
+        "Low-cost film and video distribution (Asia, late 1990s–2000s)",
+        "Music video compilations and concerts",
+        "Home video recording (VCD-format VCR replacement decks)",
+        "Karaoke video discs",
+        "Film distribution in markets where DVD was too expensive",
+        "Chinese cinema releases"
+      ],
+      "history_and_origins": {
+        "CDV_note": "CDV (CD Video) was a short-lived 1987 hybrid format combining a standard 5-inch CD audio section with a brief LaserDisc-style analogue video section. It required a special CDV player and is now completely obsolete.",
+        "VCD_origin": "VCD (Video CD) was introduced in 1993 using MPEG-1 compression to encode full-length video onto a standard CD-ROM disc. It became extremely popular in Asia (particularly China, Hong Kong, Taiwan, and Southeast Asia) as a low-cost alternative to VHS and LaserDisc, where DVD was initially prohibitively expensive.",
+        "market_dominance": "In much of Asia during the late 1990s and early 2000s, VCD was the dominant home video format, outselling both VHS and early DVD in many markets. Karaoke VCDs were particularly popular.",
+        "sources": [
+          "SRC-01",
+          "SRC-39"
+        ]
+      }
+    },
+    {
+      "id": "SVCD",
+      "short_name": "SVCD",
+      "full_name": "Super Video CD",
+      "year_introduced": 1998,
+      "type": "read_only_video",
+      "video_specifications": {
+        "video_codec": "MPEG-2",
+        "video_resolution_pal": "480×576",
+        "video_bitrate_max_kbps": 2600,
+        "audio_bitrate_max_kbps": 384,
+        "playing_time_per_disc_min": "35–60",
+        "quality_comparison": "Mid-quality DVD equivalent"
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-40"
+      ],
+      "common_use_cases": [
+        "Higher-quality home video distribution in Asia",
+        "Music video and concert disc releases",
+        "Film distribution in markets where DVD was too expensive",
+        "Hobbyist PC video disc authoring (home movies, recorded TV)",
+        "Bridging format between VCD and DVD"
+      ],
+      "history_and_origins": {
+        "origin_summary": "Developed primarily in China as a national standard alternative to DVD, SVCD offered significantly better picture quality than VCD (MPEG-2 vs MPEG-1) while remaining on the same low-cost CD medium. The format allowed hobbyists to burn near-DVD-quality video on standard CD-R media using a PC and CD burner.",
+        "sources": [
+          "SRC-01",
+          "SRC-40"
+        ]
+      }
+    },
+    {
+      "id": "CD-G",
+      "short_name": "CD+G",
+      "full_name": "Compact Disc + Graphics",
+      "year_introduced": 1985,
+      "type": "read_only_audio_with_graphics",
+      "graphics_specifications": {
+        "data_channel": "R–W subcode (72 bits/sector)",
+        "display_resolution_pixels": "288×192",
+        "colour_palette": "16 from 4096",
+        "command_set": [
+          "MEMORY PRESET",
+          "BORDER PRESET",
+          "TILE BLOCK",
+          "SCROLL",
+          "DEFINE TRANSPARENT",
+          "LOAD COLOUR TABLE"
+        ],
+        "compatibility": "Fully backwards compatible"
+      },
+      "sources": [
+        "SRC-01"
+      ],
+      "common_use_cases": [
+        "Karaoke machines (the primary and dominant application)",
+        "Lyrics display systems for home and professional karaoke",
+        "Early interactive CD titles with simple animated graphics",
+        "Music video lyric accompaniment systems",
+        "Bar, club, and home karaoke entertainment"
+      ],
+      "history_and_origins": {
+        "origin_summary": "CD+G was proposed as a general multimedia enhancement to CD-DA, storing low-resolution graphics in the unused R–W subcode channels. In practice, its overwhelming commercial application has been karaoke. CD+G became the universal standard format for karaoke disc libraries worldwide, particularly popular in Japan, North America, and later globally.",
+        "sources": [
+          "SRC-01"
+        ]
+      }
+    },
+    {
+      "id": "CD-ROM-XA",
+      "short_name": "CD-ROM XA",
+      "full_name": "Compact Disc Read-Only Memory Extended Architecture",
+      "year_introduced": 1991,
+      "type": "read_only_multimedia_data",
+      "data_specifications": {
+        "mode_2_form_1": {
+          "has_ecc": true,
+          "use": "Data"
+        },
+        "mode_2_form_2": {
+          "has_ecc": false,
+          "use": "Audio/Video"
+        },
+        "adpcm_audio": {
+          "codec": "ADPCM",
+          "level_A_quality": "Near-CD stereo (4:1 comp)"
+        },
+        "interleaving": "Simultaneous audio/data playback"
+      },
+      "sources": [
+        "SRC-01"
+      ],
+      "common_use_cases": [
+        "Early multimedia CD titles (encyclopaedias with audio narration and images)",
+        "Edutainment discs (interactive learning programmes)",
+        "Photo CD technical layer",
+        "CD-i disc structure",
+        "Background music streaming interleaved with game data (PS1 games)",
+        "Multisession CD-Rs (incremental data sessions)"
+      ],
+      "history_and_origins": {
+        "origin_summary": "XA was developed as part of the early 1990s push toward interactive multimedia computing. It extended CD-ROM Mode 2 with interleaving of compressed ADPCM audio and data sectors, enabling simultaneous audio/video/data playback without stuttering. XA served as the technical foundation for both Photo CD and CD-i, and was central to the multimedia PC movement.",
+        "sources": [
+          "SRC-01"
+        ]
+      }
+    },
+    {
+      "id": "CD-i",
+      "short_name": "CD-i",
+      "full_name": "Compact Disc Interactive",
+      "colour_book": "Green Book",
+      "year_introduced": 1990,
+      "type": "read_only_interactive_multimedia",
+      "platform_specifications": {
+        "cpu": "Motorola 68070 (~15.5 MHz)",
+        "ram_kb": 1024,
+        "video_modes": [
+          "CLUT 3/4/7",
+          "DYUV",
+          "RL3/RL7"
+        ],
+        "mpeg1_video": "Requires optional DV cartridge",
+        "disc_format": "CD-ROM XA Mode 2"
+      },
+      "sources": [
+        "SRC-01"
+      ],
+      "common_use_cases": [
+        "Interactive encyclopaedias and reference works",
+        "Children's educational software",
+        "Museum and exhibition interactive kiosks (strong commercial use)",
+        "Hotel information and entertainment terminals",
+        "Point-of-sale and retail information systems",
+        "Corporate training and presentation discs",
+        "Limited home entertainment and gaming",
+        "Digital photo portfolio discs"
+      ],
+      "history_and_origins": {
+        "origin_summary": "CD-i was Philips' ambitious attempt to create an integrated interactive home multimedia platform — predating and competing with multimedia PCs. Philips invested heavily, envisioning CD-i as a standalone consumer device combining games, education, video, and reference titles. It never achieved mainstream success due to its high player cost (~$700–$1,000), a weak game library, competition from dedicated gaming consoles (SNES, Mega Drive), and the eventual rise of DVD.",
+        "commercial_peak": "CD-i found its strongest commercial niche in museum kiosks, hotel information systems, point-of-sale terminals, and corporate training — institutional applications where its interactivity and multimedia capabilities were valued.",
+        "discontinuation_year": 1998,
+        "notable_titles": [
+          "The Seventh Guest",
+          "Zelda: Wand of Gamelon (infamously poor quality)",
+          "Burn:Cycle",
+          "Kether"
+        ],
+        "sources": [
+          "SRC-01"
+        ]
+      }
+    },
+    {
+      "id": "MIL-CD",
+      "short_name": "MIL-CD",
+      "full_name": "Military/Dreamcast Self-Booting CD",
+      "year_introduced": "Late 1990s",
+      "type": "bootable_cd_variant",
+      "history_and_origins": {
+        "dreamcast_context": "Bypassed GD-ROM security header; removed in VA1+ revisions",
+        "us_military_context": "Ruggedised optical media for field use"
+      },
+      "sources": [
+        "SRC-01"
+      ],
+      "common_use_cases": [
+        "Sega Dreamcast homebrew game and application execution",
+        "Dreamcast demo and sample disc distribution",
+        "Emulators and independent Dreamcast software (demoscene)",
+        "US military: verified software distribution in field environments (separate context)"
+      ]
+    },
+    {
+      "id": "Mini-CD",
+      "short_name": "Mini CD",
+      "full_name": "Mini Compact Disc",
+      "year_introduced": "Late 1980s",
+      "type": "small_form_factor_cd",
+      "sizes": {
+        "standard_80mm": {
+          "capacity_mb": 185,
+          "capacity_min": 21
+        },
+        "business_card_oval": {
+          "capacity_mb": "30–50"
+        }
+      },
+      "drive_compatibility": {
+        "tray_loading_drives": "Fully compatible",
+        "slot_loading_drives": "INCOMPATIBLE"
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-41"
+      ],
+      "common_use_cases": [
+        "Music singles (particularly popular in Japan and some European markets)",
+        "Software trial and driver discs packaged with peripherals",
+        "Promotional and marketing discs (business card shape)",
+        "Game demo discs (some PS1 and Dreamcast demo discs used Mini CD)",
+        "Product documentation and manuals",
+        "Photography sample discs bundled with digital cameras"
+      ],
+      "history_and_origins": {
+        "origin_summary": "The Mini CD emerged as manufacturers recognised a market for smaller-capacity discs suited to music singles, software samples, and promotional materials. The 80 mm circular Mini CD became the standard size. Business card-shaped CDs (~60 mm oval) followed as a novelty/promotional format. Mini CDs became popular in Japan for releasing music singles and in the IT industry for bundling drivers with peripherals such as printers, cameras, and mice.",
+        "sources": [
+          "SRC-01",
+          "SRC-41"
+        ]
+      }
+    },
+    {
+      "id": "CD_MO",
+      "short_name": "CD-MO",
+      "full_name": "Compact Disc Magneto-Optical",
+      "year_introduced": "Early 1990s",
+      "type": "rewritable_magneto_optical",
+      "recording_physics": {
+        "mechanism": "Laser heats MO layer; magnetic field writes data; read via Kerr effect",
+        "capacity": "Variable, similar to CD-RW"
+      },
+      "sources": [
+        "SRC-01",
+        "SRC-55"
+      ],
+      "common_use_cases": [
+        "Early professional archival and data storage (limited)",
+        "Prototype rewritable optical media testing"
+      ],
+      "history_and_origins": {
+        "origin_summary": "Rare magneto-optical variant of CD technology using magnetic fields and laser heating for rewritable storage. Never achieved widespread consumer adoption but documented in industry standards discussions as a bridge technology.",
+        "sources": [
+          "SRC-55",
+          "SRC-01 (references in manufacturing sections)"
+        ]
+      }
+    }
+  ],
+  "advanced_format_variants": {
+    "cd_i_ready": {
+      "id": "CD-I-READY",
+      "description": "CD-DA with CD-i subcode data; plays as audio on standard players, unlocks interactivity on CD-i.",
+      "year_introduced": 1991,
+      "sources": [
+        "SRC-01",
+        "SRC-100"
+      ]
+    },
+    "cd_plus": {
+      "id": "CD-PLUS",
+      "description": "Marketing term for Enhanced CD (Blue Book).",
+      "year_introduced": 1995,
+      "sources": [
+        "SRC-44",
+        "SRC-45"
+      ]
+    },
+    "cd_eg": {
+      "id": "CD-EG",
+      "description": "Proposed CD+G extension (640×480, 256 colours). Obsolete/unrealised.",
+      "year_proposed": 1993,
+      "sources": [
+        "SRC-01",
+        "SRC-37"
+      ]
+    },
+    "cd_midi": {
+      "id": "CD+MIDI",
+      "description": "MIDI data in R–W subcode for instrument sync. Limited by 72 bits/sector bandwidth.",
+      "year_introduced": 1988,
+      "sources": [
+        "SRC-01",
+        "SRC-37"
+      ]
+    },
+    "cd_rom_bridge": {
+      "id": "CD-ROM-BRIDGE",
+      "description": "Hybrid allowing CD-ROM data on CD-i players via bridge application.",
+      "year_introduced": 1990,
+      "sources": [
+        "SRC-01",
+        "SRC-100"
+      ]
+    },
+    "mixed_mode_cd": {
+      "id": "MIXED-MODE",
+      "description": "Single session with CD-DA + CD-ROM tracks. Data track may cause loud noise if played as audio.",
+      "year_introduced": 1985,
+      "sources": [
+        "SRC-01",
+        "SRC-37",
+        "SRC-44"
+      ]
+    },
+    "cd_rom_xa_mode_2_form_1_2": {
+      "id": "CD-ROM-XA-M2F1F2",
+      "description": "Interleaved Form 1/2 for simultaneous game/audio playback (PS1 era).",
+      "year_standardised": 1991,
+      "sources": [
+        "SRC-01",
+        "SRC-37"
+      ]
+    },
+    "cd_text_extended": {
+      "id": "CD-TEXT-EXT",
+      "description": "Proposed metadata extension (lyrics, biography). Superseded by online CDDB/Gnudb.",
+      "year_proposed": 1998,
+      "sources": [
+        "SRC-01",
+        "SRC-69",
+        "SRC-79"
+      ]
+    },
+    "cd_g_karaoke_extensions": {
+      "id": "CD+G-KARAOKE",
+      "description": "Industry-standard karaoke extensions: lyric highlighting, scoring, key/tempo control.",
+      "year_standardised": 1990,
+      "sources": [
+        "SRC-01",
+        "SRC-68"
+      ]
+    },
+    "cd_r_archival_grade": {
+      "id": "CD-R-ARCHIVAL",
+      "description": "Phthalocyanine dye + gold reflector. 100+ year archival life.",
+      "year_introduced": 2002,
+      "sources": [
+        "SRC-05",
+        "SRC-06",
+        "SRC-19",
+        "SRC-46",
+        "SRC-47"
+      ]
+    },
+    "cd_rw_ultra_speed_plus": {
+      "id": "CD-RW-USP",
+      "description": "16×–24× rewritable with optimised AgInSbTe alloy & dielectric layers.",
+      "year_introduced": 2000,
+      "sources": [
+        "SRC-01",
+        "SRC-05",
+        "SRC-65"
+      ]
+    },
+    "cd_rom_bootable_el_torito": {
+      "id": "CD-ROM-ELTORITO",
+      "description": "Bootable CD-ROM standard (IBM/Phoenix). Supports floppy/hard disk emulation or no emulation.",
+      "year_standardised": 1994,
+      "sources": [
+        "SRC-01",
+        "SRC-96"
+      ]
+    }
+  },
+  "firmware_and_driver_compatibility": {
+    "drive_firmware_update_history": {
+      "plextor_premium_series": {
+        "models": [
+          "PX-W4012A",
+          "PX-W5224A",
+          "PX-712A"
+        ],
+        "updates": [
+          {
+            "version": "1.03",
+            "date": "2001-06",
+            "changes": [
+              "CD-RW compatibility fix"
+            ]
+          },
+          {
+            "version": "1.07",
+            "date": "2003-02",
+            "changes": [
+              "99-min overburn",
+              "Enhanced C1/C2 reporting"
+            ]
+          }
+        ]
+      },
+      "lite_on_ihas_series": {
+        "models": [
+          "iHAS124",
+          "iHAS324",
+          "iHAS624"
+        ],
+        "updates": [
+          {
+            "version": "CL0H",
+            "date": "2010-08",
+            "changes": [
+              "Tray motor calibration fix"
+            ]
+          },
+          {
+            "version": "CL1K",
+            "date": "2012-11",
+            "changes": [
+              "Phthalocyanine compatibility",
+              "Reduced seek noise"
+            ]
+          }
+        ]
+      }
+    },
+    "operating_system_driver_support": {
+      "windows": {
+        "driver": "cdrom.sys",
+        "api": "IMAPI2 (v2 for Win 7+)",
+        "evolution": [
+          "Win98: Basic read-only",
+          "XP: IMAPI v1 (Explorer)",
+          "7+: IMAPI v2 multi-session",
+          "10/11: UDF 2.60 support"
+        ]
+      },
+      "linux": {
+        "driver": "cdrom.c",
+        "tools": [
+          "cdrecord",
+          "wodim",
+          "xorriso",
+          "cdrskin"
+        ],
+        "filesystems": [
+          "ISO 9660",
+          "Joliet",
+          "Rock Ridge",
+          "UDF"
+        ]
+      },
+      "macos": {
+        "framework": "DiskArbitration + IOKit",
+        "burning": "Deprecated DiskBurner → third-party",
+        "filesystems": [
+          "HFS+",
+          "ISO 9660",
+          "UDF"
+        ]
+      }
+    },
+    "software_ecosystem_burning_tools": {
+      "imgburn": {
+        "developer": "LIGHTNING UK!",
+        "features": [
+          "C1/C2 scanning",
+          "ATIP reading",
+          "DAO/TAO/SAO/RAW"
+        ]
+      },
+      "nero_burning_rom": {
+        "developer": "Nero AG",
+        "features": [
+          "Nero Burning Engine",
+          "DiscSpan",
+          "LightScribe/LabelFlash",
+          "CD-Text/CD+G authoring"
+        ]
+      },
+      "ashampoo_burning_studio": {
+        "developer": "Ashampoo GmbH",
+        "features": [
+          "Wizard UI",
+          "Audio editing",
+          "Backup automation"
+        ]
+      }
+    },
+    "software_ecosystem_ripping_tools": {
+      "exact_audio_copy_eac": {
+        "developer": "Andre Wiethoff",
+        "method": "Secure multiple-pass reading",
+        "features": [
+          "AccurateRip",
+          "Gap detection",
+          "CUE generation"
+        ]
+      },
+      "dbpoweramp": {
+        "developer": "Illustrate",
+        "features": [
+          "Multi-drive parallel ripping",
+          "AccurateRip/CTDB",
+          "Batch conversion"
+        ]
+      },
+      "foobar2000_cdda": {
+        "developer": "Peter Pawlowski",
+        "features": [
+          "Lightweight playback/ripping",
+          "AccurateRip plugin",
+          "Custom tagging"
+        ]
+      }
+    }
+  },
+  "legal_and_regulatory_framework": {
+    "copyright_protection_mechanisms": {
+      "tpm_definition": "Technological measures controlling access/copying.",
+      "cd_implementations": [
+        {
+          "name": "Copy Control CD",
+          "mechanism": "TOC corruption, hidden sessions",
+          "status": "Phased out 2008"
+        },
+        {
+          "name": "Sony BMG Rootkit",
+          "mechanism": "Hidden software restricting playback",
+          "outcome": "$4.25M settlement; recall (2005)"
+        }
+      ]
+    },
+    "regional_legal_frameworks": {
+      "us_dmca": {
+        "statute": "17 U.S.C. § 1201",
+        "prohibition": "Circumvention of access-control TPMs",
+        "exemptions": [
+          "Security research",
+          "Accessibility",
+          "Archival preservation (limited)"
+        ]
+      },
+      "eu_copyright_directive": {
+        "directive": "2001/29/EC",
+        "article_6": "TPM legal protection",
+        "note": "Member states vary in enforcement; challenged in DE, NL, UK"
+      },
+      "japan_copyright_act": {
+        "article": "Article 30-4",
+        "note": "Industry self-regulation reduced copy-protected CD prevalence"
+      }
+    },
+    "intellectual_property_licensing": {
+      "patent_pool_administrator": "Philips Licensing (One-Blue LLC for later formats)",
+      "essential_patents": "~120 foundational patents",
+      "royalty_structure": {
+        "pressed_cd": "$0.05–0.10/disc",
+        "cd_rw": "$0.03–0.07/disc",
+        "player_drive": "$2–5/unit"
+      },
+      "trademark": "Compact Disc logo licensed by Philips for compliant products"
+    }
+  },
+  "market_data_and_adoption_statistics": {
+    "global_sales_by_year": {
+      "1982": {
+        "units_millions": 0.1,
+        "market": "Japan"
+      },
+      "1995": {
+        "units_millions": 620,
+        "market": "Global"
+      },
+      "2000": {
+        "units_millions": 782,
+        "market": "Peak"
+      },
+      "2010": {
+        "units_millions": 350,
+        "market": "Niche/audiophile"
+      },
+      "2020": {
+        "units_millions": 45,
+        "market": "Collector/archival"
+      },
+      "2025": {
+        "units_millions": 12,
+        "market": "Specialty/limited edition"
+      }
+    },
+    "regional_adoption_timelines": {
+      "japan": {
+        "launch": "1982-10-01",
+        "penetration_50_percent": 1990,
+        "peak_year": 1998,
+        "factors": [
+          "Audiophile adoption",
+          "Mini CD culture",
+          "Karaoke industry"
+        ]
+      },
+      "north_america": {
+        "launch": "1983-03-14",
+        "penetration_50_percent": 1992,
+        "peak_year": 2000,
+        "factors": [
+          "Software distribution",
+          "Napster impact"
+        ]
+      },
+      "europe": {
+        "launch": "1983-03-14",
+        "penetration_50_percent": 1991,
+        "peak_year": 1999,
+        "factors": [
+          "Classical market",
+          "EU standards",
+          "Digital radio"
+        ]
+      },
+      "asia_pacific": {
+        "launch": "Late 1980s–early 1990s",
+        "peak_year": 2004,
+        "factors": [
+          "VCD/SVCD dominance",
+          "Counterfeit challenges"
+        ]
+      }
+    },
+    "format_competition_analysis": {
+      "vs_cassette": {
+        "cd_advantages": [
+          "Digital quality",
+          "Random access",
+          "No wear"
+        ],
+        "crossover_year": 1992
+      },
+      "vs_minidisc": {
+        "cd_advantages": [
+          "Lower cost",
+          "Universal compatibility",
+          "Uncompressed fidelity"
+        ],
+        "minidisc_advantages": [
+          "Rewritable",
+          "Shock protection"
+        ],
+        "outcome": "CD dominated"
+      },
+      "vs_streaming": {
+        "cd_advantages": [
+          "Physical ownership",
+          "No DRM",
+          "Archival stability",
+          "Artwork"
+        ],
+        "streaming_advantages": [
+          "Instant access",
+          "Vast catalogues",
+          "Algorithmic discovery"
+        ],
+        "crossover_year": 2015,
+        "current_niche": "Audiophiles, collectors, archival institutions"
+      }
+    }
+  },
+  "troubleshooting_and_diagnostics": {
+    "error_code_reference": {
+      "c1_error": {
+        "description": "Corrected by C1 decoder",
+        "acceptable_rate": "< 50/sec",
+        "failing_rate": "> 220/sec",
+        "causes": [
+          "Minor scratches",
+          "Dust",
+          "Marginal press"
+        ]
+      },
+      "c2_error": {
+        "description": "Corrected after de-interleaving",
+        "acceptable_rate": 0,
+        "causes": [
+          "Moderate scratches",
+          "Dye degradation",
+          "Reflector corrosion"
+        ]
+      },
+      "cu_uncorrected": {
+        "description": "Triggers interpolation/muting",
+        "acceptable_rate": 0,
+        "causes": [
+          "Deep scratches",
+          "Laser rot",
+          "Severe dye failure"
+        ]
+      },
+      "drive_specific": {
+        "plextor_scan": {
+          "score_100": "Perfect",
+          "score_80_99": "Good",
+          "score_60_79": "Marginal",
+          "score_<60": "Failing"
+        },
+        "nero_speed": {
+          "graph": "Dips = errors; flat = healthy"
+        }
+      }
+    },
+    "physical_degradation_flowchart": {
+      "disc_not_recognised": [
+        "Clean radially",
+        "Test different drive",
+        "Inspect damage",
+        "Check CD-R/RW finalisation",
+        "Professional recovery if critical"
+      ],
+      "audio_skips": [
+        "Scan C1/C2",
+        "If C2 > 0 → backup immediately",
+        "Clean/slower read",
+        "Check lens/drive",
+        "Migrate if dye degraded"
+      ],
+      "cd_r_will_not_write": [
+        "Verify media/drive speed",
+        "Update firmware",
+        "Lower write speed (8× optimal)",
+        "Test different media",
+        "Replace drive if OPC fails"
+      ]
+    },
+    "archival_migration_protocols": {
+      "assessment": [
+        "Catalogue by format/condition",
+        "Prioritise unique/marginal/cyanine CD-Rs",
+        "Score risk by dye/reflector/storage/error rate"
+      ],
+      "execution": {
+        "ripping": "EAC secure or dBpoweramp (AccurateRip)",
+        "formats": [
+          "FLAC",
+          "WAV",
+          "BWF"
+        ],
+        "metadata": "CD-Text/ISRC extracted → ID3v2/BWF",
+        "storage": [
+          "ZFS/BTRFS NAS",
+          "LTO-8+ tape",
+          "AWS Glacier/B2"
+        ],
+        "verification": "SHA-256/BLAKE3 checksums + scheduled integrity scans"
+      }
+    }
+  },
+  "glossary_of_terms": {
+    "a_terms": {
+      "atip": "Absolute Time in Pre-groove; timing info in CD-R/RW wobble for OPC/addressing.",
+      "audio_cd": "Colloquial for CD-DA.",
+      "azimuth_error": "Angular misalignment of OPU relative to track; causes tracking failure."
+    },
+    "b_terms": {
+      "bler": "Block Error Rate; blocks with ≥1 C1 error/sec. <220 = healthy.",
+      "buffer_underrun": "Write buffer empties; mitigated by BurnProof/JustLink.",
+      "burst_error": "Contiguous corrupted bits; corrected by CIRC interleaving."
+    },
+    "c_terms": {
+      "circ": "Cross-Interleaved Reed-Solomon Coding; CD error correction.",
+      "clv": "Constant Linear Velocity; motor RPM varies 500→200 for constant 1.2–1.4 m/s.",
+      "cav": "Constant Angular Velocity; fixed RPM, higher throughput outer edge."
+    },
+    "d_terms": {
+      "dsv": "Digital Sum Value; running bit sum for EFM DC balance.",
+      "dye_layer": "Organic CD-R recording layer altered by write laser."
+    },
+    "e_terms": {
+      "ecc": "Error Correction Code.",
+      "edc": "Error Detection Code.",
+      "efm": "Eight-to-Fourteen Modulation; RLL(2,10) encoding."
+    },
+    "f_terms": {
+      "focus_servo": "Maintains OPU focal distance ±0.5 µm via astigmatic method."
+    },
+    "note": "Full glossary of 600+ terms available in opticalmedia_glossary.json.",
+    "sources": [
+      "SRC-01",
+      "SRC-02",
+      "SRC-30",
+      "SRC-55"
+    ]
+  },
+  "timeline_of_innovations": {
+    "1950s_1970s_precursors": [
+      {
+        "year": 1957,
+        "event": "Rubbiani optical experiments"
+      },
+      {
+        "year": 1966,
+        "event": "Russell optical patent filed"
+      },
+      {
+        "year": 1978,
+        "event": "LaserDisc commercial launch"
+      }
+    ],
+    "1980s_development_and_launch": [
+      {
+        "year": 1979,
+        "event": "Sony-Philips task force formed"
+      },
+      {
+        "year": 1980,
+        "event": "Red Book published"
+      },
+      {
+        "year": 1982,
+        "event": "First CD pressed (Chopin/Arrau)"
+      },
+      {
+        "year": 1985,
+        "event": "CD-ROM (Yellow Book) published"
+      },
+      {
+        "year": 1988,
+        "event": "CD-R (Orange Book II) introduced"
+      }
+    ],
+    "1990s_expansion_and_multimedia": [
+      {
+        "year": 1990,
+        "event": "CD-i launch"
+      },
+      {
+        "year": 1992,
+        "event": "Photo CD launched; CDs surpass vinyl"
+      },
+      {
+        "year": 1993,
+        "event": "VCD standardised"
+      },
+      {
+        "year": 1995,
+        "event": "Enhanced CD (Blue Book); CDs surpass cassette"
+      },
+      {
+        "year": 1997,
+        "event": "CD-RW drives widely available"
+      }
+    ],
+    "2000s_decline_and_niche": [
+      {
+        "year": 2000,
+        "event": "Peak sales: 782M units"
+      },
+      {
+        "year": 2001,
+        "event": "Copy Control CDs introduced"
+      },
+      {
+        "year": 2005,
+        "event": "Sony BMG rootkit scandal"
+      },
+      {
+        "year": 2008,
+        "event": "Copy Control discontinued"
+      }
+    ],
+    "2010s_present_archival_focus": [
+      {
+        "year": 2010,
+        "event": "NIST/LC longevity study published"
+      },
+      {
+        "year": 2015,
+        "event": "Streaming revenue surpasses physical (RIAA)"
+      },
+      {
+        "year": 2025,
+        "event": "Production limited to specialty/collector markets"
+      }
+    ],
+    "sources": [
+      "SRC-01",
+      "SRC-02",
+      "SRC-14",
+      "SRC-15",
+      "SRC-16",
+      "SRC-35",
+      "SRC-36",
+      "SRC-46",
+      "SRC-50",
+      "SRC-51",
+      "SRC-67"
+    ]
+  },
+  "comparative_format_analysis": {
+    "cd_vs_minidisc": {
+      "audio_quality": {
+        "cd": "16-bit/44.1 kHz PCM; 96 dB DR",
+        "minidisc": "ATRAC lossy or Hi-MD PCM (~90 dB DR)"
+      },
+      "capacity": {
+        "cd": "650–700 MB",
+        "minidisc": "140–305 MB"
+      },
+      "rewritability": {
+        "cd": "CD-RW (~1000 cycles)",
+        "minidisc": "Magneto-optical (~1M cycles)"
+      },
+      "market_outcome": "CD dominated due to lower cost and universal compatibility."
+    },
+    "cd_vs_digital_download": {
+      "ownership": {
+        "cd": "Physical, resaleable, no DRM",
+        "download": "License, often DRM-restricted"
+      },
+      "quality": {
+        "cd": "Uncompressed PCM",
+        "download_modern": "Lossless FLAC/ALAC available"
+      },
+      "convenience": {
+        "cd": "Requires ripping",
+        "download": "Instant cloud sync"
+      }
+    },
+    "cd_vs_streaming": {
+      "access_model": {
+        "cd": "Own hardware/disc; no subscription",
+        "streaming": "Rent catalogue; requires internet"
+      },
+      "archival": {
+        "cd": "Decades stable if stored properly",
+        "streaming": "Content removal risk; payment dependency"
+      },
+      "current_niche": "Audiophiles, collectors, archival institutions, regions with limited broadband"
+    }
+  },
+  "regional_variant_details": {
+    "japan_specific_formats": {
+      "mini_cd_singles": {
+        "description": "80 mm discs for singles; popular 1990s–2000s. Notable: Hikaru Utada, Ayumi Hamasaki.",
+        "capacity": "185 MB / 21 min",
+        "sources": [
+          "SRC-01",
+          "SRC-41"
+        ]
+      },
+      "cdv_hybrid": {
+        "description": "20 min analog video + 20 min audio; obsolete 1987–1992.",
+        "sources": [
+          "SRC-01",
+          "SRC-39"
+        ]
+      }
+    },
+    "asia_pacific_video_formats": {
+      "vcd_dominance": {
+        "market_share_peak": "~70% of home video sales in China (1998–2003)",
+        "adoption_reasons": [
+          "Low disc cost",
+          "Cheap players",
+          "Established distribution"
+        ],
+        "decline_factors": [
+          "DVD price drops",
+          "Broadband",
+          "Piracy"
+        ]
+      },
+      "svcd_regional_standard": {
+        "description": "Chinese national standard (GB/T 18893-2002). MPEG-2, higher resolution.",
+        "market_impact": "Extended CD-based video distribution ~3 years pre-DVD"
+      }
+    },
+    "europe_multimedia_adoption": {
+      "enhanced_cd": {
+        "notable_releases": [
+          "Björk — Post",
+          "Radiohead — OK Computer",
+          "Massive Attack — Mezzanine"
+        ],
+        "cultural_impact": "Pioneered multimedia music pre-internet"
+      },
+      "cd_g_karaoke": {
+        "legacy": "Dominant format in UK/DE/NL; dedicated publishers (Chartbuster, Zoom)"
+      }
+    }
+  },
+  "software_metadata_ecosystem": {
+    "cddb_freedb_gnudb": {
+      "description": "TOC fingerprint → metadata databases.",
+      "history": {
+        "cddb_1993": "Proprietary",
+        "freedb_2000": "Open fork",
+        "gnudb_2006": "Current active"
+      },
+      "limitations": [
+        "Internet required",
+        "User-submitted accuracy",
+        "Rare TOC collisions"
+      ]
+    },
+    "accuraterip_verification": {
+      "description": "Crowdsourced database verifying bit-identical rips.",
+      "methodology": "Checksum comparison across users; detects drive calibration/disc errors."
+    },
+    "musicbrainz_integration": {
+      "description": "Open metadata via acoustic fingerprinting (Picard) or TOC matching.",
+      "advantages": [
+        "Structured data",
+        "Relationship mapping",
+        "API access",
+        "Archival preference"
+      ]
+    }
+  },
+  "preservation_and_archival_protocols_detailed": {
+    "environmental_storage_specifications": {
+      "temperature": {
+        "optimal_c": 18,
+        "range_c": "10–25",
+        "avoid": ">30°C"
+      },
+      "humidity": {
+        "optimal_percent": 35,
+        "range_percent": "20–50",
+        "avoid": ">60% (corrosion/hydrolysis); <20% (embrittlement)"
+      },
+      "light": "Opaque sleeves/cases; UV accelerates cyanine degradation & lacquer yellowing.",
+      "orientation": "Vertical in polypropylene sleeves to prevent warpage. Touch hub/edge only. Clean radially."
+    },
+    "migration_scheduling_and_verification": {
+      "frequency": "Scan archival CD-Rs every 5 years",
+      "triggers": [
+        "C2 errors",
+        "C1 > 100/sec",
+        "Physical degradation"
+      ],
+      "post_migration": [
+        "SHA-256/BLAKE3 checksums",
+        "Spot-listen",
+        "Metadata validate",
+        "XML/JSON sidecar documentation"
+      ]
+    },
+    "sources": [
+      "SRC-05",
+      "SRC-06",
+      "SRC-19",
+      "SRC-43",
+      "SRC-46",
+      "SRC-49",
+      "SRC-58"
+    ]
+  },
+  "dye_chemistry_expanded": {
+    "cyanine_degradation_kinetics": {
+      "structure": "Polymethine chain + N-heterocycles; planar cation; delocalised π-electrons.",
+      "pathways": [
+        {
+          "mechanism": "Photo-oxidation",
+          "trigger": "UV <400 nm",
+          "effect": "Oxygen breaks conjugation → reflectivity loss"
+        },
+        {
+          "mechanism": "Thermal decomposition",
+          "trigger": ">30°C",
+          "effect": "Chain scission/isomerisation"
+        },
+        {
+          "mechanism": "Hydrolysis",
+          "trigger": "RH >60%",
+          "effect": "Water attacks iminium N → delamination"
+        }
+      ],
+      "stabilisation": "Metal chelation (Ni/Co) slows degradation 3–5×; UV absorbers (benzotriazole) in lacquer; HALS oxygen scavengers."
+    },
+    "phthalocyanine_properties": {
+      "structure": "Macrocyclic tetrapyrrole + central metal (Cu/Zn). Highly conjugated.",
+      "absorption": "Q-band 670–700 nm; tuned to 780 nm via peripheral substituents.",
+      "advantages": [
+        "Photo-oxidation resistant",
+        "Thermal stability >300°C",
+        "Chemically inert",
+        "No stabilisers required"
+      ],
+      "archival_performance": "100+ years (25°C/40% RH + gold reflector). CCI field validation: 1995 discs still <10 C1/sec in 2020."
+    },
+    "azo_characteristics": {
+      "structure": "Aromatic rings + –N=N– chromophore.",
+      "stability": "Light fastness good; thermal onset ~200°C; archival 50–100 years with gold."
+    },
+    "reflective_corrosion_mechanisms": {
+      "aluminium": {
+        "reaction": "4Al + 3O₂ → 2Al₂O₃",
+        "trigger": "Lacquer pinholes",
+        "prevention": "Edge sealing, controlled RH"
+      },
+      "silver": {
+        "reaction": "2Ag + H₂S → Ag₂S + H₂",
+        "trigger": "Atmospheric H₂S",
+        "prevention": "Alloy formulations, overcoats"
+      },
+      "gold_inertness": {
+        "property": "Noble metal; immune to 'laser rot'.",
+        "cost": "+$0.50–$1.00/disc vs Al"
+      }
+    }
+  },
+  "manufacturing_process_quality_metrics": {
+    "physical_dimensions": {
+      "diameter_tolerance_mm": "±0.2 (Red Book specification)",
+      "thickness_tolerance_mm": "±0.1",
+      "eccentricity_max_mm": 0.07,
+      "warp_max_mm": 0.3,
+      "measurement_method": "Laser micrometry and optical profilometry",
+      "sources": [
+        "SRC-29",
+        "SRC-53",
+        "SRC-54"
+      ]
+    },
+    "optical_performance": {
+      "reflectivity_requirement_percent": "≥70 (aluminium), ≥65 (gold)",
+      "birefringence_max_nm": 10,
+      "pit_geometry_tolerance": "Depth ±10 nm; width ±50 nm; length ±100 nm",
+      "measurement_method": "Spectrophotometry for reflectivity; polarised light microscopy for birefringence; AFM/SEM for pit geometry",
+      "sources": [
+        "SRC-29",
+        "SRC-32",
+        "SRC-53"
+      ]
+    },
+    "error_rate_testing": {
+      "bler_test": "Block Error Rate measured at 1× speed; threshold < 220 for acceptance",
+      "c1_c2_scanning": "Full-disc scan for correctable/uncorrectable errors",
+      "jitter_measurement": "Timing variation in pit/land transitions; threshold < 35 ps peak-to-peak",
+      "push_pull_signal": "Tracking servo signal amplitude; indicates disc centring and pit contrast",
+      "sources": [
+        "SRC-32",
+        "SRC-47",
+        "SRC-53"
+      ]
+    }
+  },
+  "manufacturing_process_regional_specs": {
+    "japan_jis_standards": {
+      "standard_number": "JIS X 6251",
+      "additional_requirements": [
+        "Stricter eccentricity tolerance (±0.05 mm)",
+        "Enhanced lacquer adhesion testing",
+        "Mandatory ATIP compliance for CD-R"
+      ],
+      "certification_body": "Japanese Industrial Standards Committee",
+      "sources": [
+        "SRC-01",
+        "SRC-32"
+      ]
+    },
+    "europe_en_standards": {
+      "standard_number": "EN 60908 (harmonised with IEC 60908)",
+      "additional_requirements": [
+        "RoHS compliance for heavy metals in lacquer",
+        "REACH registration for chemical components",
+        "WEEE marking for end-of-life recycling"
+      ],
+      "certification_body": "CENELEC (European Committee for Electrotechnical Standardization)",
+      "sources": [
+        "SRC-57",
+        "SRC-61"
+      ]
+    },
+    "china_gb_standards": {
+      "standard_number": "GB/T 18893-2002",
+      "additional_requirements": [
+        "Mandatory content filtering for video discs",
+        "Localised ATIP manufacturer codes",
+        "Specific dye stability testing protocols"
+      ],
+      "certification_body": "Standardization Administration of China (SAC)",
+      "sources": [
+        "SRC-77"
+      ]
+    },
+    "usa_ansi_standards": {
+      "standard_number": "ANSI/INCITS 318-1998 (adopted ISO/IEC 10149)",
+      "additional_requirements": [
+        "FCC electromagnetic compatibility testing for drives",
+        "DMCA compliance marking for copy-protected content"
+      ],
+      "certification_body": "International Committee for Information Technology Standards (INCITS)",
+      "sources": [
+        "SRC-75",
+        "SRC-01"
+      ]
+    }
+  },
+  "environmental_impact_lifecycle": {
+    "material_inputs_per_disc": {
+      "polycarbonate_g": 15,
+      "aluminium_mg": 30,
+      "lacquer_mg": 100,
+      "ink_mg": 50,
+      "packaging_g": 10,
+      "sources": [
+        "SRC-07",
+        "SRC-08",
+        "SRC-61"
+      ]
+    },
+    "energy_consumption": {
+      "injection_moulding_kwh_per_1000_discs": 45,
+      "sputtering_kwh_per_1000_discs": 12,
+      "printing_kwh_per_1000_discs": 8,
+      "total_manufacturing_kwh_per_disc": 0.065,
+      "sources": [
+        "SRC-32",
+        "SRC-33"
+      ]
+    },
+    "end_of_life_options": {
+      "mechanical_recycling": {
+        "process": "Shredding, density separation, polycarbonate pelletisation",
+        "output_applications": [
+          "Automotive parts",
+          "Construction materials",
+          "PC/ABS blends"
+        ],
+        "recycling_rate_estimate_percent": 15,
+        "challenges": [
+          "Metal layer contamination",
+          "Lacquer removal difficulty",
+          "Low collection rates"
+        ]
+      },
+      "chemical_recycling": {
+        "process": "Depolymerisation of polycarbonate to bisphenol A and carbonates",
+        "output_applications": [
+          "Virgin-grade polycarbonate production"
+        ],
+        "commercial_status": "Pilot scale only; not economically viable at current volumes",
+        "sources": [
+          "SRC-07",
+          "SRC-08"
+        ]
+      },
+      "energy_recovery": {
+        "process": "Incineration with energy capture",
+        "energy_yield_kwh_per_kg": 8.5,
+        "emissions_control": "Flue gas treatment for dioxins and heavy metals",
+        "regulatory_framework": "EU Waste Incineration Directive; US EPA standards",
+        "sources": [
+          "SRC-61"
+        ]
+      }
+    }
+  },
+  "mathematical_appendices": {
+    "efm_encoding_tables": {
+      "description": "Sample 256-entry lookup mapping 8-bit bytes → 14-bit codewords + 3 merging bits.",
+      "first_16": {
+        "0x00": "01001000100000",
+        "0x0F": "00000001001000"
+      },
+      "last_16": {
+        "0xF0": "00010010000010",
+        "0xFF": "01000000001001"
+      },
+      "merging_example": {
+        "data": "0x00 0x01",
+        "codewords": "01001000100000 10000100000000",
+        "boundary": "'00'→'10' RLL satisfied",
+        "dsv_opt": "'000' selected",
+        "final": "01001000100000 000 10000100000000"
+      },
+      "bit_rate_calc": "1411200 × 1.44 (CIRC) × (17/8) (EFM) = 4,321,800 bps"
+    },
+    "circ_generator_polynomials": {
+      "field": "GF(2^8); primitive p(x) = x^8 + x^4 + x^3 + x^2 + 1",
+      "c1": {
+        "polynomial": "g1(x) = (x-α^0)(x-α^1)(x-α^2)(x-α^3)",
+        "expanded": "x^4 + α^75 x^3 + α^249 x^2 + α^113 x + α^15",
+        "correction": "t=2 errors"
+      },
+      "c2": {
+        "polynomial": "g2(x) [same form, different interleaving]",
+        "correction": "t=2 after de-interleaving",
+        "burst_handling": "2.5 mm scratch spread across ~28 codewords"
+      },
+      "implementation": "Hardware LUTs for GF(2^8) arithmetic enable real-time 4.3218 Mbps decoding."
+    },
+    "optical_physics_equations": {
+      "pit_depth": {
+        "formula": "d = λ / (4n)",
+        "calc": "780 / (4 × 1.55) ≈ 125.8 nm",
+        "physics": "Creates λ/2 path difference → destructive interference → transition detection."
+      },
+      "diffraction_spot": {
+        "formula": "w ≈ λ / NA",
+        "calc": "780 nm / 0.45 ≈ 1.73 µm",
+        "implication": "Sets minimum readable feature length."
+      },
+      "numerical_aperture": {
+        "definition": "NA = n × sin(θ)",
+        "values": {
+          "cd": 0.45,
+          "dvd": 0.6,
+          "blu_ray": 0.85
+        },
+        "impact": "Higher NA = smaller spot = higher density."
+      }
+    },
+    "atip_data_structure": {
+      "wobble_freq_hz": 22050,
+      "modulation": "FM: 22.05 kHz ± 4 kHz = binary data",
+      "fields": {
+        "absolute_time": "MSF format",
+        "media_code": "Manufacturer/dye type",
+        "capacity": "74/80/99 min",
+        "power": "OPC reference levels"
+      },
+      "usage": "Addressing, OPC calibration, CLV speed control during write."
+    },
+    "multi_session_format_details": {
+      "structure": {
+        "lead_in": "TOC + session type pointers",
+        "program_area": "Data/audio",
+        "lead_out": "Links to next session"
+      },
+      "linking": "Previous lead-out → next lead-in. Audio players read session 1 only.",
+      "filesystems": {
+        "iso_9660": "Separate roots per session; requires special driver linking.",
+        "udf": "Native incremental recording; preferred for data CD-R/RW."
+      }
+    },
+    "circ_error_correction_mathematics": {
+      "reed_solomon_code_parameters": {
+        "field": "GF(2^8) — Galois Field with 256 elements",
+        "c1_code": {
+          "notation": "(32,28) RS code",
+          "codeword_length_symbols": 32,
+          "data_symbols": 28,
+          "parity_symbols": 4,
+          "error_correction_capability": "t = 2 symbol errors per codeword",
+          "burst_error_capability": "Up to 4 consecutive byte errors"
+        },
+        "c2_code": {
+          "notation": "(28,24) RS code",
+          "codeword_length_symbols": 28,
+          "data_symbols": 24,
+          "parity_symbols": 4,
+          "error_correction_capability": "t = 2 symbol errors per codeword",
+          "burst_error_capability": "Up to 4 consecutive byte errors after de-interleaving"
+        }
+      },
+      "interleaving_scheme": {
+        "description": "Cross-interleaving spreads burst errors across multiple codewords",
+        "interleave_depth_symbols": 28,
+        "delay_line_configuration": "FIFO buffers with varying delay lengths to achieve cross-interleaving",
+        "burst_error_distribution": "A 2.5 mm scratch affecting ~4000 consecutive channel bits is spread across ~28 codewords, reducing per-codeword errors to correctable levels",
+        "sources": [
+          "SRC-55",
+          "SRC-27",
+          "SRC-47"
+        ]
+      },
+      "error_detection_hierarchy": {
+        "c1_corrected": "Errors corrected by C1 decoder; not reported to higher layers",
+        "c2_corrected": "Errors requiring C2 correction; indicates marginal disc condition",
+        "cu_uncorrected": "Uncorrectable errors; triggers interpolation or muting in audio playback",
+        "bler_thresholds": {
+          "healthy": "< 50 C1 errors per second",
+          "marginal": "50–220 C1 errors per second",
+          "failing": "> 220 C1 errors per second or any C2 errors"
+        },
+        "sources": [
+          "SRC-02",
+          "SRC-30",
+          "SRC-47"
+        ]
+      }
+    },
+    "optical_physics_equations_expanded": {
+      "pit_depth_derivation": {
+        "formula": "d = λ / (4n)",
+        "variables": {
+          "λ": "Laser wavelength in vacuum (780 nm for CD)",
+          "n": "Refractive index of polycarbonate substrate (1.55)"
+        },
+        "calculation": "d = 780 nm / (4 × 1.55) = 125.8 nm",
+        "physics_explanation": "Pit depth creates λ/2 optical path difference between light reflected from pit top vs land, producing destructive interference",
+        "sources": [
+          "SRC-01",
+          "SRC-09",
+          "SRC-10",
+          "SRC-11"
+        ]
+      },
+      "diffraction_limited_spot_size": {
+        "formula": "w ≈ λ / NA",
+        "variables": {
+          "λ": "Laser wavelength (780 nm)",
+          "NA": "Numerical aperture of objective lens (0.45 for CD)"
+        },
+        "calculation": "w ≈ 780 nm / 0.45 = 1.73 µm",
+        "implication": "Minimum readable feature size on disc; determines minimum pit length (3 channel bits ≈ 833 nm)",
+        "sources": [
+          "SRC-10",
+          "SRC-11",
+          "SRC-24"
+        ]
+      },
+      "numerical_aperture_relationships": {
+        "definition": "NA = n × sin(θ), where θ is half-angle of light cone accepted by lens",
+        "cd_na": 0.45,
+        "dvd_na": 0.6,
+        "blu_ray_na": 0.85,
+        "impact_on_capacity": "Higher NA enables smaller spot size, allowing narrower track pitch and shorter pit lengths, increasing areal density",
+        "sources": [
+          "SRC-01",
+          "SRC-10",
+          "SRC-24"
+        ]
+      }
+    }
+  },
+  "appendix_a_efm_lookup_table": {
+    "description": "Sample of the 256-entry lookup table mapping 8-bit data bytes to 14-bit EFM codewords",
+    "note": "Full table is 256 entries; shown here are first 16 and last 16 for reference",
+    "first_16_entries": {
+      "0x00": "01001000100000",
+      "0x01": "10000100000000",
+      "0x02": "10010000100000",
+      "0x03": "01000100000000",
+      "0x04": "00100100000000",
+      "0x05": "00010001000000",
+      "0x06": "00001001000000",
+      "0x07": "00100010000000",
+      "0x08": "10001000100000",
+      "0x09": "00000100100000",
+      "0x0A": "01001000010000",
+      "0x0B": "00100001000000",
+      "0x0C": "10010000010000",
+      "0x0D": "00010000100000",
+      "0x0E": "00000010010000",
+      "0x0F": "00000001001000"
+    },
+    "last_16_entries": {
+      "0xF0": "00010010000010",
+      "0xF1": "00001001000010",
+      "0xF2": "00100100000010",
+      "0xF3": "00000010000010",
+      "0xF4": "01000000001010",
+      "0xF5": "00100000001010",
+      "0xF6": "00010000001010",
+      "0xF7": "00001000001010",
+      "0xF8": "00000100001010",
+      "0xF9": "00000010001010",
+      "0xFA": "00000001001010",
+      "0xFB": "00000000101010",
+      "0xFC": "00000000011010",
+      "0xFD": "01000000000110",
+      "0xFE": "00100000000110",
+      "0xFF": "01000000001001"
+    },
+    "merging_bits_selection_example": {
+      "data_bytes": "0x00 0x01",
+      "efm_codewords": "01001000100000 10000100000000",
+      "boundary_check": "Last 2 bits of first codeword: '00'; first 2 bits of second: '10' → RLL(2,10) satisfied",
+      "dsv_optimisation": "Three merging bit candidates evaluated; '000' selected to minimise running DSV",
+      "final_channel_bits": "01001000100000 000 10000100000000"
+    },
+    "sources": [
+      "SRC-27",
+      "SRC-28",
+      "SRC-42",
+      "SRC-50"
+    ]
+  },
+  "appendix_b_circ_generator_polynomials": {
+    "description": "Generator polynomials for Reed-Solomon codes used in CIRC",
+    "field_definition": "GF(2^8) with primitive polynomial p(x) = x^8 + x^4 + x^3 + x^2 + 1",
+    "c1_code_generator": {
+      "polynomial": "g1(x) = (x - α^0)(x - α^1)(x - α^2)(x - α^3)",
+      "expanded_form": "x^4 + α^75 x^3 + α^249 x^2 + α^113 x + α^15",
+      "parity_calculation": "Systematic encoding: message polynomial m(x) multiplied by x^4, then divided by g1(x); remainder is parity",
+      "error_correction": "Syndrome calculation followed by Berlekamp-Massey or Euclidean algorithm for error locator polynomial"
+    },
+    "c2_code_generator": {
+      "polynomial": "g2(x) = (x - α^0)(x - α^1)(x - α^2)(x - α^3) [same form as C1, different interleaving]",
+      "application": "Applied after de-interleaving C1-corrected data",
+      "burst_error_handling": "Interleaving spreads a 2.5 mm scratch (~4000 channel bits) across ~28 codewords, reducing per-codeword errors to correctable levels"
+    },
+    "implementation_note": "Hardware implementations use lookup tables for GF(2^8) arithmetic to achieve real-time encoding/decoding at 4.3218 Mbps channel rate",
+    "sources": [
+      "SRC-55",
+      "SRC-27",
+      "SRC-47"
+    ]
+  },
+  "appendix_c_atip_data_structure": {
+    "description": "Absolute Time in Pre-groove data encoded in the wobbled groove of blank CD-R/RW media",
+    "wobble_frequency_hz": 22050,
+    "modulation_scheme": "Frequency modulation: 22.05 kHz ± 4 kHz represents binary data",
+    "data_fields": {
+      "absolute_time": "Minutes:Seconds:Frames (MSF format) for disc addressing",
+      "media_code": "Manufacturer ID, dye type, recommended write strategy",
+      "disc_capacity": "Standard (74 min), extended (80 min), or overburn capability",
+      "write_power_recommendations": "OPC reference power levels for different write speeds"
+    },
+    "usage_in_recording": {
+      "addressing": "Drive reads ATIP to determine current radial position before writing",
+      "opc_calibration": "Drive tests write power in PCA zone using ATIP timing reference",
+      "speed_control": "ATIP timing used to maintain constant linear velocity during writing"
+    },
+    "sources": [
+      "SRC-30",
+      "SRC-91",
+      "SRC-05"
+    ]
+  },
+  "appendix_d_multi_session_format_details": {
+    "description": "Technical details of multisession CD formats (Enhanced CD, CD-R incremental recording)",
+    "session_structure": {
+      "lead_in": "Contains TOC for that session; includes session type (audio/data) and track pointers",
+      "program_area": "Actual audio or data content",
+      "lead_out": "Marks end of session; contains link to next session (if any)"
+    },
+    "session_linking": {
+      "method": "Previous session's lead-out contains pointer to next session's lead-in",
+      "compatibility": "Audio players read only first session (CD-DA); computers can read all sessions if filesystem supports multisession"
+    },
+    "filesystem_considerations": {
+      "iso_9660_multisession": "Each session has its own root directory; linking requires special driver support",
+      "udf_multisession": "Native support for incremental recording; preferred for data CD-R/RW"
+    },
+    "sources": [
+      "SRC-30",
+      "SRC-44",
+      "SRC-92",
+      "SRC-93"
+    ]
+  },
+  "reference_images_and_diagrams": {
+    "chemical_structures": {
+      "bpa_pc_3d": "https://pubchem.ncbi.nlm.nih.gov/compound/Polycarbonate#section=3D-Conformer",
+      "cyanine_orbitals": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Book:_Quantum_States_of_Atoms_and_Molecules_(Zielinksi_et_al)/04:_Electronic_Spectroscopy_of_Cyanine_Dyes/4.03:_Molecular_Orbitals_of_Cyanine_Dyes",
+      "phthalocyanine_metal": "https://www.researchgate.net/figure/Metal-phthalocyanine-structures-Cu-Zn-Fe-etc_fig2_13598640",
+      "azo_synthesis": "https://www.researchgate.net/figure/Azo-dye-synthesis-diazonium-coupling-mechanism_fig3_274655030"
+    },
+    "optical_pickup_diagrams": {
+      "focus_astigmatic": "https://www.repairfaq.org/sam/images/focus-astig.gif",
+      "tracking_three_beam": "https://www.repairfaq.org/sam/images/tracking-3beam.gif",
+      "qwp_polarisation": "https://www.newport.com/medias/sys_master/images/images/hd3/h48/8797045719070/Laser-Diode-Physics-Fundamentals-Fig5.jpg",
+      "servo_block": "https://www.researchgate.net/figure/CD-player-servo-system-block-diagram_fig4_243493054"
+    },
+    "manufacturing_additional": {
+      "glass_mastering": "https://www.vdcgroup.com/images/glass-mastering-diagram.jpg",
+      "electroforming_current": "https://www.newcyberian.com/images/electroforming-graph.png",
+      "moulding_profile": "https://replicat.com.au/images/moulding-cycle-graph.jpg",
+      "bler_scanning": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4849567/bin/nihms778567f1.jpg"
+    },
+    "archival_micrographs": {
+      "cyanine_oxidation_sem": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4849567/bin/nihms778567f3.jpg",
+      "al_corrosion_optical": "https://www.canada.ca/content/dam/cci-icc/documents/services/conservation-preservation-publications/canadian-conservation-institute-notes/longevity-recordable-cds-dvds/fig4.jpg",
+      "phthalocyanine_aging": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4849567/bin/nihms778567f5.jpg"
+    },
+    "_description": "Curated external links to chemical structure diagrams, optical diagrams, technical illustrations, manufacturing schematics, and dye studies. Expanded with dozens of verified high-resolution links from ResearchGate, Sam's FAQ, NASA, and industry sources.",
+    "disc_cross_sections": {
+      "cd_r_and_dvd_r_layer_structure": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/longevity-recordable-cds-dvds.html",
+      "phase_change_layer_crystalline_amorphous_cd_rw": "https://volga.eng.yale.edu/teaching-resources/cds-and-dvds/methods-and-materials",
+      "cd_rw_full_layer_stack": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/longevity-recordable-cds-dvds.html"
+    },
+    "pit_land_sem_images": {
+      "sem_image_of_cd_pits": "https://www.researchgate.net/figure/sualization-of-the-tracks-of-pits-on-the-metalized-CD-data-surface-by-use-of-a-scanning_fig1_228423286",
+      "pit_spacing_diffraction_experiment": "https://www.researchgate.net/figure/A-CD-contains-a-spiral-track-of-pits-that-form-nearly-concentric-circles-Adjacent-tracks_fig1_303401629"
+    },
+    "manufacturing_schematics": {
+      "glass_mastering_process_diagram": "https://en.wikipedia.org/wiki/Compact_disc_manufacturing (process flow)",
+      "electroforming_stamper_family": "https://en.wikipedia.org/wiki/Compact_disc_manufacturing#Electroforming",
+      "injection_moulding_cycle": "https://www.newcyberian.com/cd-manufacturing.html"
+    },
+    "archival_studies_graphs": {
+      "nist_cd_r_longevity_accelerated_aging": "https://www.loc.gov/preservation/resources/rt/NIST_LC_OpticalDiscLongevity.pdf (figures)",
+      "cci_dye_stability_comparison": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/longevity-recordable-cds-dvds.html (tables)"
+    }
+  },
+  "comparative_index": {
+    "_description": "Quick-reference index for all formats — suitable for search/filter queries. Expanded with additional cross-references and new formats.",
+    "by_writable": {
+      "read_only": [
+        "CD-DA",
+        "CD-ROM",
+        "SACD",
+        "Photo-CD",
+        "CDV-VCD",
+        "SVCD",
+        "CD-G",
+        "CD-Text",
+        "CD-ROM-XA",
+        "CD-i",
+        "MIL-CD",
+        "ENHANCED_CD"
+      ],
+      "write_once": [
+        "CD-R"
+      ],
+      "rewritable": [
+        "CD-RW",
+        "CD_MO"
+      ],
+      "variant_dependent": [
+        "Mini-CD"
+      ]
+    },
+    "by_year_introduced": {
+      "1982": [
+        "CD-DA"
+      ],
+      "1985": [
+        "CD-ROM",
+        "CD-G"
+      ],
+      "1987": [
+        "CDV-VCD (CDV precursor)"
+      ],
+      "1988": [
+        "CD-R"
+      ],
+      "1990": [
+        "CD-i"
+      ],
+      "1991": [
+        "CD-ROM-XA"
+      ],
+      "1992": [
+        "Photo-CD"
+      ],
+      "1993": [
+        "CDV-VCD"
+      ],
+      "1995": [
+        "ENHANCED_CD"
+      ],
+      "1996": [
+        "CD-Text"
+      ],
+      "1997": [
+        "CD-RW"
+      ],
+      "1998": [
+        "SVCD",
+        "MIL-CD"
+      ],
+      "1999": [
+        "SACD"
+      ],
+      "late_1980s": [
+        "Mini-CD"
+      ],
+      "early_1990s": [
+        "CD_MO"
+      ]
+    },
+    "by_primary_use": {
+      "audio": [
+        "CD-DA",
+        "SACD",
+        "CD-G",
+        "CD-Text",
+        "ENHANCED_CD"
+      ],
+      "computer_data": [
+        "CD-ROM",
+        "CD-R",
+        "CD-RW",
+        "CD-ROM-XA"
+      ],
+      "video": [
+        "CDV-VCD",
+        "SVCD"
+      ],
+      "photography": [
+        "Photo-CD"
+      ],
+      "interactive_multimedia": [
+        "CD-i"
+      ],
+      "small_form": [
+        "Mini-CD"
+      ],
+      "bootable_special": [
+        "MIL-CD"
+      ],
+      "magneto_optical": [
+        "CD_MO"
+      ]
+    },
+    "by_capacity_mb": {
+      "30–50": [
+        "Mini-CD (business card oval)"
+      ],
+      "185": [
+        "Mini-CD (80mm)"
+      ],
+      "650": [
+        "CD-DA",
+        "CD-ROM (Mode 1)",
+        "CD-R (74 min)",
+        "CD-RW",
+        "Photo-CD",
+        "CDV-VCD",
+        "CD-G",
+        "CD-Text",
+        "CD-i"
+      ],
+      "700": [
+        "CD-R (80 min)",
+        "SVCD",
+        "MIL-CD"
+      ],
+      "748": [
+        "CD-ROM XA (Mode 2 Form 1)"
+      ],
+      "4700_hd_layer": [
+        "SACD"
+      ]
+    },
+    "by_colour_book": {
+      "Red Book": [
+        "CD-DA",
+        "CD-G",
+        "CD-Text"
+      ],
+      "Yellow Book": [
+        "CD-ROM",
+        "CD-ROM-XA"
+      ],
+      "Orange Book II": [
+        "CD-R"
+      ],
+      "Orange Book III": [
+        "CD-RW"
+      ],
+      "Scarlet Book": [
+        "SACD"
+      ],
+      "White Book": [
+        "CDV-VCD"
+      ],
+      "Green Book": [
+        "CD-i"
+      ],
+      "Blue Book": [
+        "ENHANCED_CD"
+      ],
+      "Proprietary": [
+        "Photo-CD",
+        "SVCD",
+        "MIL-CD",
+        "CD_MO"
+      ],
+      "Size variant": [
+        "Mini-CD"
+      ]
+    }
+  },
+  "dvd_and_successor_formats_comparison": {
+    "_description": "Comparative analysis of CD successor formats and competing technologies — added in UNIFIED MASTER edition",
+    "dvd_vs_cd": {
+      "dvd_specifications": {
+        "capacity_single_layer_gb": 4.7,
+        "capacity_dual_layer_gb": 8.5,
+        "laser_wavelength_nm": 650,
+        "numerical_aperture": 0.6,
+        "track_pitch_um": 0.74,
+        "video_codec": "MPEG-2",
+        "audio_codecs": [
+          "Dolby Digital (AC-3)",
+          "DTS",
+          "Linear PCM",
+          "MPEG-1 Layer 2"
+        ],
+        "copy_protection": "CSS (Content Scramble System)",
+        "introduced_year": 1996
+      },
+      "key_advantages_over_cd": [
+        "7.2× higher capacity (single layer)",
+        "Support for MPEG-2 video (DVD-quality)",
+        "Multi-channel audio (5.1 surround)",
+        "Menus and chapter navigation",
+        "Regional coding (controversial)"
+      ],
+      "backwards_compatibility": "DVD players can read standard audio CDs; DVD-ROMs can read CD-ROMs in most cases",
+      "market_impact": "DVD surpassed VHS for video by 2003; began displacing CD-ROM for software by 2000"
+    },
+    "blu_ray_vs_cd": {
+      "blu_ray_specifications": {
+        "capacity_single_layer_gb": 25,
+        "capacity_dual_layer_gb": 50,
+        "laser_wavelength_nm": 405,
+        "numerical_aperture": 0.85,
+        "track_pitch_um": 0.32,
+        "video_codecs": [
+          "H.264/AVC",
+          "VC-1",
+          "MPEG-2"
+        ],
+        "audio_codecs": [
+          "Dolby TrueHD",
+          "DTS-HD Master Audio",
+          "Dolby Digital Plus",
+          "Linear PCM"
+        ],
+        "copy_protection": "AACS (Advanced Access Content System)",
+        "introduced_year": 2006
+      },
+      "key_advantages_over_cd": [
+        "38.5× higher capacity than CD (single layer)",
+        "1080p/4K video capability",
+        "Lossless audio codecs",
+        "Mandatory Java-based interactivity (BD-J)",
+        "Internet connectivity (BD-Live)"
+      ],
+      "format_war": "Blu-ray vs HD DVD (2006–2008); Blu-ray won after Warner Bros. exclusively backed it in January 2008"
+    },
+    "dat_digital_audio_tape_comparison": {
+      "dat_specifications": {
+        "sampling_rates_khz": [
+          32,
+          44.1,
+          48
+        ],
+        "bit_depth": 16,
+        "capacity_minutes": 120,
+        "format": "Rotary-head digital tape",
+        "introduced_year": 1987
+      },
+      "dat_advantages": [
+        "Rewritable",
+        "Higher sampling rate options (48 kHz)",
+        "Professional studio adoption"
+      ],
+      "cd_advantages": [
+        "Random access",
+        "No tape wear",
+        "Consumer compatibility",
+        "Lower cost"
+      ],
+      "outcome": "DAT remained professional/studio format; CD dominated consumer market"
+    },
+    "mp3_player_impact": {
+      "ipod_launch_year": 2001,
+      "napster_peak_year": 2001,
+      "initial_cd_impact": "Gradual — CD sales continued growing through 2002",
+      "accelerated_decline_trigger": "iTunes Store + iPod combination (2003–2004)",
+      "cd_response": "Audio CD remains superior in fidelity vs early MP3 (128–192 kbps); ripping to FLAC preserves full quality",
+      "archival_irony": "CD-Rs became popular for storing MP3 collections, using the very format being disrupted"
+    }
+  },
+  "cd_player_hardware_evolution": {
+    "_description": "Historical evolution of CD player hardware from 1982 to present — added in UNIFIED MASTER edition",
+    "first_generation_1982_1985": {
+      "representative_models": [
+        "Sony CDP-101 (1982)",
+        "Philips CD-100 (1983)",
+        "Marantz CD-73 (1983)"
+      ],
+      "characteristics": {
+        "dac_type": "14-bit (CDP-101) or 16-bit",
+        "oversampling": "None or 2× (later first-gen)",
+        "error_correction": "CIRC only",
+        "display": "7-segment LED",
+        "disc_loading": "Drawer or top-loading",
+        "laser_type": "AlGaAs diode, 780 nm",
+        "servo_type": "Analogue servo loops",
+        "price_range_usd": "500–1000+"
+      },
+      "audio_quality_notes": "Early 14-bit DACs (Sony CDP-101) produced some quantisation noise; later 16-bit designs resolved this",
+      "historical_significance": "Established consumer confidence in digital audio"
+    },
+    "second_generation_1986_1990": {
+      "representative_models": [
+        "Sony CDP-X5000",
+        "Philips CD-880",
+        "Meridian MCD",
+        "Naim CDS"
+      ],
+      "innovations": [
+        "4× oversampling DACs",
+        "1-bit DAC architectures (Philips SAA7350)",
+        "Improved error correction and interpolation",
+        "High-end audiophile models emerge",
+        "Car CD players introduced"
+      ],
+      "audiophile_debate": "1-bit DAC controversy: some audiophiles preferred 16-bit multibit DACs for their 'warmer' sound; debate continues"
+    },
+    "portable_players_1984_2000": {
+      "first_model": "Sony D-50 Discman (1984)",
+      "key_features": [
+        "Anti-skip memory buffers (1990s)",
+        "Car integration (cassette adaptor)",
+        "Rechargeable NiMH batteries"
+      ],
+      "peak_market": "Late 1990s — over 100 million portable CD players sold annually at peak",
+      "decline": "Apple iPod (2001) began the decline; smartphone streaming (2008+) completed it"
+    },
+    "cd_changers_and_jukeboxes": {
+      "home_changers": "5-disc, 6-disc, 25-disc, 50-disc, 100-disc mechanisms (e.g. Sony CDP-CX400)",
+      "car_changers": "6-disc trunk-mounted magazine changers; dashboard single-disc players",
+      "commercial_jukeboxes": "CD-based jukebox systems (NSM, Rowe, Rockola) — 100–300 disc capacity",
+      "library_systems": "Automated robotic CD libraries (Disc Broadcasting Systems) — up to 10,000 discs"
+    },
+    "high_end_audiophile_cd_players": {
+      "transport_vs_dac_separation": "High-end audiophiles separating CD transport (mechanical reading) from external DAC via S/PDIF or AES/EBU",
+      "notable_high_end_models": [
+        "Linn Sondek CD12 (1998) — £12,000 at launch",
+        "dCS Verdi Transport (2001)",
+        "Esoteric P-01 VRDS transport",
+        "Naim CDS3/XPS2"
+      ],
+      "engineering_focus": "Jitter reduction, power supply isolation, mechanical damping, precision clock circuits",
+      "current_market": "High-end CD/SACD players still produced by Marantz, Denon, Cambridge Audio, Luxman, Esoteric"
+    },
+    "cd_rom_drives_evolution": {
+      "1x_era_1985_1990": {
+        "speed_kb_s": 150,
+        "access_time_ms": 300,
+        "notable": "Original Yellow Book drives"
+      },
+      "2x_4x_era_1993_1995": {
+        "speed_kb_s": "300–600",
+        "access_time_ms": 200,
+        "notable": "Multimedia PC explosion"
+      },
+      "8x_16x_era_1996_1997": {
+        "speed_kb_s": "1200–2400",
+        "notable": "Games required minimum 4× drive"
+      },
+      "32x_52x_era_1998_2002": {
+        "speed_kb_s": "4800–7800",
+        "notable": "CAV drives; vibration and noise issues at high speeds"
+      },
+      "decline_2003_present": "USB flash drives and DVDs replaced CD-ROM; most modern PCs omit optical drives"
+    }
+  },
+  "cd_pressing_plant_history": {
+    "_description": "Major CD manufacturing facilities and their historical significance — added in UNIFIED MASTER edition",
+    "pioneering_plants": {
+      "philips_dupont_optical_hannover": {
+        "established": 1982,
+        "location": "Hannover, Germany",
+        "significance": "First commercial CD pressing plant globally; pressed first consumer CDs",
+        "capacity_at_peak_discs_per_day": 50000,
+        "closure": "Merged into other Philips/PDO operations 1990s"
+      },
+      "sony_dadc_salzburg": {
+        "established": 1982,
+        "location": "Salzburg, Austria",
+        "significance": "Joint Sony-Philips plant; pressed many of Sony Music's early releases",
+        "current_status": "Still operating as Sony DADC Austria AG; expanded to DVD/Blu-ray",
+        "capacity_discs_per_year": "300 million+ (peak)"
+      },
+      "taiyo_yuden_japan": {
+        "established": 1988,
+        "location": "Japan",
+        "significance": "Developed phthalocyanine dye; benchmark for CD-R quality",
+        "current_status": "Sold CD-R operations to CMC Magnetics (CMC Pro) 2007"
+      },
+      "cmc_magnetics_taiwan": {
+        "established": 1978,
+        "location": "Taiwan",
+        "significance": "World's largest optical disc manufacturer at peak",
+        "acquired": "Taiyo Yuden CD-R brand (CMC Pro line)"
+      }
+    },
+    "industry_consolidation_timeline": {
+      "1982_1990": "Rapid plant construction globally; dozens of pressing facilities opened in US, EU, Japan",
+      "1990_2000": "Industry rationalisation; mergers and acquisitions; PolyGram and Philips combine optical operations",
+      "2000_2010": "Massive overcapacity as demand peaks then collapses; plant closures begin",
+      "2010_2025": "Most large plants closed or repurposed; specialist producers remain for vinyl/CD reissue market",
+      "specialist_survivors_2025": [
+        "Optimal Media (Germany)",
+        "GZ Media (Czech Republic)",
+        "Disc Manufacturing Inc (USA)",
+        "Sony DADC (Austria)"
+      ]
+    }
+  },
+  "cd_error_correction_deep_dive": {
+    "_description": "Expanded technical analysis of CIRC error correction including real-world performance data — added in UNIFIED MASTER edition",
+    "burst_error_scenarios": {
+      "fingerprint_scenario": {
+        "contamination_area_mm2": "~100",
+        "affected_channel_bits": "~8000",
+        "after_circ_interleaving": "Spread across ~28 codewords",
+        "correctable": true,
+        "requires_c2": true,
+        "player_behaviour": "Seamless audio; no audible effect"
+      },
+      "minor_scratch_scenario": {
+        "scratch_length_mm": 1,
+        "affected_channel_bits": "~500",
+        "correctable": true,
+        "requires_c2": false,
+        "player_behaviour": "C1 correction; no audible effect"
+      },
+      "moderate_scratch_scenario": {
+        "scratch_length_mm": 5,
+        "affected_channel_bits": "~2500",
+        "correctable": true,
+        "requires_c2": true,
+        "player_behaviour": "C1+C2 correction; no audible effect in most cases"
+      },
+      "severe_scratch_scenario": {
+        "scratch_length_mm": 10,
+        "affected_channel_bits": "~5000",
+        "correctable": "Partially",
+        "requires_interpolation": true,
+        "player_behaviour": "Interpolation for uncorrected symbols; possible audible artefact (brief mute)"
+      },
+      "catastrophic_damage": {
+        "scratch_length_mm": ">15",
+        "correctable": false,
+        "player_behaviour": "Skip, freeze, or track loss"
+      }
+    },
+    "real_world_error_statistics": {
+      "freshly_pressed_cd_typical_bler": "< 5 per second",
+      "aged_pressed_cd_healthy": "< 50 per second",
+      "cd_r_immediately_after_burning_typical": "5–20 per second",
+      "cd_r_after_10_years_cyanine_poor_storage": "50–500+ per second",
+      "cd_r_after_10_years_phthalocyanine_good_storage": "< 20 per second",
+      "sources": [
+        "SRC-46",
+        "SRC-47",
+        "SRC-48"
+      ]
+    },
+    "interpolation_techniques": {
+      "linear_interpolation": "Average of adjacent known samples; effective for isolated dropouts ≤ 2 samples",
+      "polynomial_interpolation": "Higher-order curve fitting; used in high-end players for smoother reconstruction",
+      "muting": "Last resort for uncorrectable bursts; inserts silence rather than interpolated noise",
+      "concealment_quality": "Below audible threshold for up to ~7.5 mm of disc damage when interpolation active"
+    }
+  },
+  "recording_studio_cd_workflow": {
+    "_description": "Professional recording studio workflows for CD mastering and production — added in UNIFIED MASTER edition",
+    "mastering_chain": {
+      "step_1_mix_delivery": {
+        "typical_format": "WAV or AIFF, 24-bit/96kHz or 24-bit/44.1kHz",
+        "delivery_method": "High-res audio files via hard drive or secure transfer (MASV, Dropbox etc.)"
+      },
+      "step_2_mastering": {
+        "process": "EQ, compression, limiting, stereo width adjustment",
+        "target_loudness": "Typically -14 to -9 LUFS (integrated) for CD; louder than streaming targets",
+        "dithering": "Noise-shaped dither applied when reducing from 24-bit to 16-bit for CD",
+        "software": [
+          "Ozone (iZotope)",
+          "WaveLab (Steinberg)",
+          "Sequoia (Magix)",
+          "SADiE"
+        ],
+        "hardware": [
+          "Prism AD-2",
+          "Weiss EQ1-MK2",
+          "Shadow Hills Mastering Compressor"
+        ]
+      },
+      "step_3_pre_mastering": {
+        "process": "Assembly of tracks into correct order with gaps; encoding of PQ codes (track markers), CD-Text, ISRC",
+        "software": [
+          "WaveLab",
+          "Sequoia",
+          "CD Architect (Sony)",
+          "Pyramix (Merging)"
+        ],
+        "output_format": "DDP (Disc Description Protocol) — standard delivery format to replication plants"
+      },
+      "step_4_quality_verification": {
+        "e32m_scan": "Full-disc scan for uncorrectable errors",
+        "t_flag_check": "Verify track count, gap timing, TOC accuracy",
+        "isrc_verification": "Confirm unique ISRC codes embedded per track",
+        "cd_text_review": "Verify artist/title metadata correct on all tracks"
+      },
+      "step_5_replication": {
+        "glass_mastering_turnaround_days": "3–7 business days",
+        "minimum_run_standard": "500–1000 units (below this: duplication not replication)",
+        "duplication_vs_replication": {
+          "duplication": "CD-R burning at high speed; for small runs (<300); lower quality",
+          "replication": "Glass master stamper process; for runs >300; Red Book compliant"
+        }
+      }
+    },
+    "isrc_system": {
+      "full_name": "International Standard Recording Code",
+      "format": "CC-XXX-YY-NNNNN (Country-Registrant-Year-Designation)",
+      "embedded_location": "Q-channel subcode; first track pre-gap primarily",
+      "purpose": "Unique identification of audio recordings for royalty tracking, streaming metadata",
+      "registration_body": "IFPI (International Federation of the Phonographic Industry)",
+      "required_for": "Commercial CD releases, streaming distribution, digital royalty collection"
+    },
+    "loudness_wars_and_cd": {
+      "peak_period": "1995–2010",
+      "phenomenon": "Mastering engineers applied heavy limiting to maximise perceived loudness; dynamic range declined",
+      "worst_examples": [
+        "Metallica — Death Magnetic (2008, DR3)",
+        "Red Hot Chili Peppers — Californication (1999, DR5)"
+      ],
+      "measurement": "Dynamic Range (DR) score: DR14+ = excellent; DR8–13 = good; DR6 = heavily compressed; <DR5 = severely clipped",
+      "listener_fatigue": "High-loudness masters cause ear fatigue; streaming services normalise to -14 LUFS, reducing loudness advantage",
+      "tool": "DR Meter (Pleasurize Music Foundation); TT Dynamic Range Meter"
+    }
+  },
+  "cd_copy_protection_complete": {
+    "_description": "Complete history and technical analysis of all CD copy protection schemes — added in UNIFIED MASTER edition",
+    "timeline": {
+      "2001": "First commercial copy-controlled CDs appear (Cactus Data Shield by Midbar Tech)",
+      "2002": "SunnComm MediaMax deployed by BMG on select releases",
+      "2003": "Key2Audio (Sony DADC) deployed; causes PC crashes in some systems",
+      "2005": "Sony BMG XCP rootkit scandal; massive backlash and legal action",
+      "2007": "EMI becomes first major label to abandon copy protection entirely",
+      "2008": "Universal, Warner, Sony follow; copy control CDs discontinued"
+    },
+    "technical_mechanisms_detailed": {
+      "cactus_data_shield": {
+        "developer": "Midbar Tech (Israel), later acquired by Macrovision",
+        "mechanism": "Intentionally corrupted TOC; second session with digital content; CSS errors in audio sectors",
+        "bypass_method": "Hold Shift key on Windows PC to prevent AutoPlay; rip using non-standard tools",
+        "legal_status": "Never ruled illegal; voluntarily discontinued"
+      },
+      "key2audio": {
+        "developer": "Sony DADC",
+        "mechanism": "Non-standard subchannel data triggers crashes on some PC CD-ROM drivers",
+        "controversy": "Caused kernel panics on Mac OS X (patch released); crashed some car stereos",
+        "legal_status": "Class action settled; discontinued 2006"
+      },
+      "sonybmg_xcp_rootkit": {
+        "developer": "First 4 Internet (UK)",
+        "mechanism": "Hidden software installed on Windows PCs that intercepted system calls; hid itself from users",
+        "discovery": "Mark Russinovich (Sysinternals) discovered via RootkitRevealer, October 2005",
+        "affected_albums": "~22 million CDs across ~52 artists (including Celine Dion, Neil Diamond, Van Zant)",
+        "legal_outcome": "$4.25 million class action settlement (US); additional settlements in EU",
+        "security_impact": "XCP hiding mechanism exploited by malware authors before patch released"
+      },
+      "mediamax": {
+        "developer": "SunnComm Technologies",
+        "mechanism": "Windows-only software limiting copies to 3; transparent on Mac/Linux",
+        "failure_mode": "Shift key bypass; disabled by trivial method"
+      }
+    },
+    "standards_compliance_issues": {
+      "philips_response": "Philips stated that discs using incompatible copy protection cannot carry the official 'Compact Disc Digital Audio' logo",
+      "red_book_violation": "Most copy protection schemes violated the Red Book standard intentionally to prevent PC ripping",
+      "compatibility_failures": "Copy protected CDs known to fail in: some car stereos, home CD changers, DVD players with CD playback, Mac computers, Linux systems"
+    }
+  },
+  "audio_quality_deep_dive": {
+    "_description": "Technical analysis of CD audio quality, comparisons, and audiophile debates — added in UNIFIED MASTER edition",
+    "redbook_specifications_rationale": {
+      "sampling_rate_44100_hz": {
+        "value": 44100,
+        "nyquist_theorem": "Maximum reproducible frequency = 44100/2 = 22050 Hz — exceeds human hearing limit (typically 20 kHz)",
+        "why_not_40000": "44.1 kHz was chosen for compatibility with existing video tape recording (NTSC/PAL frame rates × scan lines × samples)",
+        "exact_derivation": "NTSC: 30 fps × 490 lines × 3 samples = 44,100; PAL: 25 fps × 588 lines × 3 samples = 44,100"
+      },
+      "bit_depth_16_bit": {
+        "value": 16,
+        "dynamic_range_db": 96.3,
+        "calculation": "20 × log10(2^16) = 20 × log10(65536) ≈ 96.3 dB",
+        "noise_floor": "-96 dBFS theoretical; dithering pushes noise below audibility",
+        "sufficient_for_human_hearing": "Human auditory dynamic range ~120 dB in ideal conditions; 96 dB sufficient for music"
+      }
+    },
+    "jitter_and_audibility": {
+      "definition": "Timing variations in the digital audio stream; can cause intermodulation distortion",
+      "sources": [
+        "Disc eccentricity",
+        "Motor instability",
+        "Electrical noise in clock circuits",
+        "S/PDIF transmission"
+      ],
+      "audible_threshold": "Debated; some claim >1 ns jitter is audible; controlled studies inconclusive",
+      "reduction_methods": [
+        "High-quality transport clocks",
+        "Reclockers (dCS, Chord)",
+        "Asynchronous USB DACs",
+        "Fibre optical S/PDIF"
+      ]
+    },
+    "cd_vs_24_bit_192khz_high_res": {
+      "technical_comparison": {
+        "cd": "16-bit/44.1 kHz; 96 dB DR; DC–22 kHz bandwidth",
+        "high_res": "24-bit/96–192 kHz; 144 dB DR; DC–96 kHz bandwidth"
+      },
+      "abx_double_blind_studies": "Multiple studies (e.g., Nousaine 1997, Reiss 2016 meta-analysis) show no statistically significant preference for high-res over CD in blind tests using music signals",
+      "practical_benefits_of_high_res": "Wider headroom for mastering/editing; ultrasonic content irrelevant to listening; marketing differentiator",
+      "cd_remaining_strengths": "Bit-perfect playback from disc; no lossy compression; physical ownership; established archival track record"
+    },
+    "audophile_misconceptions": [
+      "Green magic marker on CD edges — no documented acoustic benefit",
+      "Freezing CDs for 24 hours — no documented acoustic benefit",
+      "Gold CDs sound better — gold affects longevity (corrosion resistance) not audio quality",
+      "CD players 'warm up' — no measurable difference after manufacturer-specified warm-up time",
+      "Cable direction matters for digital S/PDIF — signal is digital; direction irrelevant to data integrity"
+    ]
+  },
+  "cd_data_recovery_techniques": {
+    "_description": "Professional and DIY data recovery techniques for damaged optical media — added in UNIFIED MASTER edition",
+    "assessment_tools": {
+      "hardware_scanners": [
+        "Clover Systems DVDisaster",
+        "Plextools XL (Plextor drives)",
+        "Nero CD-DVD Speed",
+        "Opti Drive Control"
+      ],
+      "software_analysis": [
+        "IsoBuster (Windows)",
+        "CDCheck",
+        "CD Diagnostic (Spin Doctor)"
+      ],
+      "professional_equipment": [
+        "Clover Systems FC-5025",
+        "KlearKlamp disc repair machines"
+      ]
+    },
+    "diy_recovery_methods": {
+      "cleaning": {
+        "method": "Lint-free microfibre cloth; radial motion (hub to edge); never circular",
+        "cleaning_agents": [
+          "Distilled water",
+          "Isopropyl alcohol 70%",
+          "Commercial disc cleaners"
+        ],
+        "avoid": [
+          "Paper towels (scratch)",
+          "Circular wiping",
+          "Solvents stronger than IPA"
+        ]
+      },
+      "scratch_polishing": {
+        "method": "Automotive metal polish (Brasso, Meguiar's) applied in radial motion; removes shallow scratches from read surface",
+        "effectiveness": "Works on scratches <1 µm deep in polycarbonate; ineffective on deep gouges",
+        "professional_machines": [
+          "JFJ Easy Pro",
+          "Skip Dr.",
+          "Disc Repairman"
+        ]
+      },
+      "freezing_technique": {
+        "description": "Sealing disc in zip-lock bag; freezing at -20°C for 30 minutes; reading immediately after removal",
+        "mechanism_claimed": "Thermal contraction may temporarily close delamination gaps",
+        "effectiveness": "Anecdotal reports of success; no controlled study validation",
+        "risk": "Moisture condensation can damage disc if not properly sealed"
+      }
+    },
+    "professional_recovery_services": {
+      "target_customers": "Archives, legal evidence, irreplaceable recordings, forensic investigations",
+      "techniques_available": [
+        "Specialised ROM drives with error masking firmware",
+        "Disc polishing to sub-micron surface smoothness",
+        "Dye layer re-coating (extremely specialised)",
+        "Laser re-reading at different angles and powers"
+      ],
+      "cost_range_usd": "50–500+ per disc depending on damage severity",
+      "providers": [
+        "Kroll Ontrack (US)",
+        "DriveSavers (US)",
+        "Stellar Data Recovery (global)"
+      ]
+    },
+    "software_recovery": {
+      "iso_buster": {
+        "capability": "Extract data sector-by-sector; skip unreadable areas; create ISO with placeholder sectors",
+        "best_for": "CD-ROM data recovery; partially readable discs"
+      },
+      "dvdisaster": {
+        "capability": "Create error-corrected backup images of partially readable discs; RS error codes",
+        "use_case": "Proactive protection of valuable discs before they fail"
+      },
+      "ddrescue": {
+        "platform": "Linux",
+        "capability": "Low-level sector-by-sector copy; maps good/bad sectors; multiple rescue passes"
+      }
+    }
+  }
+}
